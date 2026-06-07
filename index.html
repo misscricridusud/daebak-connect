@@ -9332,6 +9332,19 @@ renderFilters();
 afficherDramas();
 renderStars();
 
+window.addEventListener('DOMContentLoaded', function() {
+    const saved = localStorage.getItem('daebak_vip_session');
+    if (saved) {
+        try {
+            const s = JSON.parse(saved);
+            if (s && s.access_token && s.user) {
+                vipUser = s;
+                vipPseudo = s.pseudo || s.user.email?.split('@')[0] || 'Fan K-Drama';
+            }
+        } catch(e) { localStorage.removeItem('daebak_vip_session'); }
+    }
+});
+
 // ============================================================
 // SUPABASE VIP CHAT
 // ============================================================
@@ -9380,6 +9393,7 @@ async function vipLogin() {
     if (!res.ok) { errEl.textContent = data.error_description || 'Erreur de connexion 😅'; errEl.classList.remove('hidden'); return; }
     vipUser = data;
     await loadVipProfile(data.user.id);
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...data, pseudo: vipPseudo}));
     entrerDansSalonVip();
 }
 
@@ -9415,6 +9429,7 @@ async function vipRegister() {
         body: JSON.stringify({ id: data.user?.id, pseudo })
     });
 
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo: vipPseudo}));
     entrerDansSalonVip();
 }
 
@@ -9535,8 +9550,8 @@ async function sauvegarderPseudo() {
         document.getElementById('vip-user-name').textContent = nouveau;
         document.getElementById('vip-avatar-letter').textContent = nouveau[0].toUpperCase();
         document.getElementById('vip-pseudo-modal').classList.add('hidden');
+        localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo: nouveau}));
     } else {
-        // Si pas de ligne existante, on insert
         await fetch(SUPABASE_URL + '/rest/v1/profiles', {
             method: 'POST',
             headers: {
@@ -9551,6 +9566,7 @@ async function sauvegarderPseudo() {
         document.getElementById('vip-user-name').textContent = nouveau;
         document.getElementById('vip-avatar-letter').textContent = nouveau[0].toUpperCase();
         document.getElementById('vip-pseudo-modal').classList.add('hidden');
+        localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo: nouveau}));
     }
 }
 
@@ -9574,6 +9590,11 @@ function vipLogout() {
             if (s && s.access_token && s.user) {
                 vipUser = s;
                 vipPseudo = s.pseudo || s.user.email?.split('@')[0] || 'Fan K-Drama';
+                // Auto-connecter si on est sur le tab VIP
+                const vipContent = document.getElementById('content-vip');
+                if (vipContent && !vipContent.classList.contains('hidden')) {
+                    entrerDansSalonVip();
+                }
             }
         } catch(e) {}
     }
