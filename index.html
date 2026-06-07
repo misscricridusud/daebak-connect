@@ -50,6 +50,28 @@
         .detail-modal.show { display: flex; }
         .detail-box { width: 100%; max-width: 430px; max-height: 82vh; overflow-y: auto; border-radius: 30px; background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(252,231,243,.95), rgba(239,246,255,.96)); border: 1px solid rgba(249,168,212,.55); box-shadow: 0 25px 70px rgba(124, 58, 237, .28); }
         .synopsis-text { line-height: 1.55; }
+
+        .genre-scroll {
+            display: flex !important;
+            gap: 8px;
+            overflow-x: auto !important;
+            overflow-y: hidden;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+            max-width: 100%;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        .genre-scroll::-webkit-scrollbar { height: 5px; display: block; }
+        .genre-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #f9a8d4, #93c5fd);
+            border-radius: 999px;
+        }
+        .genre-chip {
+            flex: 0 0 auto;
+            white-space: nowrap;
+            scroll-snap-align: start;
+        }
     </style>
 </head>
 <body class="bg-gradient-app min-h-screen flex items-center justify-center p-4">
@@ -57,7 +79,7 @@
     <div class="app-shell w-full max-w-md bg-white/72 rounded-[40px] overflow-hidden flex flex-col h-[750px] border border-pink-100/70 backdrop-blur-xl">
         <header class="header-gradient p-8 text-center text-pink-950 shadow-lg">
             <h1 class="text-2xl font-bold tracking-wide">Daebak Connect 🫰</h1>
-            <p class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 468 dramas 🇰🇷</p>
+            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama 🇰🇷</p>
         </header>
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
@@ -69,7 +91,7 @@
 
         <main id="tab-content" class="flex-1 overflow-y-auto p-6 custom-scrollbar">
             <div id="content-dramas">
-                <div id="filter-bar" class="flex gap-2 mb-3 overflow-x-auto scrollbar-hide"></div>
+                <div id="filter-bar" class="genre-scroll"></div>
                 <input type="text" id="search-bar" oninput="afficherDramas()" placeholder="Chercher dans tous les dramas, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="active-filter" class="hidden mb-3 text-xs bg-pink-50 border border-pink-200 text-pink-700 rounded-2xl p-3"></div>
                 <div id="result-count" class="text-xs text-sky-700 font-bold mb-3"></div>
@@ -7607,6 +7629,665 @@ const baseDramas = [
                         "annee": 2019,
                         "episodes": 48,
                         "synopsis": "During the Joseon dynasty, a prince born from a low-ranking mother fights political enemies and corruption to claim his place on the throne."
+            },
+            {
+                        "id": 472,
+                        "titre": "When The Stars Gossip",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Lee Jae-wook", "Gong Hyo-jin"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Un médecin de santé publique envoyé sur une île isolée tombe amoureux dans ce drama médical et romantique."
+            },
+            {
+                        "id": 474,
+                        "titre": "Mad Concrete Dreams",
+                        "genre": "Thriller",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Un thriller policier sombre salué comme l'un des meilleurs de ces dernières années."
+            },
+            {
+                        "id": 475,
+                        "titre": "Signal 2",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Kim Hye-soo", "Lee Je-hoon", "Cho Jin-woong"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "La suite très attendue du thriller culte de 2016. Trois protagonistes reliés par des signaux radio tentent de réécrire le passé et le présent."
+            },
+            {
+                        "id": 476,
+                        "titre": "All of Us Are Dead 2",
+                        "genre": "Horreur",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Park Ji-hu", "Yoon Chan-young"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "La saison 2 du drama zombie. Alors que la crise semblait résolue, un nouveau virus éclate à Séoul."
+            },
+            {
+                        "id": 477,
+                        "titre": "Wonderfools",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Park Eun-bin", "Cha Eun-woo"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "note": 8.82,
+                        "episodes": 8,
+                        "synopsis": "Une comédie d'action fantastique avec super-héros et super-pouvoirs. Avec Park Eun-bin et Cha Eun-woo sur Netflix."
+            },
+            {
+                        "id": 478,
+                        "titre": "In Your Radiant Season",
+                        "genre": "Romance",
+                        "plateforme": "Disney+",
+                        "acteurs": ["Kim Hye-yoon"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Un drama romantique avec Kim Hye-yoon (Lovely Runner), salué comme la première belle romance de 2026."
+            },
+            {
+                        "id": 479,
+                        "titre": "Wicked World",
+                        "genre": "Fantastique",
+                        "plateforme": "Viki",
+                        "acteurs": ["Lim Ji-yeon"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Une femme de la période Joseon se réveille en 2026 dans le corps d'une actrice. Un drama fantastique avec voyage temporel."
+            },
+            {
+                        "id": 480,
+                        "titre": "IU x Byeon Woo-seok Drama",
+                        "genre": "Historique",
+                        "plateforme": "Netflix",
+                        "acteurs": ["IU", "Byeon Woo-seok"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Le drama très attendu réunissant IU et Byeon Woo-seok (Lovely Runner) dans un cadre historique romantique."
+            },
+            {
+                        "id": 481,
+                        "titre": "See You at Work Tomorrow",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Seo In-guk"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Un chef de service réputé difficile et une employée compétente depuis 7 ans voient leur quotidien chamboulé."
+            },
+            {
+                        "id": 482,
+                        "titre": "A Shop for Killers 2",
+                        "genre": "Action",
+                        "plateforme": "Disney+",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "La suite de la série d'action thriller de Disney+ sortie en 2024."
+            },
+            {
+                        "id": 483,
+                        "titre": "Slowly Strongly (Show Business)",
+                        "genre": "Drame",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Song Hye-kyo", "Gong Yoo"],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "La superproduction à 80 milliards de wons réunissant pour la première fois Song Hye-kyo et Gong Yoo."
+            },
+            {
+                        "id": 484,
+                        "titre": "Cabbage Your Life",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Un cadre de Séoul muté à la campagne découvre le vrai bonheur et la famille en apprenant l'agriculture."
+            },
+            {
+                        "id": 485,
+                        "titre": "Yu Mi's Cells 3",
+                        "genre": "Romance",
+                        "plateforme": "Disney+",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Kim Yu Mi, romancière à succès, découvre qu'une grande auteure de romance peut être novice en amour réel quand elle rencontre Sun Rok."
+            },
+            {
+                        "id": 486,
+                        "titre": "Fantome Lawyer",
+                        "genre": "Fantastique",
+                        "plateforme": "À trouver",
+                        "acteurs": ["Shin Ha-kyun", "Kim Jung-nan"],
+                        "annee": 2023,
+                        "synopsis": "Un avocat fantôme revient d'entre les morts pour défendre les innocents et résoudre les injustices qu'il n'a pas pu corriger de son vivant."
+            },
+            {
+                        "id": 487,
+                        "titre": "Hearts and Hari",
+                        "genre": "Fantastique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "synopsis": "Gu Ha Ri, étudiante de 20 ans, décroche un job à mi-temps dans un café baptisé 'Red Thread' (Le Fil Rouge). Alors qu'elle espère y passer des journées paisibles entourée de ses amis, sa vie prend un tournant inattendu lorsqu'elle se retrouve au cœur d'un mystère."
+            },
+            {
+                        "id": 488,
+                        "titre": "The Judge Returns",
+                        "genre": "Juridique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Le juge Lee Han Yeong, condamné à mort pour avoir osé affronter les puissants, se réveille 10 ans dans le passé avec tous ses souvenirs. Il décide de tout faire pour que justice soit rendue, cette fois-ci."
+            },
+            {
+                        "id": 489,
+                        "titre": "To My Beloved Thief",
+                        "genre": "Historique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Inspiré de Hong Gil Dong. Une femme née d'un père noble et d'une mère esclave devient la nuit un justicier masqué. Elle croise la route d'un prince bien décidé à la démasquer... et qui tombe amoureux d'elle sans le savoir."
+            },
+            {
+                        "id": 490,
+                        "titre": "Spring Fever",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Une comédie romantique coréenne de la chaîne tvN, sortie au printemps 2026."
+            },
+            {
+                        "id": 491,
+                        "titre": "Bloodhounds 2",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Kim Geon Wu et Hong Wu Jin reprennent du service. Un homme puissant dirigeant un réseau de paris clandestins liés à la boxe tente d'entraîner Geon Wu dans son univers. Les deux amis décident de démanteler ce réseau."
+            },
+            {
+                        "id": 492,
+                        "titre": "Perfect Crown",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Dans une Corée du Sud gouvernée par une monarchie constitutionnelle, une riche héritière de chaebol rencontre un homme inattendu. Romance et comédie."
+            },
+            {
+                        "id": 493,
+                        "titre": "Our Happy Days",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Un architecte arrogant contraint de rentrer en Corée rencontre une développeuse de start-up passionnée. Ensemble, ils découvrent que rien ne remplace la chaleur humaine."
+            },
+            {
+                        "id": 494,
+                        "titre": "Pearl in Red",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Kim Dan Hui a perdu sa sœur jumelle Myeong Hui dans des circonstances tragiques. Sa sœur a été sacrifiée par l'ambition du président sans scrupules Park Tae Ho. Pour se venger, Dan Hui décide de 'tuer' sa propre identité et de vivre sous le nom de sa défunte sœur."
+            },
+            {
+                        "id": 495,
+                        "titre": "Lovephobia",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Yun Bi Ah est la brillante mais froide PDG de 'It's You', une app de rencontres basée sur une IA générative. Traumatisée par son passé, elle est incapable de maintenir une interaction humaine physique ou émotionnelle pendant plus d'une heure."
+            },
+            {
+                        "id": 496,
+                        "titre": "If Wishes Could Kill",
+                        "genre": "Thriller",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2026,
+                        "nouveaute": true,
+                        "synopsis": "Au lycée Seorin, cinq amis mettent la main sur une application mystérieuse nommée Girigo qui promet d'exaucer tous les vœux. Mais chaque souhait réalisé entraîne de lourdes conséquences et tous ceux qui s'y fient semblent liés à un destin tragique."
+            },
+            {
+                        "id": 497,
+                        "titre": "Spirit Fingers",
+                        "genre": "Comédie",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "note": 9.06,
+                        "synopsis": "Une comédie romantique et dramatique sur la jeunesse et l'amitié, dans un cadre scolaire."
+            },
+            {
+                        "id": 498,
+                        "titre": "Way Back Love",
+                        "genre": "Fantastique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "note": 8.82,
+                        "synopsis": "Un drama fantastique et romantique mêlant fantômes, immortalité et amour au-delà de la mort."
+            },
+            {
+                        "id": 499,
+                        "titre": "Our Unwritten Seoul",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "note": 8.7,
+                        "synopsis": "Une comédie romantique sur l'amour, la famille et le quotidien à Séoul."
+            },
+            {
+                        "id": 500,
+                        "titre": "The Winning Try",
+                        "genre": "Comédie",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "note": 9.08,
+                        "synopsis": "Une comédie sportive autour du rugby, mêlant humour et esprit d'équipe."
+            },
+            {
+                        "id": 501,
+                        "titre": "Glass Heart",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "note": 8.77,
+                        "synopsis": "Un drama musical et romantique autour du chant, de la musique rock et J-pop, de l'amitié et du travail."
+            },
+            {
+                        "id": 502,
+                        "titre": "When Life Gives You Tangerines",
+                        "genre": "Historique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "note": 9.36,
+                        "synopsis": "Un drama historique et romantique sur l'amour, la famille, la jeunesse et la nostalgie. L'une des meilleures notes de 2025."
+            },
+            {
+                        "id": 503,
+                        "titre": "Squid Game 2",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Gi-hun revient dans le jeu avec un seul objectif : le détruire de l'intérieur. Action, drame et survival game impitoyable."
+            },
+            {
+                        "id": 504,
+                        "titre": "Squid Game 3",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "La saison finale du phénomène mondial. Les jeux mortels atteignent leur conclusion ultime."
+            },
+            {
+                        "id": 505,
+                        "titre": "Weak Hero Class 2",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "La suite de Weak Hero. Combats, vengeance et harcèlement scolaire dans un lycée coréen impitoyable."
+            },
+            {
+                        "id": 506,
+                        "titre": "Bon Appétit, Your Majesty",
+                        "genre": "Historique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie romantique fantastique historique mêlant gastronomie, voyage temporel, triangle amoureux et royauté."
+            },
+            {
+                        "id": 507,
+                        "titre": "Genie, Make a Wish",
+                        "genre": "Fantastique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie romantique fantastique sur la magie, les contes et légendes et l'amour."
+            },
+            {
+                        "id": 508,
+                        "titre": "Good Boy",
+                        "genre": "Action",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un drama d'action mêlant comédie, policier, romance et sport. Une enquête portée par l'amitié et l'amour."
+            },
+            {
+                        "id": 509,
+                        "titre": "Undercover High School",
+                        "genre": "Action",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un agent infiltré dans un lycée pour une mission d'espionnage. Action, comédie romantique et crime dans un cadre scolaire."
+            },
+            {
+                        "id": 510,
+                        "titre": "Head Over Heels",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie romantique fantastique et mystérieuse avec des thèmes de sport, école et paranormal."
+            },
+            {
+                        "id": 511,
+                        "titre": "Dynamite Kiss",
+                        "genre": "Comédie",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie romantique sur la famille, le travail et l'amour, avec une touche de mensonges et de rebondissements."
+            },
+            {
+                        "id": 512,
+                        "titre": "The Potato Lab",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie romantique sur le travail et l'amour."
+            },
+            {
+                        "id": 513,
+                        "titre": "Dear X",
+                        "genre": "Thriller",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un mélodrame thriller sur le crime, la famille, l'amour et le traumatisme."
+            },
+            {
+                        "id": 514,
+                        "titre": "Melo Movie",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un drame romantique et mélo autour du cinéma et de l'amour."
+            },
+            {
+                        "id": 515,
+                        "titre": "Tastefully Yours",
+                        "genre": "Comédie",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie romantique autour de la gastronomie, du travail et de l'amour."
+            },
+            {
+                        "id": 516,
+                        "titre": "Karma",
+                        "genre": "Thriller",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un thriller psychologique sombre sur la malédiction, le crime et le traumatisme."
+            },
+            {
+                        "id": 517,
+                        "titre": "Resident Playbook",
+                        "genre": "Médical",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Une comédie médicale sur la jeunesse, l'amitié, le travail et la vie sociale à l'hôpital."
+            },
+            {
+                        "id": 518,
+                        "titre": "Dear Hongrang",
+                        "genre": "Historique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un thriller historique d'action mêlant mystère, mélodrame et enquête sur fond de famille et d'amour."
+            },
+            {
+                        "id": 519,
+                        "titre": "Friendly Rivalry",
+                        "genre": "Thriller",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2025,
+                        "synopsis": "Un thriller psychologique scolaire sur la rivalité, le mystère et la jeunesse."
+            },
+            {
+                        "id": 520,
+                        "titre": "Red Swan",
+                        "genre": "Action",
+                        "plateforme": "À trouver",
+                        "acteurs": ["Kim Ha Neul", "RAIN"],
+                        "annee": 2024,
+                        "synopsis": "Oh Wan Su, joueuse de golf professionnelle mariée à l'héritier d'un grand groupe, est la cible d'un attentat. Elle est sauvée par son nouveau garde du corps Seo Do Yun, qui cache une motivation secrète. Ensemble ils découvrent les dessous sordides du groupe."
+            },
+            {
+                        "id": 521,
+                        "titre": "The Pork Cutlets",
+                        "genre": "Comédie",
+                        "plateforme": "À trouver",
+                        "acteurs": ["Jeon Hye Bin"],
+                        "annee": 2024,
+                        "synopsis": "Une comédie familiale et rurale pleine d'humour autour de la vie d'un village coréen."
+            },
+            {
+                        "id": 522,
+                        "titre": "Aux Grands Maux",
+                        "genre": "Médical",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama médical coréen."
+            },
+            {
+                        "id": 523,
+                        "titre": "Les Silences de l'Amour",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drame romantique coréen."
+            },
+            {
+                        "id": 524,
+                        "titre": "When the Phone Rings",
+                        "genre": "Thriller",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un thriller romantique coréen."
+            },
+            {
+                        "id": 525,
+                        "titre": "Pas de Profit, Pas d'Amour",
+                        "genre": "Comédie",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Une comédie romantique coréenne."
+            },
+            {
+                        "id": 526,
+                        "titre": "La Reine des Larmes",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": ["Kim Ji-won", "Kim Soo-hyun"],
+                        "annee": 2024,
+                        "synopsis": "Un couple de chaebol en crise voit leur amour renaître quand la femme apprend qu'elle est condamnée. Phénomène mondial de 2024."
+            },
+            {
+                        "id": 527,
+                        "titre": "Mr. Plankton",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama romantique et mélancolique sur deux personnes que la vie réunit dans des circonstances inattendues."
+            },
+            {
+                        "id": 528,
+                        "titre": "Épouse Mon Mari",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": ["Park Min-young", "Na In-woo"],
+                        "annee": 2024,
+                        "synopsis": "Kang Ji-won revient 10 ans dans le passé après avoir découvert la trahison de son mari et de sa meilleure amie. Cette fois, elle décide de tout changer."
+            },
+            {
+                        "id": 529,
+                        "titre": "Une Famille Atypique",
+                        "genre": "Fantastique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Une famille dotée de super-pouvoirs voit sa vie bouleversée par l'arrivée d'une mystérieuse étrangère."
+            },
+            {
+                        "id": 530,
+                        "titre": "Prince Héritier pour un Jour",
+                        "genre": "Historique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama historique coréen mêlant romance et intrigues de palais."
+            },
+            {
+                        "id": 531,
+                        "titre": "Light Shop",
+                        "genre": "Fantastique",
+                        "plateforme": "Disney+",
+                        "acteurs": ["Han Hyo-joo", "Byeon Woo-seok"],
+                        "annee": 2024,
+                        "synopsis": "Des patients en état de mort cérébrale et coma convergent vers une mystérieuse boutique de lumières. Un thriller fantastique très attendu."
+            },
+            {
+                        "id": 532,
+                        "titre": "Love Next Door",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Une comédie romantique sur deux voisins d'enfance que la vie réunit à l'âge adulte."
+            },
+            {
+                        "id": 533,
+                        "titre": "What Comes After Love",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama romantique coréen sur les lendemains de l'amour."
+            },
+            {
+                        "id": 534,
+                        "titre": "Ancestral",
+                        "genre": "Fantastique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama fantastique coréen mêlant héritage familial et éléments surnaturels."
+            },
+            {
+                        "id": 535,
+                        "titre": "S'aimer dans la Ville",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Une romance urbaine coréenne."
+            },
+            {
+                        "id": 536,
+                        "titre": "Déferlante",
+                        "genre": "Thriller",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un thriller coréen."
+            },
+            {
+                        "id": 537,
+                        "titre": "Bad Memory Eraser",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama romantique coréen sur l'effacement des mauvais souvenirs."
+            },
+            {
+                        "id": 538,
+                        "titre": "Pour Seul Bagage",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drame coréen sur le voyage et les rencontres."
+            },
+            {
+                        "id": 539,
+                        "titre": "Votre Honneur",
+                        "genre": "Juridique",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama juridique coréen sur un juge confronté à un dilemme moral."
+            },
+            {
+                        "id": 540,
+                        "titre": "Les Vertus de la Vengeance",
+                        "genre": "Drame",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Un drama coréen dramatique."
+            },
+            {
+                        "id": 541,
+                        "titre": "Chicken Nugget",
+                        "genre": "Comédie",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Une femme se transforme mystérieusement en nugget de poulet. Son père et son collègue font tout pour la ramener à la normale. Une comédie absurde et hilarante."
+            },
+            {
+                        "id": 542,
+                        "titre": "My Military Valentine",
+                        "genre": "Romance",
+                        "plateforme": "À trouver",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "synopsis": "Une romance coréenne dans un cadre militaire."
             }
 ];
 let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
@@ -7614,16 +8295,17 @@ let dramas = [...baseDramas, ...customDramas];
 let favoris = JSON.parse(localStorage.getItem('daebak_favs')) || [];
 let currentGenre = 'Tous';
 let starFilter = null;
+let starFavoris = JSON.parse(localStorage.getItem('daebak_star_favs')) || [];
 
 /* ================================
    CONFIG IA GEMINI
    Mets ta clé API entre les guillemets.
    Exemple :
-   const GEMINI_API_KEY = "AIza....";
+   const GEMINI_API_KEY = "";
    Si tu laisses vide, l'appli garde l'IA locale.
 ================================ */
 const GEMINI_API_KEY = "";
-const GEMINI_MODEL = "gemini-2.0-flash";
+const GEMINI_MODEL = "gemini-1.5-flash";
 
 
 function esc(text) {
@@ -7663,18 +8345,117 @@ function platformLink(d) {
     return `<a href="${url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="platform-badge ${info.cls}" title="Ouvrir ${esc(info.label)} pour ${esc(d.titre)}"><span>${info.icon}</span><span>${esc(info.label)}</span></a>`;
 }
 
+
+
+
+
+const genreCategories = [
+    { label: 'Tous', icon: '🫰', keys: [] },
+    { label: 'Romance', icon: '🌸', keys: ['romance','amour','romantic'] },
+    { label: 'Comédie', icon: '😂', keys: ['comedie','comédie','humour','comedy','drole','drôle'] },
+    { label: 'Horreur', icon: '😱', keys: ['horreur','horror','zombie','zombies','creature','haunted','slasher','gore'] },
+    { label: 'Thriller', icon: '🔪', keys: ['thriller','suspense','crime','murder','policier','detective','détective'] },
+    { label: 'Action', icon: '⚔️', keys: ['action','fight','combat','police','cop','lawless','vigilante'] },
+    { label: 'Fantastique', icon: '✨', keys: ['fantastique','fantasy','magic','magie','mythical','goblin'] },
+    { label: 'Surnaturel', icon: '👻', keys: ['surnaturel','supernatural','ghost','spirit','reaper','demon','démon','vampire','curse','shaman'] },
+    { label: 'Science-Fiction', icon: '🚀', keys: ['science fiction','science-fiction','sci fi','sci-fi','alien','aliens','space','future','time travel','robot','robots'] },
+    { label: 'École', icon: '🏫', keys: ['ecole','école','school','student','students','high school','university'] },
+    { label: 'Juridique', icon: '⚖️', keys: ['juridique','law','lawyer','attorney','judge','justice','court','legal'] },
+    { label: 'Médical', icon: '🏥', keys: ['medical','médical','doctor','hospital','nurse','trauma'] },
+    { label: 'Historique', icon: '👑', keys: ['historique','history','historical','joseon','king','queen','palace','arthdal'] },
+    { label: 'Favoris', icon: '💗', keys: [] }
+];
+
+function inferCategories(d) {
+    const title = normalize(d.titre || '');
+    const tagsText = Array.isArray(d.tags) ? d.tags.join(' ') : (d.tags || '');
+    const text = normalize(`${d.titre || ''} ${d.genre || ''} ${d.synopsis || ''} ${tagsText}`);
+
+    // Corrections manuelles validées pour éviter les faux classements
+    const manualMain = {
+        'black': 'Surnaturel',
+        'island': 'Fantastique',
+        "witch's love": 'Romance',
+        'witchs love': 'Romance',
+        'again my life': 'Juridique',
+        'alienoid 1': 'Science-Fiction',
+        'alienoid 2': 'Science-Fiction',
+        'alienoid': 'Science-Fiction',
+        'nobody knows': 'Thriller',
+        'fantome lawyer': 'Fantastique',
+        'hearts and hari': 'Fantastique',
+        'goblin': 'Fantastique',
+        'the penthouse': 'Thriller',
+        'penthouse 2': 'Thriller',
+        'penthouse 3': 'Thriller',
+        'hello monster': 'Thriller',
+        'sweet home': 'Horreur',
+        'all of us are dead': 'Horreur',
+        'kingdom': 'Horreur',
+    };
+
+    for(const key in manualMain) {
+        if(title.includes(normalize(key))) return [manualMain[key]];
+    }
+
+    // Catégorie principale automatique, par ordre de priorité
+    const priority = [
+        'Science-Fiction',
+        'Médical',
+        'Juridique',
+        'Historique',
+        'École',
+        'Horreur',
+        'Surnaturel',
+        'Fantastique',
+        'Thriller',
+        'Action',
+        'Comédie',
+        'Romance'
+    ];
+
+    for(const name of priority) {
+        const cat = genreCategories.find(c => c.label === name);
+        if(cat && cat.keys.some(k => text.includes(normalize(k)))) return [name];
+    }
+
+    if(d.genre) return [d.genre];
+    return ['Drame'];
+}
+
+function matchesCategory(d, selected) {
+    if(selected === 'Tous') return true;
+    if(selected === 'Favoris') return favoris.includes(d.id);
+    return inferCategories(d).some(c => normalize(c) === normalize(selected));
+}
+
+function categoryLabel(name) {
+    const cat = genreCategories.find(c => c.label === name);
+    return cat ? `${cat.icon} ${cat.label}` : name;
+}
+
+
 function renderFilters() {
-    const filters = ['Tous', 'Romance', 'Action', 'Thriller', 'Comédie', 'Fantastique', 'Drame', 'Movie', 'Favoris'];
-    document.getElementById('filter-bar').innerHTML = filters.map(f => `
-        <button onclick="setGenre('${f}')" class="px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm ${currentGenre === f ? 'bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-lg shadow-pink-100' : 'bg-white/70 text-sky-700 border border-pink-100 hover:bg-pink-50'}">
-            ${f}
-        </button>
-    `).join('');
+    const bar = document.getElementById('filter-bar');
+    if(!bar) return;
+
+    bar.innerHTML = genreCategories.map(cat => {
+        const f = cat.label;
+        const active = currentGenre === f;
+        return `
+            <button onclick="setGenre('${f}')" class="genre-chip px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm ${active ? 'bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white shadow-lg shadow-pink-100' : 'bg-white/80 text-sky-700 border border-pink-100 hover:bg-pink-50'}">
+                ${cat.icon} ${f}
+            </button>
+        `;
+    }).join('');
 }
 
 function setGenre(genre) {
     currentGenre = genre;
-    
+    renderFilters();
+    afficherDramas();
+}
+
 function isGreetingOnly_OLD_DISABLED(text) {
     const t = normalize(text).replace(/[^\w\s]/g, '').trim();
     return ['bjr','bonjour','salut','coucou','hello','hey','cc','bonsoir'].includes(t);
@@ -7805,10 +8586,6 @@ ${existingTitles}
 }
 
 
-renderFilters();
-    afficherDramas();
-}
-
 function clearStarFilter() {
     starFilter = null;
     afficherDramas();
@@ -7817,11 +8594,13 @@ function clearStarFilter() {
 function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
+    const headerCount = document.getElementById('drama-count-header');
+    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • ${dramas.length} dramas 🇰🇷`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre} ${d.genre} ${d.plateforme} ${actorText} ${d.synopsis || ''}`);
         const matchesSearch = !query || fullText.includes(query);
-        const matchesGenre = currentGenre === 'Tous' || (currentGenre === 'Favoris' ? favoris.includes(d.id) : normalize(d.genre).includes(normalize(currentGenre)));
+        const matchesGenre = matchesCategory(d, currentGenre);
         const matchesStar = !starFilter || (d.acteurs || []).includes(starFilter);
         return matchesSearch && matchesGenre && matchesStar;
     });
@@ -7839,10 +8618,10 @@ function afficherDramas() {
         <div onclick="openDramaDetails(${d.id})" class="drama-card soft-card p-4 rounded-2xl flex justify-between items-center hover:border-pink-200 transition-all">
             <div class="pr-2">
                 <strong class="text-sm text-sky-900">${esc(d.titre)}</strong>
-                <div class="text-[10px] text-sky-500 font-medium mt-2 flex items-center gap-2 flex-wrap"><span>${esc(d.genre)}</span>${platformLink(d)}${d.note ? `<span class="px-2 py-0.5 rounded-full bg-pink-50 text-pink-500 border border-pink-100 font-bold">⭐ ${esc(d.note)}</span>` : ''}${d.annee ? `<span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-500 border border-indigo-100 font-bold">${esc(d.annee)}</span>` : ''}<span class="px-2 py-0.5 rounded-full bg-violet-50 text-violet-500 border border-violet-100 font-bold">📖 Synopsis FR</span></div>
+                <div class="text-[10px] text-sky-500 font-medium mt-2 flex items-center gap-2 flex-wrap"><span>${categoryLabel(inferCategories(d)[0])}</span>${platformLink(d)}${d.note ? `<span class="px-2 py-0.5 rounded-full bg-pink-50 text-pink-500 border border-pink-100 font-bold">⭐ ${esc(d.note)}</span>` : ''}${d.annee ? `<span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-500 border border-indigo-100 font-bold">${esc(d.annee)}</span>` : ''}${d.nouveaute ? `<span class="px-2 py-0.5 rounded-full bg-green-50 text-green-600 border border-green-100 font-bold">🆕</span>` : ''}<span class="px-2 py-0.5 rounded-full bg-violet-50 text-violet-500 border border-violet-100 font-bold">📖 Synopsis FR</span></div>
                 <div class="text-[10px] text-pink-500 mt-1">${(d.acteurs || []).map(esc).join(', ')}</div>
             </div>
-            <button onclick="event.stopPropagation(); toggleFav(${d.id})" class="text-lg px-2 py-1 hover:bg-sky-50 rounded-full">${favoris.includes(d.id) ? '❤️' : '🤍'}</button>
+            <button onclick="event.stopPropagation(); toggleFav(${d.id})" title="Ajouter/enlever des favoris" class="text-lg px-2 py-1 hover:bg-sky-50 rounded-full">${favoris.includes(d.id) ? '❤️' : '🤍'}</button>
         </div>
     `).join('') || `<div class="soft-card p-5 rounded-2xl text-sm text-slate-500 text-center">Aucun résultat pour l'instant 🥲</div>`;
 }
@@ -7863,6 +8642,7 @@ function openDramaDetails(id) {
     if(d.plateforme) meta.push(`<span class="px-3 py-1 rounded-full ${info.cls} font-bold">${esc(info.label)}</span>`);
     if(d.note) meta.push(`<span class="px-3 py-1 rounded-full bg-pink-50 text-pink-600 border border-pink-100 font-bold">⭐ ${esc(d.note)}</span>`);
     if(d.annee) meta.push(`<span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-bold">${esc(d.annee)}</span>`);
+    if(d.nouveaute) meta.push(`<span class="px-3 py-1 rounded-full bg-green-50 text-green-600 border border-green-100 font-bold">🆕 Nouveauté 2026</span>`);
     if(d.episodes) meta.push(`<span class="px-3 py-1 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-bold">${esc(d.episodes)} épisodes</span>`);
     document.getElementById('modal-meta').innerHTML = meta.join('');
     document.getElementById('modal-actors').textContent = (d.acteurs && d.acteurs.length) ? '🎭 ' + d.acteurs.join(', ') : '';
@@ -7885,22 +8665,60 @@ document.addEventListener('keydown', function(e) {
     if(e.key === 'Escape') closeDramaDetails();
 });
 
+
+function openDramaById(id) {
+    const drama = dramas.find(d => String(d.id) === String(id));
+    if(drama && typeof openDramaModal === 'function') openDramaModal(drama);
+}
+
+function toggleStarFav(star, event) {
+    if(event) event.stopPropagation();
+    starFavoris = starFavoris.includes(star) ? starFavoris.filter(s => s !== star) : [...starFavoris, star];
+    localStorage.setItem('daebak_star_favs', JSON.stringify(starFavoris));
+    renderStars();
+}
+
+function starDramaCount(star) {
+    return dramas.filter(d => (d.acteurs || []).includes(star)).length;
+}
+
+function actorChip(actor) {
+    return `<button onclick="filterByStar('${esc(actor)}'); closeDramaDetails();" class="inline-block mr-1 mb-1 px-2 py-1 rounded-full bg-pink-50 text-pink-600 border border-pink-100 hover:bg-pink-100">${esc(actor)}</button>`;
+}
+
 function renderStars() {
     const q = normalize(document.getElementById('star-search')?.value || '');
-    const stars = [...new Set(dramas.flatMap(d => d.acteurs || []).filter(Boolean))]
-        .sort()
+    let stars = [...new Set(dramas.flatMap(d => d.acteurs || []).filter(Boolean))]
         .filter(s => !q || normalize(s).includes(q));
+
+    stars.sort((a, b) => {
+        const favDiff = (starFavoris.includes(b) ? 1 : 0) - (starFavoris.includes(a) ? 1 : 0);
+        if(favDiff) return favDiff;
+        return starDramaCount(b) - starDramaCount(a) || a.localeCompare(b);
+    });
+
     document.getElementById('stars-list').innerHTML = stars.map(s => {
-        const count = dramas.filter(d => (d.acteurs || []).includes(s)).length;
-        const googleImages = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(s + ' korean actor')}`;
-        return `<div class="star-card p-4 rounded-2xl text-xs font-bold text-sky-800 hover:scale-[1.02] transition-all">
-            <button onclick="filterByStar('${esc(s)}')" class="w-full text-left">
-                <span class="block text-sm">${esc(s)}</span>
-                <span class="text-[10px] text-pink-500">${count} drama(s)</span>
-            </button>
-            <a href="${googleImages}" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-pink-100 text-pink-600 border border-pink-300 hover:bg-pink-200 transition-all shadow-sm">
-                <i class="fa-regular fa-image"></i> Images
-            </a>
+        const count = starDramaCount(s);
+        const googleImages = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(s + ' korean actor actress')}`;
+        const isFav = starFavoris.includes(s);
+        return `<div class="star-card p-4 rounded-2xl text-xs font-bold text-sky-800 transition-all hover:shadow-lg">
+            <div class="flex justify-between items-start gap-2">
+                <button onclick="filterByStar('${esc(s)}')" class="flex-1 text-left">
+                    <span class="block text-sm">${isFav ? '⭐ ' : ''}${esc(s)}</span>
+                    <span class="text-[10px] text-pink-500">${count} drama(s)</span>
+                </button>
+                <button onclick="toggleStarFav('${esc(s)}', event)" class="text-lg leading-none hover:scale-110 transition-transform" title="Star favorite">
+                    ${isFav ? '💗' : '🤍'}
+                </button>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3">
+                <button onclick="filterByStar('${esc(s)}')" class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-600 border border-sky-100 hover:bg-sky-100 transition-all shadow-sm">
+                    📺 Voir
+                </button>
+                <a href="${googleImages}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-pink-100 text-pink-600 border border-pink-200 hover:bg-pink-200 transition-all shadow-sm">
+                    <i class="fa-regular fa-image"></i> Images
+                </a>
+            </div>
         </div>`;
     }).join('');
 }
@@ -7952,7 +8770,7 @@ function pickRandom(list, n=3) {
 
 
 async function getGeminiResponse(userText) {
-    if(!GEMINI_API_KEY || GEMINI_API_KEY.trim() === "") return null;
+    const WORKER_URL = "https://summer-rice-9c33.femmeliberee2011.workers.dev";
 
     const miniCatalogue = dramas.map(d => ({
         id: d.id,
@@ -7962,49 +8780,33 @@ async function getGeminiResponse(userText) {
         acteurs: d.acteurs || []
     }));
 
-    const prompt = `
-Tu es Daebak Connect, une assistante K-Drama en français.
-Tu dois recommander uniquement des dramas présents dans ce catalogue.
-Réponds de façon courte, girly, claire.
-Quand tu recommandes des titres, utilise exactement les titres du catalogue.
+    const message = `Tu es Daebak Connect, une assistante K-Drama en français, girly et chaleureuse.
+Tu recommandes uniquement des dramas présents dans ce catalogue.
+Réponds de façon courte et claire. Utilise exactement les titres du catalogue.
 
-Question de l'utilisateur :
-${userText}
+Question : ${userText}
 
-Catalogue JSON :
-${JSON.stringify(miniCatalogue)}
-`;
+Catalogue : ${JSON.stringify(miniCatalogue)}`;
 
     try {
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    contents: [
-                        {
-                            parts: [
-                                { text: prompt }
-                            ]
-                        }
-                    ]
-                })
-            }
-        );
+        const response = await fetch(WORKER_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message })
+        });
 
         if(!response.ok) {
-            console.error("Erreur Gemini:", await response.text());
+            console.error("Erreur Worker:", await response.text());
             return null;
         }
 
         const data = await response.json();
-        const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        const text = data?.reply;
         if(!text) return null;
 
         let safeText = esc(text).replace(/\n/g, "<br>");
 
-        // Rend les titres du catalogue cliquables si l'IA les cite
+        // Rend les titres cliquables si l'IA les cite
         dramas.forEach(d => {
             const title = esc(d.titre);
             const regex = new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
@@ -8013,7 +8815,7 @@ ${JSON.stringify(miniCatalogue)}
 
         return safeText;
     } catch(error) {
-        console.error("Erreur appel Gemini:", error);
+        console.error("Erreur appel Worker:", error);
         return null;
     }
 }
@@ -8024,71 +8826,154 @@ function isGreetingOnly(text) {
     return ['bjr','bonjour','salut','coucou','hello','hey','cc','bonsoir'].includes(t);
 }
 
-async function getSmartAIResponse(userText) {
-    if(isGreetingOnly(userText)) return "Annyeong 🫰 Coucou ! Tu cherches quel style de K-drama aujourd’hui ? Romance, thriller, action, fantastique…";
-    const gemini = await getGeminiResponse(userText);
-    if(gemini) return gemini;
-    return getAIResponse(userText);
+// ── MÉMOIRE DE CONVERSATION ──────────────────────────────────────
+const conversationMemory = {
+    dernierGenre: null,
+    dernierActeur: null,
+    dernierePlateforme: null,
+    derniersResultats: [],
+};
+
+const genreMap = {
+    'romance':'Romance','amour':'Romance','romantique':'Romance','love':'Romance','coeur':'Romance','sentiments':'Romance',
+    'action':'Action','bagarre':'Action','combat':'Action','baston':'Action',
+    'thriller':'Thriller','policier':'Thriller','angoisse':'Thriller','suspense':'Thriller','tension':'Thriller','mystere':'Thriller','mystère':'Thriller',
+    'comedie':'Comédie','comédie':'Comédie','humour':'Comédie','drole':'Comédie','drôle':'Comédie','rire':'Comédie','marrant':'Comédie','rigolo':'Comédie',
+    'horreur':'Horreur','peur':'Horreur','zombie':'Horreur','flippant':'Horreur',
+    'fantastique':'Fantastique','magie':'Fantastique','magique':'Fantastique',
+    'surnaturel':'Surnaturel','fantome':'Surnaturel','fantôme':'Surnaturel','demon':'Surnaturel','démon':'Surnaturel','ghost':'Surnaturel',
+    'ecole':'École','école':'École','lycee':'École','lycée':'École','etudiant':'École','étudiant':'École',
+    'juridique':'Juridique','avocat':'Juridique','tribunal':'Juridique',
+    'medical':'Médical','médical':'Médical','docteur':'Médical','hopital':'Médical','hôpital':'Médical',
+    'historique':'Historique','roi':'Historique','reine':'Historique','joseon':'Historique',
+    'drame':'Drame','triste':'Drame','emotion':'Drame','touchant':'Drame','emouvant':'Drame','larmes':'Drame','pleurer':'Drame',
+    'sci fi':'Science-Fiction','sci-fi':'Science-Fiction','science fiction':'Science-Fiction','alien':'Science-Fiction','espace':'Science-Fiction','futur':'Science-Fiction',
+    'film':'Movie','movie':'Movie'
+};
+
+const humeurMap = {
+    'bonne humeur':'Comédie','happy':'Comédie','content':'Comédie','contente':'Comédie',
+    'triste':'Drame','pleurer':'Drame','cafard':'Drame','melancolie':'Drame',
+    'peur':'Horreur','frisson':'Horreur',
+    'amoureux':'Romance','amoureuse':'Romance',
+    'excite':'Action','excité':'Action','adrenaline':'Action','adrénaline':'Action'
+};
+
+function detecterIntention(t) {
+    if (/favori|préféré|prefere|coup de coeur|meilleur/.test(t)) return 'favoris';
+    const acteur = [...new Set(dramas.flatMap(d => d.acteurs || []))].find(a => t.includes(normalize(a)));
+    if (acteur) return { type: 'acteur', valeur: acteur };
+    for (const [mot, genre] of Object.entries(humeurMap)) { if (t.includes(mot)) return { type: 'genre', valeur: genre }; }
+    for (const [mot, genre] of Object.entries(genreMap)) { if (t.includes(mot)) return { type: 'genre', valeur: genre }; }
+    const plat = ['netflix','viki','disney','amazon','prime','wavve','tving'].find(p => t.includes(p));
+    if (plat) return { type: 'plateforme', valeur: plat };
+    if (/encore|autre|plus|suite|different|différent|autre chose/.test(t)) return 'suite';
+    if (/combien|nombre|total|stats|statistique/.test(t)) return 'stats';
+    return null;
+}
+
+function buildDramaCard(p) {
+    const isFav = favoris.includes(p.id);
+    const acteurs = p.acteurs && p.acteurs.length ? `<div class="text-[10px] text-slate-400 mt-1">👤 ${p.acteurs.slice(0,2).join(', ')}</div>` : '';
+    return `<button onclick="openDramaById(${p.id})" class="w-full text-left mt-2 p-3 rounded-2xl bg-gradient-to-r from-pink-50 via-white to-sky-50 border border-pink-100 hover:border-sky-300 hover:shadow-md transition-all">
+        <div class="flex justify-between items-start">
+            <span class="font-bold text-sky-900">📺 ${esc(p.titre)}</span>
+            ${isFav ? '<span class="text-rose-400 text-xs">❤️</span>' : ''}
+        </div>
+        <div class="text-[11px] text-pink-500 mt-1">${esc(p.genre || '')} • ${esc(p.plateforme || '')}</div>
+        ${acteurs}
+    </button>`;
 }
 
 function getAIResponse(text) {
     const t = normalize(text);
-    const genreWords = {
-        'romance':'Romance', 'amour':'Romance', 'romantique':'Romance',
-        'action':'Action', 'bagarre':'Action', 'combat':'Action',
-        'thriller':'Thriller', 'policier':'Thriller', 'angoisse':'Thriller', 'suspense':'Thriller',
-        'comedie':'Comédie', 'humour':'Comédie', 'drole':'Comédie', 'rire':'Comédie',
-        'fantastique':'Fantastique', 'magie':'Fantastique', 'surnaturel':'Fantastique',
-        'drame':'Drame', 'triste':'Drame', 'emotion':'Drame',
-        'film':'Movie', 'movie':'Movie'
-    };
-    let results = dramas;
-    let label = '';
+    const intention = detecterIntention(t);
+    let results = [];
+    let intro = '';
+    let conseil = '';
 
-    for(const [word, genre] of Object.entries(genreWords)) {
-        if(t.includes(word)) { results = results.filter(d => normalize(d.genre).includes(normalize(genre))); label = genre; break; }
+    if (isGreetingOnly(text)) {
+        return `Annyeong 🫰✨ Je suis Daebak, ton assistante K-Drama ! Ta liste : <b>${dramas.length} dramas</b>.<br><br>Essaie : <i>romance, thriller, avec Ji Chang-wook, mes favoris, combien j\'ai de dramas...</i>`;
     }
 
-    const platform = ['netflix','viki','disney','amazon','prime'].find(p => t.includes(p));
-    if(platform) {
-        results = results.filter(d => normalize(d.plateforme).includes(platform === 'prime' ? 'prime' : platform));
-        label += label ? ` sur ${platform}` : `sur ${platform}`;
+    if (intention === 'stats') {
+        const genres = [...new Set(dramas.map(d => d.genre).filter(Boolean))];
+        return `📊 Ta collection :<br>🎬 <b>${dramas.length}</b> dramas • ❤️ <b>${favoris.length}</b> favoris • 🎭 <b>${genres.length}</b> genres<br>Jinjja daebak 🫰`;
     }
 
-    const actor = [...new Set(dramas.flatMap(d => d.acteurs || []))].find(a => t.includes(normalize(a)));
-    if(actor) {
-        results = results.filter(d => (d.acteurs || []).includes(actor));
-        label += label ? ` avec ${actor}` : `avec ${actor}`;
+    if (intention === 'favoris') {
+        results = dramas.filter(d => favoris.includes(d.id));
+        if (!results.length) return `Omo 🥲 Pas encore de favoris ! Clique sur ❤️ sur un drama.`;
+        intro = `Tes <b>${results.length} favoris</b> 💕`;
+        conseil = 'Excellent goût jinjja ! 🫰';
+    }
+    else if (intention === 'suite' && conversationMemory.derniersResultats.length) {
+        const dejaVus = conversationMemory.derniersResultats.map(d => d.id);
+        const pool = dramas.filter(d => !dejaVus.includes(d.id) && (!conversationMemory.dernierGenre || matchesCategory(d, conversationMemory.dernierGenre)));
+        results = pickRandom(pool, 3);
+        intro = `Encore des suggestions 🫰`;
+    }
+    else if (intention && intention.type === 'acteur') {
+        conversationMemory.dernierActeur = intention.valeur;
+        results = dramas.filter(d => (d.acteurs || []).includes(intention.valeur));
+        intro = `<b>${results.length} drama${results.length>1?'s':''}</b> avec <b>${esc(intention.valeur)}</b> ⭐`;
+        conseil = results.length > 3 ? `Dis "encore" pour plus 🫰` : '';
+    }
+    else if (intention && intention.type === 'genre') {
+        conversationMemory.dernierGenre = intention.valeur;
+        // Vérifier si plateforme aussi mentionnée
+        const plat = ['netflix','viki','disney','amazon','prime'].find(p => t.includes(p));
+        if (plat) {
+            results = dramas.filter(d => matchesCategory(d, intention.valeur) && normalize(d.plateforme).includes(plat));
+            intro = `<b>${results.length} drama${results.length>1?'s':''}</b> en <b>${intention.valeur}</b> sur <b>${plat}</b> 📺`;
+        } else {
+            results = dramas.filter(d => matchesCategory(d, intention.valeur));
+            const moodIntros = {
+                'Romance':['Pour les amoureux 💕','Un peu de romanticisme 🌸'],
+                'Thriller':['Accroche-toi 😱','Suspense garanti 🔪'],
+                'Comédie':['Pour les fou rires 😂','Bonne humeur assurée 🎉'],
+                'Action':['Adrénaline à fond 💥','Ça va bouger 🥊'],
+                'Drame':['Prévois des mouchoirs 😢','De l\'émotion pure 🥺'],
+                'Horreur':['Si tu oses... 👻','Lumières allumées conseillées 🕯️'],
+            };
+            const opts = moodIntros[intention.valeur] || [`<b>${intention.valeur}</b>`];
+            intro = `${opts[Math.floor(Math.random()*opts.length)]} — <b>${results.length}</b> dramas dans ta liste !`;
+        }
+        conseil = results.length > 3 ? `Dis "encore" pour d\'autres 🫰` : '';
+    }
+    else if (intention && intention.type === 'plateforme') {
+        conversationMemory.dernierePlateforme = intention.valeur;
+        results = dramas.filter(d => normalize(d.plateforme).includes(intention.valeur));
+        intro = `<b>${results.length} drama${results.length>1?'s':''}</b> sur <b>${esc(intention.valeur)}</b> 📺`;
+    }
+    else {
+        return `Hmm 🤔 Essaie : <i>romance, thriller, avec Lee Jong-suk, mes favoris, Netflix, encore...</i> 🫰`;
     }
 
-    if(t.includes('favori') || t.includes('prefere')) {
-        results = results.filter(d => favoris.includes(d.id));
-        label += label ? ' dans tes favoris' : 'dans tes favoris';
-    }
+    if (!results.length) return `Omo 🥲 Aucun résultat ! Essaie un autre filtre 🫰`;
 
-    if(results.length === dramas.length) {
-        return "Dis-moi un style, une plateforme ou une star, et je te pioche des dramas dans ta collection. Exemple : <b>romance sur Viki</b> ou <b>avec Ji Chang-wook</b> 🫰";
-    }
-    if(!results.length) return `Omo 🥲 Je n'ai rien trouvé ${label ? 'pour <b>' + esc(label) + '</b>' : ''} dans ta liste.`;
-    const picks = pickRandom(results, Math.min(3, results.length));
-    return `Daebak 🫰 J'ai trouvé <b>${results.length}</b> résultat(s) ${label ? 'pour <b>' + esc(label) + '</b>' : ''}. Je te conseille :<br><br>${picks.map(p => `
-        <button onclick="openDramaById(${p.id})" class="w-full text-left mt-2 p-3 rounded-2xl bg-gradient-to-r from-pink-50 via-white to-sky-50 border border-pink-100 hover:border-sky-300 hover:shadow-md transition-all">
-            <span class="font-bold text-sky-900">📺 ${esc(p.titre)}</span>
-            <span class="block text-[11px] text-pink-500 mt-1">${esc(p.genre || '')} • ${esc(p.plateforme || '')}</span>
-            <span class="block text-[10px] text-slate-400 mt-1">Clique pour voir la fiche / synopsis</span>
-        </button>
-    `).join('')}`;
+    // Favoris en priorité
+    const favs = results.filter(d => favoris.includes(d.id));
+    const nonFavs = results.filter(d => !favoris.includes(d.id));
+    const picks = [...pickRandom(favs, Math.min(1, favs.length)), ...pickRandom(nonFavs, 3)].slice(0, 3);
+    conversationMemory.derniersResultats = picks;
+
+    return `${intro}<br><br>${picks.map(p => buildDramaCard(p)).join('')}${conseil ? `<br><div class="text-[11px] text-slate-400 mt-1 italic">${conseil}</div>` : ''}`;
 }
-
 
 function openDramaById(id) {
     const drama = dramas.find(d => String(d.id) === String(id));
     if(drama && typeof openDramaModal === 'function') {
         openDramaModal(drama.id);
     } else if(drama) {
-        const url = `https://www.google.com/search?q=${encodeURIComponent(drama.titre + " synopsis français")}`;
-        window.open(url, "_blank");
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(drama.titre + " synopsis français")}`, "_blank");
     }
+}
+
+async function getSmartAIResponse(userText) {
+    const gemini = await getGeminiResponse(userText);
+    if(gemini) return gemini;
+    return getAIResponse(userText);
 }
 
 function envoyerMessage() {
@@ -8103,6 +8988,7 @@ function envoyerMessage() {
         document.getElementById('tab-content').scrollTop = document.getElementById('tab-content').scrollHeight;
     }, 250);
 }
+
 
 renderFilters();
 afficherDramas();
