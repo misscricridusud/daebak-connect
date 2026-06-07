@@ -87,6 +87,7 @@
             <button onclick="showTab('chat')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-chat">IA locale</button>
             <button onclick="showTab('import')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-import">Ajout</button>
             <button onclick="showTab('stars')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-stars">Stars</button>
+            <button onclick="showTab('vip')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-vip">VIP 💎</button>
         </div>
 
         <main id="tab-content" class="flex-1 overflow-y-auto p-6 custom-scrollbar">
@@ -118,7 +119,7 @@
                     <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500 shadow-md"><i class="fa-solid fa-robot"></i></div>
                         <div class="soft-card p-4 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">
-                            Annyeong ! 🫰 Je suis ton IA locale. Je peux conseiller avec TA liste sans clé API. Essaie : <b>romance drôle</b>, <b>avec Ji Chang-wook</b>, <b>sur Viki</b>, <b>thriller</b>...
+                            Annyeong 🌸 Je suis Daebak, ton IA locale gratuite et illimitée. Tu peux papoter avec moi ou me demander un drama : <b>comédie</b>, <b>thriller</b>, <b>romance</b>, <b>avec Go Ara</b>...
                         </div>
                     </div>
                 </div>
@@ -141,6 +142,82 @@
                 <input type="text" id="star-search" oninput="renderStars()" placeholder="Chercher une star..." class="w-full px-4 py-3 mb-4 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="stars-list" class="grid grid-cols-2 gap-3"></div>
             </div>
+
+            <div id="content-vip" class="hidden">
+
+                <!-- ÉCRAN LOGIN VIP -->
+                <div id="vip-login-screen">
+                    <div class="soft-card p-6 rounded-3xl mb-4 text-center">
+                        <div class="text-4xl mb-2">💎</div>
+                        <h2 class="text-xl font-bold text-sky-900">Salon VIP K-Drama</h2>
+                        <p class="text-sm text-slate-500 mt-1">Le coin des fans passionnés 🌸</p>
+                    </div>
+
+                    <!-- Formulaire connexion -->
+                    <div id="vip-form-login" class="soft-card p-5 rounded-3xl mb-3">
+                        <h3 class="text-sm font-bold text-sky-800 mb-3">💌 Se connecter</h3>
+                        <input type="email" id="vip-email" placeholder="Ton email..." class="w-full p-3 mb-2 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
+                        <input type="password" id="vip-password" placeholder="Mot de passe..." class="w-full p-3 mb-3 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
+                        <button onclick="vipLogin()" class="w-full bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white py-3 rounded-2xl text-sm font-bold shadow-md hover:brightness-105 mb-2">
+                            Se connecter 💎
+                        </button>
+                        <button onclick="showVipRegister()" class="w-full py-2 rounded-2xl text-xs font-bold text-pink-500 hover:bg-pink-50 transition-all">
+                            Pas encore de compte ? Rejoindre le VIP →
+                        </button>
+                        <div id="vip-login-error" class="hidden mt-2 text-xs text-red-500 text-center font-bold"></div>
+                    </div>
+
+                    <!-- Formulaire inscription -->
+                    <div id="vip-form-register" class="soft-card p-5 rounded-3xl mb-3 hidden">
+                        <h3 class="text-sm font-bold text-pink-700 mb-1">🌸 Créer un compte VIP</h3>
+                        <p class="text-xs text-slate-400 mb-3">0,99€/mois — soutiens le projet 💖</p>
+                        <input type="text" id="vip-pseudo" placeholder="Ton pseudo K-Drama..." class="w-full p-3 mb-2 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
+                        <input type="email" id="vip-reg-email" placeholder="Ton email..." class="w-full p-3 mb-2 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
+                        <input type="password" id="vip-reg-password" placeholder="Mot de passe (min 6 car.)..." class="w-full p-3 mb-3 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
+                        <button onclick="vipRegister()" class="w-full bg-gradient-to-r from-pink-400 via-violet-400 to-sky-400 text-white py-3 rounded-2xl text-sm font-bold shadow-md hover:brightness-105 mb-2">
+                            Rejoindre le VIP 💎
+                        </button>
+                        <button onclick="showVipLogin()" class="w-full py-2 rounded-2xl text-xs font-bold text-sky-500 hover:bg-sky-50 transition-all">
+                            ← Déjà un compte ? Se connecter
+                        </button>
+                        <div id="vip-reg-error" class="hidden mt-2 text-xs text-red-500 text-center font-bold"></div>
+                    </div>
+                </div>
+
+                <!-- ÉCRAN CHAT VIP -->
+                <div id="vip-chat-screen" class="hidden flex flex-col h-full">
+                    <!-- Header user connecté -->
+                    <div class="soft-card p-3 rounded-2xl mb-3 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-300 to-violet-300 flex items-center justify-center text-white font-bold text-xs" id="vip-avatar-letter">?</div>
+                            <div>
+                                <div class="text-xs font-bold text-sky-900" id="vip-user-name">...</div>
+                                <div class="text-[10px] text-pink-400 font-bold">💎 Membre VIP</div>
+                            </div>
+                        </div>
+                        <button onclick="vipLogout()" class="text-xs text-slate-400 hover:text-red-400 transition-all px-3 py-1 rounded-full hover:bg-red-50">
+                            Déconnexion
+                        </button>
+                    </div>
+
+                    <!-- Zone messages -->
+                    <div id="vip-messages-list" class="space-y-3 mb-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
+                        <div class="text-center text-xs text-slate-400 py-4">Chargement des messages 🌸</div>
+                    </div>
+
+                    <!-- Input chat VIP -->
+                    <div class="soft-card p-3 rounded-2xl">
+                        <div class="flex gap-2">
+                            <input type="text" id="vip-chat-input" onkeydown="if(event.key==='Enter') vipEnvoyerMessage()" placeholder="Partage ton avis K-Drama... 🌸" class="flex-grow px-4 py-2 bg-white/70 rounded-full text-sm outline-none border border-pink-100 focus:ring-2 focus:ring-pink-200">
+                            <button onclick="vipEnvoyerMessage()" class="w-10 h-10 bg-gradient-to-br from-sky-400 to-pink-400 text-white rounded-full hover:brightness-105 flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </main>
 
         <div id="drama-modal" class="detail-modal" onclick="closeDramaDetails(event)">
@@ -7635,7 +7712,10 @@ const baseDramas = [
                         "titre": "When The Stars Gossip",
                         "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": ["Lee Jae-wook", "Gong Hyo-jin"],
+                        "acteurs": [
+                                    "Lee Jae-wook",
+                                    "Gong Hyo-jin"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "Un médecin de santé publique envoyé sur une île isolée tombe amoureux dans ce drama médical et romantique."
@@ -7655,7 +7735,11 @@ const baseDramas = [
                         "titre": "Signal 2",
                         "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": ["Kim Hye-soo", "Lee Je-hoon", "Cho Jin-woong"],
+                        "acteurs": [
+                                    "Kim Hye-soo",
+                                    "Lee Je-hoon",
+                                    "Cho Jin-woong"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "La suite très attendue du thriller culte de 2016. Trois protagonistes reliés par des signaux radio tentent de réécrire le passé et le présent."
@@ -7665,7 +7749,10 @@ const baseDramas = [
                         "titre": "All of Us Are Dead 2",
                         "genre": "Horreur",
                         "plateforme": "Netflix",
-                        "acteurs": ["Park Ji-hu", "Yoon Chan-young"],
+                        "acteurs": [
+                                    "Park Ji-hu",
+                                    "Yoon Chan-young"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "La saison 2 du drama zombie. Alors que la crise semblait résolue, un nouveau virus éclate à Séoul."
@@ -7675,7 +7762,10 @@ const baseDramas = [
                         "titre": "Wonderfools",
                         "genre": "Action",
                         "plateforme": "Netflix",
-                        "acteurs": ["Park Eun-bin", "Cha Eun-woo"],
+                        "acteurs": [
+                                    "Park Eun-bin",
+                                    "Cha Eun-woo"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "note": 8.82,
@@ -7687,7 +7777,9 @@ const baseDramas = [
                         "titre": "In Your Radiant Season",
                         "genre": "Romance",
                         "plateforme": "Disney+",
-                        "acteurs": ["Kim Hye-yoon"],
+                        "acteurs": [
+                                    "Kim Hye-yoon"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "Un drama romantique avec Kim Hye-yoon (Lovely Runner), salué comme la première belle romance de 2026."
@@ -7697,7 +7789,9 @@ const baseDramas = [
                         "titre": "Wicked World",
                         "genre": "Fantastique",
                         "plateforme": "Viki",
-                        "acteurs": ["Lim Ji-yeon"],
+                        "acteurs": [
+                                    "Lim Ji-yeon"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "Une femme de la période Joseon se réveille en 2026 dans le corps d'une actrice. Un drama fantastique avec voyage temporel."
@@ -7707,7 +7801,10 @@ const baseDramas = [
                         "titre": "IU x Byeon Woo-seok Drama",
                         "genre": "Historique",
                         "plateforme": "Netflix",
-                        "acteurs": ["IU", "Byeon Woo-seok"],
+                        "acteurs": [
+                                    "IU",
+                                    "Byeon Woo-seok"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "Le drama très attendu réunissant IU et Byeon Woo-seok (Lovely Runner) dans un cadre historique romantique."
@@ -7717,7 +7814,9 @@ const baseDramas = [
                         "titre": "See You at Work Tomorrow",
                         "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": ["Seo In-guk"],
+                        "acteurs": [
+                                    "Seo In-guk"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "Un chef de service réputé difficile et une employée compétente depuis 7 ans voient leur quotidien chamboulé."
@@ -7737,7 +7836,10 @@ const baseDramas = [
                         "titre": "Slowly Strongly (Show Business)",
                         "genre": "Drame",
                         "plateforme": "Netflix",
-                        "acteurs": ["Song Hye-kyo", "Gong Yoo"],
+                        "acteurs": [
+                                    "Song Hye-kyo",
+                                    "Gong Yoo"
+                        ],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "La superproduction à 80 milliards de wons réunissant pour la première fois Song Hye-kyo et Gong Yoo."
@@ -7767,7 +7869,10 @@ const baseDramas = [
                         "titre": "Fantome Lawyer",
                         "genre": "Fantastique",
                         "plateforme": "À trouver",
-                        "acteurs": ["Shin Ha-kyun", "Kim Jung-nan"],
+                        "acteurs": [
+                                    "Shin Ha-kyun",
+                                    "Kim Jung-nan"
+                        ],
                         "annee": 2023,
                         "synopsis": "Un avocat fantôme revient d'entre les morts pour défendre les innocents et résoudre les injustices qu'il n'a pas pu corriger de son vivant."
             },
@@ -8087,7 +8192,10 @@ const baseDramas = [
                         "titre": "Red Swan",
                         "genre": "Action",
                         "plateforme": "À trouver",
-                        "acteurs": ["Kim Ha Neul", "RAIN"],
+                        "acteurs": [
+                                    "Kim Ha Neul",
+                                    "RAIN"
+                        ],
                         "annee": 2024,
                         "synopsis": "Oh Wan Su, joueuse de golf professionnelle mariée à l'héritier d'un grand groupe, est la cible d'un attentat. Elle est sauvée par son nouveau garde du corps Seo Do Yun, qui cache une motivation secrète. Ensemble ils découvrent les dessous sordides du groupe."
             },
@@ -8096,7 +8204,9 @@ const baseDramas = [
                         "titre": "The Pork Cutlets",
                         "genre": "Comédie",
                         "plateforme": "À trouver",
-                        "acteurs": ["Jeon Hye Bin"],
+                        "acteurs": [
+                                    "Jeon Hye Bin"
+                        ],
                         "annee": 2024,
                         "synopsis": "Une comédie familiale et rurale pleine d'humour autour de la vie d'un village coréen."
             },
@@ -8141,7 +8251,10 @@ const baseDramas = [
                         "titre": "La Reine des Larmes",
                         "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": ["Kim Ji-won", "Kim Soo-hyun"],
+                        "acteurs": [
+                                    "Kim Ji-won",
+                                    "Kim Soo-hyun"
+                        ],
                         "annee": 2024,
                         "synopsis": "Un couple de chaebol en crise voit leur amour renaître quand la femme apprend qu'elle est condamnée. Phénomène mondial de 2024."
             },
@@ -8159,7 +8272,10 @@ const baseDramas = [
                         "titre": "Épouse Mon Mari",
                         "genre": "Romance",
                         "plateforme": "À trouver",
-                        "acteurs": ["Park Min-young", "Na In-woo"],
+                        "acteurs": [
+                                    "Park Min-young",
+                                    "Na In-woo"
+                        ],
                         "annee": 2024,
                         "synopsis": "Kang Ji-won revient 10 ans dans le passé après avoir découvert la trahison de son mari et de sa meilleure amie. Cette fois, elle décide de tout changer."
             },
@@ -8186,7 +8302,10 @@ const baseDramas = [
                         "titre": "Light Shop",
                         "genre": "Fantastique",
                         "plateforme": "Disney+",
-                        "acteurs": ["Han Hyo-joo", "Byeon Woo-seok"],
+                        "acteurs": [
+                                    "Han Hyo-joo",
+                                    "Byeon Woo-seok"
+                        ],
                         "annee": 2024,
                         "synopsis": "Des patients en état de mort cérébrale et coma convergent vers une mystérieuse boutique de lumières. Un thriller fantastique très attendu."
             },
@@ -8288,6 +8407,90 @@ const baseDramas = [
                         "acteurs": [],
                         "annee": 2024,
                         "synopsis": "Une romance coréenne dans un cadre militaire."
+            },
+            {
+                        "id": 543,
+                        "titre": "Welcome to Waikiki 2",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [
+                                    "Lee Yi-kyung",
+                                    "Kim Seon-ho",
+                                    "Moon Ga-young"
+                        ],
+                        "annee": 2019,
+                        "episodes": 16,
+                        "synopsis": "Nouvelle bande, nouvelles catastrophes : la guesthouse Waikiki devient encore une fois le théâtre de galères hilarantes."
+            },
+            {
+                        "id": 544,
+                        "titre": "The Fiery Priest 2",
+                        "genre": "Comédie",
+                        "plateforme": "Disney+",
+                        "acteurs": [
+                                    "Kim Nam-gil",
+                                    "Lee Ha-nee",
+                                    "Kim Sung-kyun"
+                        ],
+                        "annee": 2024,
+                        "episodes": 12,
+                        "synopsis": "Le prêtre le plus colérique revient pour une nouvelle enquête pleine d'action, de punchlines et de situations explosives."
+            },
+            {
+                        "id": 545,
+                        "titre": "Pegasus Market",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [
+                                    "Kim Byung-chul",
+                                    "Lee Dong-hwi",
+                                    "Jung Hye-sung"
+                        ],
+                        "annee": 2019,
+                        "episodes": 12,
+                        "synopsis": "Un supermarché au bord du gouffre devient le terrain de jeu d'un patron étrange et d'employés complètement décalés."
+            },
+            {
+                        "id": 546,
+                        "titre": "Modern Farmer",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [
+                                    "Lee Hong-ki",
+                                    "Park Min-woo",
+                                    "Lee Si-eon"
+                        ],
+                        "annee": 2014,
+                        "episodes": 20,
+                        "synopsis": "Des musiciens ratés quittent la ville pour cultiver un champ de choux, mais la vie à la campagne est tout sauf tranquille."
+            },
+            {
+                        "id": 547,
+                        "titre": "The Sound of Your Heart Reboot",
+                        "genre": "Comédie",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Sung Hoon",
+                                    "Kwon Yuri",
+                                    "Shim Hye-jin"
+                        ],
+                        "annee": 2018,
+                        "episodes": 20,
+                        "synopsis": "Nouvelle version de la comédie familiale absurde autour de Jo Seok, de ses proches et de leurs catastrophes du quotidien."
+            },
+            {
+                        "id": 548,
+                        "titre": "Work Later, Drink Now 2",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [
+                                    "Lee Sun-bin",
+                                    "Han Sun-hwa",
+                                    "Jung Eun-ji"
+                        ],
+                        "annee": 2022,
+                        "episodes": 12,
+                        "synopsis": "Les trois amies reviennent avec de nouveaux défis, des émotions plus fortes et toujours leur façon unique de traverser la vie."
             }
 ];
 let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
@@ -8730,7 +8933,7 @@ function filterByStar(star) {
 }
 
 function showTab(tab) {
-    ['dramas', 'chat', 'import', 'stars'].forEach(t => {
+    ['dramas', 'chat', 'import', 'stars', 'vip'].forEach(t => {
         document.getElementById(`content-${t}`).classList.add('hidden');
         document.getElementById(`tab-${t}`).className = "flex-1 py-4 text-xs font-bold text-pink-500 transition-all hover:bg-pink-50/60";
     });
@@ -8738,6 +8941,7 @@ function showTab(tab) {
     document.getElementById(`tab-${tab}`).className = "flex-1 py-4 text-xs font-bold text-sky-700 border-b-2 border-pink-400 bg-white/45 transition-all";
     document.getElementById('chat-input-area').classList.toggle('hidden', tab !== 'chat');
     if(tab === 'stars') renderStars();
+    if(tab === 'vip' && vipUser) entrerDansSalonVip();
 }
 
 function toggleFav(id) {
@@ -8770,33 +8974,59 @@ function pickRandom(list, n=3) {
 
 
 async function getGeminiResponse(userText) {
-    const WORKER_URL = "https://summer-rice-9c33.femmeliberee2011.workers.dev";
+    if(!GEMINI_API_KEY || GEMINI_API_KEY.trim() === "") return null;
 
-    const miniCatalogue = dramas.slice(0, 200).map(d => ({
+    const miniCatalogue = dramas.map(d => ({
+        id: d.id,
         titre: d.titre,
         genre: d.genre,
-        plateforme: d.plateforme
+        plateforme: d.plateforme,
+        acteurs: d.acteurs || []
     }));
 
+    const prompt = `
+Tu es Daebak Connect, une assistante K-Drama en français.
+Tu dois recommander uniquement des dramas présents dans ce catalogue.
+Réponds de façon courte, girly, claire.
+Quand tu recommandes des titres, utilise exactement les titres du catalogue.
+
+Question de l'utilisateur :
+${userText}
+
+Catalogue JSON :
+${JSON.stringify(miniCatalogue)}
+`;
+
     try {
-        const response = await fetch(WORKER_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: userText, catalogue: miniCatalogue })
-        });
+        const response = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    contents: [
+                        {
+                            parts: [
+                                { text: prompt }
+                            ]
+                        }
+                    ]
+                })
+            }
+        );
 
         if(!response.ok) {
-            console.error("Erreur Worker:", await response.text());
+            console.error("Erreur Gemini:", await response.text());
             return null;
         }
 
         const data = await response.json();
-        const text = data?.reply;
+        const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
         if(!text) return null;
 
         let safeText = esc(text).replace(/\n/g, "<br>");
 
-        // Rend les titres cliquables si l'IA les cite
+        // Rend les titres du catalogue cliquables si l'IA les cite
         dramas.forEach(d => {
             const title = esc(d.titre);
             const regex = new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
@@ -8805,7 +9035,7 @@ async function getGeminiResponse(userText) {
 
         return safeText;
     } catch(error) {
-        console.error("Erreur appel Worker:", error);
+        console.error("Erreur appel Gemini:", error);
         return null;
     }
 }
@@ -8960,11 +9190,115 @@ function openDramaById(id) {
     }
 }
 
-async function getSmartAIResponse(userText) {
-    const gemini = await getGeminiResponse(userText);
-    if(gemini) return gemini;
-    return getAIResponse(userText);
+
+let daebakModeDiscussion = false;
+
+function daebakPick(list) {
+    return list[Math.floor(Math.random() * list.length)];
 }
+
+function daebakDramasList() {
+    if (typeof dramas !== "undefined" && Array.isArray(dramas)) return dramas;
+    if (typeof baseDramas !== "undefined" && Array.isArray(baseDramas)) return baseDramas;
+    return [];
+}
+
+function daebakIsDramaRequest(t) {
+    return /(drama|kdrama|k-drama|serie|série|film|regarder|conseille|recommande|propose|trouve|cherche|netflix|viki|disney|prime|acteur|actrice|star|avec|romance|thriller|action|fantastique|comedie|comédie|comique|drole|drôle|humour|juridique|medical|médical|historique|horreur)/.test(t);
+}
+
+function daebakFindDramas(msg) {
+    const t = normalize(msg || "");
+    const liste = daebakDramasList();
+    let resultats = [];
+    if (/comique|comedie|comédie|drole|drôle|humour|rire|marrant|rigolo/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("comed"));
+    else if (/thriller|suspense|crime|enquete|enquête|policier/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("thriller"));
+    else if (/romance|romantique|amour/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("romance"));
+    else if (/action|combat/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("action"));
+    else if (/fantastique|fantasy|magie|surnaturel/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("fantastique"));
+    else if (/juridique|justice|avocat|tribunal/.test(t)) resultats = liste.filter(d => normalize([d.titre,d.genre,d.synopsis,(d.acteurs||[]).join(" ")].join(" ")).match(/juridique|justice|avocat|tribunal|attorney|lawyer|prosecutor|judge/));
+    else {
+        const mots = t.split(/\s+/).filter(w => w.length > 2);
+        resultats = liste.filter(d => {
+            const bloc = normalize([d.titre || "", d.genre || "", d.plateforme || "", (d.acteurs || []).join(" "), d.synopsis || ""].join(" "));
+            return mots.some(m => bloc.includes(m));
+        });
+    }
+    return resultats.slice(0, 5);
+}
+
+function daebakDramaReply(msg) {
+    const res = daebakFindDramas(msg);
+    if (!res.length) return daebakPick([
+        "Je n’ai pas trouvé exactement dans ta liste 😅 Tu veux plutôt romance, thriller, comédie, fantastique ou juridique ?",
+        "Hmm je ne trouve pas bien 😄 Donne-moi un genre ou un acteur, et je fouille dans tes dramas.",
+        "Je sèche un peu là 🌸 Essaie par exemple : “drama comique”, “avec Go Ara”, “thriller Netflix”."
+    ]);
+    return daebakPick(["Ouiii 😄 j’ai trouvé ça pour toi :", "J’ai quelques idées dans ta liste 🌸 :", "Mission recommandation activée 🫰 Voilà ce que je te propose :"]) +
+        "<br><br>" + res.map(d => {
+            const meta = [d.genre, d.plateforme, d.note ? "⭐ " + d.note : ""].filter(Boolean).join(" • ");
+            return `🎬 <b>${esc(d.titre)}</b><br><span class="text-xs text-slate-500">${esc(meta)}</span>`;
+        }).join("<br><br>");
+}
+
+function getSmartAIResponse(msg) {
+    const t = normalize(msg || "");
+
+    if (/^(salut|bonjour|coucou|hello|hey|annyeong|annyong|bonsoir)[\s!?.]*$/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Coucou 🌸 Contente de te voir ! Comment tu vas aujourd’hui ?", "Annyeong 🫰 Ça me fait plaisir de te voir 😄 Tu vas bien ?", "Hey toi 🩷 Tu veux papoter un peu ou chercher un drama ?"]);
+    }
+    if (/comment ca va|comment ça va|tu vas bien|ca va|ça va/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Ça va très bien 🌸 Je suis contente de papoter avec toi. Et toi, comment tu vas ?", "Moi ça va 😄 Je suis en mode copine K-Drama aujourd’hui. Et toi ?", "Ça va nickel 🩷 Et toi, ta journée se passe bien ?"]);
+    }
+    if (/discuter|parler|papoter|bavarder|parler un peu|raconte/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Avec plaisir 🌸 Tu veux me raconter ta journée ou on parle de ce qui te passe par la tête ?", "Ouiii viens on discute 🩷 Tu as fait quoi aujourd’hui ?", "J’adore papoter 😄 Ton humeur là maintenant, c’est plutôt calme, fatiguée ou motivée ?"]);
+    }
+    if (daebakIsDramaRequest(t)) {
+        daebakModeDiscussion = false;
+        return daebakDramaReply(msg);
+    }
+    if (/je viens de me lever|je me leve|je me lève|reveil|réveil/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Ah le réveil en douceur 😄☕ Tu as bien dormi ?", "Réveil + café, le combo officiel du matin 😂 Tu as prévu quoi aujourd’hui ?", "Tu démarres tranquille alors 🌸 Café obligatoire avant de parler au monde ?"]);
+    }
+    if (/cafe|café/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Le café du matin c’est sacré ☕😄 Tu le bois tranquille ou en mode survie ?", "Je valide totalement le café 😂 Tu as une journée chargée après ?", "Café validé 🌸 Maintenant il faut juste que la journée soit gentille avec toi."]);
+    }
+    if (/fatigue|fatiguée|fatiguee|crevee|crevée|épuisée|epuisee/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Oh mince 🥺 Tu mérites une pause douce là. Journée trop longue ?", "Aïe 🩷 On va y aller tranquille alors. Tu veux parler ou te changer les idées ?", "Fatiguée comme après un drama de 16 épisodes en une nuit ? 😅"]);
+    }
+    if (/triste|pas bien|bof|moral|pleure|pleurer/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Oh 🥺 je suis là. Tu veux me raconter ce qui ne va pas ?", "Viens là virtuellement 🩷 On peut parler doucement, sans pression.", "J’aime pas te savoir comme ça 🌸 Tu veux vider ton sac ou penser à autre chose ?"]);
+    }
+    if (/ennuie|ennui|je sais pas quoi faire/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Mission anti-ennui activée 🫰 Tu veux papoter, jouer, créer, ou chercher un drama ?", "On va sauver cette journée 😄 Tu veux une idée tranquille ou un truc qui bouge ?", "L’ennui n’a aucune chance contre nous 😂 Tu veux parler de Vénus, Conan, créations ou dramas ?"]);
+    }
+    if (/venus|vénus|chien|chienne/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Ah Vénus 🐶🩷 Elle est sage aujourd’hui ou elle fait sa petite star ?", "Vénus mérite son propre K-Drama franchement 😂 Elle t’écoute un peu ?", "Fais-lui une caresse pour moi 🌸 même si elle fait sa tête de mule."]);
+    }
+    if (/platre|plâtre|bougie|tasse|mug|creation|création|crea|créa/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Oh j’aime quand tu parles de tes créations 🌸 Tu travailles sur quoi ?", "Trop bien 😄 C’est pour une tasse, du plâtre ou une bougie ?", "Raconte 🩷 tu as eu une nouvelle idée créative ?"]);
+    }
+    if (/conan|7 days|jeu|jouer|game|gaming/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Ah là on passe en mode gameuse 🎮😄 Tu es sur Conan ou 7 Days ?", "Session jeu en vue ? 🫰 Tu avances dans quoi en ce moment ?", "J’aime bien quand tu me racontes tes jeux 😄 Il s’est passé quoi ?"]);
+    }
+    if (/merci|thanks/.test(t)) return daebakPick(["Avec plaisir 🩷", "Toujours là pour toi 🌸", "De rien 😄"]);
+    if (/bonne nuit|dodo|je vais dormir/.test(t)) return daebakPick(["Bonne nuit 🌙 Fais de beaux rêves, sans cliffhanger dramatique 😂🩷", "Dors bien 🌸 On papotera demain.", "Bonne nuit 🫰 Repose-toi bien."]);
+
+    if (daebakModeDiscussion) return daebakPick(["Je t’écoute 🌸 Raconte-moi un peu plus.", "Ah oui 😄 Et toi tu l’as vécu comment ?", "Je vois 🩷 Tu veux continuer à m’en parler ?", "D’accord 🌸 Et après ça, tu as prévu quoi ?", "On peut rester sur ce sujet si tu veux, je suis là 😄"]);
+    return "Je t’écoute 🌸 Tu veux papoter un peu ou tu veux que je t’aide à trouver un drama ?";
+}
+
 
 function envoyerMessage() {
     const input = document.getElementById('chat-input');
@@ -8983,6 +9317,204 @@ function envoyerMessage() {
 renderFilters();
 afficherDramas();
 renderStars();
+
+// ============================================================
+// SUPABASE VIP CHAT
+// ============================================================
+const SUPABASE_URL = 'https://xcjsgqdzisdqjxxfkhnb.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhjanNncWR6aXNkcWp4eGZraG5iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4MTk0NjcsImV4cCI6MjA5NjM5NTQ2N30.1EKZlpGCkEoATyMAL3kIYOuquKXu0BC90Kbh6HbnSfE';
+
+let vipUser = null;
+let vipPseudo = '';
+let vipRealtimeChannel = null;
+
+async function supaFetch(path, options = {}) {
+    const res = await fetch(SUPABASE_URL + path, {
+        ...options,
+        headers: {
+            'apikey': SUPABASE_ANON,
+            'Authorization': 'Bearer ' + (vipUser ? vipUser.access_token : SUPABASE_ANON),
+            'Content-Type': 'application/json',
+            ...(options.headers || {})
+        }
+    });
+    const data = await res.json();
+    return { ok: res.ok, status: res.status, data };
+}
+
+function showVipLogin() {
+    document.getElementById('vip-form-login').classList.remove('hidden');
+    document.getElementById('vip-form-register').classList.add('hidden');
+}
+function showVipRegister() {
+    document.getElementById('vip-form-login').classList.add('hidden');
+    document.getElementById('vip-form-register').classList.remove('hidden');
+}
+
+async function vipLogin() {
+    const email = document.getElementById('vip-email').value.trim();
+    const password = document.getElementById('vip-password').value;
+    const errEl = document.getElementById('vip-login-error');
+    errEl.classList.add('hidden');
+    if (!email || !password) { errEl.textContent = 'Remplis tous les champs 😊'; errEl.classList.remove('hidden'); return; }
+    const res = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
+        method: 'POST',
+        headers: { 'apikey': SUPABASE_ANON, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) { errEl.textContent = data.error_description || 'Erreur de connexion 😅'; errEl.classList.remove('hidden'); return; }
+    vipUser = data;
+    await loadVipProfile(data.user.id);
+    entrerDansSalonVip();
+}
+
+async function vipRegister() {
+    const pseudo = document.getElementById('vip-pseudo').value.trim();
+    const email = document.getElementById('vip-reg-email').value.trim();
+    const password = document.getElementById('vip-reg-password').value;
+    const errEl = document.getElementById('vip-reg-error');
+    errEl.classList.add('hidden');
+    if (!pseudo || !email || !password) { errEl.textContent = 'Remplis tous les champs 😊'; errEl.classList.remove('hidden'); return; }
+    if (password.length < 6) { errEl.textContent = 'Mot de passe trop court (min 6 caractères)'; errEl.classList.remove('hidden'); return; }
+
+    const res = await fetch(SUPABASE_URL + '/auth/v1/signup', {
+        method: 'POST',
+        headers: { 'apikey': SUPABASE_ANON, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) { errEl.textContent = data.error_description || 'Erreur inscription 😅'; errEl.classList.remove('hidden'); return; }
+
+    vipUser = data;
+    vipPseudo = pseudo;
+
+    // Sauvegarder le profil
+    await fetch(SUPABASE_URL + '/rest/v1/profiles', {
+        method: 'POST',
+        headers: {
+            'apikey': SUPABASE_ANON,
+            'Authorization': 'Bearer ' + (data.access_token || SUPABASE_ANON),
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ id: data.user?.id, pseudo })
+    });
+
+    entrerDansSalonVip();
+}
+
+async function loadVipProfile(userId) {
+    const r = await supaFetch('/rest/v1/profiles?id=eq.' + userId + '&select=pseudo');
+    if (r.ok && r.data && r.data[0]) {
+        vipPseudo = r.data[0].pseudo;
+    } else {
+        vipPseudo = vipUser.user?.email?.split('@')[0] || 'Fan K-Drama';
+    }
+}
+
+function entrerDansSalonVip() {
+    document.getElementById('vip-login-screen').classList.add('hidden');
+    document.getElementById('vip-chat-screen').classList.remove('hidden');
+    const letter = (vipPseudo || '?')[0].toUpperCase();
+    document.getElementById('vip-avatar-letter').textContent = letter;
+    document.getElementById('vip-user-name').textContent = vipPseudo || 'Fan K-Drama';
+    chargerMessages();
+    demarrerRealtime();
+}
+
+async function chargerMessages() {
+    const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50');
+    const box = document.getElementById('vip-messages-list');
+    if (!r.ok || !r.data.length) {
+        box.innerHTML = '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
+        return;
+    }
+    box.innerHTML = r.data.map(m => renderVipMessage(m)).join('');
+    box.scrollTop = box.scrollHeight;
+}
+
+function renderVipMessage(m) {
+    const isMe = vipUser && m.user_id === vipUser.user?.id;
+    const time = new Date(m.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    const letter = (m.pseudo || '?')[0].toUpperCase();
+    if (isMe) {
+        return `<div class="flex justify-end gap-2 items-end">
+            <div class="max-w-[75%]">
+                <div class="text-[10px] text-right text-pink-400 font-bold mb-1">${esc(m.pseudo)} · ${time}</div>
+                <div class="bg-gradient-to-r from-sky-400 to-pink-400 text-white p-3 rounded-2xl rounded-tr-none text-sm leading-relaxed">${esc(m.message)}</div>
+            </div>
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-pink-300 to-violet-300 flex items-center justify-center text-white font-bold text-xs flex-shrink-0">${letter}</div>
+        </div>`;
+    }
+    return `<div class="flex gap-2 items-end">
+        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-sky-200 to-pink-200 flex items-center justify-center text-pink-600 font-bold text-xs flex-shrink-0">${letter}</div>
+        <div class="max-w-[75%]">
+            <div class="text-[10px] text-sky-500 font-bold mb-1">💎 ${esc(m.pseudo)} · ${time}</div>
+            <div class="soft-card p-3 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">${esc(m.message)}</div>
+        </div>
+    </div>`;
+}
+
+async function vipEnvoyerMessage() {
+    const input = document.getElementById('vip-chat-input');
+    const msg = input.value.trim();
+    if (!msg || !vipUser) return;
+    input.value = '';
+    await supaFetch('/rest/v1/vip_messages', {
+        method: 'POST',
+        headers: { 'Prefer': 'return=minimal' },
+        body: JSON.stringify({
+            user_id: vipUser.user?.id,
+            pseudo: vipPseudo,
+            message: msg
+        })
+    });
+}
+
+function demarrerRealtime() {
+    // Polling léger toutes les 3 secondes (Supabase Realtime nécessite websockets)
+    if (vipRealtimeChannel) clearInterval(vipRealtimeChannel);
+    vipRealtimeChannel = setInterval(async () => {
+        if (!vipUser) { clearInterval(vipRealtimeChannel); return; }
+        const box = document.getElementById('vip-messages-list');
+        if (!box) { clearInterval(vipRealtimeChannel); return; }
+        const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50');
+        if (r.ok && r.data.length) {
+            const newHtml = r.data.map(m => renderVipMessage(m)).join('');
+            if (box.innerHTML !== newHtml) {
+                const wasAtBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
+                box.innerHTML = newHtml;
+                if (wasAtBottom) box.scrollTop = box.scrollHeight;
+            }
+        }
+    }, 3000);
+}
+
+function vipLogout() {
+    vipUser = null;
+    vipPseudo = '';
+    if (vipRealtimeChannel) clearInterval(vipRealtimeChannel);
+    document.getElementById('vip-chat-screen').classList.add('hidden');
+    document.getElementById('vip-login-screen').classList.remove('hidden');
+    document.getElementById('vip-email').value = '';
+    document.getElementById('vip-password').value = '';
+    showVipLogin();
+}
+
+// Vérifier session sauvegardée
+(function() {
+    const saved = localStorage.getItem('daebak_vip_session');
+    if (saved) {
+        try {
+            const s = JSON.parse(saved);
+            if (s && s.access_token && s.user) {
+                vipUser = s;
+                vipPseudo = s.pseudo || s.user.email?.split('@')[0] || 'Fan K-Drama';
+            }
+        } catch(e) {}
+    }
+})();
 </script>
 </body>
 </html>
