@@ -8772,28 +8772,17 @@ function pickRandom(list, n=3) {
 async function getGeminiResponse(userText) {
     const WORKER_URL = "https://summer-rice-9c33.femmeliberee2011.workers.dev";
 
-    // Limiter à 150 dramas pour ne pas dépasser la limite de Gemini
-    const miniCatalogue = dramas.slice(0, 150).map(d => ({
-        id: d.id,
+    const miniCatalogue = dramas.slice(0, 200).map(d => ({
         titre: d.titre,
         genre: d.genre,
-        plateforme: d.plateforme,
-        acteurs: (d.acteurs || []).slice(0, 2)
+        plateforme: d.plateforme
     }));
-
-    const message = `Tu es Daebak, une assistante K-Drama en français, girly et chaleureuse.
-Tu recommandes uniquement des dramas présents dans ce catalogue.
-Réponds en 3-4 phrases max, avec des emojis. Utilise exactement les titres du catalogue.
-
-Question : ${userText}
-
-Catalogue : ${JSON.stringify(miniCatalogue)}`;
 
     try {
         const response = await fetch(WORKER_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message })
+            body: JSON.stringify({ message: userText, catalogue: miniCatalogue })
         });
 
         if(!response.ok) {
