@@ -191,7 +191,10 @@
                         <div class="flex items-center gap-2">
                             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-300 to-violet-300 flex items-center justify-center text-white font-bold text-xs" id="vip-avatar-letter">?</div>
                             <div>
-                                <div class="text-xs font-bold text-sky-900" id="vip-user-name">...</div>
+                                <div class="flex items-center gap-1">
+                                    <div class="text-xs font-bold text-sky-900" id="vip-user-name">...</div>
+                                    <button onclick="ouvrirEditPseudo()" title="Modifier pseudo" class="text-pink-300 hover:text-pink-500 transition-all text-xs">✏️</button>
+                                </div>
                                 <div class="text-[10px] text-pink-400 font-bold">💎 Membre VIP</div>
                             </div>
                         </div>
@@ -203,6 +206,17 @@
                     <!-- Zone messages -->
                     <div id="vip-messages-list" class="space-y-3 mb-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
                         <div class="text-center text-xs text-slate-400 py-4">Chargement des messages 🌸</div>
+                    </div>
+
+                    <!-- Modal édition pseudo -->
+                    <div id="vip-pseudo-modal" class="hidden soft-card p-4 rounded-2xl mb-3">
+                        <div class="text-xs font-bold text-sky-800 mb-2">✏️ Modifier ton pseudo</div>
+                        <div class="flex gap-2">
+                            <input type="text" id="vip-pseudo-edit" placeholder="Nouveau pseudo..." class="flex-grow px-3 py-2 bg-white/70 rounded-full text-sm outline-none border border-pink-100 focus:ring-2 focus:ring-pink-200">
+                            <button onclick="sauvegarderPseudo()" class="px-4 py-2 bg-gradient-to-r from-sky-400 to-pink-400 text-white rounded-full text-xs font-bold hover:brightness-105">OK</button>
+                            <button onclick="document.getElementById('vip-pseudo-modal').classList.add('hidden')" class="px-3 py-2 text-xs text-slate-400 hover:text-slate-600">✕</button>
+                        </div>
+                        <div id="vip-pseudo-error" class="hidden mt-1 text-xs text-red-400"></div>
                     </div>
 
                     <!-- Input chat VIP -->
@@ -9489,6 +9503,55 @@ function demarrerRealtime() {
             }
         }
     }, 3000);
+}
+
+function ouvrirEditPseudo() {
+    const modal = document.getElementById('vip-pseudo-modal');
+    document.getElementById('vip-pseudo-edit').value = vipPseudo;
+    modal.classList.toggle('hidden');
+}
+
+async function sauvegarderPseudo() {
+    const nouveau = document.getElementById('vip-pseudo-edit').value.trim();
+    const errEl = document.getElementById('vip-pseudo-error');
+    errEl.classList.add('hidden');
+    if (!nouveau) { errEl.textContent = 'Écris un pseudo 😊'; errEl.classList.remove('hidden'); return; }
+    if (nouveau.length < 2) { errEl.textContent = 'Pseudo trop court !'; errEl.classList.remove('hidden'); return; }
+
+    const userId = vipUser.user?.id;
+    // Upsert dans profiles
+    const r = await fetch(SUPABASE_URL + '/rest/v1/profiles?id=eq.' + userId, {
+        method: 'PATCH',
+        headers: {
+            'apikey': SUPABASE_ANON,
+            'Authorization': 'Bearer ' + vipUser.access_token,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ pseudo: nouveau })
+    });
+    if (r.ok || r.status === 204) {
+        vipPseudo = nouveau;
+        document.getElementById('vip-user-name').textContent = nouveau;
+        document.getElementById('vip-avatar-letter').textContent = nouveau[0].toUpperCase();
+        document.getElementById('vip-pseudo-modal').classList.add('hidden');
+    } else {
+        // Si pas de ligne existante, on insert
+        await fetch(SUPABASE_URL + '/rest/v1/profiles', {
+            method: 'POST',
+            headers: {
+                'apikey': SUPABASE_ANON,
+                'Authorization': 'Bearer ' + vipUser.access_token,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({ id: userId, pseudo: nouveau })
+        });
+        vipPseudo = nouveau;
+        document.getElementById('vip-user-name').textContent = nouveau;
+        document.getElementById('vip-avatar-letter').textContent = nouveau[0].toUpperCase();
+        document.getElementById('vip-pseudo-modal').classList.add('hidden');
+    }
 }
 
 function vipLogout() {
