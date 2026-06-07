@@ -219,9 +219,49 @@
                         <div id="vip-pseudo-error" class="hidden mt-1 text-xs text-red-400"></div>
                     </div>
 
+                    <!-- Panneau emojis -->
+                    <div id="vip-emoji-panel" class="hidden soft-card p-3 rounded-2xl mb-2">
+                        <div class="flex flex-wrap gap-1 text-lg">
+                            <span class="text-xs text-slate-400 w-full mb-1 font-bold">K-Drama vibes 🇰🇷</span>
+                            <button onclick="insererEmoji('😍')" class="hover:scale-125 transition-transform">😍</button>
+                            <button onclick="insererEmoji('🥺')" class="hover:scale-125 transition-transform">🥺</button>
+                            <button onclick="insererEmoji('😭')" class="hover:scale-125 transition-transform">😭</button>
+                            <button onclick="insererEmoji('🤩')" class="hover:scale-125 transition-transform">🤩</button>
+                            <button onclick="insererEmoji('😂')" class="hover:scale-125 transition-transform">😂</button>
+                            <button onclick="insererEmoji('🥹')" class="hover:scale-125 transition-transform">🥹</button>
+                            <button onclick="insererEmoji('😤')" class="hover:scale-125 transition-transform">😤</button>
+                            <button onclick="insererEmoji('🫠')" class="hover:scale-125 transition-transform">🫠</button>
+                            <button onclick="insererEmoji('💀')" class="hover:scale-125 transition-transform">💀</button>
+                            <button onclick="insererEmoji('🙈')" class="hover:scale-125 transition-transform">🙈</button>
+                            <span class="text-xs text-slate-400 w-full mt-2 mb-1 font-bold">Amour 💕</span>
+                            <button onclick="insererEmoji('❤️')" class="hover:scale-125 transition-transform">❤️</button>
+                            <button onclick="insererEmoji('🩷')" class="hover:scale-125 transition-transform">🩷</button>
+                            <button onclick="insererEmoji('💜')" class="hover:scale-125 transition-transform">💜</button>
+                            <button onclick="insererEmoji('🫶')" class="hover:scale-125 transition-transform">🫶</button>
+                            <button onclick="insererEmoji('💘')" class="hover:scale-125 transition-transform">💘</button>
+                            <button onclick="insererEmoji('💍')" class="hover:scale-125 transition-transform">💍</button>
+                            <button onclick="insererEmoji('💋')" class="hover:scale-125 transition-transform">💋</button>
+                            <button onclick="insererEmoji('🌸')" class="hover:scale-125 transition-transform">🌸</button>
+                            <button onclick="insererEmoji('✨')" class="hover:scale-125 transition-transform">✨</button>
+                            <button onclick="insererEmoji('🫰')" class="hover:scale-125 transition-transform">🫰</button>
+                            <span class="text-xs text-slate-400 w-full mt-2 mb-1 font-bold">Dramas 🎬</span>
+                            <button onclick="insererEmoji('🎬')" class="hover:scale-125 transition-transform">🎬</button>
+                            <button onclick="insererEmoji('📺')" class="hover:scale-125 transition-transform">📺</button>
+                            <button onclick="insererEmoji('⭐')" class="hover:scale-125 transition-transform">⭐</button>
+                            <button onclick="insererEmoji('🔥')" class="hover:scale-125 transition-transform">🔥</button>
+                            <button onclick="insererEmoji('👑')" class="hover:scale-125 transition-transform">👑</button>
+                            <button onclick="insererEmoji('🇰🇷')" class="hover:scale-125 transition-transform">🇰🇷</button>
+                            <button onclick="insererEmoji('🍜')" class="hover:scale-125 transition-transform">🍜</button>
+                            <button onclick="insererEmoji('🍵')" class="hover:scale-125 transition-transform">🍵</button>
+                            <button onclick="insererEmoji('💎')" class="hover:scale-125 transition-transform">💎</button>
+                            <button onclick="insererEmoji('🎭')" class="hover:scale-125 transition-transform">🎭</button>
+                        </div>
+                    </div>
+
                     <!-- Input chat VIP -->
                     <div class="soft-card p-3 rounded-2xl">
                         <div class="flex gap-2">
+                            <button onclick="toggleEmojiPanel()" class="w-10 h-10 bg-white/70 border border-pink-100 rounded-full hover:bg-pink-50 flex-shrink-0 flex items-center justify-center text-lg">😊</button>
                             <input type="text" id="vip-chat-input" onkeydown="if(event.key==='Enter') vipEnvoyerMessage()" placeholder="Partage ton avis K-Drama... 🌸" class="flex-grow px-4 py-2 bg-white/70 rounded-full text-sm outline-none border border-pink-100 focus:ring-2 focus:ring-pink-200">
                             <button onclick="vipEnvoyerMessage()" class="w-10 h-10 bg-gradient-to-br from-sky-400 to-pink-400 text-white rounded-full hover:brightness-105 flex-shrink-0 flex items-center justify-center">
                                 <i class="fa-solid fa-paper-plane text-xs"></i>
@@ -9518,6 +9558,18 @@ function demarrerRealtime() {
             }
         }
     }, 3000);
+}
+
+function toggleEmojiPanel() {
+    document.getElementById('vip-emoji-panel').classList.toggle('hidden');
+}
+
+function insererEmoji(emoji) {
+    const input = document.getElementById('vip-chat-input');
+    const pos = input.selectionStart || input.value.length;
+    input.value = input.value.slice(0, pos) + emoji + input.value.slice(pos);
+    input.focus();
+    input.setSelectionRange(pos + emoji.length, pos + emoji.length);
 }
 
 function ouvrirEditPseudo() {
