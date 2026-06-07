@@ -9461,15 +9461,15 @@ async function vipEnvoyerMessage() {
     const msg = input.value.trim();
     if (!msg || !vipUser) return;
     input.value = '';
-    await supaFetch('/rest/v1/vip_messages', {
+    const r = await supaFetch('/rest/v1/vip_messages', {
         method: 'POST',
-        headers: { 'Prefer': 'return=minimal' },
+        headers: { 'Prefer': 'return=representation' },
         body: JSON.stringify({
-            user_id: vipUser.user?.id,
             pseudo: vipPseudo,
             message: msg
         })
     });
+    chargerMessages();
 }
 
 function demarrerRealtime() {
