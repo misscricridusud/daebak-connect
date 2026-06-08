@@ -210,10 +210,10 @@
 
                     <!-- Sélecteur de salons -->
                     <div class="flex gap-2 mb-3 overflow-x-auto scrollbar-hide pb-1">
-                        <button onclick="changerSalon('général')" id="salon-btn-général" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-sm">💬 Général</button>
+                        <button onclick="changerSalon('general')" id="salon-btn-general" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-sm">💬 Général</button>
                         <button onclick="changerSalon('romance')" id="salon-btn-romance" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">💕 Romance</button>
                         <button onclick="changerSalon('thriller')" id="salon-btn-thriller" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">🔥 Thriller</button>
-                        <button onclick="changerSalon('comédie')" id="salon-btn-comédie" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">😂 Comédie</button>
+                        <button onclick="changerSalon('comedie')" id="salon-btn-comedie" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">😂 Comédie</button>
                         <button onclick="changerSalon('fantastique')" id="salon-btn-fantastique" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">✨ Fantastique</button>
                     </div>
 
@@ -9506,7 +9506,7 @@ function entrerDansSalonVip() {
     demarrerRealtime();
 }
 
-let salonActuel = 'général';
+let salonActuel = 'general';
 
 async function chargerMessages() {
     const r = await supaFetch('/rest/v1/vip_messages?select=*&salon=eq.' + encodeURIComponent(salonActuel) + '&order=created_at.asc&limit=50');
