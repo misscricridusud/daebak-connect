@@ -208,8 +208,17 @@
                         </button>
                     </div>
 
+                    <!-- Sélecteur de salons -->
+                    <div class="flex gap-2 mb-3 overflow-x-auto scrollbar-hide pb-1">
+                        <button onclick="changerSalon('général')" id="salon-btn-général" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-sm">💬 Général</button>
+                        <button onclick="changerSalon('romance')" id="salon-btn-romance" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">💕 Romance</button>
+                        <button onclick="changerSalon('thriller')" id="salon-btn-thriller" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">🔥 Thriller</button>
+                        <button onclick="changerSalon('comédie')" id="salon-btn-comédie" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">😂 Comédie</button>
+                        <button onclick="changerSalon('fantastique')" id="salon-btn-fantastique" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50">✨ Fantastique</button>
+                    </div>
+
                     <!-- Zone messages -->
-                    <div id="vip-messages-list" class="space-y-3 mb-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
+                    <div id="vip-messages-list" class="space-y-3 mb-3 max-h-[360px] overflow-y-auto custom-scrollbar pr-1">
                         <div class="text-center text-xs text-slate-400 py-4">Chargement des messages 🌸</div>
                     </div>
 
@@ -9497,8 +9506,10 @@ function entrerDansSalonVip() {
     demarrerRealtime();
 }
 
+let salonActuel = 'général';
+
 async function chargerMessages() {
-    const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50');
+    const r = await supaFetch('/rest/v1/vip_messages?select=*&salon=eq.' + encodeURIComponent(salonActuel) + '&order=created_at.asc&limit=50');
     const box = document.getElementById('vip-messages-list');
     if (!r.ok || !r.data.length) {
         box.innerHTML = '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
@@ -9506,6 +9517,16 @@ async function chargerMessages() {
     }
     box.innerHTML = r.data.map(m => renderVipMessage(m)).join('');
     box.scrollTop = box.scrollHeight;
+}
+
+function changerSalon(salon) {
+    salonActuel = salon;
+    document.querySelectorAll('.salon-btn').forEach(b => {
+        b.className = 'salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50';
+    });
+    const actif = document.getElementById('salon-btn-' + salon);
+    if (actif) actif.className = 'salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-sm';
+    chargerMessages();
 }
 
 function renderVipMessage(m) {
@@ -9540,7 +9561,8 @@ async function vipEnvoyerMessage() {
         headers: { 'Prefer': 'return=representation' },
         body: JSON.stringify({
             pseudo: vipPseudo,
-            message: msg
+            message: msg,
+            salon: salonActuel
         })
     });
     chargerMessages();
@@ -9553,7 +9575,7 @@ function demarrerRealtime() {
         if (!vipUser) { clearInterval(vipRealtimeChannel); return; }
         const box = document.getElementById('vip-messages-list');
         if (!box) { clearInterval(vipRealtimeChannel); return; }
-        const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50');
+        const r = await supaFetch('/rest/v1/vip_messages?select=*&salon=eq.' + encodeURIComponent(salonActuel) + '&order=created_at.asc&limit=50');
         if (r.ok && r.data.length) {
             const newHtml = r.data.map(m => renderVipMessage(m)).join('');
             if (box.innerHTML !== newHtml) {
