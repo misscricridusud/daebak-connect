@@ -9529,7 +9529,13 @@ function jsArg(value) {
 }
 
 function normalize(text) {
-    return String(text || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    return String(text || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')       // enlève les accents
+        .replace(/[^a-z0-9]+/g, ' ')              // enlève ! ? : - apostrophes, etc.
+        .trim()
+        .replace(/\s+/g, ' ');                  // espaces propres
 }
 
 
