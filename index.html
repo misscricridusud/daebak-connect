@@ -9318,11 +9318,18 @@ function daebakDramaReply(msg) {
         "Hmm je ne trouve pas bien 😄 Donne-moi un genre ou un acteur, et je fouille dans tes dramas.",
         "Je sèche un peu là 🌸 Essaie par exemple : “drama comique”, “avec Go Ara”, “thriller Netflix”."
     ]);
-    return daebakPick(["Ouiii 😄 j’ai trouvé ça pour toi :", "J’ai quelques idées dans ta liste 🌸 :", "Mission recommandation activée 🫰 Voilà ce que je te propose :"]) +
+    return daebakPick(["Ouiii 😄 j'ai trouvé ça pour toi :", "J'ai quelques idées dans ta liste 🌸 :", "Mission recommandation activée 🫰 Voilà ce que je te propose :"]) +
         "<br><br>" + res.map(d => {
             const meta = [d.genre, d.plateforme, d.note ? "⭐ " + d.note : ""].filter(Boolean).join(" • ");
-            return `🎬 <b>${esc(d.titre)}</b><br><span class="text-xs text-slate-500">${esc(meta)}</span>`;
+            const t2 = (d.titre||"").replace(/'/g, "&#39;");
+            return `🎬 <b><span onclick="showDramaFiche('${t2}')" style="cursor:pointer;color:#7dd3fc;text-decoration:underline dotted;">${esc(d.titre)}</span></b><br><span class="text-xs text-slate-500">${esc(meta)}</span>`;
         }).join("<br><br>");
+}
+
+function showDramaFiche(titre) {
+    const d = dramas.find(x => x.titre === titre);
+    if (!d) return;
+    openDramaDetails(d.id);
 }
 
 function getSmartAIResponse(msg) {
@@ -9364,9 +9371,17 @@ function getSmartAIResponse(msg) {
         daebakModeDiscussion = true;
         return daebakPick(["Mission anti-ennui activée 🫰 Tu veux papoter, jouer, créer, ou chercher un drama ?", "On va sauver cette journée 😄 Tu veux une idée tranquille ou un truc qui bouge ?", "L’ennui n’a aucune chance contre nous 😂 Tu veux parler de Vénus, Conan, créations ou dramas ?"]);
     }
-    if (/venus|vénus|chien|chienne/.test(t)) {
+    if (/venus|vénus/.test(t)) {
         daebakModeDiscussion = true;
-        return daebakPick(["Ah Vénus 🐶🩷 Elle est sage aujourd’hui ou elle fait sa petite star ?", "Vénus mérite son propre K-Drama franchement 😂 Elle t’écoute un peu ?", "Fais-lui une caresse pour moi 🌸 même si elle fait sa tête de mule."]);
+        return daebakPick(["Ah Vénus 🐶🩷 Elle est sage aujourd'hui ou elle fait sa petite star ?", "Vénus mérite son propre K-Drama franchement 😂 Elle t'écoute un peu ?", "Fais-lui une caresse pour moi 🌸 même si elle fait sa tête de mule."]);
+    }
+    if (/sortir le chien|promener|balade.*chien|chien.*balade/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Bonne balade 🐾🌸 Profitez bien !", "Trop bien une petite sortie 😄 Il fait beau ?", "Bonne balade 🩷 Rien de mieux pour se ressourcer !"]);
+    }
+    if (/chien|chienne|toutou|mon animal|mon chat/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Aww 🐾🩷 Il/Elle est mignon(ne) ?", "Les animaux c'est trop mignon 😄🌸", "J'adore les animaux 🩷 Raconte-moi !"]);
     }
     if (/platre|plâtre|bougie|tasse|mug|creation|création|crea|créa/.test(t)) {
         daebakModeDiscussion = true;
@@ -9379,6 +9394,31 @@ function getSmartAIResponse(msg) {
     if (/merci|thanks/.test(t)) return daebakPick(["Avec plaisir 🩷", "Toujours là pour toi 🌸", "De rien 😄"]);
     if (/bonne nuit|dodo|je vais dormir/.test(t)) return daebakPick(["Bonne nuit 🌙 Fais de beaux rêves, sans cliffhanger dramatique 😂🩷", "Dors bien 🌸 On papotera demain.", "Bonne nuit 🫰 Repose-toi bien."]);
 
+    // Réponses courtes positives
+    if (/^(oui|ouais|oui oui|yep|yes|ouep)[\s!.]*$/.test(t)) {
+        return daebakPick(["Super 😄🌸 Tu as quelque chose de prévu aujourd'hui ?", "Contente 🩷 Et ta journée elle ressemble à quoi ?", "Parfait 🌸 On papote, on cherche un drama ou tu voulais me dire quelque chose ?"]);
+    }
+    if (/^(bien|super|nickel|ca va|ça va|tres bien|très bien|genial|génial|top)[\s!.]*$/.test(t)) {
+        return daebakPick(["Trop bien 😄 Tu as l'air en forme ! Tu fais quoi là ?", "Super 🌸 Une bonne journée ça fait du bien. Tu veux papoter ou chercher un drama ?", "Nickel 🩷 Et il se passe quoi de beau dans ta vie en ce moment ?"]);
+    }
+    if (/travaill|bosser|boulot|travail|job|taff/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Courage pour le boulot 💪🌸 Les dramas t'attendront sagement !", "Ah journée de taff 😄 Bon courage, tu mérites une pause K-Drama après !", "Le travail c'est bien mais les dramas c'est mieux 😂🩷 Bon courage quand même !"]);
+    }
+    if (/sortir|courses|ballade|balade|promenade|dehors/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Ah tu sors un peu 🌸 Bonne idée de prendre l'air !", "Profite bien dehors 😄 Il fait beau chez toi ?", "Profite bien 🩷 Tu reviens me raconter après !"]);
+    }
+    if (/manger|dejeuner|déjeuner|diner|dîner|repas|cuisine/.test(t)) {
+        daebakModeDiscussion = true;
+        return daebakPick(["Ah l'heure de manger 😄 Tu fais quoi comme bon petit plat ?", "Miam 🍜 Tu cuisines ou tu commandes ?", "Le repas c'est sacré 🌸 Tu manges quoi de bon ?"]);
+    }
+    if (/et toi|et vous|toi comment|tu vas comment/.test(t)) {
+        return daebakPick(["Moi je suis toujours là, fidèle au poste 😄🌸 Passionnée de K-Dramas comme d'habitude !", "Moi ça va super 🩷 Je passe mes journées à penser aux dramas, c'est ma vie 😂", "Je suis en pleine forme 🌸 Prête à papoter et à chercher le drama parfait pour toi !"]);
+    }
+    if (/^(non|nope|nan|pas vraiment|bof)[\s!.]*$/.test(t)) {
+        return daebakPick(["Oh 🥺 Tu veux m'en dire plus ?", "Aïe 🩷 C'est quoi qui va pas ?", "Je suis là si tu veux parler 🌸 Sans pression."]);
+    }
     if (daebakModeDiscussion) return daebakPick(["Je t’écoute 🌸 Raconte-moi un peu plus.", "Ah oui 😄 Et toi tu l’as vécu comment ?", "Je vois 🩷 Tu veux continuer à m’en parler ?", "D’accord 🌸 Et après ça, tu as prévu quoi ?", "On peut rester sur ce sujet si tu veux, je suis là 😄"]);
     return "Je t’écoute 🌸 Tu veux papoter un peu ou tu veux que je t’aide à trouver un drama ?";
 }
