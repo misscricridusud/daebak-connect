@@ -9373,6 +9373,9 @@ function getSmartAIResponse(msg) {
     }
     if (/venus|vénus/.test(t)) {
         daebakModeDiscussion = true;
+        if (/qui est|cest qui|c'est qui|kesquec|qu'est.ce/.test(t)) {
+            return daebakPick(["Vénus c'est la chienne de la créatrice de Daebak Connect 🐶🩷 Une vraie star !", "Vénus est une petite chienne adorable qui inspire les K-Dramas 😂🌸", "C'est la mascotte officielle de Daebak Connect 🐾 Une chienne trop mignonne !"]);
+        }
         return daebakPick(["Ah Vénus 🐶🩷 Elle est sage aujourd'hui ou elle fait sa petite star ?", "Vénus mérite son propre K-Drama franchement 😂 Elle t'écoute un peu ?", "Fais-lui une caresse pour moi 🌸 même si elle fait sa tête de mule."]);
     }
     if (/sortir le chien|promener|balade.*chien|chien.*balade/.test(t)) {
