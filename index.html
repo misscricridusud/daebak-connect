@@ -189,6 +189,22 @@
                     </div>
                 </div>
 
+                <!-- ÉCRAN CHOIX PSEUDO -->
+                <div id="vip-pseudo-screen" class="hidden">
+                    <div class="soft-card p-6 rounded-3xl mb-4 text-center">
+                        <div class="text-4xl mb-2">🌸</div>
+                        <h2 class="text-xl font-bold text-sky-900">Choisis ton pseudo</h2>
+                        <p class="text-sm text-slate-500 mt-1">Il s'affichera dans le salon VIP 💎</p>
+                    </div>
+                    <div class="soft-card p-5 rounded-3xl">
+                        <input type="text" id="vip-pseudo-initial" onkeydown="if(event.key==='Enter') validerPseudoInitial()" placeholder="Ton pseudo K-Drama... ex: DramaQueen 🌸" class="w-full p-3 mb-3 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
+                        <button onclick="validerPseudoInitial()" class="w-full bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white py-3 rounded-2xl text-sm font-bold shadow-md hover:brightness-105">
+                            Entrer dans le salon 💎
+                        </button>
+                        <div id="vip-pseudo-initial-error" class="hidden mt-2 text-xs text-red-500 text-center"></div>
+                    </div>
+                </div>
+
                 <!-- ÉCRAN CHAT VIP -->
                 <div id="vip-chat-screen" class="hidden flex flex-col h-full">
                     <!-- Header user connecté -->
@@ -9497,7 +9513,13 @@ async function loadVipProfile(userId) {
 }
 
 function entrerDansSalonVip() {
+    // Si pas de pseudo, on le demande d'abord
+    if (!vipPseudo || vipPseudo === vipUser?.user?.email?.split('@')[0]) {
+        demanderPseudo();
+        return;
+    }
     document.getElementById('vip-login-screen').classList.add('hidden');
+    document.getElementById('vip-pseudo-screen') && document.getElementById('vip-pseudo-screen').classList.add('hidden');
     document.getElementById('vip-chat-screen').classList.remove('hidden');
     const letter = (vipPseudo || '?')[0].toUpperCase();
     document.getElementById('vip-avatar-letter').textContent = letter;
@@ -9506,10 +9528,29 @@ function entrerDansSalonVip() {
     demarrerRealtime();
 }
 
+function demanderPseudo() {
+    document.getElementById('vip-login-screen').classList.add('hidden');
+    document.getElementById('vip-chat-screen').classList.add('hidden');
+    document.getElementById('vip-pseudo-screen').classList.remove('hidden');
+}
+
+function validerPseudoInitial() {
+    const pseudo = document.getElementById('vip-pseudo-initial').value.trim();
+    if (!pseudo || pseudo.length < 2) {
+        document.getElementById('vip-pseudo-initial-error').textContent = 'Pseudo trop court 😊';
+        document.getElementById('vip-pseudo-initial-error').classList.remove('hidden');
+        return;
+    }
+    vipPseudo = pseudo;
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo}));
+    document.getElementById('vip-pseudo-screen').classList.add('hidden');
+    entrerDansSalonVip();
+}
+
 let salonActuel = 'general';
 
 async function chargerMessages() {
-    const r = await supaFetch('/rest/v1/vip_messages?select=*&salon=eq.' + encodeURIComponent(salonActuel) + '&order=created_at.asc&limit=50');
+    const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50&salon=eq.' + encodeURIComponent(salonActuel));
     const box = document.getElementById('vip-messages-list');
     if (!r.ok || !r.data.length) {
         box.innerHTML = '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
@@ -9575,7 +9616,7 @@ function demarrerRealtime() {
         if (!vipUser) { clearInterval(vipRealtimeChannel); return; }
         const box = document.getElementById('vip-messages-list');
         if (!box) { clearInterval(vipRealtimeChannel); return; }
-        const r = await supaFetch('/rest/v1/vip_messages?select=*&salon=eq.' + encodeURIComponent(salonActuel) + '&order=created_at.asc&limit=50');
+        const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50&salon=eq.' + encodeURIComponent(salonActuel));
         if (r.ok && r.data.length) {
             const newHtml = r.data.map(m => renderVipMessage(m)).join('');
             if (box.innerHTML !== newHtml) {
