@@ -84,7 +84,7 @@
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
             <button onclick="showTab('dramas')" class="flex-1 py-4 text-xs font-bold text-sky-600 border-b-2 border-sky-400 transition-all" id="tab-dramas">Dramas</button>
-            <button onclick="showTab('chat')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-chat">IA locale</button>
+            <button onclick="showTab('chat')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-chat">💖 OppaBot</button>
             <button onclick="showTab('import')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-import">Ajout</button>
             <button onclick="showTab('stars')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-stars">Stars</button>
             <button onclick="showTab('vip')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-vip">VIP 💎</button>
@@ -93,6 +93,7 @@
         <main id="tab-content" class="flex-1 overflow-y-auto p-6 custom-scrollbar">
             <div id="content-dramas">
                 <div id="filter-bar" class="genre-scroll"></div>
+                
                 <input type="text" id="search-bar" oninput="afficherDramas()" placeholder="Chercher dans tous les dramas, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="active-filter" class="hidden mb-3 text-xs bg-pink-50 border border-pink-200 text-pink-700 rounded-2xl p-3"></div>
                 <div id="result-count" class="text-xs text-sky-700 font-bold mb-3"></div>
@@ -119,7 +120,7 @@
                     <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500 shadow-md"><i class="fa-solid fa-robot"></i></div>
                         <div class="soft-card p-4 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">
-                            Annyeong 🌸 Je suis Daebak, ton IA locale gratuite et illimitée. Tu peux papoter avec moi ou me demander un drama : <b>comédie</b>, <b>thriller</b>, <b>romance</b>, <b>avec Go Ara</b>...
+                            Annyeong 🌸 Je suis OppaBot, ton assistant K-Drama ! Dis-moi ce que tu cherches : romance, thriller, fantasy, Go Ara, Lee Dong Wook ou ton prochain crush K-Drama : <b>comédie</b>, <b>thriller</b>, <b>romance</b>, <b>avec Go Ara</b>...
                         </div>
                     </div>
                 </div>
@@ -339,7 +340,7 @@ const baseDramas = [
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Joon-gi"
+                                    "Lee Joon Gi"
                         ]
             },
             {
@@ -402,7 +403,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Disney+",
                         "acteurs": [
-                                    "Lee Dong-wook",
+                                    "Lee Dong Wook",
                                     "Kim Hye Joon",
                                     "Seo Hyun Woo",
                                     "Park Ji Bin",
@@ -428,7 +429,7 @@ const baseDramas = [
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Joon-gi",
+                                    "Lee Joon Gi",
                                     "Lee Kyung Young",
                                     "Kim Ji Eun",
                                     "Jung Sang Hoon",
@@ -447,7 +448,7 @@ const baseDramas = [
                         "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Jae-wook",
+                                    "Lee Jae Wook",
                                     "Jung So Min",
                                     "Hwang Hyun Min",
                                     "Shin Seung Ho",
@@ -466,7 +467,7 @@ const baseDramas = [
                         "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Jae-wook",
+                                    "Lee Jae Wook",
                                     "Jung So Min",
                                     "Hwang Hyun Min",
                                     "Shin Seung Ho",
@@ -489,7 +490,7 @@ const baseDramas = [
                         "genre": "Movie",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Kim Woo-bin"
+                                    "Kim Woo Bin"
                         ]
             },
             {
@@ -498,7 +499,7 @@ const baseDramas = [
                         "genre": "Movie",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Kim Woo-bin"
+                                    "Kim Woo Bin"
                         ]
             },
             {
@@ -507,7 +508,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
-                                    "Shin Hye-sun",
+                                    "Shin Hye Sun",
                                     "L",
                                     "Kim Myung Soo",
                                     "Lee Dong Gun",
@@ -528,7 +529,7 @@ const baseDramas = [
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Eric Mun",
-                                    "Seo Hyun-jin"
+                                    "Seo Hyun Jin"
                         ],
                         "synopsis": "Two women working in the same industry with the exact same name keep getting their lives entangled both professionally and personally."
             },
@@ -567,7 +568,7 @@ const baseDramas = [
                         "genre": "Comédie",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Ji Chang-wook",
+                                    "Ji Chang Wook",
                                     "Kim Yoo-jung"
                         ],
                         "synopsis": "It tells an unpredictable 24-hour love story of the four-dimensional innocent girl Jung Saet Byeol who was once a troublemaker and the adorkable caring male store manager, Choi Dae Hyun, in the context of a convenience store. They have met each other accidentally 4 years ago, back then Saet Byeol asked Dae Hyun to buy cigarettes for them. Until now, Saet Byeol comes to the convenience store Dae Hyun runs for a part-time job, their hilarious romantic story starts."
@@ -578,7 +579,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Dong-wook",
+                                    "Lee Dong Wook",
                                     "Wi Ha Joon",
                                     "Han Ji Eun",
                                     "Cha Hak Yeon",
@@ -684,7 +685,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Kim Woo-bin"
+                                    "Kim Woo Bin"
                         ],
                         "synopsis": "A successful executive determined to do whatever it takes to protect the woman he loves, meets a travel agent, who may be linked to his past."
             },
@@ -719,7 +720,7 @@ const baseDramas = [
                         "genre": "Movie",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Shin Hye-sun"
+                                    "Shin Hye Sun"
                         ]
             },
             {
@@ -890,7 +891,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Jae-wook",
+                                    "Lee Jae Wook",
                                     "Go Ara"
                         ],
                         "synopsis": "A riches-to-rags pianist who loses everything but her smile is guided by twinkling little stars to a small town where she finds hope, home and love."
@@ -1022,7 +1023,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Disney+",
                         "acteurs": [
-                                    "Ahn Bo-hyun",
+                                    "Ahn Bo Hyun",
                                     "Park Ji Hyun",
                                     "Kang Sang Jun",
                                     "Kim Shin Bi",
@@ -1048,7 +1049,7 @@ const baseDramas = [
                         "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Joon-gi",
+                                    "Lee Joon Gi",
                                     "Moon Chae Won",
                                     "Jang Hee Jin",
                                     "Seo Hyun Woo",
@@ -1068,7 +1069,7 @@ const baseDramas = [
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Song Kang",
-                                    "Park Min-young"
+                                    "Park Min Young"
                         ],
                         "synopsis": "Inside a national weather service, love proves just as difficult to predict as rain or shine for a diligent forecaster and her free-spirited co-worker."
             },
@@ -1238,8 +1239,8 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Ji Chang-wook",
-                                    "Park Min-young",
+                                    "Ji Chang Wook",
+                                    "Park Min Young",
                                     "Yoo Ji Tae",
                                     "Kim  Mi Kyung",
                                     "Park Sang Won",
@@ -1267,7 +1268,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Park Min-young",
+                                    "Park Min Young",
                                     "Kim Jae-wook",
                                     "Ahn Bo Hyun",
                                     "One",
@@ -1456,7 +1457,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Joon-gi",
+                                    "Lee Joon Gi",
                                     "Seo Yea Ji",
                                     "Lee Hye Young",
                                     "Choi Min Soo",
@@ -1522,7 +1523,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
-                                    "Park Min-young"
+                                    "Park Min Young"
                         ],
                         "synopsis": "Can marriage be a business? Sang-eun is a single-life helper with 13 years of career. Her customers are those who need a wife for their public life under social pressure. Ji-ho is Sang-eun's MWF husband client who has been with her for 5 years. While short-term, abusing clients on TTS are driving Sang-eun mad, new long-term contractor Hye-jin appears and takes up the TTS husband schedule. With two different men, MWF husband and TTS husband, Sang-eun's week flows romantically crossing the borderline between public affairs and private emotions."
             },
@@ -1613,7 +1614,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Amazon Prime",
                         "acteurs": [
-                                    "Park Min-young",
+                                    "Park Min Young",
                                     "Na In Woo",
                                     "Lee Yi Kyung",
                                     "Song Ha Yoon",
@@ -1629,7 +1630,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
-                                    "Ji Chang-wook"
+                                    "Ji Chang Wook"
                         ]
             },
             {
@@ -1720,7 +1721,7 @@ const baseDramas = [
                         "genre": "Comédie",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Shin Hye-sun",
+                                    "Shin Hye Sun",
                                     "Kim Jung Hyun",
                                     "Bae Jong Ok",
                                     "Kim Tae Woo",
@@ -1892,7 +1893,7 @@ const baseDramas = [
                         "genre": "Movie",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Kim Woo-bin"
+                                    "Kim Woo Bin"
                         ]
             },
             {
@@ -2094,7 +2095,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Shin Hye-sun",
+                                    "Shin Hye Sun",
                                     "Ahn Bo Hyun",
                                     "Ha Yoon Kyung",
                                     "Ahn Dong Goo",
@@ -2205,7 +2206,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Shin Hye-sun"
+                                    "Shin Hye Sun"
                         ]
             },
             {
@@ -2262,7 +2263,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Ji Chang-wook",
+                                    "Ji Chang Wook",
                                     "Nam Ji Hyun",
                                     "Choi  Tae Joon",
                                     "Kwon Na Ra",
@@ -2281,7 +2282,7 @@ const baseDramas = [
                         "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Dong-wook",
+                                    "Lee Dong Wook",
                                     "Jo Bo Ah",
                                     "Kim Bum",
                                     "Kim Yong Ji",
@@ -2471,7 +2472,7 @@ const baseDramas = [
                         "genre": "Drame",
                         "plateforme": "Disney+",
                         "acteurs": [
-                                    "Lee Jae-wook"
+                                    "Lee Jae Wook"
                         ]
             },
             {
@@ -2489,7 +2490,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Ji Chang-wook"
+                                    "Ji Chang Wook"
                         ]
             },
             {
@@ -2571,7 +2572,7 @@ const baseDramas = [
                         "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Ji Chang-wook",
+                                    "Ji Chang Wook",
                                     "Choi Sung Eun",
                                     "Hwang In Youp",
                                     "Oh So Hyun",
@@ -2661,7 +2662,7 @@ const baseDramas = [
                         "genre": "Action",
                         "plateforme": "Disney+",
                         "acteurs": [
-                                    "Ji Chang-wook"
+                                    "Ji Chang Wook"
                         ]
             },
             {
@@ -2898,8 +2899,8 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Ji Chang-wook",
-                                    "Shin Hye-sun"
+                                    "Ji Chang Wook",
+                                    "Shin Hye Sun"
                         ]
             },
             {
@@ -2929,7 +2930,7 @@ const baseDramas = [
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Park Seo-joon",
-                                    "Park Min-young",
+                                    "Park Min Young",
                                     "Lee Tae Hwan",
                                     "Pyo Ye Jin",
                                     "Kim Hye Ok",
@@ -3062,7 +3063,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Seo Hyun-jin"
+                                    "Seo Hyun Jin"
                         ],
                         "synopsis": "A hotel concierge and a psychiatrist with traumatic childhoods form a heartfelt bond when they become entangled in a perplexing local murder case."
             },
@@ -4597,7 +4598,7 @@ const baseDramas = [
             },
             {
                         "id": 290,
-                        "titre": "I Hear Your Voice",
+                        "titre": "I Can Hear Your Voice",
                         "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [
@@ -7797,7 +7798,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
-                                    "Lee Jae-wook",
+                                    "Lee Jae Wook",
                                     "Gong Hyo-jin"
                         ],
                         "annee": 2026,
@@ -8357,7 +8358,7 @@ const baseDramas = [
                         "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [
-                                    "Park Min-young",
+                                    "Park Min Young",
                                     "Na In-woo"
                         ],
                         "annee": 2024,
@@ -8575,82 +8576,7 @@ const baseDramas = [
                         "annee": 2022,
                         "episodes": 12,
                         "synopsis": "Les trois amies reviennent avec de nouveaux défis, des émotions plus fortes et toujours leur façon unique de traverser la vie."
-            }
-];
-let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
-let dramas = [...baseDramas, ...customDramas];
-let favoris = JSON.parse(localStorage.getItem('daebak_favs')) || [];
-let currentGenre = 'Tous';
-let starFilter = null;
-let starFavoris = JSON.parse(localStorage.getItem('daebak_star_favs')) || [];
-
-/* ================================
-   CONFIG IA GEMINI
-   Mets ta clé API entre les guillemets.
-   Exemple :
-   const GEMINI_API_KEY = "";
-   Si tu laisses vide, l'appli garde l'IA locale.
-================================ */
-const GEMINI_API_KEY = "";
-const GEMINI_MODEL = "gemini-1.5-flash";
-
-
-function esc(text) {
-    return String(text ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));
-}
-
-function normalize(text) {
-    return String(text || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-}
-
-
-
-function getPlatformUrl(d) {
-    const title = encodeURIComponent(d.titre);
-    const platform = normalize(d.plateforme);
-
-    if(platform.includes('netflix')) return `https://www.netflix.com/search?q=${title}`;
-    if(platform.includes('disney')) return `https://www.disneyplus.com/fr-fr/search?q=${title}`;
-    if(platform.includes('viki')) return `https://www.viki.com/search?q=${title}`;
-    if(platform.includes('amazon') || platform.includes('prime')) return `https://www.primevideo.com/search/ref=atv_nb_sr?phrase=${title}`;
-
-    return `https://www.google.com/search?q=${title}%20streaming`;
-}
-
-function platformInfo(platformText) {
-    const platform = normalize(platformText);
-    if(platform.includes('netflix')) return { cls: 'platform-netflix', icon: '▶', label: 'Netflix' };
-    if(platform.includes('disney')) return { cls: 'platform-disney', icon: '✦', label: 'Disney+' };
-    if(platform.includes('viki')) return { cls: 'platform-viki', icon: '💜', label: 'Viki' };
-    if(platform.includes('amazon') || platform.includes('prime')) return { cls: 'platform-prime', icon: '↗', label: 'Prime Video' };
-    return { cls: 'platform-other', icon: '🔎', label: platformText || 'Recherche' };
-}
-
-function platformLink(d) {
-    const url = getPlatformUrl(d);
-    const info = platformInfo(d.plateforme);
-    return `<a href="${url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="platform-badge ${info.cls}" title="Ouvrir ${esc(info.label)} pour ${esc(d.titre)}"><span>${info.icon}</span><span>${esc(info.label)}</span></a>`;
-}
-
-
-
-
-
-const genreCategories = [
-    { label: 'Tous', icon: '🫰', keys: [] },
-    { label: 'Romance', icon: '🌸', keys: ['romance','amour','romantic'] },
-    { label: 'Comédie', icon: '😂', keys: ['comedie','comédie','humour','comedy','drole','drôle'] },
-    { label: 'Horreur', icon: '😱', keys: ['horreur','horror','zombie','zombies','creature','haunted','slasher','gore'] },
-    { label: 'Thriller', icon: '🔪', keys: ['thriller','suspense','crime','murder','policier','detective','détective'] },
-    { label: 'Action', icon: '⚔️', keys: ['action','fight','combat','police','cop','lawless','vigilante'] },
-    { label: 'Fantastique', icon: '✨', keys: ['fantastique','fantasy','magic','magie','mythical','goblin'] },
-    { label: 'Surnaturel', icon: '👻', keys: ['surnaturel','supernatural','ghost','spirit','reaper','demon','démon','vampire','curse','shaman'] },
-    { label: 'Science-Fiction', icon: '🚀', keys: ['science fiction','science-fiction','sci fi','sci-fi','alien','aliens','space','future','time travel','robot','robots'] },
-    { label: 'École', icon: '🏫', keys: ['ecole','école','school','student','students','high school','university'] },
-    { label: 'Juridique', icon: '⚖️', keys: ['juridique','law','lawyer','attorney','judge','justice','court','legal'] },
-    { label: 'Médical', icon: '🏥', keys: ['medical','médical','doctor','hospital','nurse','trauma'] },
-    { label: 'Historique', icon: '👑', keys: ['historique','history','historical','joseon','king','queen','palace','arthdal'] },
-    { label: 'Favoris', icon: '💗', keys: [] },
+            },
         {
             "id": 549,
             "titre": "Poong, the Joseon Psychiatrist",
@@ -8938,6 +8864,165 @@ const genreCategories = [
             "episodes": 12
         }
 ];
+let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
+let dramas = [...baseDramas, ...customDramas].map(d => ({
+    ...d,
+    titre: d.titre || 'Titre inconnu',
+    genre: d.genre || 'Drame',
+    plateforme: d.plateforme || 'À vérifier',
+    acteurs: Array.isArray(d.acteurs) ? d.acteurs : []
+}));
+let favoris = JSON.parse(localStorage.getItem('daebak_favs')) || [];
+let currentGenre = 'Tous';
+let currentYear = 'Toutes';
+let starFilter = null;
+let starFavoris = JSON.parse(localStorage.getItem('daebak_star_favs')) || [];
+
+/* ================================
+   CONFIG IA GEMINI
+   Mets ta clé API entre les guillemets.
+   Exemple :
+   const GEMINI_API_KEY = "";
+   Si tu laisses vide, l'appli garde l'OppaBot.
+================================ */
+const GEMINI_API_KEY = "";
+const GEMINI_MODEL = "gemini-1.5-flash";
+
+
+function esc(text) {
+    return String(text ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));
+}
+
+function jsArg(value) {
+    return JSON.stringify(String(value ?? ''));
+}
+
+function normalize(text) {
+    return String(text || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+
+
+function getPlatformUrl(d) {
+    // Version fluide : on ne charge aucune page lourde dans Daebak.
+    // Le clic plateforme ouvre une recherche Google avec le titre + la plateforme.
+    const title = d?.titre || '';
+    const platform = d?.plateforme || 'streaming';
+    return `https://www.google.com/search?q=${encodeURIComponent(title + ' kdrama ' + platform)}`;
+}
+
+function platformInfo(platformText) {
+    const platform = normalize(platformText);
+    if(platform.includes('netflix')) return { cls: 'platform-netflix', icon: '▶', label: 'Netflix' };
+    if(platform.includes('disney')) return { cls: 'platform-disney', icon: '✦', label: 'Disney+' };
+    if(platform.includes('viki')) return { cls: 'platform-viki', icon: '💜', label: 'Viki' };
+    if(platform.includes('amazon') || platform.includes('prime')) return { cls: 'platform-prime', icon: '↗', label: 'Prime Video' };
+    return { cls: 'platform-other', icon: '🔎', label: platformText || 'Recherche' };
+}
+
+function platformLink(d) {
+    const url = getPlatformUrl(d);
+    const info = platformInfo(d.plateforme);
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="platform-badge ${info.cls}" title="Ouvrir ${esc(info.label)} pour ${esc(d.titre)}"><span>${info.icon}</span><span>${esc(info.label)}</span></a>`;
+}
+
+
+
+
+
+const genreCategories = [
+    { label: 'Tous', icon: '🫰', keys: [] },
+    { label: 'Romance', icon: '🌸', keys: ['romance','amour','romantic'] },
+    { label: 'Comédie', icon: '😂', keys: ['comedie','comédie','humour','comedy','drole','drôle'] },
+    { label: 'Horreur', icon: '😱', keys: ['horreur','horror','zombie','zombies','creature','haunted','slasher','gore'] },
+    { label: 'Thriller', icon: '🔪', keys: ['thriller','suspense','crime','murder','policier','detective','détective'] },
+    { label: 'Action', icon: '⚔️', keys: ['action','fight','combat','police','cop','lawless','vigilante'] },
+    { label: 'Fantastique', icon: '✨', keys: ['fantastique','fantasy','magic','magie','mythical','goblin'] },
+    { label: 'Surnaturel', icon: '👻', keys: ['surnaturel','supernatural','ghost','spirit','reaper','demon','démon','vampire','curse','shaman'] },
+    { label: 'Science-Fiction', icon: '🚀', keys: ['science fiction','science-fiction','sci fi','sci-fi','alien','aliens','space','future','time travel','robot','robots'] },
+    { label: 'École', icon: '🏫', keys: ['ecole','école','school','student','students','high school','university'] },
+    { label: 'Juridique', icon: '⚖️', keys: ['juridique','law','lawyer','attorney','judge','justice','court','legal'] },
+    { label: 'Médical', icon: '🏥', keys: ['medical','médical','doctor','hospital','nurse','trauma'] },
+    { label: 'Historique', icon: '👑', keys: ['historique','history','historical','joseon','king','queen','palace','arthdal'] },
+    { label: 'Favoris', icon: '💗', keys: [] },
+        {
+            "id": 575,
+            "titre": "Scarlet Heart: Ryeo",
+            "annee": 2016,
+            "genre": "Historique",
+            "plateforme": "SBS",
+            "note": "7.8",
+            "acteurs": ["Lee Joon Gi", "IU", "Kang Ha Neul"],
+            "synopsis": "Une femme moderne se retrouve transportée dans la période Goryeo et tombe amoureuse d'un prince, tout en étant mêlée aux luttes de pouvoir entre les fils du roi.",
+            "episodes": 20
+        },
+        {
+            "id": 576,
+            "titre": "Mon amour venu des étoiles",
+            "annee": 2013,
+            "genre": "Romance",
+            "plateforme": "SBS",
+            "note": "7.3",
+            "acteurs": ["Kim Soo Hyun", "Jun Ji Hyun"],
+            "synopsis": "Un extraterrestre ayant vécu 400 ans sur Terre tombe amoureux d'une actrice célèbre, juste avant de devoir rentrer sur sa planète.",
+            "episodes": 21
+        },
+        {
+            "id": 577,
+            "titre": "The Empress Ki",
+            "annee": 2013,
+            "genre": "Historique",
+            "plateforme": "MBC",
+            "note": "8.0",
+            "acteurs": ["Ha Ji Won", "Ji Chang Wook", "Joo Jin Mo"],
+            "synopsis": "Inspiré de la vraie impératrice Ki, une femme coréenne d'origine modeste s'élève pour devenir l'une des figures les plus puissantes de la cour mongole.",
+            "episodes": 51
+        },
+        {
+            "id": 578,
+            "titre": "Secret Garden",
+            "annee": 2010,
+            "genre": "Romance",
+            "plateforme": "SBS",
+            "note": "7.0",
+            "acteurs": ["Hyun Bin", "Ha Ji Won"],
+            "synopsis": "Un PDG arrogant et une cascadeuse ordinaire voient leurs corps s'échanger mystérieusement, les forçant à vivre dans la peau de l'autre et à tomber amoureux.",
+            "episodes": 20
+        },
+        {
+            "id": 581,
+            "titre": "W: Two Worlds",
+            "annee": 2016,
+            "genre": "Fantastique",
+            "plateforme": "MBC",
+            "note": "7.2",
+            "acteurs": ["Lee Jong Suk", "Han Hyo Joo"],
+            "synopsis": "Une chirurgienne est aspirée dans un webtoon créé par son père et rencontre le héros de la BD, un homme mystérieux qui cherche à découvrir son créateur.",
+            "episodes": 16
+        },
+        {
+            "id": 582,
+            "titre": "Something in the Rain",
+            "annee": 2018,
+            "genre": "Romance",
+            "plateforme": "JTBC",
+            "note": "7.4",
+            "acteurs": ["Son Ye Jin", "Jung Hae In"],
+            "synopsis": "Une femme de 35 ans tombe amoureuse du meilleur ami de son frère, plus jeune qu'elle, et affronte l'opposition de sa famille pour vivre leur relation.",
+            "episodes": 16
+        },
+        {
+            "id": 583,
+            "titre": "Weightlifting Fairy Kim Bok-Joo",
+            "annee": 2016,
+            "genre": "Sport",
+            "plateforme": "MBC",
+            "note": "7.5",
+            "acteurs": ["Lee Sung Kyung", "Nam Joo Hyuk"],
+            "synopsis": "Une haltérophile talentueuse et un nageur se retrouvent dans la même université sportive, redécouvrant leur amitié d'enfance et vivant leurs premiers émois amoureux.",
+            "episodes": 16
+        }
+];
 
 function inferCategories(d) {
     const title = normalize(d.titre || '');
@@ -9012,20 +9097,49 @@ function renderFilters() {
     const bar = document.getElementById('filter-bar');
     if(!bar) return;
 
-    bar.innerHTML = genreCategories.map(cat => {
-        const f = cat.label;
-        const active = currentGenre === f;
+    bar.innerHTML = genreCategories
+        .filter(cat => cat && cat.label && cat.icon)
+        .map(cat => {
+            const f = cat.label;
+            const active = currentGenre === f;
+            return `
+                <button onclick="setGenre('${f}')" class="genre-chip px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm ${active ? 'bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white shadow-lg shadow-pink-100' : 'bg-white/80 text-sky-700 border border-pink-100 hover:bg-pink-50'}">
+                    ${cat.icon} ${f}
+                </button>
+            `;
+        }).join('');
+}
+
+function getAvailableYears() {
+    return [...new Set(dramas.map(d => String(d.annee || '').trim()).filter(y => /^\d{4}$/.test(y)))]
+        .sort((a, b) => Number(b) - Number(a));
+}
+
+function renderYearFilters() {
+    const bar = document.getElementById('year-bar');
+    if(!bar) return;
+    const years = ['Toutes', ...getAvailableYears()];
+    bar.innerHTML = years.map(y => {
+        const active = currentYear === y;
+        const label = y === 'Toutes' ? '📅 Toutes années' : `📅 ${y}`;
         return `
-            <button onclick="setGenre('${f}')" class="genre-chip px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm ${active ? 'bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white shadow-lg shadow-pink-100' : 'bg-white/80 text-sky-700 border border-pink-100 hover:bg-pink-50'}">
-                ${cat.icon} ${f}
+            <button onclick="setYear('${y}')" class="genre-chip px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm ${active ? 'bg-gradient-to-r from-violet-400 via-pink-400 to-sky-400 text-white shadow-lg shadow-pink-100' : 'bg-white/80 text-violet-700 border border-pink-100 hover:bg-pink-50'}">
+                ${label}
             </button>
         `;
     }).join('');
 }
 
+function setYear(year) {
+    currentYear = year;
+    if (typeof renderYearFilters === 'function') renderYearFilters();
+    afficherDramas();
+}
+
 function setGenre(genre) {
     currentGenre = genre;
     renderFilters();
+    if (typeof renderYearFilters === 'function') renderYearFilters();
     afficherDramas();
 }
 
@@ -9060,7 +9174,7 @@ function addSuggestedDrama(encoded) {
 
         customDramas.push(drama);
         localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
-        dramas = [...baseDramas, ...customDramas];
+        dramas = [...baseDramas, ...customDramas].map(d => ({...d, titre: d.titre || 'Titre inconnu', genre: d.genre || 'Drame', plateforme: d.plateforme || 'À vérifier', acteurs: Array.isArray(d.acteurs) ? d.acteurs : []}));
         afficherDramas();
         renderStars();
 
@@ -9171,11 +9285,12 @@ function afficherDramas() {
     if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • ${dramas.length} dramas 🇰🇷`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
-        const fullText = normalize(`${d.titre} ${d.genre} ${d.plateforme} ${actorText} ${d.synopsis || ''}`);
+        const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
         const matchesSearch = !query || fullText.includes(query);
         const matchesGenre = matchesCategory(d, currentGenre);
-        const matchesStar = !starFilter || (d.acteurs || []).includes(starFilter);
-        return matchesSearch && matchesGenre && matchesStar;
+        const matchesYear = currentYear === 'Toutes' || String(d.annee || '') === String(currentYear);
+        const matchesStar = !starFilter || (d.acteurs || []).some(a => normalize(a) === normalize(starFilter));
+        return matchesSearch && matchesGenre && matchesYear && matchesStar;
     });
 
     const active = document.getElementById('active-filter');
@@ -9186,13 +9301,13 @@ function afficherDramas() {
         active.classList.add('hidden');
     }
 
-    document.getElementById('result-count').textContent = `${filtered.length} drama(s) trouvé(s)`;
+    document.getElementById('result-count').textContent = `${filtered.length} drama(s) trouvé(s)${currentYear !== 'Toutes' ? ' • ' + currentYear : ''}`;
     document.getElementById('dramas-list').innerHTML = filtered.map(d => `
         <div onclick="openDramaDetails(${d.id})" class="drama-card soft-card p-4 rounded-2xl flex justify-between items-center hover:border-pink-200 transition-all">
             <div class="pr-2">
                 <strong class="text-sm text-sky-900">${esc(d.titre)}</strong>
-                <div class="text-[10px] text-sky-500 font-medium mt-2 flex items-center gap-2 flex-wrap"><span>${categoryLabel(inferCategories(d)[0])}</span>${platformLink(d)}${d.note ? `<span class="px-2 py-0.5 rounded-full bg-pink-50 text-pink-500 border border-pink-100 font-bold">⭐ ${esc(d.note)}</span>` : ''}${d.annee ? `<span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-500 border border-indigo-100 font-bold">${esc(d.annee)}</span>` : ''}${d.nouveaute ? `<span class="px-2 py-0.5 rounded-full bg-green-50 text-green-600 border border-green-100 font-bold">🆕</span>` : ''}<span class="px-2 py-0.5 rounded-full bg-violet-50 text-violet-500 border border-violet-100 font-bold">📖 Synopsis FR</span></div>
-                <div class="text-[10px] text-pink-500 mt-1">${(d.acteurs || []).map(esc).join(', ')}</div>
+                <div class="text-[10px] text-sky-500 font-medium mt-2 flex items-center gap-2 flex-wrap"><span>${categoryLabel(inferCategories(d)[0])}</span>${platformLink(d)}${d.note ? `<span class="px-2 py-0.5 rounded-full bg-pink-50 text-pink-500 border border-pink-100 font-bold">⭐ ${esc(d.note)}</span>` : ''}${d.annee ? `<span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-500 border border-indigo-100 font-bold">${esc(d.annee)}</span>` : ''}${d.nouveaute ? `<span class="px-2 py-0.5 rounded-full bg-green-50 text-green-600 border border-green-100 font-bold">🆕</span>` : ''}<span class="px-2 py-0.5 rounded-full bg-violet-50 text-violet-500 border border-violet-100 font-bold">🔎 Google synopsis</span></div>
+                ${actorChipsList(d)}
             </div>
             <button onclick="event.stopPropagation(); toggleFav(${d.id})" title="Ajouter/enlever des favoris" class="text-lg px-2 py-1 hover:bg-sky-50 rounded-full">${favoris.includes(d.id) ? '❤️' : '🤍'}</button>
         </div>
@@ -9218,13 +9333,18 @@ function openDramaDetails(id) {
     if(d.nouveaute) meta.push(`<span class="px-3 py-1 rounded-full bg-green-50 text-green-600 border border-green-100 font-bold">🆕 Nouveauté 2026</span>`);
     if(d.episodes) meta.push(`<span class="px-3 py-1 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-bold">${esc(d.episodes)} épisodes</span>`);
     document.getElementById('modal-meta').innerHTML = meta.join('');
-    document.getElementById('modal-actors').textContent = (d.acteurs && d.acteurs.length) ? '🎭 ' + d.acteurs.join(', ') : '';
+    document.getElementById('modal-actors').innerHTML = (d.acteurs && d.acteurs.length) ? '🎭 ' + d.acteurs.map(actorChip).join('') : '';
     const synopsisUrl = getSynopsisGoogleUrl(d);
     document.getElementById('modal-synopsis').innerHTML = `
-        <p class="mb-4">Pour éviter les mauvaises traductions, ouvre directement une recherche Google en français pour cette série.</p>
-        <a href="${synopsisUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white font-bold shadow-md hover:brightness-105 transition-all">
-            🔎 Voir le synopsis français sur Google
-        </a>
+        <p class="mb-4">Base légère : Daebak garde le titre, l’année, le genre et la plateforme. Pour le synopsis, ouvre Google directement.</p>
+        <div class="flex flex-col gap-2">
+            <a href="${synopsisUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white font-bold shadow-md hover:brightness-105 transition-all">
+                🔎 Voir le synopsis français sur Google
+            </a>
+            <a href="${getPlatformUrl(d)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-white/80 text-sky-700 border border-sky-100 font-bold shadow-sm hover:bg-sky-50 transition-all">
+                📺 Chercher sur Google avec la plateforme
+            </a>
+        </div>
     `;
     modal.classList.add('show');
 }
@@ -9256,7 +9376,17 @@ function starDramaCount(star) {
 }
 
 function actorChip(actor) {
-    return `<button onclick="filterByStar('${esc(actor)}'); closeDramaDetails();" class="inline-block mr-1 mb-1 px-2 py-1 rounded-full bg-pink-50 text-pink-600 border border-pink-100 hover:bg-pink-100">${esc(actor)}</button>`;
+    return `<button onclick='filterByStar(${jsArg(actor)}); closeDramaDetails();' title="Voir toutes les séries avec ${esc(actor)}" class="inline-block mr-1 mb-1 px-2 py-1 rounded-full bg-pink-50 text-pink-600 border border-pink-100 hover:bg-pink-100 transition-all">${esc(actor)}</button>`;
+}
+
+function actorChipsList(d) {
+    const actors = (d.acteurs || []).filter(Boolean).slice(0, 6);
+    if(!actors.length) return '';
+    return `<div class="text-[10px] text-pink-500 mt-2 flex flex-wrap gap-1">${actors.map(actorChip).join('')}</div>`;
+}
+
+function dramasForStar(star) {
+    return dramas.filter(d => (d.acteurs || []).includes(star));
 }
 
 function renderStars() {
@@ -9276,16 +9406,16 @@ function renderStars() {
         const isFav = starFavoris.includes(s);
         return `<div class="star-card p-4 rounded-2xl text-xs font-bold text-sky-800 transition-all hover:shadow-lg">
             <div class="flex justify-between items-start gap-2">
-                <button onclick="filterByStar('${esc(s)}')" class="flex-1 text-left">
+                <button onclick='filterByStar(${jsArg(s)})' class="flex-1 text-left">
                     <span class="block text-sm">${isFav ? '⭐ ' : ''}${esc(s)}</span>
                     <span class="text-[10px] text-pink-500">${count} drama(s)</span>
                 </button>
-                <button onclick="toggleStarFav('${esc(s)}', event)" class="text-lg leading-none hover:scale-110 transition-transform" title="Star favorite">
+                <button onclick='toggleStarFav(${jsArg(s)}, event)' class="text-lg leading-none hover:scale-110 transition-transform" title="Star favorite">
                     ${isFav ? '💗' : '🤍'}
                 </button>
             </div>
             <div class="flex flex-wrap gap-2 mt-3">
-                <button onclick="filterByStar('${esc(s)}')" class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-600 border border-sky-100 hover:bg-sky-100 transition-all shadow-sm">
+                <button onclick='filterByStar(${jsArg(s)})' class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-600 border border-sky-100 hover:bg-sky-100 transition-all shadow-sm">
                     📺 Voir
                 </button>
                 <a href="${googleImages}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-pink-100 text-pink-600 border border-pink-200 hover:bg-pink-200 transition-all shadow-sm">
@@ -9297,7 +9427,13 @@ function renderStars() {
 }
 
 function filterByStar(star) {
-    starFilter = star.replace(/&#039;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    starFilter = String(star || '').replace(/&#039;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    currentGenre = 'Tous';
+    currentYear = 'Toutes';
+    const searchEl = document.getElementById('search-bar');
+    if(searchEl) searchEl.value = '';
+    renderFilters();
+    if (typeof renderYearFilters === 'function') renderYearFilters();
     showTab('dramas');
     afficherDramas();
 }
@@ -9329,7 +9465,7 @@ function ajouterDrama() {
     const drama = { id: Date.now(), titre: title, genre, plateforme: platform, acteurs: actors };
     customDramas.push(drama);
     localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
-    dramas = [...baseDramas, ...customDramas];
+    dramas = [...baseDramas, ...customDramas].map(d => ({...d, titre: d.titre || 'Titre inconnu', genre: d.genre || 'Drame', plateforme: d.plateforme || 'À vérifier', acteurs: Array.isArray(d.acteurs) ? d.acteurs : []}));
     document.getElementById('new-drama-title').value = '';
     document.getElementById('new-drama-platform').value = '';
     document.getElementById('new-drama-actors').value = '';
@@ -9483,7 +9619,7 @@ function getAIResponse(text) {
     let conseil = '';
 
     if (isGreetingOnly(text)) {
-        return `Annyeong 🫰✨ Je suis Daebak, ton assistante K-Drama ! Ta liste : <b>${dramas.length} dramas</b>.<br><br>Essaie : <i>romance, thriller, avec Ji Chang-wook, mes favoris, combien j\'ai de dramas...</i>`;
+        return `Annyeong 🫰✨ Je suis Daebak, ton assistante K-Drama ! Ta liste : <b>${dramas.length} dramas</b>.<br><br>Essaie : <i>romance, thriller, avec Ji Chang Wook, mes favoris, combien j\'ai de dramas...</i>`;
     }
 
     if (intention === 'stats') {
@@ -9713,13 +9849,98 @@ function getSmartAIResponse(msg) {
 }
 
 
+
+
+function ajouterMessageBot(html) {
+    const zone = document.getElementById("chat-messages");
+    if (!zone) return;
+    zone.innerHTML += `
+        <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500 shadow-md"><i class="fa-solid fa-robot"></i></div>
+            <div class="soft-card p-4 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">${html}</div>
+        </div>`;
+    zone.scrollTop = zone.scrollHeight;
+}
+
+function normaliserTexteOppaBot(txt) {
+    return (txt || "")
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[-_']/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function trouverActeurDansMessage(message) {
+    const msg = normaliserTexteOppaBot(message);
+    if (!msg) return null;
+
+    const index = {};
+    (dramas || []).forEach(d => {
+        (d.acteurs || []).forEach(a => {
+            if (!a || typeof a !== "string") return;
+            const propre = a.trim();
+            const cle = normaliserTexteOppaBot(propre);
+            if (cle.length < 3) return;
+            if (!index[cle]) index[cle] = propre;
+        });
+    });
+
+    const acteurs = Object.keys(index).sort((a, b) => b.length - a.length);
+    for (const cle of acteurs) {
+        if (msg.includes(cle)) return index[cle];
+    }
+    return null;
+}
+
+function ouvrirFicheActeurDepuisOppaBot(nomActeur) {
+    if (!nomActeur) return;
+
+    // On ouvre directement l'onglet Stars et on cherche l'acteur.
+    showTab("stars");
+
+    const starSearch = document.getElementById("star-search");
+    if (starSearch) starSearch.value = nomActeur;
+
+    renderStars();
+
+    setTimeout(() => {
+        const starsList = document.getElementById("stars-list");
+        if (starsList) starsList.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+}
+
+function repondreActeurOppaBot(message) {
+    const acteur = trouverActeurDansMessage(message);
+    if (!acteur) return false;
+
+    ajouterMessageBot(`Je t'ouvre la fiche de <b>${acteur}</b> 🌸 Clique sur <b>Voir</b> pour afficher ses dramas.`);
+    ouvrirFicheActeurDepuisOppaBot(acteur);
+    return true;
+}
+
+
 function envoyerMessage() {
     const input = document.getElementById('chat-input');
     const msg = input.value.trim();
     if(!msg) return;
+
     const box = document.getElementById('chat-messages');
     box.insertAdjacentHTML('beforeend', `<div class="text-right mb-2"><div class="inline-block bg-gradient-to-r from-sky-400 to-pink-400 text-white p-3 px-4 rounded-2xl rounded-tr-none text-sm">${esc(msg)}</div></div>`);
     input.value = '';
+
+    // Si OppaBot reconnaît un acteur, il ouvre directement sa fiche Stars.
+    const acteurTrouve = trouverActeurDansMessage(msg);
+    if (acteurTrouve) {
+        setTimeout(() => {
+            box.insertAdjacentHTML('beforeend', `<div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500"><i class="fa-solid fa-robot"></i></div><div class="bg-white p-4 rounded-2xl rounded-tl-none text-sm border border-sky-100 leading-relaxed text-slate-600">Je t'ouvre la fiche de <b>${esc(acteurTrouve)}</b> 🌸</div></div>`);
+            ouvrirFicheActeurDepuisOppaBot(acteurTrouve);
+        }, 250);
+        return;
+    }
+
     setTimeout(async () => {
         box.insertAdjacentHTML('beforeend', `<div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500"><i class="fa-solid fa-robot"></i></div><div class="bg-white p-4 rounded-2xl rounded-tl-none text-sm border border-sky-100 leading-relaxed text-slate-600">${await getSmartAIResponse(msg)}</div></div>`);
         document.getElementById('tab-content').scrollTop = document.getElementById('tab-content').scrollHeight;
@@ -9728,6 +9949,7 @@ function envoyerMessage() {
 
 
 renderFilters();
+if (typeof renderYearFilters === 'function') renderYearFilters();
 afficherDramas();
 renderStars();
 
