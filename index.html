@@ -79,7 +79,7 @@
     <div class="app-shell w-full max-w-md bg-white/72 rounded-[40px] overflow-hidden flex flex-col h-[750px] border border-pink-100/70 backdrop-blur-xl">
         <header class="header-gradient p-8 text-center text-pink-950 shadow-lg">
             <h1 class="text-2xl font-bold tracking-wide">Daebak Connect 🫰</h1>
-            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama 🇰🇷</p>
+            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">941 dramas dans Daebak Connect 🇰🇷</p>
         </header>
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
@@ -13553,6 +13553,15 @@ function vipLogout() {
         } catch(e) {}
     }
 })();
+
+// ✅ Compteur Daebak Connect actualisé automatiquement
+document.addEventListener('DOMContentLoaded', function() {
+    const countHeader = document.getElementById('drama-count-header');
+    if (countHeader && typeof baseDramas !== 'undefined') {
+        countHeader.textContent = baseDramas.length + ' dramas dans Daebak Connect 🇰🇷';
+    }
+});
+
 </script>
 </body>
 </html>
