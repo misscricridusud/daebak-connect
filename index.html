@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daebak Connect - 1107 dramas 🫰</title>
+    <title>Daebak Connect - 1112 dramas 🫰</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -79,7 +79,7 @@
     <div class="app-shell w-full max-w-md bg-white/72 rounded-[40px] overflow-hidden flex flex-col h-[750px] border border-pink-100/70 backdrop-blur-xl">
         <header class="header-gradient p-8 text-center text-pink-950 shadow-lg">
             <h1 class="text-2xl font-bold tracking-wide">Daebak Connect 🫰</h1>
-            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1107 dramas 🇰🇷</p>
+            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1112 dramas 🇰🇷</p>
         </header>
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
@@ -131,7 +131,22 @@
                     <h3 class="text-base font-bold text-sky-800 mb-4">Ajouter un K-Drama 🇰🇷</h3>
                     <input type="text" id="new-drama-title" placeholder="Titre..." class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
                     <select id="new-drama-genre" class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
-                        <option>Drame</option><option>Romance</option><option>Action</option><option>Thriller</option><option>Comédie</option><option>Fantastique</option><option>Movie</option>
+                        <option>Drame</option>
+                        <option>Romance</option>
+                        <option>Comédie</option>
+                        <option>Action</option>
+                        <option>Thriller</option>
+                        <option>Horreur</option>
+                        <option>Fantastique</option>
+                        <option>Surnaturel</option>
+                        <option>Science-Fiction</option>
+                        <option>École</option>
+                        <option>Juridique</option>
+                        <option>Médical</option>
+                        <option>Historique</option>
+                        <option>Family</option>
+                        <option>Melodrama</option>
+                        <option>Movie</option>
                     </select>
                     <input type="text" id="new-drama-platform" placeholder="Plateforme ex: Netflix, Viki..." class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
                     <input type="text" id="new-drama-actors" placeholder="Acteurs séparés par des virgules" class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
@@ -13712,6 +13727,41 @@ const baseDramas = [
                         "acteurs": [],
                         "annee": 2021,
                         "episodes": 16
+            },
+            {
+                        "id": 1110,
+                        "titre": "Love & Wish",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": []
+            },
+            {
+                        "id": 1111,
+                        "titre": "A Time to Remember",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": []
+            },
+            {
+                        "id": 1112,
+                        "titre": "Behind Cut",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": []
+            },
+            {
+                        "id": 1113,
+                        "titre": "The Man's Voice",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": []
+            },
+            {
+                        "id": 1114,
+                        "titre": "Her Bucket List",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": []
             }
 ];
 let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
@@ -14061,7 +14111,7 @@ function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
     const headerCount = document.getElementById('drama-count-header');
-    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1107 dramas 🇰🇷`;
+    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1112 dramas 🇰🇷`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
@@ -15023,7 +15073,7 @@ function vipLogout() {
 document.addEventListener('DOMContentLoaded', function() {
     const countHeader = document.getElementById('drama-count-header');
     if (countHeader && typeof baseDramas !== 'undefined') {
-        countHeader.textContent = 'Ton assistant K-Drama • 1107 dramas 🇰🇷';
+        countHeader.textContent = 'Ton assistant K-Drama • 1112 dramas 🇰🇷';
     }
 });
 
