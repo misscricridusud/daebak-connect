@@ -356,15 +356,17 @@
     </div>
 
 <script>
+<!-- Nettoyage catégories V4 MAX : 268 + 45 reclassements contrôlés, total 1175 dramas. -->
 const baseDramas = [
             {
                         "id": 1,
                         "titre": "17 First Kisses",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Lee Joon Gi"
-                        ]
+                        ],
+                        "tags": "Romance"
             },
             {
                         "id": 2,
@@ -378,13 +380,14 @@ const baseDramas = [
             {
                         "id": 3,
                         "titre": "A Good Day to Be a Dog",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Cha Eun-woo",
                                     "Park Gyu-young"
                         ],
-                        "synopsis": "It will revolve around Hana who is bound to inherit her family curse which is turning into a dog after getting her first kiss. The only way to break the curse is to get a second kiss. The problem is the guy who gave Hana her first kiss is afraid of dogs."
+                        "synopsis": "It will revolve around Hana who is bound to inherit her family curse which is turning into a dog after getting her first kiss. The only way to break the curse is to get a second kiss. The problem is the guy who gave Hana her first kiss is afraid of dogs.",
+                        "tags": "Fantastique"
             },
             {
                         "id": 4,
@@ -620,7 +623,7 @@ const baseDramas = [
             {
                         "id": 20,
                         "titre": "Be Melodramatic",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Chun Woo-hee",
@@ -634,7 +637,8 @@ const baseDramas = [
                         "note": 8.5,
                         "annee": 2019,
                         "episodes": 16,
-                        "synopsis": "At the start of their 30s, three friends navigate the demanding entertainment industry while juggling love, careers and dreams."
+                        "synopsis": "At the start of their 30s, three friends navigate the demanding entertainment industry while juggling love, careers and dreams.",
+                        "tags": "Life"
             },
             {
                         "id": 21,
@@ -697,7 +701,7 @@ const baseDramas = [
             {
                         "id": 25,
                         "titre": "Black",
-                        "genre": "Surnaturel",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Song Seung-heon",
@@ -728,7 +732,7 @@ const baseDramas = [
             {
                         "id": 28,
                         "titre": "Branding in Seongsu",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Park Solomon",
@@ -739,7 +743,8 @@ const baseDramas = [
                         ],
                         "note": 7.6,
                         "annee": 2024,
-                        "episodes": 24
+                        "episodes": 24,
+                        "tags": "Business"
             },
             {
                         "id": 29,
@@ -816,11 +821,12 @@ const baseDramas = [
             {
                         "id": 36,
                         "titre": "CEO-dol Mart",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Lee Shin-young"
-                        ]
+                        ],
+                        "tags": "Business"
             },
             {
                         "id": 37,
@@ -1035,11 +1041,12 @@ const baseDramas = [
             {
                         "id": 52,
                         "titre": "Face Me",
-                        "genre": "Drame",
+                        "genre": "Médical",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Lee Min-ki"
-                        ]
+                        ],
+                        "tags": "Médical"
             },
             {
                         "id": 53,
@@ -1090,13 +1097,14 @@ const baseDramas = [
             {
                         "id": 56,
                         "titre": "Forecasting Love and Weather",
-                        "genre": "Romance",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Song Kang",
                                     "Park Min Young"
                         ],
-                        "synopsis": "Inside a national weather service, love proves just as difficult to predict as rain or shine for a diligent forecaster and her free-spirited co-worker."
+                        "synopsis": "Inside a national weather service, love proves just as difficult to predict as rain or shine for a diligent forecaster and her free-spirited co-worker.",
+                        "tags": "Business"
             },
             {
                         "id": 57,
@@ -1130,7 +1138,7 @@ const baseDramas = [
             {
                         "id": 59,
                         "titre": "Gaus Electronics",
-                        "genre": "Comédie",
+                        "genre": "Business",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Kwak Dong-yeon",
@@ -1144,7 +1152,8 @@ const baseDramas = [
                         "note": 8.5,
                         "annee": 2022,
                         "episodes": 12,
-                        "synopsis": "The series is about the office workers of Marketing Team 3 at the home appliance headquarters of Gaus Electronics—a multinational company. It highlights the highs and lows of corporate life, and love and friendship between the employees."
+                        "synopsis": "The series is about the office workers of Marketing Team 3 at the home appliance headquarters of Gaus Electronics—a multinational company. It highlights the highs and lows of corporate life, and love and friendship between the employees.",
+                        "tags": "Business"
             },
             {
                         "id": 60,
@@ -1204,7 +1213,7 @@ const baseDramas = [
             {
                         "id": 63,
                         "titre": "Chief Kim",
-                        "genre": "Comédie",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Namgoong Min",
@@ -1218,7 +1227,8 @@ const baseDramas = [
                         ],
                         "note": 8.6,
                         "annee": 2017,
-                        "episodes": 20
+                        "episodes": 20,
+                        "tags": "Business"
             },
             {
                         "id": 64,
@@ -1342,7 +1352,7 @@ const baseDramas = [
             {
                         "id": 72,
                         "titre": "Hotel del Luna",
-                        "genre": "Surnaturel",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "IU",
@@ -1771,7 +1781,7 @@ const baseDramas = [
             {
                         "id": 103,
                         "titre": "My Dearest Nemesis",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Mun Ka Young",
@@ -1781,7 +1791,8 @@ const baseDramas = [
                         ],
                         "note": 8.3,
                         "annee": 2025,
-                        "episodes": 12
+                        "episodes": 12,
+                        "tags": "Romance"
             },
             {
                         "id": 104,
@@ -1796,21 +1807,23 @@ const baseDramas = [
             {
                         "id": 105,
                         "titre": "My Golden Life",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Park Si-hoo"
                         ],
-                        "synopsis": "A hardworking contract worker desperate for a full-time job finds her life turning upside down after an unexpected revelation about her family."
+                        "synopsis": "A hardworking contract worker desperate for a full-time job finds her life turning upside down after an unexpected revelation about her family.",
+                        "tags": "Family"
             },
             {
                         "id": 106,
                         "titre": "My Happy Ending",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Jang Na-ra"
-                        ]
+                        ],
+                        "tags": "Thriller"
             },
             {
                         "id": 107,
@@ -1972,7 +1985,7 @@ const baseDramas = [
             {
                         "id": 119,
                         "titre": "Our Blues",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Lee Byung-hun",
@@ -1986,7 +1999,8 @@ const baseDramas = [
                         "note": 8.7,
                         "annee": 2022,
                         "episodes": 20,
-                        "synopsis": "Romance is sweet and bitter — and life riddled with ups and downs — in multiple stories about people who live and work on bustling Jeju island."
+                        "synopsis": "Romance is sweet and bitter — and life riddled with ups and downs — in multiple stories about people who live and work on bustling Jeju island.",
+                        "tags": "Life"
             },
             {
                         "id": 120,
@@ -2224,13 +2238,14 @@ const baseDramas = [
             {
                         "id": 138,
                         "titre": "Start-Up",
-                        "genre": "Romance",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Bae Suzy",
                                     "Nam Joo-hyuk"
                         ],
-                        "synopsis": "Young entrepreneurs aspiring to launch virtual dreams into reality compete for success and love in the cutthroat world of Korea's high-tech industry."
+                        "synopsis": "Young entrepreneurs aspiring to launch virtual dreams into reality compete for success and love in the cutthroat world of Korea's high-tech industry.",
+                        "tags": "Business"
             },
             {
                         "id": 139,
@@ -2707,12 +2722,13 @@ const baseDramas = [
             {
                         "id": 174,
                         "titre": "Thirty-Nine",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Son Ye-jin"
                         ],
-                        "synopsis": "Leaning on each other through thick and thin, a trio of best friends stand together as they experience life, love and loss on the brink of turning 40."
+                        "synopsis": "Leaning on each other through thick and thin, a trio of best friends stand together as they experience life, love and loss on the brink of turning 40.",
+                        "tags": "Life"
             },
             {
                         "id": 175,
@@ -2831,9 +2847,10 @@ const baseDramas = [
             {
                         "id": 182,
                         "titre": "Typhoon Family",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 183,
@@ -3077,7 +3094,7 @@ const baseDramas = [
             {
                         "id": 202,
                         "titre": "Wonderful World",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Cha Eun-woo",
@@ -3088,7 +3105,8 @@ const baseDramas = [
                         ],
                         "note": 8.3,
                         "annee": 2024,
-                        "episodes": 14
+                        "episodes": 14,
+                        "tags": "Thriller"
             },
             {
                         "id": 203,
@@ -4463,7 +4481,7 @@ const baseDramas = [
             {
                         "id": 278,
                         "titre": "Age of Youth",
-                        "genre": "Romance",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Han Ye Ri",
@@ -4476,7 +4494,8 @@ const baseDramas = [
                         "note": 8.6,
                         "annee": 2016,
                         "episodes": 12,
-                        "source": "Dataset"
+                        "source": "Dataset",
+                        "tags": "École"
             },
             {
                         "id": 279,
@@ -4631,7 +4650,7 @@ const baseDramas = [
             {
                         "id": 287,
                         "titre": "Beautiful World",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Park Hee Soon",
@@ -4645,7 +4664,8 @@ const baseDramas = [
                         "annee": 2019,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "This drama tells the story of a boy who becomes critically injured due to an incident of school violence and his family who seeks the truth and fights for justice in his name."
+                        "synopsis": "This drama tells the story of a boy who becomes critically injured due to an incident of school violence and his family who seeks the truth and fights for justice in his name.",
+                        "tags": "Family"
             },
             {
                         "id": 288,
@@ -4689,7 +4709,7 @@ const baseDramas = [
             {
                         "id": 290,
                         "titre": "I Hear Your Voice",
-                        "genre": "Romance",
+                        "genre": "Juridique",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Jong Suk",
@@ -4703,7 +4723,8 @@ const baseDramas = [
                         "annee": 2013,
                         "episodes": 18,
                         "source": "Dataset",
-                        "synopsis": "An action-packed drama of the events that occur when materialistic government tax lawyer Jung Hye-sung meets Park Suha, who has the ability to read people's thoughts."
+                        "synopsis": "An action-packed drama of the events that occur when materialistic government tax lawyer Jung Hye-sung meets Park Suha, who has the ability to read people's thoughts.",
+                        "tags": "Juridique"
             },
             {
                         "id": 291,
@@ -4728,7 +4749,7 @@ const baseDramas = [
             {
                         "id": 292,
                         "titre": "Reply 1997",
-                        "genre": "Romance",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Jung Eun Ji",
@@ -4742,7 +4763,8 @@ const baseDramas = [
                         "annee": 2012,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "Set in the 1990's, the drama centers around a female high school student Shi Won, who idolizes boyband H.O.T and her 5 high school friends in Busan. As the timeline moves back and forth between their past as 18-year-old high schoolers in 1997 and their present as 33-year-olds at their high school reunion dinner in 2012, where one couple will announce that they're getting married."
+                        "synopsis": "Set in the 1990's, the drama centers around a female high school student Shi Won, who idolizes boyband H.O.T and her 5 high school friends in Busan. As the timeline moves back and forth between their past as 18-year-old high schoolers in 1997 and their present as 33-year-olds at their high school reunion dinner in 2012, where one couple will announce that they're getting married.",
+                        "tags": "École"
             },
             {
                         "id": 293,
@@ -4880,7 +4902,7 @@ const baseDramas = [
             {
                         "id": 300,
                         "titre": "Thirty But Seventeen",
-                        "genre": "Romance",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Shin Hye Sun",
@@ -4893,7 +4915,8 @@ const baseDramas = [
                         "note": 8.5,
                         "annee": 2018,
                         "episodes": 32,
-                        "source": "Dataset"
+                        "source": "Dataset",
+                        "tags": "École"
             },
             {
                         "id": 301,
@@ -5161,7 +5184,7 @@ const baseDramas = [
             {
                         "id": 315,
                         "titre": "Lost",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Jeon Do Yeon",
@@ -5175,7 +5198,8 @@ const baseDramas = [
                         "annee": 2021,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "A forty year old woman who feels like she has not accomplished anything in life and a twenty-seven year old man who's frightened of himself."
+                        "synopsis": "A forty year old woman who feels like she has not accomplished anything in life and a twenty-seven year old man who's frightened of himself.",
+                        "tags": "Life"
             },
             {
                         "id": 316,
@@ -5313,7 +5337,7 @@ const baseDramas = [
             {
                         "id": 323,
                         "titre": "Search: WWW",
-                        "genre": "Romance",
+                        "genre": "Business",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Im Soo Jung",
@@ -5327,7 +5351,8 @@ const baseDramas = [
                         "annee": 2019,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "The stories of ambitious career women working at the top of the best portal sites in the IT industry. Paved with wins and losses, their road to success takes a new turn when love comes along the way."
+                        "synopsis": "The stories of ambitious career women working at the top of the best portal sites in the IT industry. Paved with wins and losses, their road to success takes a new turn when love comes along the way.",
+                        "tags": "Business"
             },
             {
                         "id": 324,
@@ -5464,7 +5489,7 @@ const baseDramas = [
             {
                         "id": 331,
                         "titre": "Extraordinary You",
-                        "genre": "Romance",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Kim Hye Yoon",
@@ -5477,7 +5502,8 @@ const baseDramas = [
                         "note": 8.4,
                         "annee": 2019,
                         "episodes": 32,
-                        "source": "Dataset"
+                        "source": "Dataset",
+                        "tags": "École"
             },
             {
                         "id": 332,
@@ -5540,7 +5566,7 @@ const baseDramas = [
             {
                         "id": 335,
                         "titre": "My Unfamiliar Family",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Han Ye Ri",
@@ -5554,12 +5580,13 @@ const baseDramas = [
                         "annee": 2020,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "A family must deal with the unresolved emotions and misunderstandings that deeply affect their relationships with each other. From the mother that wants to graduate from her marriage, to the daughter who discovers her husband's well-hidden secret, the family must learn to rely on and communicate with each other."
+                        "synopsis": "A family must deal with the unresolved emotions and misunderstandings that deeply affect their relationships with each other. From the mother that wants to graduate from her marriage, to the daughter who discovers her husband's well-hidden secret, the family must learn to rely on and communicate with each other.",
+                        "tags": "Family"
             },
             {
                         "id": 336,
                         "titre": "Age of Youth 2",
-                        "genre": "Romance",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Han Ye Ri",
@@ -5572,7 +5599,8 @@ const baseDramas = [
                         "note": 8.4,
                         "annee": 2017,
                         "episodes": 14,
-                        "source": "Dataset"
+                        "source": "Dataset",
+                        "tags": "École"
             },
             {
                         "id": 337,
@@ -5671,7 +5699,7 @@ const baseDramas = [
             {
                         "id": 342,
                         "titre": "My Country: The New Age",
-                        "genre": "Romance",
+                        "genre": "Historique",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Yang Se Jong",
@@ -5685,7 +5713,8 @@ const baseDramas = [
                         "annee": 2019,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "Set during the turbulent time of the fall of Goryeo and the founding of Joseon, two former friends face-off against one another over a woman and the future shape of the nation."
+                        "synopsis": "Set during the turbulent time of the fall of Goryeo and the founding of Joseon, two former friends face-off against one another over a woman and the future shape of the nation.",
+                        "tags": "Historique"
             },
             {
                         "id": 343,
@@ -6171,7 +6200,7 @@ const baseDramas = [
             {
                         "id": 368,
                         "titre": "Misty",
-                        "genre": "Romance",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Kim Nam Joo",
@@ -6185,7 +6214,8 @@ const baseDramas = [
                         "annee": 2018,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "When a popular anchorwoman for a prime time news show becomes the suspect in a murder case, her estranged husband - who has worked as a prosecutor in the past but now works as a public defender - decides to defend his wife."
+                        "synopsis": "When a popular anchorwoman for a prime time news show becomes the suspect in a murder case, her estranged husband - who has worked as a prosecutor in the past but now works as a public defender - decides to defend his wife.",
+                        "tags": "Thriller"
             },
             {
                         "id": 369,
@@ -6835,7 +6865,7 @@ const baseDramas = [
             {
                         "id": 403,
                         "titre": "Memory",
-                        "genre": "Romance",
+                        "genre": "Juridique",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Sung Min",
@@ -6849,7 +6879,8 @@ const baseDramas = [
                         "annee": 2016,
                         "episodes": 16,
                         "source": "Dataset",
-                        "synopsis": "This drama is about a lawyer, Park Tae Suk who finds out that he has Alzheimer’s and puts his life on the line to fight one last case. The drama depicts his vigorous efforts trying to protect the precious value of the life and family love, while his memory starts fading away."
+                        "synopsis": "This drama is about a lawyer, Park Tae Suk who finds out that he has Alzheimer’s and puts his life on the line to fight one last case. The drama depicts his vigorous efforts trying to protect the precious value of the life and family love, while his memory starts fading away.",
+                        "tags": "Juridique"
             },
             {
                         "id": 404,
@@ -6920,7 +6951,7 @@ const baseDramas = [
             {
                         "id": 408,
                         "titre": "One Day Off",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Na Young"
@@ -6928,7 +6959,8 @@ const baseDramas = [
                         "note": 8.3,
                         "annee": 2023,
                         "episodes": 8,
-                        "source": "Dataset"
+                        "source": "Dataset",
+                        "tags": "Life"
             },
             {
                         "id": 409,
@@ -7524,7 +7556,7 @@ const baseDramas = [
             {
                         "id": 445,
                         "titre": "Uncle Samsik",
-                        "genre": "Drame",
+                        "genre": "Politique",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Song Kang Ho",
@@ -7536,7 +7568,8 @@ const baseDramas = [
                         "note": 7.5,
                         "annee": 2024,
                         "episodes": 16,
-                        "source": "Dataset"
+                        "source": "Dataset",
+                        "tags": "Politique"
             },
             {
                         "id": 446,
@@ -7925,7 +7958,7 @@ const baseDramas = [
             {
                         "id": 470,
                         "titre": "Reply 1994",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Go Ara",
@@ -7935,12 +7968,13 @@ const baseDramas = [
                         "source": "Ajout Go Ara",
                         "annee": 2013,
                         "episodes": 21,
-                        "synopsis": "A group of university students from different provinces live together in a boarding house in Seoul in 1994, sharing friendship, youth and first love."
+                        "synopsis": "A group of university students from different provinces live together in a boarding house in Seoul in 1994, sharing friendship, youth and first love.",
+                        "tags": "École"
             },
             {
                         "id": 471,
                         "titre": "Haechi",
-                        "genre": "Drame",
+                        "genre": "Historique",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Go Ara",
@@ -7950,7 +7984,8 @@ const baseDramas = [
                         "source": "Ajout Go Ara",
                         "annee": 2019,
                         "episodes": 48,
-                        "synopsis": "During the Joseon dynasty, a prince born from a low-ranking mother fights political enemies and corruption to claim his place on the throne."
+                        "synopsis": "During the Joseon dynasty, a prince born from a low-ranking mother fights political enemies and corruption to claim his place on the throne.",
+                        "tags": "Historique"
             },
             {
                         "id": 472,
@@ -8125,10 +8160,11 @@ const baseDramas = [
             {
                         "id": 487,
                         "titre": "Hearts and Hari",
-                        "genre": "Fantastique",
+                        "genre": "École",
                         "plateforme": "À trouver",
                         "acteurs": [],
-                        "synopsis": "Gu Ha Ri, étudiante de 20 ans, décroche un job à mi-temps dans un café baptisé 'Red Thread' (Le Fil Rouge). Alors qu'elle espère y passer des journées paisibles entourée de ses amis, sa vie prend un tournant inattendu lorsqu'elle se retrouve au cœur d'un mystère."
+                        "synopsis": "Gu Ha Ri, étudiante de 20 ans, décroche un job à mi-temps dans un café baptisé 'Red Thread' (Le Fil Rouge). Alors qu'elle espère y passer des journées paisibles entourée de ses amis, sa vie prend un tournant inattendu lorsqu'elle se retrouve au cœur d'un mystère.",
+                        "tags": "École"
             },
             {
                         "id": 488,
@@ -8193,12 +8229,13 @@ const baseDramas = [
             {
                         "id": 494,
                         "titre": "Pearl in Red",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2026,
                         "nouveaute": true,
-                        "synopsis": "Kim Dan Hui a perdu sa sœur jumelle Myeong Hui dans des circonstances tragiques. Sa sœur a été sacrifiée par l'ambition du président sans scrupules Park Tae Ho. Pour se venger, Dan Hui décide de 'tuer' sa propre identité et de vivre sous le nom de sa défunte sœur."
+                        "synopsis": "Kim Dan Hui a perdu sa sœur jumelle Myeong Hui dans des circonstances tragiques. Sa sœur a été sacrifiée par l'ambition du président sans scrupules Park Tae Ho. Pour se venger, Dan Hui décide de 'tuer' sa propre identité et de vivre sous le nom de sa défunte sœur.",
+                        "tags": "Melodrama"
             },
             {
                         "id": 495,
@@ -8385,11 +8422,12 @@ const baseDramas = [
             {
                         "id": 514,
                         "titre": "Melo Movie",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2025,
-                        "synopsis": "Un drame romantique et mélo autour du cinéma et de l'amour."
+                        "synopsis": "Un drame romantique et mélo autour du cinéma et de l'amour.",
+                        "tags": "Romance"
             },
             {
                         "id": 515,
@@ -8472,11 +8510,12 @@ const baseDramas = [
             {
                         "id": 523,
                         "titre": "Les Silences de l'Amour",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2024,
-                        "synopsis": "Un drame romantique coréen."
+                        "synopsis": "Un drame romantique coréen.",
+                        "tags": "Romance"
             },
             {
                         "id": 524,
@@ -8511,11 +8550,12 @@ const baseDramas = [
             {
                         "id": 527,
                         "titre": "Mr. Plankton",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2024,
-                        "synopsis": "Un drama romantique et mélancolique sur deux personnes que la vie réunit dans des circonstances inattendues."
+                        "synopsis": "Un drama romantique et mélancolique sur deux personnes que la vie réunit dans des circonstances inattendues.",
+                        "tags": "Romance"
             },
             {
                         "id": 528,
@@ -8616,11 +8656,12 @@ const baseDramas = [
             {
                         "id": 538,
                         "titre": "Pour Seul Bagage",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2024,
-                        "synopsis": "Un drame coréen sur le voyage et les rencontres."
+                        "synopsis": "Un drame coréen sur le voyage et les rencontres.",
+                        "tags": "Romance"
             },
             {
                         "id": 539,
@@ -8634,11 +8675,12 @@ const baseDramas = [
             {
                         "id": 540,
                         "titre": "Les Vertus de la Vengeance",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2024,
-                        "synopsis": "Un drama coréen dramatique."
+                        "synopsis": "Un drama coréen dramatique.",
+                        "tags": "Thriller"
             },
             {
                         "id": 541,
@@ -8747,7 +8789,7 @@ const baseDramas = [
                         "id": 549,
                         "titre": "Poong, the Joseon Psychiatrist",
                         "annee": 2022,
-                        "genre": "Historique",
+                        "genre": "Médical",
                         "plateforme": "tvN",
                         "note": "6.1",
                         "acteurs": [
@@ -8755,7 +8797,8 @@ const baseDramas = [
                                     "Kim Min Jae"
                         ],
                         "synopsis": "Un médecin de l'ère Joseon spécialisé en psychiatrie aide ses patients à traverser leurs troubles mentaux avec des méthodes innovantes pour l'époque.",
-                        "episodes": 16
+                        "episodes": 16,
+                        "tags": "Médical"
             },
             {
                         "id": 550,
@@ -8875,7 +8918,7 @@ const baseDramas = [
                         "id": 558,
                         "titre": "Une mauvaise mère ?",
                         "annee": 2023,
-                        "genre": "Drame",
+                        "genre": "Music",
                         "plateforme": "JTBC",
                         "note": "7.8",
                         "acteurs": [
@@ -8883,7 +8926,8 @@ const baseDramas = [
                                     "Lee Do Hyun"
                         ],
                         "synopsis": "Une procureure ambitieuse se retrouve face à son fils qu'elle a abandonné enfant, désormais dans le coma. Elle doit le soigner tout en affrontant ses remords.",
-                        "episodes": 16
+                        "episodes": 16,
+                        "tags": "Music"
             },
             {
                         "id": 559,
@@ -8976,7 +9020,7 @@ const baseDramas = [
                         "id": 565,
                         "titre": "Reborn Rich",
                         "annee": 2022,
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "JTBC",
                         "note": "8.2",
                         "acteurs": [
@@ -8984,13 +9028,14 @@ const baseDramas = [
                                     "Lee Sung Min"
                         ],
                         "synopsis": "Un secrétaire tué par la famille chaebol qu'il servait se réincarne en son plus jeune fils, bien décidé à prendre sa revanche depuis l'intérieur.",
-                        "episodes": 16
+                        "episodes": 16,
+                        "tags": "Fantastique"
             },
             {
                         "id": 566,
                         "titre": "Cheer Up",
                         "annee": 2022,
-                        "genre": "Comédie",
+                        "genre": "École",
                         "plateforme": "SBS",
                         "note": "6.5",
                         "acteurs": [
@@ -8998,7 +9043,8 @@ const baseDramas = [
                                     "Bae In Hyuk"
                         ],
                         "synopsis": "Une étudiante froide et calculatrice rejoint l'équipe de pom-pom girls de son université par intérêt, mais finit par découvrir la valeur de l'amitié et de la passion.",
-                        "episodes": 16
+                        "episodes": 16,
+                        "tags": "École"
             },
             {
                         "id": 567,
@@ -9018,7 +9064,7 @@ const baseDramas = [
                         "id": 568,
                         "titre": "Anna",
                         "annee": 2022,
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Coupang Play",
                         "note": "7.5",
                         "acteurs": [
@@ -9026,7 +9072,8 @@ const baseDramas = [
                                     "Jung Eun Chae"
                         ],
                         "synopsis": "Une femme ordinaire usurpe l'identité d'une autre pour fuir sa vie misérable, mais ce mensonge prend une ampleur incontrôlable en l'entraînant dans une spirale dangereuse.",
-                        "episodes": 6
+                        "episodes": 6,
+                        "tags": "Thriller"
             },
             {
                         "id": 569,
@@ -9120,7 +9167,7 @@ const baseDramas = [
             {
                         "id": 575,
                         "titre": "Secret Garden",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Hyun Bin",
@@ -9130,7 +9177,8 @@ const baseDramas = [
                         ],
                         "annee": 2010,
                         "episodes": 20,
-                        "synopsis": "Une cascadeuse modeste et un riche directeur arrogant se croisent par hasard. Leur relation devient encore plus folle lorsqu’un phénomène magique échange leurs corps."
+                        "synopsis": "Une cascadeuse modeste et un riche directeur arrogant se croisent par hasard. Leur relation devient encore plus folle lorsqu’un phénomène magique échange leurs corps.",
+                        "tags": "Fantastique"
             },
             {
                         "id": 576,
@@ -9150,7 +9198,7 @@ const baseDramas = [
             {
                         "id": 577,
                         "titre": "Athena: Goddess of War",
-                        "genre": "Drame",
+                        "genre": "Action",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Jung Woo Sung",
@@ -9162,12 +9210,13 @@ const baseDramas = [
                         ],
                         "annee": 2010,
                         "episodes": 20,
-                        "synopsis": "Dans l’univers d’Iris, des agents sud-coréens affrontent une organisation secrète nommée Athena, entre espionnage, complots internationaux et menaces terroristes."
+                        "synopsis": "Dans l’univers d’Iris, des agents sud-coréens affrontent une organisation secrète nommée Athena, entre espionnage, complots internationaux et menaces terroristes.",
+                        "tags": "Action"
             },
             {
                         "id": 578,
                         "titre": "Personal Taste",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Min Ho",
@@ -9177,12 +9226,13 @@ const baseDramas = [
                         ],
                         "annee": 2010,
                         "episodes": 16,
-                        "synopsis": "Une créatrice de meubles accepte de vivre avec un architecte qu’elle croit homosexuel. Entre malentendus, cohabitation et sentiments, leur relation se complique."
+                        "synopsis": "Une créatrice de meubles accepte de vivre avec un architecte qu’elle croit homosexuel. Entre malentendus, cohabitation et sentiments, leur relation se complique.",
+                        "tags": "Romance"
             },
             {
                         "id": 579,
                         "titre": "Protect the Boss",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Ji Sung",
@@ -9191,12 +9241,13 @@ const baseDramas = [
                                     "Wang Ji Hye"
                         ],
                         "annee": 2011,
-                        "synopsis": "Une secrétaire volontaire se retrouve à travailler pour un héritier chaebol immature. Entre bureau, rivalités familiales et sentiments compliqués, leur relation devient vite explosive."
+                        "synopsis": "Une secrétaire volontaire se retrouve à travailler pour un héritier chaebol immature. Entre bureau, rivalités familiales et sentiments compliqués, leur relation devient vite explosive.",
+                        "tags": "Business"
             },
             {
                         "id": 580,
                         "titre": "Heartstrings",
-                        "genre": "Drame",
+                        "genre": "Music",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Jung Yong Hwa",
@@ -9205,12 +9256,13 @@ const baseDramas = [
                                     "So Yi Hyun"
                         ],
                         "annee": 2011,
-                        "synopsis": "Dans une université artistique, une étudiante passionnée de musique traditionnelle croise un chanteur populaire. Leur rivalité laisse peu à peu place à une histoire d'amour et de rêves."
+                        "synopsis": "Dans une université artistique, une étudiante passionnée de musique traditionnelle croise un chanteur populaire. Leur rivalité laisse peu à peu place à une histoire d'amour et de rêves.",
+                        "tags": "Music"
             },
             {
                         "id": 581,
                         "titre": "My Princess",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Song Seung Heon",
@@ -9219,12 +9271,13 @@ const baseDramas = [
                                     "Ryu Soo Young"
                         ],
                         "annee": 2011,
-                        "synopsis": "Une étudiante ordinaire découvre qu'elle est l'héritière d'une famille royale coréenne. Sa vie bascule entre protocole, romance et querelles politiques."
+                        "synopsis": "Une étudiante ordinaire découvre qu'elle est l'héritière d'une famille royale coréenne. Sa vie bascule entre protocole, romance et querelles politiques.",
+                        "tags": "Romance"
             },
             {
                         "id": 582,
                         "titre": "Le Jardin Céleste",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Choi Bool Am",
@@ -9233,12 +9286,13 @@ const baseDramas = [
                                     "Kang Chan Hee"
                         ],
                         "annee": 2011,
-                        "synopsis": "Une femme retourne vivre à la campagne avec ses enfants et tente de reconstruire sa vie. Une histoire familiale douce sur les blessures, le pardon et les nouveaux départs."
+                        "synopsis": "Une femme retourne vivre à la campagne avec ses enfants et tente de reconstruire sa vie. Une histoire familiale douce sur les blessures, le pardon et les nouveaux départs.",
+                        "tags": "Family"
             },
             {
                         "id": 583,
                         "titre": "Lie to Me",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Kang Ji Hwan",
@@ -9247,12 +9301,13 @@ const baseDramas = [
                                     "Jo Yoon Hee"
                         ],
                         "annee": 2011,
-                        "synopsis": "Un mensonge lancé pour sauver la face fait croire qu'une fonctionnaire est mariée à un riche hôtelier. Le faux couple doit alors jouer le jeu, jusqu'à ce que les sentiments s'en mêlent."
+                        "synopsis": "Un mensonge lancé pour sauver la face fait croire qu'une fonctionnaire est mariée à un riche hôtelier. Le faux couple doit alors jouer le jeu, jusqu'à ce que les sentiments s'en mêlent.",
+                        "tags": "Romance"
             },
             {
                         "id": 584,
                         "titre": "Couleur d'une femme",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Yoon So Yi",
@@ -9261,12 +9316,13 @@ const baseDramas = [
                                     "Shim Ji Ho"
                         ],
                         "annee": 2011,
-                        "synopsis": "Deux femmes aux personnalités opposées se retrouvent dans le même univers professionnel. Ambition, amour et rivalité s'entremêlent dans leur parcours."
+                        "synopsis": "Deux femmes aux personnalités opposées se retrouvent dans le même univers professionnel. Ambition, amour et rivalité s'entremêlent dans leur parcours.",
+                        "tags": "Romance"
             },
             {
                         "id": 585,
                         "titre": "Copine de golf",
-                        "genre": "Drame",
+                        "genre": "Sport",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Uee",
@@ -9275,7 +9331,8 @@ const baseDramas = [
                                     "Oh Hyun Kyung"
                         ],
                         "annee": 2011,
-                        "synopsis": "Une jeune femme passionnée de golf poursuit son rêve malgré les obstacles. Entre compétition, famille et romance, elle cherche sa place sur le green et dans la vie."
+                        "synopsis": "Une jeune femme passionnée de golf poursuit son rêve malgré les obstacles. Entre compétition, famille et romance, elle cherche sa place sur le green et dans la vie.",
+                        "tags": "Sport"
             },
             {
                         "id": 586,
@@ -9294,7 +9351,7 @@ const baseDramas = [
             {
                         "id": 587,
                         "titre": "Scent of a Woman",
-                        "genre": "Drame",
+                        "genre": "Médical",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Kim Sun Ah",
@@ -9303,12 +9360,13 @@ const baseDramas = [
                                     "Seo Hyo Rim"
                         ],
                         "annee": 2011,
-                        "synopsis": "Après avoir appris qu'elle est gravement malade, une femme décide de vivre enfin pour elle-même. Elle dresse une liste de rêves à accomplir et rencontre un homme qui change sa vie."
+                        "synopsis": "Après avoir appris qu'elle est gravement malade, une femme décide de vivre enfin pour elle-même. Elle dresse une liste de rêves à accomplir et rencontre un homme qui change sa vie.",
+                        "tags": "Médical"
             },
             {
                         "id": 588,
                         "titre": "Miss Ripley",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Lee Da Hae",
@@ -9317,7 +9375,8 @@ const baseDramas = [
                                     "Kang Hye Jung"
                         ],
                         "annee": 2011,
-                        "synopsis": "Une femme marquée par un passé difficile construit sa réussite sur des mensonges. Ses choix l'entraînent dans une spirale de secrets, d'ambition et de romance."
+                        "synopsis": "Une femme marquée par un passé difficile construit sa réussite sur des mensonges. Ses choix l'entraînent dans une spirale de secrets, d'ambition et de romance.",
+                        "tags": "Thriller"
             },
             {
                         "id": 589,
@@ -9352,7 +9411,7 @@ const baseDramas = [
             {
                         "id": 591,
                         "titre": "I Miss You",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Park Yoo Chun",
@@ -9363,7 +9422,8 @@ const baseDramas = [
                         ],
                         "annee": 2012,
                         "episodes": 21,
-                        "synopsis": "Deux adolescents séparés par un drame se retrouvent des années plus tard, encore marqués par leur passé et leurs sentiments inachevés."
+                        "synopsis": "Deux adolescents séparés par un drame se retrouvent des années plus tard, encore marqués par leur passé et leurs sentiments inachevés.",
+                        "tags": "Melodrama"
             },
             {
                         "id": 592,
@@ -9398,7 +9458,7 @@ const baseDramas = [
             {
                         "id": 594,
                         "titre": "Please, Captain",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Ji Jin Hee",
@@ -9408,12 +9468,13 @@ const baseDramas = [
                         ],
                         "annee": 2012,
                         "episodes": 20,
-                        "synopsis": "Une jeune pilote déterminée poursuit son rêve dans le monde exigeant de l'aviation, entre épreuves professionnelles, secrets familiaux et sentiments."
+                        "synopsis": "Une jeune pilote déterminée poursuit son rêve dans le monde exigeant de l'aviation, entre épreuves professionnelles, secrets familiaux et sentiments.",
+                        "tags": "Business"
             },
             {
                         "id": 595,
                         "titre": "Can We Get Married?",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Sung Joon",
@@ -9423,7 +9484,8 @@ const baseDramas = [
                         ],
                         "annee": 2012,
                         "episodes": 20,
-                        "synopsis": "À travers plusieurs couples, le drama explore les préparatifs du mariage, les familles, les doutes et les réalités de l'amour adulte."
+                        "synopsis": "À travers plusieurs couples, le drama explore les préparatifs du mariage, les familles, les doutes et les réalités de l'amour adulte.",
+                        "tags": "Romance"
             },
             {
                         "id": 596,
@@ -9489,7 +9551,7 @@ const baseDramas = [
             {
                         "id": 600,
                         "titre": "I Can Hear Your Voice",
-                        "genre": "Drame",
+                        "genre": "Juridique",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Lee Jong Suk",
@@ -9499,7 +9561,8 @@ const baseDramas = [
                         ],
                         "annee": 2013,
                         "episodes": 18,
-                        "synopsis": "Un jeune homme capable d'entendre les pensées aide une avocate à résoudre des affaires, tandis qu'un danger lié à leur passé ressurgit."
+                        "synopsis": "Un jeune homme capable d'entendre les pensées aide une avocate à résoudre des affaires, tandis qu'un danger lié à leur passé ressurgit.",
+                        "tags": "Juridique"
             },
             {
                         "id": 601,
@@ -9693,9 +9756,10 @@ const baseDramas = [
             {
                         "id": 614,
                         "titre": "Assembly",
-                        "genre": "Drame",
+                        "genre": "Politique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Politique"
             },
             {
                         "id": 615,
@@ -9714,16 +9778,18 @@ const baseDramas = [
             {
                         "id": 617,
                         "titre": "Heard It Through the Grapevine",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 618,
                         "titre": "Imaginary Cat",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Life"
             },
             {
                         "id": 619,
@@ -9750,9 +9816,10 @@ const baseDramas = [
             {
                         "id": 622,
                         "titre": "Last",
-                        "genre": "Drame",
+                        "genre": "Action",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Action"
             },
             {
                         "id": 623,
@@ -9898,7 +9965,7 @@ const baseDramas = [
             {
                         "id": 635,
                         "titre": "My Fair Lady",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Oh Ji Ho",
@@ -9909,7 +9976,8 @@ const baseDramas = [
                         "episodes": 16,
                         "alias": [
                                     "Oh My Geum Bi"
-                        ]
+                        ],
+                        "tags": "Romance"
             },
             {
                         "id": 636,
@@ -10028,7 +10096,7 @@ const baseDramas = [
             {
                         "id": 644,
                         "titre": "White Nights",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Yo Won",
@@ -10039,7 +10107,8 @@ const baseDramas = [
                         "episodes": 20,
                         "alias": [
                                     "Night Light"
-                        ]
+                        ],
+                        "tags": "Business"
             },
             {
                         "id": 645,
@@ -10398,11 +10467,12 @@ const baseDramas = [
             {
                         "id": 675,
                         "titre": "Women's Secret",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
-                        "source": "Ajout manuel 2016-2017"
+                        "source": "Ajout manuel 2016-2017",
+                        "tags": "Melodrama"
             },
             {
                         "id": 676,
@@ -10425,11 +10495,12 @@ const baseDramas = [
             {
                         "id": 678,
                         "titre": "The Master of Revenge",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
-                        "source": "Ajout manuel 2016-2017"
+                        "source": "Ajout manuel 2016-2017",
+                        "tags": "Thriller"
             },
             {
                         "id": 679,
@@ -10488,11 +10559,12 @@ const baseDramas = [
             {
                         "id": 685,
                         "titre": "The Promise",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
-                        "source": "Ajout manuel 2016-2017"
+                        "source": "Ajout manuel 2016-2017",
+                        "tags": "Melodrama"
             },
             {
                         "id": 686,
@@ -10543,11 +10615,12 @@ const baseDramas = [
             {
                         "id": 691,
                         "titre": "The Miracle",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
-                        "source": "Ajout manuel 2016-2017"
+                        "source": "Ajout manuel 2016-2017",
+                        "tags": "Fantastique"
             },
             {
                         "id": 692,
@@ -10616,20 +10689,22 @@ const baseDramas = [
             {
                         "id": 699,
                         "titre": "You Are a Gift",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
-                        "source": "Ajout manuel 2016-2017"
+                        "source": "Ajout manuel 2016-2017",
+                        "tags": "Family"
             },
             {
                         "id": 700,
                         "titre": "Monster",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
-                        "source": "Ajout manuel 2016-2017"
+                        "source": "Ajout manuel 2016-2017",
+                        "tags": "Thriller"
             },
             {
                         "id": 701,
@@ -10692,19 +10767,21 @@ const baseDramas = [
             },
             {
                         "titre": "Part-Time Idol",
-                        "genre": "Drame",
+                        "genre": "Music",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
-                        "id": 982
+                        "id": 982,
+                        "tags": "Music"
             },
             {
                         "titre": "Reunited Worlds",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
-                        "id": 983
+                        "id": 983,
+                        "tags": "Fantastique"
             },
             {
                         "titre": "My Sassy Girl",
@@ -10791,11 +10868,12 @@ const baseDramas = [
             },
             {
                         "titre": "Queen of Ring",
-                        "genre": "Romance",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
-                        "id": 994
+                        "id": 994,
+                        "tags": "Fantastique"
             },
             {
                         "titre": "The Boy Next Door",
@@ -10826,16 +10904,18 @@ const baseDramas = [
             {
                         "id": 703,
                         "titre": "Borg Mom",
-                        "genre": "Drame",
+                        "genre": "Science-Fiction",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Science-Fiction"
             },
             {
                         "id": 704,
                         "titre": "Distorted",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 705,
@@ -10847,9 +10927,10 @@ const baseDramas = [
             {
                         "id": 706,
                         "titre": "Teacher Oh Soon-Nam",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 707,
@@ -10861,9 +10942,10 @@ const baseDramas = [
             {
                         "id": 708,
                         "titre": "Andante",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "École"
             },
             {
                         "id": 709,
@@ -10875,51 +10957,58 @@ const baseDramas = [
             {
                         "id": 710,
                         "titre": "Sweet Enemy",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 711,
                         "titre": "Man Who Dies to Live",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Comédie"
             },
             {
                         "id": 712,
                         "titre": "Band of Sisters",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 713,
                         "titre": "Trace of the Hand",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 714,
                         "titre": "You Are Too Much",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 715,
                         "titre": "Sea of the Woman",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 716,
                         "titre": "Ruby Ruby Love",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 717,
@@ -10931,9 +11020,10 @@ const baseDramas = [
             {
                         "id": 718,
                         "titre": "Missing Nine",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 719,
@@ -10952,16 +11042,18 @@ const baseDramas = [
             {
                         "id": 721,
                         "titre": "Revolutionary Love",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 722,
                         "titre": "Manhole",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 723,
@@ -10973,9 +11065,10 @@ const baseDramas = [
             {
                         "id": 724,
                         "titre": "Romance Full of Life",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 725,
@@ -10987,93 +11080,106 @@ const baseDramas = [
             {
                         "id": 726,
                         "titre": "Radiant Office",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Business"
             },
             {
                         "id": 727,
                         "titre": "My Secret Romance",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 728,
                         "titre": "My Only Love Song",
-                        "genre": "Drame",
+                        "genre": "Historique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Historique"
             },
             {
                         "id": 729,
                         "titre": "Meloholic",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 730,
                         "titre": "20th Century Boy and Girl",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 731,
                         "titre": "Enemies from the Past",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 732,
                         "titre": "Happy Sisters",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 733,
                         "titre": "Oh My Grace",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Comédie"
             },
             {
                         "id": 734,
                         "titre": "Unexpected Heroes",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 735,
                         "titre": "Everyday Loves",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 736,
                         "titre": "Unknown Woman",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 737,
                         "titre": "Girl's War",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 738,
                         "titre": "Fortuneteller's Secret Recipe",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 739,
@@ -11092,37 +11198,42 @@ const baseDramas = [
             {
                         "id": 741,
                         "titre": "Seventeen",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "École"
             },
             {
                         "id": 742,
                         "titre": "Last Minute Romance",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 743,
                         "titre": "The Most Beautiful Goodbye",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 744,
                         "titre": "Bad Thief, Good Thief",
-                        "genre": "Drame",
+                        "genre": "Action",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Action"
             },
             {
                         "id": 745,
                         "titre": "Hundred Million Stars From the Sky",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 746,
@@ -11134,9 +11245,10 @@ const baseDramas = [
             {
                         "id": 747,
                         "titre": "Devilish Joy",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 748,
@@ -11148,23 +11260,26 @@ const baseDramas = [
             {
                         "id": 749,
                         "titre": "Misty",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 750,
                         "titre": "My Husband Oh Jak-Doo",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 751,
                         "titre": "You Drive Me Crazy!",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 752,
@@ -11183,23 +11298,26 @@ const baseDramas = [
             {
                         "id": 754,
                         "titre": "Encounter",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 755,
                         "titre": "Where Stars Land",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 756,
                         "titre": "My Strange Hero",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "École"
             },
             {
                         "id": 757,
@@ -11211,23 +11329,26 @@ const baseDramas = [
             {
                         "id": 758,
                         "titre": "Beauty Inside",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 759,
                         "titre": "About Time",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 760,
                         "titre": "My ID is Gangnam Beauty",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "École"
             },
             {
                         "id": 761,
@@ -11239,51 +11360,58 @@ const baseDramas = [
             {
                         "id": 762,
                         "titre": "The Good Witch",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 763,
                         "titre": "The Third Charm",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 764,
                         "titre": "That Time When Time Stops",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 765,
                         "titre": "The Undateables",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 766,
                         "titre": "Rich Man",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 767,
                         "titre": "Love Alert",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 768,
                         "titre": "Secret Queen Makers",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 769,
@@ -11295,37 +11423,42 @@ const baseDramas = [
             {
                         "id": 770,
                         "titre": "Secret Mother",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 771,
                         "titre": "Your House Helper",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Life"
             },
             {
                         "id": 772,
                         "titre": "Short",
-                        "genre": "Drame",
+                        "genre": "Sport",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Sport"
             },
             {
                         "id": 773,
                         "titre": "Should We Kiss First",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 774,
                         "titre": "Mysterious Personal Shopper",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 775,
@@ -11344,9 +11477,10 @@ const baseDramas = [
             {
                         "id": 777,
                         "titre": "Marry Me Now?",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 778,
@@ -11358,37 +11492,42 @@ const baseDramas = [
             {
                         "id": 779,
                         "titre": "Hold Me Tight",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 780,
                         "titre": "Luv Pub",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 781,
                         "titre": "That Man Oh Soo",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 782,
                         "titre": "The Miracle We Met",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 783,
                         "titre": "Exit",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Thriller"
             },
             {
                         "id": 784,
@@ -11400,51 +11539,58 @@ const baseDramas = [
             {
                         "id": 785,
                         "titre": "Goodbye to Goodbye",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 786,
                         "titre": "Secrets and Lies",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 787,
                         "titre": "Let Me Introduce Her",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 788,
                         "titre": "My First Love",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 789,
                         "titre": "Love in Memory",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 790,
                         "titre": "Flower Ever After",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 791,
                         "titre": "Love to the End",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 792,
@@ -11456,23 +11602,26 @@ const baseDramas = [
             {
                         "id": 793,
                         "titre": "Hide and Seek",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 794,
                         "titre": "Lady Cha Dal-Rae's Lover",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 795,
                         "titre": "Big Forest",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Comédie"
             },
             {
                         "id": 796,
@@ -11498,9 +11647,10 @@ const baseDramas = [
             {
                         "id": 799,
                         "titre": "Matrimonial Chaos",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 800,
@@ -11512,9 +11662,10 @@ const baseDramas = [
             {
                         "id": 801,
                         "titre": "The Time",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Melodrama"
             },
             {
                         "id": 802,
@@ -11526,30 +11677,34 @@ const baseDramas = [
             {
                         "id": 803,
                         "titre": "Twelve Nights",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 804,
                         "titre": "My Healing Love",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Family"
             },
             {
                         "id": 805,
                         "titre": "Mama Fairy and the Woodcutter",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 806,
                         "titre": "Top Star Yoo Baek",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 807,
@@ -11568,9 +11723,10 @@ const baseDramas = [
             {
                         "id": 809,
                         "titre": "Just Dance",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "École"
             },
             {
                         "id": 810,
@@ -11582,26 +11738,29 @@ const baseDramas = [
             {
                         "id": 811,
                         "titre": "The Secret Life of My Secretary",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 812,
                         "titre": "Romance Is a Bonus Book",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 813,
                         "titre": "My First First Love Season 2",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 814,
@@ -11614,42 +11773,47 @@ const baseDramas = [
             {
                         "id": 815,
                         "titre": "Love with Flaws",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 816,
                         "titre": "Chocolate",
-                        "genre": "Drame",
+                        "genre": "Médical",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Médical"
             },
             {
                         "id": 817,
                         "titre": "The Light in Your Eyes",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Fantastique"
             },
             {
                         "id": 818,
                         "titre": "My Absolute Boyfriend",
-                        "genre": "Drame",
+                        "genre": "Science-Fiction",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Science-Fiction"
             },
             {
                         "id": 819,
                         "titre": "Perfume",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Fantastique"
             },
             {
                         "id": 820,
@@ -11678,10 +11842,11 @@ const baseDramas = [
             {
                         "id": 823,
                         "titre": "Persona",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 824,
@@ -11694,10 +11859,11 @@ const baseDramas = [
             {
                         "id": 825,
                         "titre": "When the Devil Calls Your Name",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Fantastique"
             },
             {
                         "id": 826,
@@ -11710,18 +11876,20 @@ const baseDramas = [
             {
                         "id": 827,
                         "titre": "VIP",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 828,
                         "titre": "My Fellow Citizens!",
-                        "genre": "Drame",
+                        "genre": "Politique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Politique"
             },
             {
                         "id": 829,
@@ -11742,10 +11910,11 @@ const baseDramas = [
             {
                         "id": 831,
                         "titre": "FAILing in Love",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "École"
             },
             {
                         "id": 832,
@@ -11766,18 +11935,20 @@ const baseDramas = [
             {
                         "id": 834,
                         "titre": "How to Hate You",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "École"
             },
             {
                         "id": 835,
                         "titre": "Level Up",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 836,
@@ -11806,18 +11977,20 @@ const baseDramas = [
             {
                         "id": 839,
                         "titre": "The Great Show",
-                        "genre": "Drame",
+                        "genre": "Politique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Politique"
             },
             {
                         "id": 840,
                         "titre": "Everything and Nothing",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "École"
             },
             {
                         "id": 841,
@@ -11838,10 +12011,11 @@ const baseDramas = [
             {
                         "id": 843,
                         "titre": "Special Labor Inspector Mr. Jo",
-                        "genre": "Drame",
+                        "genre": "Juridique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Juridique"
             },
             {
                         "id": 844,
@@ -11870,26 +12044,29 @@ const baseDramas = [
             {
                         "id": 847,
                         "titre": "Dear My Name",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "École"
             },
             {
                         "id": 848,
                         "titre": "Big Issue",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Thriller"
             },
             {
                         "id": 849,
                         "titre": "I Hate You, Juliet!",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 850,
@@ -11902,34 +12079,38 @@ const baseDramas = [
             {
                         "id": 851,
                         "titre": "Kiss Scene in Yeonnamdong",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 852,
                         "titre": "The Best Chicken",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 853,
                         "titre": "The Best Ending",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 854,
                         "titre": "Spring Turns to Spring",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Comédie"
             },
             {
                         "id": 855,
@@ -11942,26 +12123,29 @@ const baseDramas = [
             {
                         "id": 856,
                         "titre": "Just One Bite Season 2",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 857,
                         "titre": "The Guilty Secret",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "École"
             },
             {
                         "id": 858,
                         "titre": "I Have Three Boyfriends",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 859,
@@ -11982,18 +12166,20 @@ const baseDramas = [
             {
                         "id": 861,
                         "titre": "Maybe, Maybe Not",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 862,
                         "titre": "Different Dreams",
-                        "genre": "Drame",
+                        "genre": "Historique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Historique"
             },
             {
                         "id": 863,
@@ -12014,18 +12200,20 @@ const baseDramas = [
             {
                         "id": 865,
                         "titre": "Re-Feel",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 866,
                         "titre": "4 Reasons Why I Hate Christmas",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 867,
@@ -12038,34 +12226,38 @@ const baseDramas = [
             {
                         "id": 868,
                         "titre": "Like",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 869,
                         "titre": "True Ending",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 870,
                         "titre": "Miss Independent Ji Eun Season 1",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Life"
             },
             {
                         "id": 871,
                         "titre": "Miss Independent Ji Eun Season 2",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Life"
             },
             {
                         "id": 872,
@@ -12078,10 +12270,11 @@ const baseDramas = [
             {
                         "id": 873,
                         "titre": "Golden Garden",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 874,
@@ -12094,26 +12287,29 @@ const baseDramas = [
             {
                         "id": 875,
                         "titre": "Wish Woosh Season 1",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 876,
                         "titre": "Wish Woosh Season 2",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 877,
                         "titre": "Triple Fling",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 878,
@@ -12142,42 +12338,47 @@ const baseDramas = [
             {
                         "id": 881,
                         "titre": "Miss Lee",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 882,
                         "titre": "Love as You Taste",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 883,
                         "titre": "Cat's Bar",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Fantastique"
             },
             {
                         "id": 884,
                         "titre": "When You Love Yourself Season 1",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 885,
                         "titre": "When You Love Yourself Season 2",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 886,
@@ -12190,10 +12391,11 @@ const baseDramas = [
             {
                         "id": 887,
                         "titre": "Monchouchou Globalhouse",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 888,
@@ -12206,18 +12408,20 @@ const baseDramas = [
             {
                         "id": 889,
                         "titre": "I Started Following Romance",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 890,
                         "titre": "Crash! Insignificant Roommates",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Comédie"
             },
             {
                         "id": 891,
@@ -12230,226 +12434,254 @@ const baseDramas = [
             {
                         "id": 892,
                         "titre": "I Hate Going to Work",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 893,
                         "titre": "Loss Time Life",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Fantastique"
             },
             {
                         "id": 894,
                         "titre": "Fight Hard, Love Harder",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 895,
                         "titre": "Do You \"Truth or Dare\" with Me?",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "École"
             },
             {
                         "id": 896,
                         "titre": "Want a Taste?",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 897,
                         "titre": "Blessing of the Sea",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 898,
                         "titre": "Will Be Okay, Never Die",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Fantastique"
             },
             {
                         "id": 899,
                         "titre": "Office Watch Season 1",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 900,
                         "titre": "Office Watch Season 2",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 901,
                         "titre": "Office Watch Season 3",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 902,
                         "titre": "Issue Makers",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Business"
             },
             {
                         "id": 903,
                         "titre": "What Happened to Mirae?",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 904,
                         "titre": "The Pure Memories of My Heart",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 905,
                         "titre": "The Secret of Secret",
-                        "genre": "Drame",
+                        "genre": "Melodrama",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Melodrama"
             },
             {
                         "id": 906,
                         "titre": "Jal Pa Gin Love",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 907,
                         "titre": "Genome's Romance",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 908,
                         "titre": "My Heart Flutters",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 909,
                         "titre": "380,000 km Between You and Me",
-                        "genre": "Drame",
+                        "genre": "Science-Fiction",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Science-Fiction"
             },
             {
                         "id": 910,
                         "titre": "LOVE-Imong",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 911,
                         "titre": "Do With All Your Heart Today",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 912,
                         "titre": "When the Apple of Eye Shattered",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 913,
                         "titre": "Ugly Miss Young Ae Season 17",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Family"
             },
             {
                         "id": 914,
                         "titre": "The Price of a Life",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Thriller"
             },
             {
                         "id": 915,
                         "titre": "Sweat Romance",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 916,
                         "titre": "Fancafe",
-                        "genre": "Drame",
+                        "genre": "Music",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Music"
             },
             {
                         "id": 917,
                         "titre": "One-Dimensional",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 918,
                         "titre": "Uigeumbu",
-                        "genre": "Drame",
+                        "genre": "Historique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Historique"
             },
             {
                         "id": 919,
                         "titre": "Perhaps Love?",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2019
+                        "annee": 2019,
+                        "tags": "Romance"
             },
             {
                         "id": 920,
@@ -12494,42 +12726,47 @@ const baseDramas = [
             {
                         "id": 925,
                         "titre": "Lovestruck in the City",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 926,
                         "titre": "Find Me in Your Memory",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 927,
                         "titre": "A Love So Beautiful",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "École"
             },
             {
                         "id": 928,
                         "titre": "A Piece of Your Mind",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 929,
                         "titre": "Meow, the Secret Boy",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Fantastique"
             },
             {
                         "id": 930,
@@ -12558,42 +12795,47 @@ const baseDramas = [
             {
                         "id": 933,
                         "titre": "Dinner Mate",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 934,
                         "titre": "More Than Friends",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 935,
                         "titre": "Kiss Goblin",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Fantastique"
             },
             {
                         "id": 936,
                         "titre": "Forest",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 937,
                         "titre": "Into the Ring",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 938,
@@ -12614,10 +12856,11 @@ const baseDramas = [
             {
                         "id": 940,
                         "titre": "Oh My Baby",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 941,
@@ -12638,42 +12881,47 @@ const baseDramas = [
             {
                         "id": 943,
                         "titre": "Please Don't Date Him",
-                        "genre": "Drame",
+                        "genre": "Science-Fiction",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Science-Fiction"
             },
             {
                         "id": 944,
                         "titre": "Ending Again",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 945,
                         "titre": "The Spy Who Loved Me",
-                        "genre": "Drame",
+                        "genre": "Action",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Action"
             },
             {
                         "id": 946,
                         "titre": "Cheat On Me, If You Can",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Thriller"
             },
             {
                         "id": 947,
                         "titre": "To All The Guys Who Loved Me",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 948,
@@ -12694,26 +12942,29 @@ const baseDramas = [
             {
                         "id": 950,
                         "titre": "Cast:ing",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 951,
                         "titre": "Mermaid Prince",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Fantastique"
             },
             {
                         "id": 952,
                         "titre": "Mermaid Prince: The Beginning",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Fantastique"
             },
             {
                         "id": 953,
@@ -12750,26 +13001,29 @@ const baseDramas = [
             {
                         "id": 957,
                         "titre": "Touch",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 958,
                         "titre": "Ga Doo Ri's Sushi Restaurant",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 959,
                         "titre": "How Are You Bread",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 960,
@@ -12782,18 +13036,20 @@ const baseDramas = [
             {
                         "id": 961,
                         "titre": "Sweet Munchies",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 962,
                         "titre": "Lonely Enough to Love",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 963,
@@ -12806,34 +13062,38 @@ const baseDramas = [
             {
                         "id": 964,
                         "titre": "One Fine Week",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 965,
                         "titre": "One Fine Week 2",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 966,
                         "titre": "Graceful Friends",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Thriller"
             },
             {
                         "id": 967,
                         "titre": "Goddess of Revenge",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Thriller"
             },
             {
                         "id": 968,
@@ -12846,66 +13106,74 @@ const baseDramas = [
             {
                         "id": 969,
                         "titre": "My Dangerous Wife",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Thriller"
             },
             {
                         "id": 970,
                         "titre": "Hush",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 971,
                         "titre": "Money Game",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 972,
                         "titre": "The Secret",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Thriller"
             },
             {
                         "id": 973,
                         "titre": "She Knows Everything",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Thriller"
             },
             {
                         "id": 974,
                         "titre": "Can I Step In?",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Romance"
             },
             {
                         "id": 975,
                         "titre": "Kkondae Intern",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Business"
             },
             {
                         "id": 976,
                         "titre": "Pop Out Boy!",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "annee": 2020
+                        "annee": 2020,
+                        "tags": "Fantastique"
             },
             {
                         "id": 998,
@@ -12919,20 +13187,22 @@ const baseDramas = [
             {
                         "id": 999,
                         "titre": "Ordinary but Special",
-                        "genre": "Drame",
+                        "genre": "École",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 6
+                        "episodes": 6,
+                        "tags": "École"
             },
             {
                         "id": 1000,
                         "titre": "Phoenix 2020",
-                        "genre": "Family",
+                        "genre": "Melodrama",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 120
+                        "episodes": 120,
+                        "tags": "Melodrama"
             },
             {
                         "id": 1001,
@@ -12982,29 +13252,32 @@ const baseDramas = [
             {
                         "id": 1006,
                         "titre": "Today Office Tomorrow Romance",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 10
+                        "episodes": 10,
+                        "tags": "Business"
             },
             {
                         "id": 1007,
                         "titre": "The Colors of Our Time",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 4
+                        "episodes": 4,
+                        "tags": "Romance"
             },
             {
                         "id": 1008,
                         "titre": "Big Picture House",
-                        "genre": "Drame",
+                        "genre": "Music",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 12
+                        "episodes": 12,
+                        "tags": "Music"
             },
             {
                         "id": 1009,
@@ -13036,20 +13309,22 @@ const baseDramas = [
             {
                         "id": 1012,
                         "titre": "Sometoon 2020",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 10
+                        "episodes": 10,
+                        "tags": "Romance"
             },
             {
                         "id": 1013,
                         "titre": "Fight Hard, Love Harder Season 2",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 4
+                        "episodes": 4,
+                        "tags": "Family"
             },
             {
                         "id": 1014,
@@ -13063,65 +13338,72 @@ const baseDramas = [
             {
                         "id": 1015,
                         "titre": "Romance Bible",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 8
+                        "episodes": 8,
+                        "tags": "Romance"
             },
             {
                         "id": 1016,
                         "titre": "Cast: The Golden Age of Insiders",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 8
+                        "episodes": 8,
+                        "tags": "Business"
             },
             {
                         "id": 1017,
                         "titre": "A Ticket to India",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 6
+                        "episodes": 6,
+                        "tags": "Comédie"
             },
             {
                         "id": 1018,
                         "titre": "Meal Kid",
-                        "genre": "Drame",
+                        "genre": "Business",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 10
+                        "episodes": 10,
+                        "tags": "Business"
             },
             {
                         "id": 1019,
                         "titre": "Winter Vacation",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 6
+                        "episodes": 6,
+                        "tags": "Life"
             },
             {
                         "id": 1020,
                         "titre": "Tell Me You've Changed",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 4
+                        "episodes": 4,
+                        "tags": "Romance"
             },
             {
                         "id": 1021,
                         "titre": "Thumbs Up Feeds Me",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 10
+                        "episodes": 10,
+                        "tags": "Comédie"
             },
             {
                         "id": 1022,
@@ -13144,20 +13426,22 @@ const baseDramas = [
             {
                         "id": 1024,
                         "titre": "Scene Number Paran",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 3
+                        "episodes": 3,
+                        "tags": "Romance"
             },
             {
                         "id": 1025,
                         "titre": "Cramped Love",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 3
+                        "episodes": 3,
+                        "tags": "Romance"
             },
             {
                         "id": 1026,
@@ -13171,29 +13455,32 @@ const baseDramas = [
             {
                         "id": 1027,
                         "titre": "Sweat Romance Season 2",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 9
+                        "episodes": 9,
+                        "tags": "Family"
             },
             {
                         "id": 1028,
                         "titre": "Scene and Box: Season of Love",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 4
+                        "episodes": 4,
+                        "tags": "Family"
             },
             {
                         "id": 1029,
                         "titre": "Something Music Season 2",
-                        "genre": "Drame",
+                        "genre": "Music",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 9
+                        "episodes": 9,
+                        "tags": "Music"
             },
             {
                         "id": 1030,
@@ -13207,29 +13494,32 @@ const baseDramas = [
             {
                         "id": 1031,
                         "titre": "Yeokkeuni",
-                        "genre": "Drame",
+                        "genre": "Historique",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 5
+                        "episodes": 5,
+                        "tags": "Historique"
             },
             {
                         "id": 1032,
                         "titre": "Ask Miss Shin",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 3
+                        "episodes": 3,
+                        "tags": "Comédie"
             },
             {
                         "id": 1033,
                         "titre": "If in Love, Choose an Ordinance?!",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 12
+                        "episodes": 12,
+                        "tags": "Romance"
             },
             {
                         "id": 1034,
@@ -13243,11 +13533,12 @@ const baseDramas = [
             {
                         "id": 1035,
                         "titre": "LOVE up-date",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
-                        "episodes": 8
+                        "episodes": 8,
+                        "tags": "Romance"
             },
             {
                         "id": 1036,
@@ -13262,11 +13553,12 @@ const baseDramas = [
             {
                         "id": 1037,
                         "titre": "100% Era",
-                        "genre": "Romance",
+                        "genre": "École",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 8
+                        "episodes": 8,
+                        "tags": "École"
             },
             {
                         "id": 1038,
@@ -13289,11 +13581,12 @@ const baseDramas = [
             {
                         "id": 1040,
                         "titre": "She Would Never Know",
-                        "genre": "Romance",
+                        "genre": "Business",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 16
+                        "episodes": 16,
+                        "tags": "Business"
             },
             {
                         "id": 1041,
@@ -13469,11 +13762,12 @@ const baseDramas = [
             {
                         "id": 1059,
                         "titre": "Revolutionary Sisters",
-                        "genre": "Drame",
+                        "genre": "Family",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 50
+                        "episodes": 50,
+                        "tags": "Family"
             },
             {
                         "id": 1060,
@@ -13550,11 +13844,12 @@ const baseDramas = [
             {
                         "id": 1068,
                         "titre": "Bio Homme",
-                        "genre": "Drame",
+                        "genre": "BL",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 10
+                        "episodes": 10,
+                        "tags": "BL"
             },
             {
                         "id": 1069,
@@ -13691,11 +13986,12 @@ const baseDramas = [
             {
                         "id": 1083,
                         "titre": "Here's My Plan",
-                        "genre": "Drame",
+                        "genre": "Thriller",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 4
+                        "episodes": 4,
+                        "tags": "Thriller"
             },
             {
                         "id": 1084,
@@ -13776,11 +14072,12 @@ const baseDramas = [
             {
                         "id": 1092,
                         "titre": "Yunseul",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 8
+                        "episodes": 8,
+                        "tags": "Romance"
             },
             {
                         "id": 1093,
@@ -13794,11 +14091,12 @@ const baseDramas = [
             {
                         "id": 1094,
                         "titre": "So Not Worth It",
-                        "genre": "Comédie",
+                        "genre": "École",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 12
+                        "episodes": 12,
+                        "tags": "École"
             },
             {
                         "id": 1095,
@@ -13859,7 +14157,7 @@ const baseDramas = [
             {
                         "id": 1101,
                         "titre": "Blue Birthday",
-                        "genre": "Science-Fiction",
+                        "genre": "Fantastique",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13923,11 +14221,12 @@ const baseDramas = [
             {
                         "id": 1108,
                         "titre": "Don't Worry Apricot",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
-                        "episodes": 8
+                        "episodes": 8,
+                        "tags": "Romance"
             },
             {
                         "id": 1109,
@@ -13941,16 +14240,18 @@ const baseDramas = [
             {
                         "id": 1110,
                         "titre": "Love & Wish",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 1111,
                         "titre": "A Time to Remember",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 1112,
@@ -13962,16 +14263,18 @@ const baseDramas = [
             {
                         "id": 1113,
                         "titre": "The Man's Voice",
-                        "genre": "Drame",
+                        "genre": "Fantastique",
                         "plateforme": "Viki",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Fantastique"
             },
             {
                         "id": 1114,
                         "titre": "Her Bucket List",
-                        "genre": "Drame",
+                        "genre": "Romance",
                         "plateforme": "Viki",
-                        "acteurs": []
+                        "acteurs": [],
+                        "tags": "Romance"
             },
             {
                         "id": 1115,
@@ -14076,12 +14379,12 @@ const baseDramas = [
             {
                         "id": 1125,
                         "titre": "Mumul Zzumul",
-                        "genre": "École",
+                        "genre": "Music",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
                         "episodes": 10,
-                        "tags": "Youth Romance"
+                        "tags": "Youth Romance, Music"
             },
             {
                         "id": 1126,
@@ -14196,7 +14499,7 @@ const baseDramas = [
             {
                         "id": 1137,
                         "titre": "Moebius: The Veil",
-                        "genre": "Action",
+                        "genre": "Thriller",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14246,12 +14549,12 @@ const baseDramas = [
             {
                         "id": 1142,
                         "titre": "Life of Jung, Lee, Ro, and Woon",
-                        "genre": "Life",
+                        "genre": "Comédie",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
                         "episodes": 15,
-                        "tags": "Life, Drama"
+                        "tags": "Life, Drama, Comédie"
             },
             {
                         "id": 1143,
@@ -14396,7 +14699,7 @@ const baseDramas = [
             {
                         "id": 1157,
                         "titre": "Show Window: The Queen's House",
-                        "genre": "Melodrama",
+                        "genre": "Thriller",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14406,12 +14709,12 @@ const baseDramas = [
             {
                         "id": 1158,
                         "titre": "Mr. Lee",
-                        "genre": "Drame",
+                        "genre": "Comédie",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
                         "episodes": 8,
-                        "tags": "Drama"
+                        "tags": "Drama, Comédie"
             },
             {
                         "id": 1159,
@@ -14446,7 +14749,7 @@ const baseDramas = [
             {
                         "id": 1162,
                         "titre": "Artificial City",
-                        "genre": "Melodrama",
+                        "genre": "Thriller",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14526,7 +14829,7 @@ const baseDramas = [
             {
                         "id": 1170,
                         "titre": "Pumpkin Time",
-                        "genre": "Sport",
+                        "genre": "Fantastique",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14546,12 +14849,12 @@ const baseDramas = [
             {
                         "id": 1172,
                         "titre": "I Want to Live an Easy Life",
-                        "genre": "Drame",
+                        "genre": "Life",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
                         "episodes": 8,
-                        "tags": "Drama"
+                        "tags": "Drama, Life"
             },
             {
                         "id": 1173,
