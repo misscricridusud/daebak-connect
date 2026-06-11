@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daebak Connect - 1173 dramas 🫰</title>
+    <title>Daebak Connect - 1190 dramas 🫰</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -79,7 +79,7 @@
     <div class="app-shell w-full max-w-md bg-white/72 rounded-[40px] overflow-hidden flex flex-col h-[750px] border border-pink-100/70 backdrop-blur-xl">
         <header class="header-gradient p-8 text-center text-pink-950 shadow-lg">
             <h1 class="text-2xl font-bold tracking-wide">Daebak Connect 🫰</h1>
-            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1173 dramas 🇰🇷</p>
+            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1190 dramas 🇰🇷</p>
         </header>
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
@@ -145,17 +145,10 @@
                         <option>Médical</option>
                         <option>Historique</option>
                         <option>Family</option>
-                        <option>Melodrama</option>
                         <option>Movie</option>
-                    
-                        <option>Life</option>
-                        <option>Music</option>
-                        <option>BL</option>
                         <option>Policier</option>
                         <option>Sport</option>
-                        <option>Business</option>
-                        <option>Politique</option>
-                        <option>Documentaire</option></select>
+                        <option>Business</option></select>
                     <input type="text" id="new-drama-platform" placeholder="Plateforme ex: Netflix, Viki..." class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
                     <input type="text" id="new-drama-actors" placeholder="Acteurs séparés par des virgules" class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
                     <button onclick="ajouterDrama()" class="w-full bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white py-3 rounded-2xl text-sm font-bold shadow-md hover:brightness-105">Ajouter</button>
@@ -356,7 +349,7 @@
     </div>
 
 <script>
-<!-- Nettoyage acteurs V6 : 78 doublon(s)/variantes supprimé(s) dans les fiches, total 1173 dramas conservés. -->
+<!-- V7 catégories propres : Life/Music/Melodrama/Documentaire fusionnés en Drame ; BL en Romance ; Politique en Thriller ; boutons inutiles retirés. Total 1190 dramas conservés. -->
 
 const baseDramas = [
             {
@@ -617,7 +610,7 @@ const baseDramas = [
             {
                         "id": 20,
                         "titre": "Be Melodramatic",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Chun Woo-hee",
@@ -631,7 +624,7 @@ const baseDramas = [
                         "annee": 2019,
                         "episodes": 16,
                         "synopsis": "At the start of their 30s, three friends navigate the demanding entertainment industry while juggling love, careers and dreams.",
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 21,
@@ -740,7 +733,7 @@ const baseDramas = [
             {
                         "id": 29,
                         "titre": "Brave Citizen",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Shin Hye Sun"
@@ -793,7 +786,7 @@ const baseDramas = [
             {
                         "id": 34,
                         "titre": "Castaway Diva",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Park Eun-bin"
@@ -905,7 +898,7 @@ const baseDramas = [
             {
                         "id": 44,
                         "titre": "Do Do Sol Sol La La Sol",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Lee Jae Wook",
@@ -1298,7 +1291,7 @@ const baseDramas = [
             {
                         "id": 70,
                         "titre": "Hit-and-Run Squad",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Gong Hyo-jin"
@@ -1642,7 +1635,7 @@ const baseDramas = [
             {
                         "id": 95,
                         "titre": "Midnight",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Jin Ki-joo"
@@ -1651,7 +1644,7 @@ const baseDramas = [
             {
                         "id": 96,
                         "titre": "Miss & Mrs. Cops",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Ra Mi-ran"
@@ -1895,7 +1888,7 @@ const baseDramas = [
             {
                         "id": 115,
                         "titre": "Officer Black Belt",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Kim Woo Bin"
@@ -1942,7 +1935,7 @@ const baseDramas = [
             {
                         "id": 119,
                         "titre": "Our Blues",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Lee Byung-hun",
@@ -1956,12 +1949,12 @@ const baseDramas = [
                         "annee": 2022,
                         "episodes": 20,
                         "synopsis": "Romance is sweet and bitter — and life riddled with ups and downs — in multiple stories about people who live and work on bustling Jeju island.",
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 120,
                         "titre": "Parasite",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Song Kang-ho"
@@ -1989,7 +1982,7 @@ const baseDramas = [
             {
                         "id": 122,
                         "titre": "Phantom Detective",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Lee Je-hoon"
@@ -2141,7 +2134,7 @@ const baseDramas = [
             {
                         "id": 134,
                         "titre": "Sh**ting Stars",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Lee Sung-kyung",
@@ -2351,7 +2344,7 @@ const baseDramas = [
             {
                         "id": 150,
                         "titre": "The Childe",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Kim Seon-ho",
@@ -2379,7 +2372,7 @@ const baseDramas = [
             {
                         "id": 152,
                         "titre": "The Fabulous",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Choi Min-ho"
@@ -2415,7 +2408,7 @@ const baseDramas = [
             {
                         "id": 155,
                         "titre": "The Girl on a Bulldozer",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Kim Hye-yoon"
@@ -2627,7 +2620,7 @@ const baseDramas = [
             {
                         "id": 171,
                         "titre": "The Witch",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Kim Da-mi",
@@ -2660,13 +2653,13 @@ const baseDramas = [
             {
                         "id": 174,
                         "titre": "Thirty-Nine",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Son Ye-jin"
                         ],
                         "synopsis": "Leaning on each other through thick and thin, a trio of best friends stand together as they experience life, love and loss on the brink of turning 40.",
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 175,
@@ -2708,7 +2701,7 @@ const baseDramas = [
             {
                         "id": 177,
                         "titre": "Train to Busan",
-                        "genre": "Movie",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Gong Yoo"
@@ -3097,7 +3090,7 @@ const baseDramas = [
             {
                         "id": 209,
                         "titre": "Move to Heaven",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Je Hoon",
@@ -3116,7 +3109,7 @@ const baseDramas = [
             {
                         "id": 210,
                         "titre": "Twinkling Watermelon",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Ha Eun-Gyeol",
@@ -3343,7 +3336,7 @@ const baseDramas = [
             {
                         "id": 222,
                         "titre": "Navillera",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Park In Hwan",
@@ -3575,7 +3568,7 @@ const baseDramas = [
             {
                         "id": 234,
                         "titre": "The Penthouse",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Ji Ah",
@@ -3673,7 +3666,7 @@ const baseDramas = [
             {
                         "id": 239,
                         "titre": "The Penthouse 2",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Kim So Yeon",
@@ -3711,7 +3704,7 @@ const baseDramas = [
             {
                         "id": 241,
                         "titre": "Dear My Friends",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Go Hyun Jung",
@@ -4051,7 +4044,7 @@ const baseDramas = [
             {
                         "id": 259,
                         "titre": "My Liberation Notes",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Kim Ji Won",
@@ -4350,7 +4343,7 @@ const baseDramas = [
             {
                         "id": 275,
                         "titre": "Designated Survivor",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Ji Jin Hee",
@@ -5012,7 +5005,7 @@ const baseDramas = [
             {
                         "id": 310,
                         "titre": "The World of the Married",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Kim Hee Ae",
@@ -5107,7 +5100,7 @@ const baseDramas = [
             {
                         "id": 315,
                         "titre": "Lost",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Jeon Do Yeon",
@@ -5122,7 +5115,7 @@ const baseDramas = [
                         "episodes": 16,
                         "source": "Dataset",
                         "synopsis": "A forty year old woman who feels like she has not accomplished anything in life and a twenty-seven year old man who's frightened of himself.",
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 316,
@@ -5795,7 +5788,7 @@ const baseDramas = [
             {
                         "id": 351,
                         "titre": "Soundtrack #1",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Park Hyung Sik",
@@ -5893,7 +5886,7 @@ const baseDramas = [
             {
                         "id": 356,
                         "titre": "Lie After Lie",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Yoo Ri",
@@ -6007,7 +6000,7 @@ const baseDramas = [
             {
                         "id": 362,
                         "titre": "Graceful Family",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Im Soo Hyang",
@@ -6368,7 +6361,7 @@ const baseDramas = [
             {
                         "id": 381,
                         "titre": "Mine",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Bo Young",
@@ -6498,7 +6491,7 @@ const baseDramas = [
             {
                         "id": 388,
                         "titre": "Light on Me",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Sae On",
@@ -6874,7 +6867,7 @@ const baseDramas = [
             {
                         "id": 408,
                         "titre": "One Day Off",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Lee Na Young"
@@ -6883,12 +6876,12 @@ const baseDramas = [
                         "annee": 2023,
                         "episodes": 8,
                         "source": "Dataset",
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 409,
                         "titre": "Queenmaker",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Kim Hee Ae",
@@ -6903,7 +6896,7 @@ const baseDramas = [
             {
                         "id": 410,
                         "titre": "Celebrity",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Park Gyu Young",
@@ -7479,7 +7472,7 @@ const baseDramas = [
             {
                         "id": 445,
                         "titre": "Uncle Samsik",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Song Kang Ho",
@@ -7492,7 +7485,7 @@ const baseDramas = [
                         "annee": 2024,
                         "episodes": 16,
                         "source": "Dataset",
-                        "tags": "Politique"
+                        "tags": "Thriller"
             },
             {
                         "id": 446,
@@ -7704,7 +7697,7 @@ const baseDramas = [
             {
                         "id": 459,
                         "titre": "Kick Kick Kick Kick",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Ji Jin Hee",
@@ -8038,7 +8031,7 @@ const baseDramas = [
             {
                         "id": 483,
                         "titre": "Slowly Strongly (Show Business)",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Song Hye-kyo",
@@ -8152,13 +8145,13 @@ const baseDramas = [
             {
                         "id": 494,
                         "titre": "Pearl in Red",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2026,
                         "nouveaute": true,
                         "synopsis": "Kim Dan Hui a perdu sa sœur jumelle Myeong Hui dans des circonstances tragiques. Sa sœur a été sacrifiée par l'ambition du président sans scrupules Park Tae Ho. Pour se venger, Dan Hui décide de 'tuer' sa propre identité et de vivre sous le nom de sa défunte sœur.",
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 495,
@@ -8223,7 +8216,7 @@ const baseDramas = [
             {
                         "id": 501,
                         "titre": "Glass Heart",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2025,
@@ -8841,7 +8834,7 @@ const baseDramas = [
                         "id": 558,
                         "titre": "Une mauvaise mère ?",
                         "annee": 2023,
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "JTBC",
                         "note": "7.8",
                         "acteurs": [
@@ -8850,7 +8843,7 @@ const baseDramas = [
                         ],
                         "synopsis": "Une procureure ambitieuse se retrouve face à son fils qu'elle a abandonné enfant, désormais dans le coma. Elle doit le soigner tout en affrontant ses remords.",
                         "episodes": 16,
-                        "tags": "Music"
+                        "tags": "Drame"
             },
             {
                         "id": 559,
@@ -9032,7 +9025,7 @@ const baseDramas = [
                         "id": 571,
                         "titre": "Shooting Star",
                         "annee": 2022,
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "tvN",
                         "note": "6.7",
                         "acteurs": [
@@ -9047,7 +9040,7 @@ const baseDramas = [
                         "id": 572,
                         "titre": "Behind Every Star",
                         "annee": 2022,
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "note": "7.1",
                         "acteurs": [
@@ -9170,7 +9163,7 @@ const baseDramas = [
             {
                         "id": 580,
                         "titre": "Heartstrings",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Jung Yong Hwa",
@@ -9180,7 +9173,7 @@ const baseDramas = [
                         ],
                         "annee": 2011,
                         "synopsis": "Dans une université artistique, une étudiante passionnée de musique traditionnelle croise un chanteur populaire. Leur rivalité laisse peu à peu place à une histoire d'amour et de rêves.",
-                        "tags": "Music"
+                        "tags": "Drame"
             },
             {
                         "id": 581,
@@ -9334,7 +9327,7 @@ const baseDramas = [
             {
                         "id": 591,
                         "titre": "I Miss You",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Park Yoo Chun",
@@ -9346,7 +9339,7 @@ const baseDramas = [
                         "annee": 2012,
                         "episodes": 21,
                         "synopsis": "Deux adolescents séparés par un drame se retrouvent des années plus tard, encore marqués par leur passé et leurs sentiments inachevés.",
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 592,
@@ -9428,7 +9421,7 @@ const baseDramas = [
             {
                         "id": 597,
                         "titre": "K-Pop: L'Ultime Audition",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Go Eun Ah",
@@ -9459,7 +9452,7 @@ const baseDramas = [
             {
                         "id": 599,
                         "titre": "That Winter, the Wind Blows",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Jo In Sung",
@@ -9490,7 +9483,7 @@ const baseDramas = [
             {
                         "id": 601,
                         "titre": "Secret Love",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Ji Sung",
@@ -9611,7 +9604,7 @@ const baseDramas = [
             {
                         "id": 609,
                         "titre": "The Producers",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Kim Soo Hyun",
@@ -9656,7 +9649,7 @@ const baseDramas = [
             {
                         "id": 612,
                         "titre": "Mask",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Viki",
                         "acteurs": [
                                     "Soo Ae",
@@ -9679,10 +9672,10 @@ const baseDramas = [
             {
                         "id": 614,
                         "titre": "Assembly",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Politique"
+                        "tags": "Thriller"
             },
             {
                         "id": 615,
@@ -9701,18 +9694,18 @@ const baseDramas = [
             {
                         "id": 617,
                         "titre": "Heard It Through the Grapevine",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 618,
                         "titre": "Imaginary Cat",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 619,
@@ -10176,7 +10169,7 @@ const baseDramas = [
             {
                         "id": 655,
                         "titre": "Entertainer",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [
                                     "Ji Sung",
@@ -10390,12 +10383,12 @@ const baseDramas = [
             {
                         "id": 675,
                         "titre": "Women's Secret",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
                         "source": "Ajout manuel 2016-2017",
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 676,
@@ -10482,12 +10475,12 @@ const baseDramas = [
             {
                         "id": 685,
                         "titre": "The Promise",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À trouver",
                         "acteurs": [],
                         "annee": 2016,
                         "source": "Ajout manuel 2016-2017",
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 686,
@@ -10690,12 +10683,12 @@ const baseDramas = [
             },
             {
                         "titre": "Part-Time Idol",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
                         "id": 982,
-                        "tags": "Music"
+                        "tags": "Drame"
             },
             {
                         "titre": "Reunited Worlds",
@@ -10734,7 +10727,7 @@ const baseDramas = [
             },
             {
                         "titre": "Hit the Top",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
@@ -10775,7 +10768,7 @@ const baseDramas = [
             },
             {
                         "titre": "The Lady in Dignity",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
@@ -10800,7 +10793,7 @@ const baseDramas = [
             },
             {
                         "titre": "The Boy Next Door",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2017,
@@ -10880,10 +10873,10 @@ const baseDramas = [
             {
                         "id": 710,
                         "titre": "Sweet Enemy",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 711,
@@ -10920,10 +10913,10 @@ const baseDramas = [
             {
                         "id": 715,
                         "titre": "Sea of the Woman",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 716,
@@ -10981,7 +10974,7 @@ const baseDramas = [
             {
                         "id": 723,
                         "titre": "The Liar and His Lover",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": []
             },
@@ -11075,10 +11068,10 @@ const baseDramas = [
             {
                         "id": 736,
                         "titre": "Unknown Woman",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 737,
@@ -11099,7 +11092,7 @@ const baseDramas = [
             {
                         "id": 739,
                         "titre": "The IDOLM@STER.KR",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": []
             },
@@ -11229,7 +11222,7 @@ const baseDramas = [
             {
                         "id": 757,
                         "titre": "Tempted",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": []
             },
@@ -11338,10 +11331,10 @@ const baseDramas = [
             {
                         "id": 771,
                         "titre": "Your House Helper",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 772,
@@ -11362,10 +11355,10 @@ const baseDramas = [
             {
                         "id": 774,
                         "titre": "Mysterious Personal Shopper",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 775,
@@ -11399,10 +11392,10 @@ const baseDramas = [
             {
                         "id": 779,
                         "titre": "Hold Me Tight",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 780,
@@ -11446,26 +11439,26 @@ const baseDramas = [
             {
                         "id": 785,
                         "titre": "Goodbye to Goodbye",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 786,
                         "titre": "Secrets and Lies",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 787,
                         "titre": "Let Me Introduce Her",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 788,
@@ -11494,10 +11487,10 @@ const baseDramas = [
             {
                         "id": 791,
                         "titre": "Love to the End",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 792,
@@ -11509,10 +11502,10 @@ const baseDramas = [
             {
                         "id": 793,
                         "titre": "Hide and Seek",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 794,
@@ -11547,7 +11540,7 @@ const baseDramas = [
             {
                         "id": 798,
                         "titre": "To. Jenny",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": []
             },
@@ -11569,10 +11562,10 @@ const baseDramas = [
             {
                         "id": 801,
                         "titre": "The Time",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 802,
@@ -11623,7 +11616,7 @@ const baseDramas = [
             {
                         "id": 808,
                         "titre": "Fates & Furies",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": []
             },
@@ -11775,7 +11768,7 @@ const baseDramas = [
             {
                         "id": 826,
                         "titre": "I Wanna Hear Your Song",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -11792,11 +11785,11 @@ const baseDramas = [
             {
                         "id": 828,
                         "titre": "My Fellow Citizens!",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019,
-                        "tags": "Politique"
+                        "tags": "Thriller"
             },
             {
                         "id": 829,
@@ -11876,7 +11869,7 @@ const baseDramas = [
             {
                         "id": 838,
                         "titre": "Chief of Staff",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -11884,11 +11877,11 @@ const baseDramas = [
             {
                         "id": 839,
                         "titre": "The Great Show",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019,
-                        "tags": "Politique"
+                        "tags": "Thriller"
             },
             {
                         "id": 840,
@@ -11927,7 +11920,7 @@ const baseDramas = [
             {
                         "id": 844,
                         "titre": "Love in Sadness",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -12022,7 +12015,7 @@ const baseDramas = [
             {
                         "id": 855,
                         "titre": "Woman of 9.9 Billion",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -12057,7 +12050,7 @@ const baseDramas = [
             {
                         "id": 859,
                         "titre": "Out of Breath",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -12065,7 +12058,7 @@ const baseDramas = [
             {
                         "id": 860,
                         "titre": "Chief of Staff Season 2",
-                        "genre": "Politique",
+                        "genre": "Thriller",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -12091,7 +12084,7 @@ const baseDramas = [
             {
                         "id": 863,
                         "titre": "Tower of Babel",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -12151,20 +12144,20 @@ const baseDramas = [
             {
                         "id": 870,
                         "titre": "Miss Independent Ji Eun Season 1",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019,
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 871,
                         "titre": "Miss Independent Ji Eun Season 2",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019,
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 872,
@@ -12237,7 +12230,7 @@ const baseDramas = [
             {
                         "id": 880,
                         "titre": "A Place in the Sun",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019
@@ -12458,11 +12451,11 @@ const baseDramas = [
             {
                         "id": 905,
                         "titre": "The Secret of Secret",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019,
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 906,
@@ -12557,11 +12550,11 @@ const baseDramas = [
             {
                         "id": 916,
                         "titre": "Fancafe",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2019,
-                        "tags": "Music"
+                        "tags": "Drame"
             },
             {
                         "id": 917,
@@ -12609,7 +12602,7 @@ const baseDramas = [
             {
                         "id": 922,
                         "titre": "The Penthouse 3",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2020
@@ -12678,7 +12671,7 @@ const baseDramas = [
             {
                         "id": 930,
                         "titre": "Do You Like Brahms?",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Netflix",
                         "acteurs": [],
                         "annee": 2020
@@ -13104,12 +13097,12 @@ const baseDramas = [
             {
                         "id": 1000,
                         "titre": "Phoenix 2020",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
                         "episodes": 120,
-                        "tags": "Melodrama"
+                        "tags": "Drame"
             },
             {
                         "id": 1001,
@@ -13141,7 +13134,7 @@ const baseDramas = [
             {
                         "id": 1004,
                         "titre": "Fatal Promise",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
@@ -13179,12 +13172,12 @@ const baseDramas = [
             {
                         "id": 1008,
                         "titre": "Big Picture House",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
                         "episodes": 12,
-                        "tags": "Music"
+                        "tags": "Drame"
             },
             {
                         "id": 1009,
@@ -13285,12 +13278,12 @@ const baseDramas = [
             {
                         "id": 1019,
                         "titre": "Winter Vacation",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
                         "episodes": 6,
-                        "tags": "Life"
+                        "tags": "Drame"
             },
             {
                         "id": 1020,
@@ -13382,12 +13375,12 @@ const baseDramas = [
             {
                         "id": 1029,
                         "titre": "Something Music Season 2",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "Autre",
                         "acteurs": [],
                         "annee": 2020,
                         "episodes": 9,
-                        "tags": "Music"
+                        "tags": "Drame"
             },
             {
                         "id": 1030,
@@ -13507,7 +13500,7 @@ const baseDramas = [
             {
                         "id": 1042,
                         "titre": "To My Star",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13526,7 +13519,7 @@ const baseDramas = [
             {
                         "id": 1044,
                         "titre": "Replay: The Moment When It Starts Again",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13564,7 +13557,7 @@ const baseDramas = [
             {
                         "id": 1048,
                         "titre": "Miss Monte-Cristo",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13630,7 +13623,7 @@ const baseDramas = [
             {
                         "id": 1055,
                         "titre": "Must You Go?",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13640,7 +13633,7 @@ const baseDramas = [
             {
                         "id": 1056,
                         "titre": "You Make Me Dance",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13751,12 +13744,12 @@ const baseDramas = [
             {
                         "id": 1068,
                         "titre": "Bio Homme",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
                         "episodes": 10,
-                        "tags": "BL"
+                        "tags": "Romance"
             },
             {
                         "id": 1069,
@@ -13779,7 +13772,7 @@ const baseDramas = [
             {
                         "id": 1071,
                         "titre": "Amor Fati",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13788,7 +13781,7 @@ const baseDramas = [
             {
                         "id": 1072,
                         "titre": "My Love: Six Stories of True Love",
-                        "genre": "Documentaire",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13797,7 +13790,7 @@ const baseDramas = [
             {
                         "id": 1073,
                         "titre": "Nobleman Ryu's Wedding",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13826,7 +13819,7 @@ const baseDramas = [
             {
                         "id": 1076,
                         "titre": "Just Friend",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13836,7 +13829,7 @@ const baseDramas = [
             {
                         "id": 1077,
                         "titre": "So I Married the Anti-Fan",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13865,7 +13858,7 @@ const baseDramas = [
             {
                         "id": 1080,
                         "titre": "Imitation",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -13960,7 +13953,7 @@ const baseDramas = [
             {
                         "id": 1090,
                         "titre": "Love (ft. Marriage and Divorce) Season 2",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14045,7 +14038,7 @@ const baseDramas = [
             {
                         "id": 1099,
                         "titre": "Red Shoes",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14101,7 +14094,7 @@ const baseDramas = [
             {
                         "id": 1105,
                         "titre": "The Second Husband",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14163,7 +14156,7 @@ const baseDramas = [
             {
                         "id": 1112,
                         "titre": "Behind Cut",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "Viki",
                         "acteurs": []
             },
@@ -14186,7 +14179,7 @@ const baseDramas = [
             {
                         "id": 1115,
                         "titre": "Peach of Time",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14256,7 +14249,7 @@ const baseDramas = [
             {
                         "id": 1122,
                         "titre": "The Tasty Florida",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14286,7 +14279,7 @@ const baseDramas = [
             {
                         "id": 1125,
                         "titre": "Mumul Zzumul",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14326,7 +14319,7 @@ const baseDramas = [
             {
                         "id": 1129,
                         "titre": "Reflection of You",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14346,7 +14339,7 @@ const baseDramas = [
             {
                         "id": 1131,
                         "titre": "Your Playlist",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14366,7 +14359,7 @@ const baseDramas = [
             {
                         "id": 1133,
                         "titre": "My Sweet Dear",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14386,7 +14379,7 @@ const baseDramas = [
             {
                         "id": 1135,
                         "titre": "Would You Like a Cup of Coffee?",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14396,7 +14389,7 @@ const baseDramas = [
             {
                         "id": 1136,
                         "titre": "Heartbeat Broadcasting Accident",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14466,7 +14459,7 @@ const baseDramas = [
             {
                         "id": 1143,
                         "titre": "Let Me Be Your Knight",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14476,7 +14469,7 @@ const baseDramas = [
             {
                         "id": 1144,
                         "titre": "Idol: The Coup",
-                        "genre": "Music",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14536,7 +14529,7 @@ const baseDramas = [
             {
                         "id": 1150,
                         "titre": "Now, We Are Breaking Up",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14686,7 +14679,7 @@ const baseDramas = [
             {
                         "id": 1165,
                         "titre": "A DeadbEAT's Meal",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14756,7 +14749,7 @@ const baseDramas = [
             {
                         "id": 1172,
                         "titre": "I Want to Live an Easy Life",
-                        "genre": "Life",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14766,7 +14759,7 @@ const baseDramas = [
             {
                         "id": 1173,
                         "titre": "The One and Only",
-                        "genre": "Melodrama",
+                        "genre": "Drame",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14786,7 +14779,7 @@ const baseDramas = [
             {
                         "id": 1175,
                         "titre": "Tinted with You",
-                        "genre": "BL",
+                        "genre": "Romance",
                         "plateforme": "À vérifier",
                         "acteurs": [],
                         "annee": 2021,
@@ -14823,7 +14816,266 @@ const baseDramas = [
                         "episodes": 8,
                         "tags": "Science-Fiction, Thriller, Monstres, Survie"
             }
-];
+,
+{
+            "id": 1178,
+            "titre": "The Wailing",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Kwak Do Won",
+                        "Hwang Jung Min",
+                        "Chun Woo Hee"
+            ],
+            "annee": 2016,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Dans un village coréen, une série de morts étranges et violentes pousse un policier à enquêter sur une présence mystérieuse. Possession, chamanisme et paranoïa installent une ambiance très malsaine."
+},
+{
+            "id": 1179,
+            "titre": "Gonjiam: Haunted Asylum",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Wi Ha Joon",
+                        "Park Ji Hyun",
+                        "Oh Ah Yeon"
+            ],
+            "annee": 2018,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Une équipe de vidéastes entre dans un ancien hôpital psychiatrique abandonné pour une émission en direct. La chasse aux frissons vire rapidement au cauchemar."
+},
+{
+            "id": 1180,
+            "titre": "The Call",
+            "genre": "Horreur",
+            "plateforme": "Netflix",
+            "acteurs": [
+                        "Park Shin Hye",
+                        "Jeon Jong Seo",
+                        "Kim Sung Ryung"
+            ],
+            "annee": 2020,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Deux femmes vivant à des époques différentes communiquent par téléphone. Ce lien temporel devient dangereux lorsqu'une décision du passé change le présent."
+},
+{
+            "id": 1181,
+            "titre": "A Tale of Two Sisters",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Im Soo Jung",
+                        "Moon Geun Young",
+                        "Yum Jung Ah"
+            ],
+            "annee": 2003,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Deux sœurs reviennent vivre dans la maison familiale avec leur belle-mère. Les tensions, les secrets et les apparitions créent une atmosphère psychologique oppressante."
+},
+{
+            "id": 1182,
+            "titre": "The Medium",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Narilya Gulmongkolpech",
+                        "Sawanee Utoomma",
+                        "Sirani Yankittikan"
+            ],
+            "annee": 2021,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Une équipe documentaire suit une chamane et sa famille lorsqu'une jeune femme semble possédée. Le rituel spirituel tourne progressivement à l'horreur."
+},
+{
+            "id": 1183,
+            "titre": "The Mimic",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Yum Jung Ah",
+                        "Park Hyuk Kwon",
+                        "Shin Rin Ah"
+            ],
+            "annee": 2017,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Une famille recueille une mystérieuse fillette près d'une montagne liée à une légende terrifiante. Des voix familières commencent à troubler la réalité."
+},
+{
+            "id": 1184,
+            "titre": "Sleep",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Jung Yu Mi",
+                        "Lee Sun Kyun"
+            ],
+            "annee": 2023,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Une jeune femme enceinte s'inquiète du comportement de son mari pendant son sommeil. Chaque nuit devient plus menaçante que la précédente."
+},
+{
+            "id": 1185,
+            "titre": "#Alive",
+            "genre": "Horreur",
+            "plateforme": "Netflix",
+            "acteurs": [
+                        "Yoo Ah In",
+                        "Park Shin Hye"
+            ],
+            "annee": 2020,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Un jeune homme se retrouve isolé dans son appartement pendant qu'une infection zombie ravage la ville. Il tente de survivre avec peu de ressources."
+},
+{
+            "id": 1186,
+            "titre": "Peninsula",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Gang Dong Won",
+                        "Lee Jung Hyun",
+                        "Kwon Hae Hyo"
+            ],
+            "annee": 2020,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Quatre ans après l'épidémie de Train to Busan, un ancien soldat retourne dans une Corée dévastée par les zombies pour une mission risquée."
+},
+{
+            "id": 1187,
+            "titre": "The Host",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Song Kang Ho",
+                        "Byun Hee Bong",
+                        "Park Hae Il",
+                        "Bae Doona"
+            ],
+            "annee": 2006,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Une créature mutante surgit du fleuve Han et enlève une jeune fille. Sa famille se lance dans une course désespérée pour la retrouver."
+},
+{
+            "id": 1188,
+            "titre": "I Saw the Devil",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Lee Byung Hun",
+                        "Choi Min Sik"
+            ],
+            "annee": 2010,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Après le meurtre brutal de sa fiancée, un agent secret traque un tueur en série et transforme sa vengeance en jeu psychologique extrêmement violent."
+},
+{
+            "id": 1189,
+            "titre": "Project Wolf Hunting",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Seo In Guk",
+                        "Jang Dong Yoon",
+                        "Jung So Min",
+                        "Sung Dong Il"
+            ],
+            "annee": 2022,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Des criminels dangereux sont transférés par bateau vers la Corée. Une expérience monstrueuse transforme le voyage en massacre sanglant."
+},
+{
+            "id": 1190,
+            "titre": "Death Bell",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Lee Beom Soo",
+                        "Yoon Jung Hee",
+                        "Nam Gyu Ri",
+                        "Kim Bum"
+            ],
+            "annee": 2008,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Des lycéens brillants sont enfermés dans leur école et forcés de résoudre des énigmes mortelles pour survivre."
+},
+{
+            "id": 1191,
+            "titre": "Death Bell 2: Bloody Camp",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Hwang Jung Eum",
+                        "Yoon Si Yoon",
+                        "Kim Su Ro",
+                        "Ji Chang Wook"
+            ],
+            "annee": 2010,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Pendant un camp d'été scolaire, des élèves deviennent les cibles d'un tueur qui transforme l'école en piège sanglant."
+},
+{
+            "id": 1192,
+            "titre": "Hansel & Gretel",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Chun Jung Myung",
+                        "Eun Won Jae",
+                        "Shim Eun Kyung",
+                        "Jin Ji Hee"
+            ],
+            "annee": 2007,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Un homme perdu en forêt découvre une maison étrange habitée par des enfants. Le conte de fées devient un cauchemar sombre et inquiétant."
+},
+{
+            "id": 1193,
+            "titre": "Svaha: The Sixth Finger",
+            "genre": "Horreur",
+            "plateforme": "Netflix",
+            "acteurs": [
+                        "Lee Jung Jae",
+                        "Park Jung Min",
+                        "Lee Jae In",
+                        "Jung Jin Young"
+            ],
+            "annee": 2019,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Un pasteur enquêtant sur des sectes découvre une affaire mystérieuse mêlant meurtres, croyances occultes et secrets religieux."
+},
+{
+            "id": 1194,
+            "titre": "Metamorphosis",
+            "genre": "Horreur",
+            "plateforme": "Google",
+            "acteurs": [
+                        "Bae Sung Woo",
+                        "Sung Dong Il",
+                        "Jang Young Nam",
+                        "Kim Hye Jun"
+            ],
+            "annee": 2019,
+            "type": "Movie",
+            "tags": "Horreur",
+            "synopsis": "Une famille est terrorisée par une entité démoniaque capable de prendre l'apparence de ses proches."
+}];
 let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
 customDramas = customDramas.map(d => ({ ...d, acteurs: uniqueActors(d.acteurs) }));
 localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
@@ -14926,8 +15178,9 @@ const genreCategories = [
     { label: 'Tous', icon: '🫰', keys: [] },
     { label: 'Romance', icon: '🌸', keys: ['romance','amour','romantic'] },
     { label: 'Comédie', icon: '😂', keys: ['comedie','comédie','humour','comedy','drole','drôle'] },
+    { label: 'Drame', icon: '🎭', keys: ['drame','drama'] },
     { label: 'Horreur', icon: '😱', keys: ['horreur','horror','zombie','zombies','creature','haunted','slasher','gore'] },
-    { label: 'Thriller', icon: '🔪', keys: ['thriller','suspense','crime','murder','policier','detective','détective'] },
+    { label: 'Thriller', icon: '🔪', keys: ['thriller','suspense','crime','murder','detective','détective'] },
     { label: 'Action', icon: '⚔️', keys: ['action','fight','combat','police','cop','lawless','vigilante'] },
     { label: 'Fantastique', icon: '✨', keys: ['fantastique','fantasy','magic','magie','mythical','goblin'] },
     { label: 'Surnaturel', icon: '👻', keys: ['surnaturel','supernatural','ghost','spirit','reaper','demon','démon','vampire','curse','shaman'] },
@@ -14937,15 +15190,9 @@ const genreCategories = [
     { label: 'Médical', icon: '🏥', keys: ['medical','médical','doctor','hospital','nurse','trauma'] },
     { label: 'Historique', icon: '👑', keys: ['historique','history','historical','joseon','king','queen','palace','arthdal'] },
     { label: 'Family', icon: '👨‍👩‍👧', keys: ['family','familial','famille'] },
-    { label: 'Melodrama', icon: '💔', keys: ['melodrama','mélodrame','makjang'] },
-    { label: 'Life', icon: '☕', keys: ['life','slice of life','vie'] },
     { label: 'Policier', icon: '🚓', keys: ['policier','police','detective','détective','profiler','investigation'] },
     { label: 'Sport', icon: '🏆', keys: ['sport','baseball','badminton','basket','wrestling','athlete','sports'] },
     { label: 'Business', icon: '💼', keys: ['business','company','office','workplace','corporate','startup','start-up'] },
-    { label: 'Politique', icon: '🏛️', keys: ['politique','political','assembly','chief of staff','president'] },
-    { label: 'Documentaire', icon: '🎞️', keys: ['documentaire','documentary'] },
-    { label: 'Music', icon: '🎵', keys: ['music','musique','idol','band'] },
-    { label: 'BL', icon: '🏳️‍🌈', keys: ['bl','boys love'] },
     { label: 'Favoris', icon: '💗', keys: [] }
 ];
 
@@ -15749,7 +15996,7 @@ function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
     const headerCount = document.getElementById('drama-count-header');
-    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1173 dramas 🇰🇷`;
+    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1190 dramas 🇰🇷`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
@@ -16716,7 +16963,7 @@ function vipLogout() {
 document.addEventListener('DOMContentLoaded', function() {
     const countHeader = document.getElementById('drama-count-header');
     if (countHeader && typeof baseDramas !== 'undefined') {
-        countHeader.textContent = 'Ton assistant K-Drama • 1173 dramas 🇰🇷';
+        countHeader.textContent = 'Ton assistant K-Drama • 1190 dramas 🇰🇷';
     }
 });
 
