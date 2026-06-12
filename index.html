@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daebak Connect - 1246 dramas 🫰</title>
+    <title>Daebak Connect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -79,7 +79,7 @@
     <div class="app-shell w-full max-w-md bg-white/72 rounded-[40px] overflow-hidden flex flex-col h-[750px] border border-pink-100/70 backdrop-blur-xl">
         <header class="header-gradient p-8 text-center text-pink-950 shadow-lg">
             <h1 class="text-2xl font-bold tracking-wide">Daebak Connect 🫰</h1>
-            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1246 dramas 🇰🇷</p>
+            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1248 dramas 🇰🇷</p>
         </header>
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
@@ -349,7 +349,7 @@
     </div>
 
 <script>
-<!-- V8 ajouts 2023-2024 : 34 dramas ajoutés depuis la base 1212 ; When the Phone Rings était déjà présent. Total 1246 dramas. -->
+<!-- V8 ajouts 2023-2024 : 34 dramas ajoutés depuis la base 1212 ; When the Phone Rings était déjà présent. Compteur désormais automatique. Total détecté: 1248 dramas. -->
 
 const baseDramas = [
             {
@@ -15380,7 +15380,23 @@ const baseDramas = [
             "plateforme": "Viki",
             "acteurs": [],
             "annee": 2024,
-            "tags": "Romance"
+            "tags": "Romance",
+            {
+                        "id": 1229,
+                        "titre": "Under the Queen's Umbrella",
+                        "genre": "Historique",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Kim Hye-soo",
+                                    "Kim Hae-sook",
+                                    "Choi Won-young"
+                        ],
+                        "note": 8.8,
+                        "annee": 2022,
+                        "episodes": 16,
+                        "synopsis": "Une reine déterminée tente de protéger ses fils et de les préparer au trône, tout en affrontant les intrigues du palais et les rivalités de la cour.",
+                        "tags": "Historique Drame Politique"
+            }
 }];
 let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
 customDramas = customDramas.map(d => ({ ...d, acteurs: uniqueActors(d.acteurs) }));
@@ -16302,7 +16318,8 @@ function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
     const headerCount = document.getElementById('drama-count-header');
-    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1246 dramas 🇰🇷`;
+    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • ${dramas.length} dramas 🇰🇷`;
+    document.title = `Daebak Connect - ${dramas.length} dramas 🫰`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
@@ -17338,7 +17355,8 @@ function vipLogout() {
 document.addEventListener('DOMContentLoaded', function() {
     const countHeader = document.getElementById('drama-count-header');
     if (countHeader && typeof baseDramas !== 'undefined') {
-        countHeader.textContent = 'Ton assistant K-Drama • 1246 dramas 🇰🇷';
+        countHeader.textContent = `Ton assistant K-Drama • ${baseDramas.length} dramas 🇰🇷`;
+        document.title = `Daebak Connect - ${baseDramas.length} dramas 🫰`;
     }
 });
 
