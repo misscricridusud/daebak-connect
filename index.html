@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daebak Connect</title>
+    <title>Daebak Connect - 1248 dramas 🫰</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -349,7 +349,7 @@
     </div>
 
 <script>
-<!-- V8 ajouts 2023-2024 : 34 dramas ajoutés depuis la base 1212 ; When the Phone Rings était déjà présent. Compteur désormais automatique. Total détecté: 1248 dramas. -->
+<!-- V8 ajouts 2023-2024 : 34 dramas ajoutés depuis la base 1212 ; When the Phone Rings était déjà présent. Total 1248 dramas. -->
 
 const baseDramas = [
             {
@@ -15380,7 +15380,8 @@ const baseDramas = [
             "plateforme": "Viki",
             "acteurs": [],
             "annee": 2024,
-            "tags": "Romance",
+            "tags": "Romance"
+},
             {
                         "id": 1229,
                         "titre": "Under the Queen's Umbrella",
@@ -15396,8 +15397,7 @@ const baseDramas = [
                         "episodes": 16,
                         "synopsis": "Une reine déterminée tente de protéger ses fils et de les préparer au trône, tout en affrontant les intrigues du palais et les rivalités de la cour.",
                         "tags": "Historique Drame Politique"
-            }
-}];
+            }];
 let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
 customDramas = customDramas.map(d => ({ ...d, acteurs: uniqueActors(d.acteurs) }));
 localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
@@ -16318,8 +16318,7 @@ function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
     const headerCount = document.getElementById('drama-count-header');
-    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • ${dramas.length} dramas 🇰🇷`;
-    document.title = `Daebak Connect - ${dramas.length} dramas 🫰`;
+    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1248 dramas 🇰🇷`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
@@ -17355,8 +17354,7 @@ function vipLogout() {
 document.addEventListener('DOMContentLoaded', function() {
     const countHeader = document.getElementById('drama-count-header');
     if (countHeader && typeof baseDramas !== 'undefined') {
-        countHeader.textContent = `Ton assistant K-Drama • ${baseDramas.length} dramas 🇰🇷`;
-        document.title = `Daebak Connect - ${baseDramas.length} dramas 🫰`;
+        countHeader.textContent = 'Ton assistant K-Drama • 1248 dramas 🇰🇷';
     }
 });
 
