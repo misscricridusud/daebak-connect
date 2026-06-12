@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daebak Connect - 1277 dramas 🫰</title>
+    <title>Daebak Connect - K-Drama & Films KR 🫰</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -79,7 +79,7 @@
     <div class="app-shell w-full max-w-md bg-white/72 rounded-[40px] overflow-hidden flex flex-col h-[750px] border border-pink-100/70 backdrop-blur-xl">
         <header class="header-gradient p-8 text-center text-pink-950 shadow-lg">
             <h1 class="text-2xl font-bold tracking-wide">Daebak Connect 🫰</h1>
-            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">Ton assistant K-Drama • 1277 dramas 🇰🇷</p>
+            <p id="drama-count-header" class="text-xs text-pink-700 mt-1 font-medium italic">K-Drama & Films KR 🇰🇷</p>
         </header>
 
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
@@ -87,6 +87,7 @@
             <button onclick="showTab('chat')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-chat">💖 OppaBot</button>
             <button onclick="showTab('import')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-import">Ajout</button>
             <button onclick="showTab('stars')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-stars">Stars</button>
+            <button onclick="showTab('future2026')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-future2026">2026 📅</button>
             <button onclick="showTab('vip')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-vip">VIP 💎</button>
         </div>
 
@@ -158,6 +159,26 @@
             <div id="content-stars" class="hidden">
                 <input type="text" id="star-search" oninput="renderStars()" placeholder="Chercher une star..." class="w-full px-4 py-3 mb-4 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="stars-list" class="grid grid-cols-2 gap-3"></div>
+            </div>
+
+
+            <div id="content-future2026" class="hidden">
+                <div class="soft-card p-5 rounded-3xl mb-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-11 h-11 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center shadow-sm">📅</div>
+                        <div class="flex-1">
+                            <h2 class="text-lg font-bold text-sky-900">Sorties 2026</h2>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Dramas annoncés ou à surveiller. Les dates, titres et plateformes peuvent encore changer avant diffusion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="text" id="search-2026" oninput="render2026()" placeholder="Chercher une sortie 2026, un acteur, une plateforme..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
+                <div id="filter-2026" class="genre-scroll"></div>
+                <div id="count-2026" class="text-xs text-violet-700 font-bold mb-3"></div>
+                <div id="list-2026" class="space-y-3"></div>
             </div>
 
             <div id="content-vip" class="hidden">
@@ -16552,7 +16573,7 @@ function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
     const headerCount = document.getElementById('drama-count-header');
-    if(headerCount) headerCount.innerHTML = `Ton assistant K-Drama • 1277 dramas 🇰🇷`;
+    if(headerCount) headerCount.innerHTML = `K-Drama & Films KR 🇰🇷`;
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
@@ -16713,8 +16734,406 @@ function filterByStar(star) {
     afficherDramas();
 }
 
+
+// Onglet séparé 2026 : ne modifie pas baseDramas.
+const dramas2026 = [
+    {
+        "titre": "The Remarried Empress",
+        "genre": "Fantastique",
+        "plateforme": "Disney+",
+        "statut": "Annoncé",
+        "acteurs": [
+            "Shin Min-a",
+            "Lee Jong-suk",
+            "Ju Ji-hoon",
+            "Lee Se-young"
+        ],
+        "tags": "Romance Historique Fantastique"
+    },
+    {
+        "titre": "Boyfriend on Demand",
+        "genre": "Romance",
+        "plateforme": "Netflix",
+        "statut": "Annoncé",
+        "acteurs": [
+            "Jisoo",
+            "Seo In-guk"
+        ],
+        "tags": "Romance Comédie"
+    },
+    {
+        "titre": "Can This Love Be Translated?",
+        "genre": "Romance",
+        "plateforme": "Netflix",
+        "statut": "Annoncé",
+        "acteurs": [
+            "Kim Seon-ho",
+            "Go Youn-jung"
+        ],
+        "tags": "Romance Comédie"
+    },
+    {
+        "titre": "Bloodhounds 2",
+        "genre": "Action",
+        "plateforme": "Netflix",
+        "statut": "À surveiller",
+        "acteurs": [
+            "Woo Do-hwan",
+            "Lee Sang-yi"
+        ],
+        "tags": "Action Thriller"
+    },
+    {
+        "titre": "Yumi's Cells 3",
+        "genre": "Romance",
+        "plateforme": "À confirmer",
+        "statut": "À surveiller",
+        "acteurs": [
+            "Kim Go-eun"
+        ],
+        "tags": "Romance Comédie"
+    },
+    {
+        "titre": "A Shop for Killers 2",
+        "genre": "Action",
+        "plateforme": "Disney+",
+        "statut": "À surveiller",
+        "acteurs": [
+            "Lee Dong Wook",
+            "Kim Hye Joon"
+        ],
+        "tags": "Action Thriller"
+    },
+    {
+        "titre": "Made in Korea 2",
+        "genre": "Thriller",
+        "plateforme": "À confirmer",
+        "statut": "À surveiller",
+        "acteurs": [
+            "Hyun Bin",
+            "Jung Woo-sung"
+        ],
+        "tags": "Thriller Crime"
+    },
+    {
+        "titre": "Perfect Crown",
+        "genre": "Drame",
+        "plateforme": "Disney+",
+        "statut": "Annoncé",
+        "acteurs": [
+            "IU"
+        ],
+        "tags": "Drame Romance Politique"
+    },
+    {
+        "titre": "No Tail to Tell",
+        "genre": "Romance",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Kim Hye-yoon",
+            "Lomon",
+            "Jang Dong-joo",
+            "Lee Si-woo"
+        ],
+        "tags": "Romance Fantastique Comédie",
+        "episodes": 12
+    },
+    {
+        "titre": "The WONDERfools",
+        "genre": "Fantastique",
+        "plateforme": "Netflix",
+        "statut": "Annoncé",
+        "acteurs": [
+            "Park Eun-bin",
+            "Cha Eun-woo"
+        ],
+        "tags": "Fantastique Action Comédie"
+    },
+    {
+        "titre": "The Art of Sarah",
+        "genre": "Thriller",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Shin Hye-sun",
+            "Lee Jun-hyuk",
+            "Kim Jae-won",
+            "Jung Da-bin",
+            "Shin Hyun-seung"
+        ],
+        "tags": "Thriller Mystère",
+        "episodes": 8
+    },
+    {
+        "titre": "Undercover Miss Hong",
+        "genre": "Comédie",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Park Shin-hye",
+            "Go Kyung-pyo",
+            "Ha Yoon-kyung",
+            "Cho Han-gyeol",
+            "Yuna"
+        ],
+        "tags": "Comédie Action Workplace",
+        "episodes": 16
+    },
+    {
+        "titre": "Portraits of Delusion",
+        "genre": "Fantastique",
+        "plateforme": "Disney+",
+        "statut": "À venir",
+        "acteurs": [
+            "Bae Suzy",
+            "Kim Seon-ho"
+        ],
+        "tags": "Fantastique Thriller Mystère Historique"
+    },
+    {
+        "titre": "The Judge Returns",
+        "genre": "Juridique",
+        "plateforme": "Wavve / TVING / HBO Max",
+        "statut": "Sorti",
+        "acteurs": [
+            "Ji Sung",
+            "Park Hee-soon",
+            "Won Jin-ah",
+            "Baek Jin-hee"
+        ],
+        "tags": "Juridique Fantastique Action Revenge",
+        "episodes": 14
+    },
+    {
+        "titre": "The Scandal",
+        "genre": "Drame",
+        "plateforme": "Netflix",
+        "statut": "À venir",
+        "acteurs": [
+            "Son Ye-jin",
+            "Ji Chang-wook",
+            "Nana"
+        ],
+        "tags": "Drame Historique Romance"
+    },
+    {
+        "titre": "Embers",
+        "genre": "Drame",
+        "plateforme": "À confirmer",
+        "statut": "À surveiller",
+        "acteurs": [
+            "Kim Min-ha"
+        ],
+        "tags": "Drame Historique",
+        "note2026": "Sortie plutôt annoncée 2027 selon HanCinema"
+    },
+    {
+        "titre": "The Scarecrow",
+        "genre": "Horreur",
+        "plateforme": "Genie TV / TVING / Viki",
+        "statut": "Sorti",
+        "acteurs": [
+            "Park Hae-soo",
+            "Lee Hee-joon",
+            "Kwak Sun-young",
+            "Seo Ji-hye"
+        ],
+        "tags": "Horreur Thriller Mystère",
+        "episodes": 7
+    },
+    {
+        "titre": "Sold Out on You",
+        "genre": "Romance",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Ahn Hyo-seop",
+            "Chae Won-bin",
+            "Kim Bum",
+            "Go Doo-shim",
+            "Yoon Byung-hee"
+        ],
+        "tags": "Romance Comédie Workplace",
+        "episodes": 6
+    },
+    {
+        "titre": "Absolute Value of Romance",
+        "genre": "Romance",
+        "plateforme": "Coupang Play / Amazon Prime",
+        "statut": "Sorti",
+        "acteurs": [
+            "Kim Hyang-gi",
+            "Cha Hak-yeon",
+            "Kim Jae-hyun",
+            "Son Jeong-hyeok",
+            "Kim Dong-gyu"
+        ],
+        "tags": "Romance École"
+    },
+    {
+        "titre": "We Are All Trying Here",
+        "genre": "Drame",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Koo Kyo-hwan",
+            "Go Youn-jung",
+            "Oh Jung-se",
+            "Kang Mal-geum",
+            "Park Hae-joon",
+            "Bae Jong-ok",
+            "Han Sun-hwa",
+            "Choi Won-young"
+        ],
+        "tags": "Drame Comédie noire Mélodrame",
+        "episodes": 8
+    },
+    {
+        "titre": "If Wishes Could Kill",
+        "genre": "Thriller",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Jeon So-young",
+            "Kang Mi-na",
+            "Baek Sun-ho",
+            "Hyun Woo-seok",
+            "Lee Hyo-je"
+        ],
+        "tags": "Thriller Horreur Mystère École"
+    },
+    {
+        "titre": "Siren's Kiss",
+        "genre": "Fantastique",
+        "plateforme": "Amazon Prime / tvN",
+        "statut": "Sorti",
+        "acteurs": [
+            "Park Min-young",
+            "Wi Ha-joon",
+            "Kim Jung-hyun",
+            "Lee Elijah",
+            "Han Joon-woo"
+        ],
+        "tags": "Fantastique Romance Thriller",
+        "episodes": 12
+    },
+    {
+        "titre": "Still Shining",
+        "genre": "Romance",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+            "Park Jin-young",
+            "Kim Min-ju",
+            "Shin Jae-ha",
+            "Park Se-hyun",
+            "Kim Tae-hoon"
+        ],
+        "tags": "Romance Drame Mélodrame",
+        "episodes": 10
+    },
+    {
+        "titre": "Climax",
+        "genre": "Thriller",
+        "plateforme": "ENA / Genie TV",
+        "statut": "Sorti",
+        "acteurs": [
+            "Ju Ji-hoon",
+            "Ha Ji-won",
+            "Nana",
+            "Oh Jung-se",
+            "Cha Joo-young"
+        ],
+        "tags": "Thriller Politique Noir",
+        "episodes": 10
+    },
+    {
+        "titre": "Mad Concrete Dreams",
+        "genre": "Thriller",
+        "plateforme": "TVING",
+        "statut": "Sorti",
+        "acteurs": [
+            "Ha Jung-woo",
+            "Im Soo-jung",
+            "Kim Jun-han",
+            "Krystal Jung",
+            "Shim Eun-kyung"
+        ],
+        "tags": "Thriller Drame Comédie noire"
+    }
+];
+let currentGenre2026 = 'Tous';
+
+function norm2026(v) {
+    return String(v || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function esc2026(v) {
+    return String(v || '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+
+function setGenre2026(genre) {
+    currentGenre2026 = genre;
+    render2026();
+}
+
+function render2026() {
+    const list = document.getElementById('list-2026');
+    const count = document.getElementById('count-2026');
+    const filter = document.getElementById('filter-2026');
+    if(!list || !count || !filter) return;
+
+    const q = norm2026(document.getElementById('search-2026')?.value || '');
+    const cats = ['Tous', ...Array.from(new Set(dramas2026.map(d => d.genre).filter(Boolean))).sort()];
+
+    filter.innerHTML = cats.map(c => {
+        const active = currentGenre2026 === c;
+        const icon = c === 'Tous' ? '✨' :
+            c === 'Action' ? '🔥' :
+            c === 'Romance' ? '💕' :
+            c === 'Fantastique' ? '🪄' :
+            c === 'Thriller' ? '🕵️' :
+            c === 'Juridique' ? '⚖️' :
+            c === 'Horreur' ? '👻' :
+            c === 'Comédie' ? '😂' : '🎬';
+        return `<button onclick="setGenre2026('${esc2026(c)}')" class="genre-chip px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm ${active ? 'bg-gradient-to-r from-violet-400 via-pink-400 to-sky-400 text-white shadow-lg shadow-pink-100' : 'bg-white/80 text-violet-700 border border-pink-100 hover:bg-pink-50'}">${icon} ${esc2026(c)}</button>`;
+    }).join('');
+
+    const filtered = dramas2026.filter(d => {
+        const full = norm2026(`${d.titre} ${d.genre} ${d.plateforme} ${d.statut} ${(d.acteurs || []).join(' ')} ${d.tags || ''}`);
+        const okSearch = !q || full.includes(q);
+        const okGenre = currentGenre2026 === 'Tous' || norm2026(d.genre) === norm2026(currentGenre2026) || norm2026(d.tags).includes(norm2026(currentGenre2026));
+        return okSearch && okGenre;
+    });
+
+    count.textContent = `${filtered.length} sortie(s) 2026 affichée(s) sur ${dramas2026.length}`;
+
+    list.innerHTML = filtered.map(d => {
+        const actors = (d.acteurs && d.acteurs.length) ? d.acteurs.map(esc2026).join(', ') : 'Casting à compléter';
+        const statusClass = d.statut === 'Sorti' ? 'bg-sky-50 text-sky-700 border-sky-100' : (d.statut === 'À venir' || d.statut === 'Annoncé') ? 'bg-emerald-50 text-emerald-700 border-emerald-100' : 'bg-amber-50 text-amber-700 border-amber-100';
+        return `
+            <div class="soft-card drama-card p-4 rounded-3xl border border-pink-100">
+                <div class="flex justify-between items-start gap-3">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sky-900 text-sm">${esc2026(d.titre)}</h3>
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-100">📅 2026</span>
+                            <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-pink-50 text-pink-700 border border-pink-100">${esc2026(d.genre)}</span>
+                            <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-100">${esc2026(d.plateforme)}</span>
+                            <span class="text-[10px] font-bold px-2 py-1 rounded-full border ${statusClass}">${esc2026(d.statut)}</span>
+                        </div>
+                        <div class="text-xs text-pink-600 font-bold mt-3">⭐ ${actors}</div>
+                        <div class="text-[11px] text-slate-400 mt-2">Tags : ${esc2026(d.tags || d.genre)}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('') || `<div class="text-center text-sm text-slate-400 py-8">Aucune sortie 2026 trouvée 🌸</div>`;
+}
+
 function showTab(tab) {
-    ['dramas', 'chat', 'import', 'stars', 'vip'].forEach(t => {
+    ['dramas', 'chat', 'import', 'stars', 'future2026', 'vip'].forEach(t => {
         document.getElementById(`content-${t}`).classList.add('hidden');
         document.getElementById(`tab-${t}`).className = "flex-1 py-4 text-xs font-bold text-pink-500 transition-all hover:bg-pink-50/60";
     });
@@ -16722,6 +17141,7 @@ function showTab(tab) {
     document.getElementById(`tab-${tab}`).className = "flex-1 py-4 text-xs font-bold text-sky-700 border-b-2 border-pink-400 bg-white/45 transition-all";
     document.getElementById('chat-input-area').classList.toggle('hidden', tab !== 'chat');
     if(tab === 'stars') renderStars();
+    if(tab === 'future2026') render2026();
     if(tab === 'vip' && vipUser) entrerDansSalonVip();
 }
 
@@ -17588,7 +18008,7 @@ function vipLogout() {
 document.addEventListener('DOMContentLoaded', function() {
     const countHeader = document.getElementById('drama-count-header');
     if (countHeader && typeof baseDramas !== 'undefined') {
-        countHeader.textContent = 'Ton assistant K-Drama • 1277 dramas 🇰🇷';
+        countHeader.textContent = 'K-Drama & Films KR 🇰🇷';
     }
 });
 
