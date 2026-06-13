@@ -120,7 +120,7 @@
                     <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500 shadow-md"><i class="fa-solid fa-robot"></i></div>
                         <div class="soft-card p-4 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">
-                            Annyeong 🌸 Je suis OppaBot, ton assistant K-Drama & Films KR ! Dis-moi ce que tu cherches : romance, thriller, fantasy, Go Ara, Lee Dong Wook ou ton prochain crush K-Drama : <b>comédie</b>, <b>thriller</b>, <b>romance</b>, <b>avec Go Ara</b>...
+                            Annyeong 🌸 Je suis OppaBot en mode recherche. Écris ce que tu veux : <b>film amour</b>, <b>drama thriller</b>, <b>film horreur</b>, <b>Netflix romance</b>, <b>avec Lee Dong Wook</b>, <b>2026 romance</b>. Je cherche dans la base, sans blabla.
                         </div>
                     </div>
                 </div>
@@ -334,7 +334,7 @@
 
         <div id="chat-input-area" class="p-4 border-t border-pink-100 bg-white/60 hidden">
             <div class="flex gap-2">
-                <input type="text" id="chat-input" onkeydown="if(event.key==='Enter') envoyerMessage()" placeholder="Je cherche..." class="flex-grow px-4 py-3 bg-white rounded-full text-sm outline-none border border-sky-100 shadow-inner">
+                <input type="text" id="chat-input" onkeydown="if(event.key==='Enter') envoyerMessage()" placeholder="Ex: film amour, drama thriller, avec Go Ara..." class="flex-grow px-4 py-3 bg-white rounded-full text-sm outline-none border border-sky-100 shadow-inner">
                 <button onclick="envoyerMessage()" class="w-12 h-12 bg-gradient-to-br from-sky-400 to-pink-400 text-white rounded-full hover:brightness-105"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
@@ -19304,16 +19304,20 @@ function daebakFindDramas(msg) {
 
 function daebakDramaReply(msg) {
     const res = daebakFindDramas(msg);
-    if (!res.length) return daebakPick([
-        "Je n’ai pas trouvé exactement dans ta liste 😅 Tu veux plutôt <b>film amour</b>, drama thriller, comédie, fantastique ou juridique ?",
-        "Hmm je ne trouve pas bien 😄 Donne-moi un genre ou un acteur, et je fouille dans tes dramas.",
-        "Je sèche un peu là 🌸 Essaie par exemple : “film amour”, “drama comique”, “avec Go Ara”, “thriller Netflix”."
-    ]);
-    return daebakPick(["Ouiii 😄 j'ai trouvé ça pour toi :", "J'ai quelques idées dans ta liste 🌸 :", "Mission recommandation activée 🫰 Voilà ce que je te propose :"]) +
-        "<br><br>" + res.map(d => {
-            const meta = [d.genre, d.plateforme, d.note ? "⭐ " + d.note : ""].filter(Boolean).join(" • ");
+    if (!res.length) {
+        return "Je n’ai rien trouvé dans la base 😅 Essaie : <b>film amour</b>, <b>drama thriller</b>, <b>film horreur</b>, <b>Netflix romance</b> ou un acteur.";
+    }
+
+    const t = normalize(msg || "");
+    let typeDemande = "titres";
+    if (/\b(film|films|movie)\b/.test(t)) typeDemande = "films";
+    else if (/\b(drama|dramas|serie|series|série|séries)\b/.test(t)) typeDemande = "dramas";
+
+    return `J’ai trouvé ${res.length} ${typeDemande} pour toi 🎬<br><span class="text-xs text-slate-500">Clique sur un titre pour ouvrir la fiche.</span><br><br>` +
+        res.map(d => {
+            const meta = [d.genre, d.plateforme, d.annee ? String(d.annee) : "", d.note ? "⭐ " + d.note : ""].filter(Boolean).join(" • ");
             const t2 = (d.titre||"").replace(/'/g, "&#39;");
-            return `🎬 <b><span onclick="showDramaFiche('${t2}')" style="cursor:pointer;color:#7dd3fc;text-decoration:underline dotted;">${esc(d.titre)}</span></b><br><span class="text-xs text-slate-500">${esc(meta)}</span>`;
+            return `🎬 <b><span onclick="showDramaFiche('${t2}')" style="cursor:pointer;color:#0ea5e9;text-decoration:underline dotted;">${esc(d.titre)}</span></b><br><span class="text-xs text-slate-500">${esc(meta)}</span>`;
         }).join("<br><br>");
 }
 
@@ -19326,109 +19330,13 @@ function showDramaFiche(titre) {
 function getSmartAIResponse(msg) {
     const t = normalize(msg || "");
 
+    // OppaBot = moteur de recherche uniquement. Pas de papotage ici.
     if (/^(salut|bonjour|coucou|hello|hey|annyeong|annyong|bonsoir)[\s!?.]*$/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Coucou 🌸 Contente de te voir ! Comment tu vas aujourd’hui ?", "Annyeong 🫰 Ça me fait plaisir de te voir 😄 Tu vas bien ?", "Hey toi 🩷 Tu veux papoter un peu ou chercher un drama ?"]);
+        return "Coucou 🌸 Je suis en mode recherche. Écris par exemple : <b>film amour</b>, <b>drama thriller</b>, <b>avec Lee Dong Wook</b>, <b>Netflix romance</b>.";
     }
-    if (/comment ca va|comment ça va|tu vas bien|ca va|ça va/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Ça va très bien 🌸 Je suis contente de papoter avec toi. Et toi, comment tu vas ?", "Moi ça va 😄 Je suis en mode copine K-Drama aujourd’hui. Et toi ?", "Ça va nickel 🩷 Et toi, ta journée se passe bien ?"]);
-    }
-    if (/discuter|parler|papoter|bavarder|parler un peu|raconte/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Avec plaisir 🌸 Tu veux me raconter ta journée ou on parle de ce qui te passe par la tête ?", "Ouiii viens on discute 🩷 Tu as fait quoi aujourd’hui ?", "J’adore papoter 😄 Ton humeur là maintenant, c’est plutôt calme, fatiguée ou motivée ?"]);
-    }
-    if (daebakIsDramaRequest(t)) {
-        daebakModeDiscussion = false;
-        return daebakDramaReply(msg);
-    }
-    if (/je viens de me lever|je me leve|je me lève|reveil|réveil/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Ah le réveil en douceur 😄☕ Tu as bien dormi ?", "Réveil + café, le combo officiel du matin 😂 Tu as prévu quoi aujourd’hui ?", "Tu démarres tranquille alors 🌸 Café obligatoire avant de parler au monde ?"]);
-    }
-    if (/cafe|café/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Le café du matin c’est sacré ☕😄 Tu le bois tranquille ou en mode survie ?", "Je valide totalement le café 😂 Tu as une journée chargée après ?", "Café validé 🌸 Maintenant il faut juste que la journée soit gentille avec toi."]);
-    }
-    if (/fatigue|fatiguée|fatiguee|crevee|crevée|épuisée|epuisee/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Oh mince 🥺 Tu mérites une pause douce là. Journée trop longue ?", "Aïe 🩷 On va y aller tranquille alors. Tu veux parler ou te changer les idées ?", "Fatiguée comme après un drama de 16 épisodes en une nuit ? 😅"]);
-    }
-    if (/triste|pas bien|bof|moral|pleure|pleurer/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Oh 🥺 je suis là. Tu veux me raconter ce qui ne va pas ?", "Viens là virtuellement 🩷 On peut parler doucement, sans pression.", "J’aime pas te savoir comme ça 🌸 Tu veux vider ton sac ou penser à autre chose ?"]);
-    }
-    if (/ennuie|ennui|je sais pas quoi faire/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Mission anti-ennui activée 🫰 Tu veux papoter, jouer, créer, ou chercher un drama ?", "On va sauver cette journée 😄 Tu veux une idée tranquille ou un truc qui bouge ?", "L’ennui n’a aucune chance contre nous 😂 Tu veux parler de Vénus, Conan, créations ou dramas ?"]);
-    }
-    if (/venus|vénus/.test(t)) {
-        daebakModeDiscussion = true;
-        if (/qui est|cest qui|c'est qui|kesquec|qu'est.ce/.test(t)) {
-            return daebakPick(["Vénus c'est la chienne de la créatrice de Daebak Connect 🐶🩷 Une vraie star !", "Vénus est une petite chienne adorable qui inspire les K-Dramas 😂🌸", "C'est la mascotte officielle de Daebak Connect 🐾 Une chienne trop mignonne !"]);
-        }
-        return daebakPick(["Ah Vénus 🐶🩷 Elle est sage aujourd'hui ou elle fait sa petite star ?", "Vénus mérite son propre K-Drama franchement 😂 Elle t'écoute un peu ?", "Fais-lui une caresse pour moi 🌸 même si elle fait sa tête de mule."]);
-    }
-    if (/sortir le chien|promener|balade.*chien|chien.*balade/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Bonne balade 🐾🌸 Profitez bien !", "Trop bien une petite sortie 😄 Il fait beau ?", "Bonne balade 🩷 Rien de mieux pour se ressourcer !"]);
-    }
-    if (/chien|chienne|toutou|mon animal|mon chat/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Aww 🐾🩷 Il/Elle est mignon(ne) ?", "Les animaux c'est trop mignon 😄🌸", "J'adore les animaux 🩷 Raconte-moi !"]);
-    }
-    if (/platre|plâtre|bougie|tasse|mug|creation|création|crea|créa/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Oh j’aime quand tu parles de tes créations 🌸 Tu travailles sur quoi ?", "Trop bien 😄 C’est pour une tasse, du plâtre ou une bougie ?", "Raconte 🩷 tu as eu une nouvelle idée créative ?"]);
-    }
-    if (/conan|7 days|jeu|jouer|game|gaming/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Ah là on passe en mode gameuse 🎮😄 Tu es sur Conan ou 7 Days ?", "Session jeu en vue ? 🫰 Tu avances dans quoi en ce moment ?", "J’aime bien quand tu me racontes tes jeux 😄 Il s’est passé quoi ?"]);
-    }
-    if (/merci|thanks/.test(t)) return daebakPick(["Avec plaisir 🩷", "Toujours là pour toi 🌸", "De rien 😄"]);
-    if (/bonne nuit|dodo|je vais dormir/.test(t)) return daebakPick(["Bonne nuit 🌙 Fais de beaux rêves, sans cliffhanger dramatique 😂🩷", "Dors bien 🌸 On papotera demain.", "Bonne nuit 🫰 Repose-toi bien."]);
 
-    // Réponses courtes positives
-    if (/^(oui|ouais|oui oui|yep|yes|ouep)[\s!.]*$/.test(t)) {
-        return daebakPick(["Super 😄🌸 Tu as quelque chose de prévu aujourd'hui ?", "Contente 🩷 Et ta journée elle ressemble à quoi ?", "Parfait 🌸 On papote, on cherche un drama ou tu voulais me dire quelque chose ?"]);
-    }
-    if (/^(bien|super|nickel|ca va|ça va|tres bien|très bien|genial|génial|top)[\s!.]*$/.test(t)) {
-        return daebakPick(["Trop bien 😄 Tu as l'air en forme ! Tu fais quoi là ?", "Super 🌸 Une bonne journée ça fait du bien. Tu veux papoter ou chercher un drama ?", "Nickel 🩷 Et il se passe quoi de beau dans ta vie en ce moment ?"]);
-    }
-    if (/travaill|bosser|boulot|travail|job|taff/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Courage pour le boulot 💪🌸 Les dramas t'attendront sagement !", "Ah journée de taff 😄 Bon courage, tu mérites une pause K-Drama après !", "Le travail c'est bien mais les dramas c'est mieux 😂🩷 Bon courage quand même !"]);
-    }
-    if (/sortir|courses|ballade|balade|promenade|dehors/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Ah tu sors un peu 🌸 Bonne idée de prendre l'air !", "Profite bien dehors 😄 Il fait beau chez toi ?", "Profite bien 🩷 Tu reviens me raconter après !"]);
-    }
-    if (/manger|dejeuner|déjeuner|diner|dîner|repas|cuisine/.test(t)) {
-        daebakModeDiscussion = true;
-        return daebakPick(["Ah l'heure de manger 😄 Tu fais quoi comme bon petit plat ?", "Miam 🍜 Tu cuisines ou tu commandes ?", "Le repas c'est sacré 🌸 Tu manges quoi de bon ?"]);
-    }
-    if (/et toi|et vous|toi comment|tu vas comment/.test(t)) {
-        return daebakPick(["Moi je suis toujours là, fidèle au poste 😄🌸 Passionnée de K-Dramas comme d'habitude !", "Moi ça va super 🩷 Je passe mes journées à penser aux dramas, c'est ma vie 😂", "Je suis en pleine forme 🌸 Prête à papoter et à chercher le drama parfait pour toi !"]);
-    }
-    if (/^(non|nope|nan|pas vraiment|bof)[\s!.]*$/.test(t)) {
-        return daebakPick(["Oh 🥺 Tu veux m'en dire plus ?", "Aïe 🩷 C'est quoi qui va pas ?", "Je suis là si tu veux parler 🌸 Sans pression."]);
-    }
-    if (daebakModeDiscussion) return daebakPick(["Je t’écoute 🌸 Raconte-moi un peu plus.", "Ah oui 😄 Et toi tu l’as vécu comment ?", "Je vois 🩷 Tu veux continuer à m’en parler ?", "D’accord 🌸 Et après ça, tu as prévu quoi ?", "On peut rester sur ce sujet si tu veux, je suis là 😄"]);
-    return "Je t’écoute 🌸 Tu veux papoter un peu ou tu veux que je t’aide à trouver un drama ?";
-}
-
-
-
-
-function ajouterMessageBot(html) {
-    const zone = document.getElementById("chat-messages");
-    if (!zone) return;
-    zone.innerHTML += `
-        <div class="flex items-start gap-3">
-            <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500 shadow-md"><i class="fa-solid fa-robot"></i></div>
-            <div class="soft-card p-4 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">${html}</div>
-        </div>`;
-    zone.scrollTop = zone.scrollHeight;
+    // Toute demande est traitée comme une recherche dans la base.
+    return daebakDramaReply(msg);
 }
 
 function normaliserTexteOppaBot(txt) {
@@ -19568,16 +19476,6 @@ function envoyerMessage() {
     const box = document.getElementById('chat-messages');
     box.insertAdjacentHTML('beforeend', `<div class="text-right mb-2"><div class="inline-block bg-gradient-to-r from-sky-400 to-pink-400 text-white p-3 px-4 rounded-2xl rounded-tr-none text-sm">${esc(msg)}</div></div>`);
     input.value = '';
-
-    // Si OppaBot reconnaît un acteur, il ouvre directement sa fiche Stars.
-    const acteurTrouve = trouverActeurDansMessage(msg);
-    if (acteurTrouve) {
-        setTimeout(() => {
-            box.insertAdjacentHTML('beforeend', `<div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500"><i class="fa-solid fa-robot"></i></div><div class="bg-white p-4 rounded-2xl rounded-tl-none text-sm border border-sky-100 leading-relaxed text-slate-600">Je t'ouvre la fiche de <b>${esc(acteurTrouve)}</b> 🌸</div></div>`);
-            ouvrirFicheActeurDepuisOppaBot(acteurTrouve);
-        }, 250);
-        return;
-    }
 
     setTimeout(async () => {
         box.insertAdjacentHTML('beforeend', `<div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500"><i class="fa-solid fa-robot"></i></div><div class="bg-white p-4 rounded-2xl rounded-tl-none text-sm border border-sky-100 leading-relaxed text-slate-600">${await getSmartAIResponse(msg)}</div></div>`);
