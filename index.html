@@ -94,7 +94,7 @@
             <div id="content-dramas">
                 <div id="filter-bar" class="genre-scroll"></div>
                 
-                <input type="text" id="search-bar" oninput="afficherDramas()" placeholder="Chercher dans tous les dramas, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
+                <input type="text" id="search-bar" oninput="afficherDramas()" placeholder="Chercher dramas, films, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="active-filter" class="hidden mb-3 text-xs bg-pink-50 border border-pink-200 text-pink-700 rounded-2xl p-3"></div>
                 <div id="result-count" class="text-xs text-sky-700 font-bold mb-3"></div>
 
@@ -102,7 +102,7 @@
                     <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center shadow-sm">🆕</div>
                         <div class="flex-1">
-                            <div class="text-sm font-bold text-sky-900">Nouveautés K-Drama</div>
+                            <div class="text-sm font-bold text-sky-900">Nouveautés K-Drama & Films KR</div>
                             <div class="text-xs text-slate-500 mt-1">Vérifie les nouveautés et ajoute seulement celles que tu valides.</div>
                             <button onclick="verifierNouveautes()" class="mt-3 px-4 py-2 rounded-full bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white text-xs font-bold shadow-md hover:brightness-105">
                                 Vérifier les nouveautés
@@ -120,7 +120,7 @@
                     <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500 shadow-md"><i class="fa-solid fa-robot"></i></div>
                         <div class="soft-card p-4 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">
-                            Annyeong 🌸 Je suis OppaBot, ton assistant K-Drama ! Dis-moi ce que tu cherches : romance, thriller, fantasy, Go Ara, Lee Dong Wook ou ton prochain crush K-Drama : <b>comédie</b>, <b>thriller</b>, <b>romance</b>, <b>avec Go Ara</b>...
+                            Annyeong 🌸 Je suis OppaBot, ton assistant K-Drama & Films KR ! Dis-moi ce que tu cherches : romance, thriller, fantasy, Go Ara, Lee Dong Wook ou ton prochain crush K-Drama : <b>comédie</b>, <b>thriller</b>, <b>romance</b>, <b>avec Go Ara</b>...
                         </div>
                     </div>
                 </div>
@@ -341,7 +341,7 @@
     </div>
 
 <script>
-<!-- V8 ajouts 2023-2024 : 34 dramas ajoutés depuis la base 1212 ; When the Phone Rings était déjà présent. Total 1249 dramas. -->
+<!-- Base Daebak Connect : K-Drama & Films KR, sans compteur visible. -->
 
 const baseDramas = [
             {
@@ -8369,7 +8369,6 @@ const baseDramas = [
                         "titre": "Dear Hongrang",
                         "genre": "Historique",
                         "plateforme": "À trouver",
-                        "acteurs": ["Lee Jae-wook", "Jo Bo-ah"],
                         "acteurs": [],
                         "annee": 2025,
                         "synopsis": "Un thriller historique d'action mêlant mystère, mélodrame et enquête sur fond de famille et d'amour."
@@ -14808,573 +14807,572 @@ const baseDramas = [
                         "annee": 2024,
                         "episodes": 8,
                         "tags": "Science-Fiction, Thriller, Monstres, Survie"
-            }
-,
-{
-            "id": 1178,
-            "titre": "The Wailing",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Kwak Do Won",
-                        "Hwang Jung Min",
-                        "Chun Woo Hee"
-            ],
-            "annee": 2016,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Dans un village coréen, une série de morts étranges et violentes pousse un policier à enquêter sur une présence mystérieuse. Possession, chamanisme et paranoïa installent une ambiance très malsaine."
-},
-{
-            "id": 1179,
-            "titre": "Gonjiam: Haunted Asylum",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Wi Ha Joon",
-                        "Park Ji Hyun",
-                        "Oh Ah Yeon"
-            ],
-            "annee": 2018,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Une équipe de vidéastes entre dans un ancien hôpital psychiatrique abandonné pour une émission en direct. La chasse aux frissons vire rapidement au cauchemar."
-},
-{
-            "id": 1180,
-            "titre": "The Call",
-            "genre": "Horreur",
-            "plateforme": "Netflix",
-            "acteurs": [
-                        "Park Shin Hye",
-                        "Jeon Jong Seo",
-                        "Kim Sung Ryung"
-            ],
-            "annee": 2020,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Deux femmes vivant à des époques différentes communiquent par téléphone. Ce lien temporel devient dangereux lorsqu'une décision du passé change le présent."
-},
-{
-            "id": 1181,
-            "titre": "A Tale of Two Sisters",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Im Soo Jung",
-                        "Moon Geun Young",
-                        "Yum Jung Ah"
-            ],
-            "annee": 2003,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Deux sœurs reviennent vivre dans la maison familiale avec leur belle-mère. Les tensions, les secrets et les apparitions créent une atmosphère psychologique oppressante."
-},
-{
-            "id": 1182,
-            "titre": "The Medium",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Narilya Gulmongkolpech",
-                        "Sawanee Utoomma",
-                        "Sirani Yankittikan"
-            ],
-            "annee": 2021,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Une équipe documentaire suit une chamane et sa famille lorsqu'une jeune femme semble possédée. Le rituel spirituel tourne progressivement à l'horreur."
-},
-{
-            "id": 1183,
-            "titre": "The Mimic",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Yum Jung Ah",
-                        "Park Hyuk Kwon",
-                        "Shin Rin Ah"
-            ],
-            "annee": 2017,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Une famille recueille une mystérieuse fillette près d'une montagne liée à une légende terrifiante. Des voix familières commencent à troubler la réalité."
-},
-{
-            "id": 1184,
-            "titre": "Sleep",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Jung Yu Mi",
-                        "Lee Sun Kyun"
-            ],
-            "annee": 2023,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Une jeune femme enceinte s'inquiète du comportement de son mari pendant son sommeil. Chaque nuit devient plus menaçante que la précédente."
-},
-{
-            "id": 1185,
-            "titre": "#Alive",
-            "genre": "Horreur",
-            "plateforme": "Netflix",
-            "acteurs": [
-                        "Yoo Ah In",
-                        "Park Shin Hye"
-            ],
-            "annee": 2020,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Un jeune homme se retrouve isolé dans son appartement pendant qu'une infection zombie ravage la ville. Il tente de survivre avec peu de ressources."
-},
-{
-            "id": 1186,
-            "titre": "Peninsula",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Gang Dong Won",
-                        "Lee Jung Hyun",
-                        "Kwon Hae Hyo"
-            ],
-            "annee": 2020,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Quatre ans après l'épidémie de Train to Busan, un ancien soldat retourne dans une Corée dévastée par les zombies pour une mission risquée."
-},
-{
-            "id": 1187,
-            "titre": "The Host",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Song Kang Ho",
-                        "Byun Hee Bong",
-                        "Park Hae Il",
-                        "Bae Doona"
-            ],
-            "annee": 2006,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Une créature mutante surgit du fleuve Han et enlève une jeune fille. Sa famille se lance dans une course désespérée pour la retrouver."
-},
-{
-            "id": 1188,
-            "titre": "I Saw the Devil",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Lee Byung Hun",
-                        "Choi Min Sik"
-            ],
-            "annee": 2010,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Après le meurtre brutal de sa fiancée, un agent secret traque un tueur en série et transforme sa vengeance en jeu psychologique extrêmement violent."
-},
-{
-            "id": 1189,
-            "titre": "Project Wolf Hunting",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Seo In Guk",
-                        "Jang Dong Yoon",
-                        "Jung So Min",
-                        "Sung Dong Il"
-            ],
-            "annee": 2022,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Des criminels dangereux sont transférés par bateau vers la Corée. Une expérience monstrueuse transforme le voyage en massacre sanglant."
-},
-{
-            "id": 1190,
-            "titre": "Death Bell",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Lee Beom Soo",
-                        "Yoon Jung Hee",
-                        "Nam Gyu Ri",
-                        "Kim Bum"
-            ],
-            "annee": 2008,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Des lycéens brillants sont enfermés dans leur école et forcés de résoudre des énigmes mortelles pour survivre."
-},
-{
-            "id": 1191,
-            "titre": "Death Bell 2: Bloody Camp",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Hwang Jung Eum",
-                        "Yoon Si Yoon",
-                        "Kim Su Ro",
-                        "Ji Chang Wook"
-            ],
-            "annee": 2010,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Pendant un camp d'été scolaire, des élèves deviennent les cibles d'un tueur qui transforme l'école en piège sanglant."
-},
-{
-            "id": 1192,
-            "titre": "Hansel & Gretel",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Chun Jung Myung",
-                        "Eun Won Jae",
-                        "Shim Eun Kyung",
-                        "Jin Ji Hee"
-            ],
-            "annee": 2007,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Un homme perdu en forêt découvre une maison étrange habitée par des enfants. Le conte de fées devient un cauchemar sombre et inquiétant."
-},
-{
-            "id": 1193,
-            "titre": "Svaha: The Sixth Finger",
-            "genre": "Horreur",
-            "plateforme": "Netflix",
-            "acteurs": [
-                        "Lee Jung Jae",
-                        "Park Jung Min",
-                        "Lee Jae In",
-                        "Jung Jin Young"
-            ],
-            "annee": 2019,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Un pasteur enquêtant sur des sectes découvre une affaire mystérieuse mêlant meurtres, croyances occultes et secrets religieux."
-},
-{
-            "id": 1194,
-            "titre": "Metamorphosis",
-            "genre": "Horreur",
-            "plateforme": "Google",
-            "acteurs": [
-                        "Bae Sung Woo",
-                        "Sung Dong Il",
-                        "Jang Young Nam",
-                        "Kim Hye Jun"
-            ],
-            "annee": 2019,
-            "type": "Movie",
-            "tags": "Horreur",
-            "synopsis": "Une famille est terrorisée par une entité démoniaque capable de prendre l'apparence de ses proches."
-},
-{
-            "id": 1195,
-            "titre": "Mask Girl",
-            "genre": "Thriller",
-            "plateforme": "Netflix",
-            "acteurs": [],
-            "annee": 2023,
-            "tags": "Drame"
-},
-{
-            "id": 1196,
-            "titre": "Miraculous Brothers",
-            "genre": "Fantastique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2023,
-            "tags": "Drame"
-},
-{
-            "id": 1197,
-            "titre": "Connection",
-            "genre": "Thriller",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Policier"
-},
-{
-            "id": 1198,
-            "titre": "Bitter Sweet Hell",
-            "genre": "Thriller",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1199,
-            "titre": "Dreaming of a Freaking Fairy Tale",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1200,
-            "titre": "Queen Woo",
-            "genre": "Historique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Action"
-},
-{
-            "id": 1201,
-            "titre": "Jeongnyeon: The Star Is Born",
-            "genre": "Historique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1202,
-            "titre": "Love, Andante",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1203,
-            "titre": "Perfect Family",
-            "genre": "Thriller",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1204,
-            "titre": "Romance in the House",
-            "genre": "Romance",
-            "plateforme": "Netflix",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1205,
-            "titre": "Serendipity's Embrace",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1206,
-            "titre": "The Tyrant",
-            "genre": "Action",
-            "plateforme": "Disney+",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Science-Fiction"
-},
-{
-            "id": 1207,
-            "titre": "Cinderella at 2 A.M.",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1208,
-            "titre": "Family Matters",
-            "genre": "Fantastique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Action"
-},
-{
-            "id": 1209,
-            "titre": "Iron Family",
-            "genre": "Family",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1210,
-            "titre": "Dear Hyeri",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1211,
-            "titre": "Dog Knows Everything",
-            "genre": "Comédie",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Policier"
-},
-{
-            "id": 1212,
-            "titre": "Spice Up Our Love",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1213,
-            "titre": "My Merry Marriage",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Family"
-},
-{
-            "id": 1214,
-            "titre": "Family by Choice",
-            "genre": "Family",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Romance"
-},
-{
-            "id": 1215,
-            "titre": "Dong-Jae, the Good or the Bastard",
-            "genre": "Juridique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Thriller"
-},
-{
-            "id": 1216,
-            "titre": "Doubt",
-            "genre": "Thriller",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Policier"
-},
-{
-            "id": 1217,
-            "titre": "A Virtuous Business",
-            "genre": "Comédie",
-            "plateforme": "Netflix",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1218,
-            "titre": "Parole Examiner Lee",
-            "genre": "Juridique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Thriller"
-},
-{
-            "id": 1219,
-            "titre": "Brewing Love",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1220,
-            "titre": "Who Is She?",
-            "genre": "Comédie",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Drame"
-},
-{
-            "id": 1221,
-            "titre": "Check-In Hanyang",
-            "genre": "Historique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Romance"
-},
-{
-            "id": 1222,
-            "titre": "Gangnam B-Side",
-            "genre": "Policier",
-            "plateforme": "Disney+",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Thriller"
-},
-{
-            "id": 1223,
-            "titre": "Cinderella Game",
-            "genre": "Drame",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Romance"
-},
-{
-            "id": 1224,
-            "titre": "Kind Ms. Sun-Joo",
-            "genre": "Drame",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Family"
-},
-{
-            "id": 1225,
-            "titre": "Marry You",
-            "genre": "Romance",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Comédie"
-},
-{
-            "id": 1226,
-            "titre": "Social Savvy Class 101",
-            "genre": "École",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Romance"
-},
-{
-            "id": 1227,
-            "titre": "Namib",
-            "genre": "Drame",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Business"
-},
-{
-            "id": 1228,
-            "titre": "The Tale of Lady Ok",
-            "genre": "Historique",
-            "plateforme": "Viki",
-            "acteurs": [],
-            "annee": 2024,
-            "tags": "Romance"
-},
+            },
+            {
+                        "id": 1178,
+                        "titre": "The Wailing",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Kwak Do Won",
+                                    "Hwang Jung Min",
+                                    "Chun Woo Hee"
+                        ],
+                        "annee": 2016,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Dans un village coréen, une série de morts étranges et violentes pousse un policier à enquêter sur une présence mystérieuse. Possession, chamanisme et paranoïa installent une ambiance très malsaine."
+            },
+            {
+                        "id": 1179,
+                        "titre": "Gonjiam: Haunted Asylum",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Wi Ha Joon",
+                                    "Park Ji Hyun",
+                                    "Oh Ah Yeon"
+                        ],
+                        "annee": 2018,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Une équipe de vidéastes entre dans un ancien hôpital psychiatrique abandonné pour une émission en direct. La chasse aux frissons vire rapidement au cauchemar."
+            },
+            {
+                        "id": 1180,
+                        "titre": "The Call",
+                        "genre": "Horreur",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Park Shin Hye",
+                                    "Jeon Jong Seo",
+                                    "Kim Sung Ryung"
+                        ],
+                        "annee": 2020,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Deux femmes vivant à des époques différentes communiquent par téléphone. Ce lien temporel devient dangereux lorsqu'une décision du passé change le présent."
+            },
+            {
+                        "id": 1181,
+                        "titre": "A Tale of Two Sisters",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Im Soo Jung",
+                                    "Moon Geun Young",
+                                    "Yum Jung Ah"
+                        ],
+                        "annee": 2003,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Deux sœurs reviennent vivre dans la maison familiale avec leur belle-mère. Les tensions, les secrets et les apparitions créent une atmosphère psychologique oppressante."
+            },
+            {
+                        "id": 1182,
+                        "titre": "The Medium",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Narilya Gulmongkolpech",
+                                    "Sawanee Utoomma",
+                                    "Sirani Yankittikan"
+                        ],
+                        "annee": 2021,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Une équipe documentaire suit une chamane et sa famille lorsqu'une jeune femme semble possédée. Le rituel spirituel tourne progressivement à l'horreur."
+            },
+            {
+                        "id": 1183,
+                        "titre": "The Mimic",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Yum Jung Ah",
+                                    "Park Hyuk Kwon",
+                                    "Shin Rin Ah"
+                        ],
+                        "annee": 2017,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Une famille recueille une mystérieuse fillette près d'une montagne liée à une légende terrifiante. Des voix familières commencent à troubler la réalité."
+            },
+            {
+                        "id": 1184,
+                        "titre": "Sleep",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Jung Yu Mi",
+                                    "Lee Sun Kyun"
+                        ],
+                        "annee": 2023,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Une jeune femme enceinte s'inquiète du comportement de son mari pendant son sommeil. Chaque nuit devient plus menaçante que la précédente."
+            },
+            {
+                        "id": 1185,
+                        "titre": "#Alive",
+                        "genre": "Horreur",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Yoo Ah In",
+                                    "Park Shin Hye"
+                        ],
+                        "annee": 2020,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Un jeune homme se retrouve isolé dans son appartement pendant qu'une infection zombie ravage la ville. Il tente de survivre avec peu de ressources."
+            },
+            {
+                        "id": 1186,
+                        "titre": "Peninsula",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Gang Dong Won",
+                                    "Lee Jung Hyun",
+                                    "Kwon Hae Hyo"
+                        ],
+                        "annee": 2020,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Quatre ans après l'épidémie de Train to Busan, un ancien soldat retourne dans une Corée dévastée par les zombies pour une mission risquée."
+            },
+            {
+                        "id": 1187,
+                        "titre": "The Host",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Song Kang Ho",
+                                    "Byun Hee Bong",
+                                    "Park Hae Il",
+                                    "Bae Doona"
+                        ],
+                        "annee": 2006,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Une créature mutante surgit du fleuve Han et enlève une jeune fille. Sa famille se lance dans une course désespérée pour la retrouver."
+            },
+            {
+                        "id": 1188,
+                        "titre": "I Saw the Devil",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Lee Byung Hun",
+                                    "Choi Min Sik"
+                        ],
+                        "annee": 2010,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Après le meurtre brutal de sa fiancée, un agent secret traque un tueur en série et transforme sa vengeance en jeu psychologique extrêmement violent."
+            },
+            {
+                        "id": 1189,
+                        "titre": "Project Wolf Hunting",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Seo In Guk",
+                                    "Jang Dong Yoon",
+                                    "Jung So Min",
+                                    "Sung Dong Il"
+                        ],
+                        "annee": 2022,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Des criminels dangereux sont transférés par bateau vers la Corée. Une expérience monstrueuse transforme le voyage en massacre sanglant."
+            },
+            {
+                        "id": 1190,
+                        "titre": "Death Bell",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Lee Beom Soo",
+                                    "Yoon Jung Hee",
+                                    "Nam Gyu Ri",
+                                    "Kim Bum"
+                        ],
+                        "annee": 2008,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Des lycéens brillants sont enfermés dans leur école et forcés de résoudre des énigmes mortelles pour survivre."
+            },
+            {
+                        "id": 1191,
+                        "titre": "Death Bell 2: Bloody Camp",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Hwang Jung Eum",
+                                    "Yoon Si Yoon",
+                                    "Kim Su Ro",
+                                    "Ji Chang Wook"
+                        ],
+                        "annee": 2010,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Pendant un camp d'été scolaire, des élèves deviennent les cibles d'un tueur qui transforme l'école en piège sanglant."
+            },
+            {
+                        "id": 1192,
+                        "titre": "Hansel & Gretel",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Chun Jung Myung",
+                                    "Eun Won Jae",
+                                    "Shim Eun Kyung",
+                                    "Jin Ji Hee"
+                        ],
+                        "annee": 2007,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Un homme perdu en forêt découvre une maison étrange habitée par des enfants. Le conte de fées devient un cauchemar sombre et inquiétant."
+            },
+            {
+                        "id": 1193,
+                        "titre": "Svaha: The Sixth Finger",
+                        "genre": "Horreur",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Lee Jung Jae",
+                                    "Park Jung Min",
+                                    "Lee Jae In",
+                                    "Jung Jin Young"
+                        ],
+                        "annee": 2019,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Un pasteur enquêtant sur des sectes découvre une affaire mystérieuse mêlant meurtres, croyances occultes et secrets religieux."
+            },
+            {
+                        "id": 1194,
+                        "titre": "Metamorphosis",
+                        "genre": "Horreur",
+                        "plateforme": "Google",
+                        "acteurs": [
+                                    "Bae Sung Woo",
+                                    "Sung Dong Il",
+                                    "Jang Young Nam",
+                                    "Kim Hye Jun"
+                        ],
+                        "annee": 2019,
+                        "type": "Movie",
+                        "tags": "Horreur",
+                        "synopsis": "Une famille est terrorisée par une entité démoniaque capable de prendre l'apparence de ses proches."
+            },
+            {
+                        "id": 1195,
+                        "titre": "Mask Girl",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2023,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1196,
+                        "titre": "Miraculous Brothers",
+                        "genre": "Fantastique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2023,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1197,
+                        "titre": "Connection",
+                        "genre": "Thriller",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Policier"
+            },
+            {
+                        "id": 1198,
+                        "titre": "Bitter Sweet Hell",
+                        "genre": "Thriller",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1199,
+                        "titre": "Dreaming of a Freaking Fairy Tale",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1200,
+                        "titre": "Queen Woo",
+                        "genre": "Historique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Action"
+            },
+            {
+                        "id": 1201,
+                        "titre": "Jeongnyeon: The Star Is Born",
+                        "genre": "Historique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1202,
+                        "titre": "Love, Andante",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1203,
+                        "titre": "Perfect Family",
+                        "genre": "Thriller",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1204,
+                        "titre": "Romance in the House",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1205,
+                        "titre": "Serendipity's Embrace",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1206,
+                        "titre": "The Tyrant",
+                        "genre": "Action",
+                        "plateforme": "Disney+",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Science-Fiction"
+            },
+            {
+                        "id": 1207,
+                        "titre": "Cinderella at 2 A.M.",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1208,
+                        "titre": "Family Matters",
+                        "genre": "Fantastique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Action"
+            },
+            {
+                        "id": 1209,
+                        "titre": "Iron Family",
+                        "genre": "Family",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1210,
+                        "titre": "Dear Hyeri",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1211,
+                        "titre": "Dog Knows Everything",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Policier"
+            },
+            {
+                        "id": 1212,
+                        "titre": "Spice Up Our Love",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1213,
+                        "titre": "My Merry Marriage",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Family"
+            },
+            {
+                        "id": 1214,
+                        "titre": "Family by Choice",
+                        "genre": "Family",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Romance"
+            },
+            {
+                        "id": 1215,
+                        "titre": "Dong-Jae, the Good or the Bastard",
+                        "genre": "Juridique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Thriller"
+            },
+            {
+                        "id": 1216,
+                        "titre": "Doubt",
+                        "genre": "Thriller",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Policier"
+            },
+            {
+                        "id": 1217,
+                        "titre": "A Virtuous Business",
+                        "genre": "Comédie",
+                        "plateforme": "Netflix",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1218,
+                        "titre": "Parole Examiner Lee",
+                        "genre": "Juridique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Thriller"
+            },
+            {
+                        "id": 1219,
+                        "titre": "Brewing Love",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1220,
+                        "titre": "Who Is She?",
+                        "genre": "Comédie",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Drame"
+            },
+            {
+                        "id": 1221,
+                        "titre": "Check-In Hanyang",
+                        "genre": "Historique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Romance"
+            },
+            {
+                        "id": 1222,
+                        "titre": "Gangnam B-Side",
+                        "genre": "Policier",
+                        "plateforme": "Disney+",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Thriller"
+            },
+            {
+                        "id": 1223,
+                        "titre": "Cinderella Game",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Romance"
+            },
+            {
+                        "id": 1224,
+                        "titre": "Kind Ms. Sun-Joo",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Family"
+            },
+            {
+                        "id": 1225,
+                        "titre": "Marry You",
+                        "genre": "Romance",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Comédie"
+            },
+            {
+                        "id": 1226,
+                        "titre": "Social Savvy Class 101",
+                        "genre": "École",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Romance"
+            },
+            {
+                        "id": 1227,
+                        "titre": "Namib",
+                        "genre": "Drame",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Business"
+            },
+            {
+                        "id": 1228,
+                        "titre": "The Tale of Lady Ok",
+                        "genre": "Historique",
+                        "plateforme": "Viki",
+                        "acteurs": [],
+                        "annee": 2024,
+                        "tags": "Romance"
+            },
             {
                         "id": 1229,
                         "titre": "Under the Queen's Umbrella",
@@ -15410,971 +15408,1945 @@ const baseDramas = [
                         "synopsis": "Les Counters reviennent affronter de nouveaux démons plus puissants, avec de nouveaux pouvoirs et des ennemis encore plus dangereux.",
                         "tags": "Demon Catcher Fantastique Action Surnaturel"
             },
-{
+            {
                         "id": 1231,
                         "titre": "My Dearest",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2023,
-                        "acteurs": ["Namkoong Min", "Ahn Eun-jin", "Lee Hak-joo", "Lee Da-in"]
+                        "acteurs": [
+                                    "Namkoong Min",
+                                    "Ahn Eun-jin",
+                                    "Lee Hak-joo",
+                                    "Lee Da-in"
+                        ]
             },
-{
+            {
                         "id": 1232,
                         "titre": "My Dearest Part 2",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2023,
-                        "acteurs": ["Namkoong Min", "Ahn Eun-jin", "Lee Hak-joo", "Lee Da-in"]
+                        "acteurs": [
+                                    "Namkoong Min",
+                                    "Ahn Eun-jin",
+                                    "Lee Hak-joo",
+                                    "Lee Da-in"
+                        ]
             },
-{
+            {
                         "id": 1233,
                         "titre": "Death's Game",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2023,
-                        "acteurs": ["Seo In-guk", "Park So-dam", "Kim Ji-hoon", "Choi Si-won", "Lee Jae-wook"]
+                        "acteurs": [
+                                    "Seo In-guk",
+                                    "Park So-dam",
+                                    "Kim Ji-hoon",
+                                    "Choi Si-won",
+                                    "Lee Jae-wook"
+                        ]
             },
-{
+            {
                         "id": 1234,
                         "titre": "Death's Game Part 2",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2023,
-                        "acteurs": ["Seo In-guk", "Park So-dam", "Kim Ji-hoon", "Lee Jae-wook", "Go Youn-jung"]
+                        "acteurs": [
+                                    "Seo In-guk",
+                                    "Park So-dam",
+                                    "Kim Ji-hoon",
+                                    "Lee Jae-wook",
+                                    "Go Youn-jung"
+                        ]
             },
-{
+            {
                         "id": 1235,
                         "titre": "The Price of Confession",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Jeon Do-yeon", "Kim Go-eun", "Park Hae-soo", "Jin Sun-kyu"]
+                        "acteurs": [
+                                    "Jeon Do-yeon",
+                                    "Kim Go-eun",
+                                    "Park Hae-soo",
+                                    "Jin Sun-kyu"
+                        ]
             },
-{
+            {
                         "id": 1236,
                         "titre": "One Day, Maybe",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1237,
                         "titre": "Mercy for None",
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["So Ji-sub", "Heo Joon-ho", "Ahn Kil-kang", "Lee Beom-soo"]
+                        "acteurs": [
+                                    "So Ji-sub",
+                                    "Heo Joon-ho",
+                                    "Ahn Kil-kang",
+                                    "Lee Beom-soo"
+                        ]
             },
-{
+            {
                         "id": 1238,
                         "titre": "The Manipulated",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Ji Chang-wook", "Doh Kyung-soo"]
+                        "acteurs": [
+                                    "Ji Chang-wook",
+                                    "Doh Kyung-soo"
+                        ]
             },
-{
+            {
                         "id": 1239,
                         "titre": "Made in Korea",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Hyun Bin", "Jung Woo-sung"]
+                        "acteurs": [
+                                    "Hyun Bin",
+                                    "Jung Woo-sung"
+                        ]
             },
-{
+            {
                         "id": 1240,
                         "titre": "Law and the City",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Lee Jong-suk", "Mun Ka-young", "Kang You-seok", "Ryu Hye-young"]
+                        "acteurs": [
+                                    "Lee Jong-suk",
+                                    "Mun Ka-young",
+                                    "Kang You-seok",
+                                    "Ryu Hye-young"
+                        ]
             },
-{
+            {
                         "id": 1241,
                         "titre": "Nine Puzzles",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Kim Da-mi", "Son Suk-ku"]
+                        "acteurs": [
+                                    "Kim Da-mi",
+                                    "Son Suk-ku"
+                        ]
             },
-{
+            {
                         "id": 1242,
                         "titre": "Cashero",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Lee Jun-ho", "Kim Hye-jun"]
+                        "acteurs": [
+                                    "Lee Jun-ho",
+                                    "Kim Hye-jun"
+                        ]
             },
-{
+            {
                         "id": 1243,
                         "titre": "Our Movie",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Namkoong Min", "Jeon Yeo-been"]
+                        "acteurs": [
+                                    "Namkoong Min",
+                                    "Jeon Yeo-been"
+                        ]
             },
-{
+            {
                         "id": 1244,
                         "titre": "Hyper Knife",
                         "genre": "Médical",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Park Eun-bin", "Sul Kyung-gu", "Yoon Chan-young"]
+                        "acteurs": [
+                                    "Park Eun-bin",
+                                    "Sul Kyung-gu",
+                                    "Yoon Chan-young"
+                        ]
             },
-{
+            {
                         "id": 1245,
                         "titre": "The Haunted Palace",
                         "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Yook Sung-jae", "Bona", "Kim Ji-hoon"]
+                        "acteurs": [
+                                    "Yook Sung-jae",
+                                    "Bona",
+                                    "Kim Ji-hoon"
+                        ]
             },
-{
+            {
                         "id": 1246,
                         "titre": "Beyond the Bar",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1247,
                         "titre": "The Murky Stream",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1248,
                         "titre": "Trigger",
                         "genre": "Action",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Kim Nam-gil", "Kim Young-kwang"]
+                        "acteurs": [
+                                    "Kim Nam-gil",
+                                    "Kim Young-kwang"
+                        ]
             },
-{
+            {
                         "id": 1249,
                         "titre": "The Art of Negotiation",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1250,
                         "titre": "Heo's Diner",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1251,
                         "titre": "Low Life",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1252,
                         "titre": "Aema",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1253,
                         "titre": "Salon de Holmes",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1254,
                         "titre": "Hunter with a Scalpel",
                         "genre": "Médical",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1255,
                         "titre": "Queen Mantis",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1256,
                         "titre": "Love, Take Two",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025
             },
-{
+            {
                         "id": 1257,
                         "titre": "Tempest",
                         "genre": "Drame",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Jun Ji-hyun", "Kang Dong-won"]
+                        "acteurs": [
+                                    "Jun Ji-hyun",
+                                    "Kang Dong-won"
+                        ]
             },
-{
+            {
                         "id": 1258,
                         "titre": "S Line",
                         "genre": "Fantastique",
                         "plateforme": "Netflix",
                         "annee": 2025,
-                        "acteurs": ["Lee Soo-hyuk", "Lee Da-hee", "Arin"]
+                        "acteurs": [
+                                    "Lee Soo-hyuk",
+                                    "Lee Da-hee",
+                                    "Arin"
+                        ]
             },
-{
-            "id": 1259,
-            "titre": "Ode to My Father",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2014,
-            "acteurs": [
-                        "Hwang Jung-min",
-                        "Yunjin Kim",
-                        "Oh Dal-su",
-                        "Jung Jin-young"
-            ],
-            "tags": "Movie Drame Historique Family",
-            "synopsis": "Film coréen familial et historique suivant la vie d'un homme à travers les grands bouleversements de la Corée moderne."
-},
-{
-            "id": 1260,
-            "titre": "4PM",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Oh Dal-su",
-                        "Jang Young-nam",
-                        "Kim Hong-pa"
-            ],
-            "tags": "Movie Thriller Mystère"
-},
-{
-            "id": 1261,
-            "titre": "Badland Hunters",
-            "genre": "Action",
-            "plateforme": "Netflix",
-            "annee": 2024,
-            "acteurs": [
-                        "Ma Dong-seok",
-                        "Lee Hee-joon",
-                        "Lee Jun-young",
-                        "Roh Jeong-eui"
-            ],
-            "tags": "Movie Action Science-Fiction Thriller"
-},
-{
-            "id": 1262,
-            "titre": "Bogota: City of the Lost",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Song Joong-ki",
-                        "Lee Hee-joon",
-                        "Kwon Hae-hyo"
-            ],
-            "tags": "Movie Drame Crime"
-},
-{
-            "id": 1263,
-            "titre": "By the Stream",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Kwon Hae-hyo",
-                        "Kim Min-hee",
-                        "Cho Yun-hee"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1264,
-            "titre": "Escape",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Lee Je-hoon",
-                        "Koo Kyo-hwan",
-                        "Hong Sa-bin"
-            ],
-            "tags": "Movie Action Thriller"
-},
-{
-            "id": 1265,
-            "titre": "Exhuma",
-            "genre": "Horreur",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Choi Min-sik",
-                        "Kim Go-eun",
-                        "Yoo Hae-jin",
-                        "Lee Do-hyun"
-            ],
-            "tags": "Movie Horreur Surnaturel Thriller"
-},
-{
-            "id": 1266,
-            "titre": "Handsome Guys",
-            "genre": "Comédie",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Lee Sung-min",
-                        "Lee Hee-joon",
-                        "Gong Seung-yeon"
-            ],
-            "tags": "Movie Comédie Horreur"
-},
-{
-            "id": 1267,
-            "titre": "Harbin",
-            "genre": "Historique",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Hyun Bin",
-                        "Park Jeong-min",
-                        "Jo Woo-jin",
-                        "Jeon Yeo-been"
-            ],
-            "tags": "Movie Historique Thriller Action"
-},
-{
-            "id": 1268,
-            "titre": "Hiver à Sokcho",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Bella Kim",
-                        "Roschdy Zem",
-                        "Park Mi-hyeon"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1269,
-            "titre": "My Name Is Loh Kiwan",
-            "genre": "Drame",
-            "plateforme": "Netflix",
-            "annee": 2024,
-            "acteurs": [
-                        "Song Joong-ki",
-                        "Choi Sung-eun",
-                        "Jo Han-chul"
-            ],
-            "tags": "Movie Drame Romance"
-},
-{
-            "id": 1270,
-            "titre": "Love in the Big City",
-            "genre": "Romance",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Kim Go-eun",
-                        "Noh Sang-hyun"
-            ],
-            "tags": "Movie Romance Drame"
-},
-{
-            "id": 1271,
-            "titre": "Noise",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Lee Sun-bin",
-                        "Kim Min-seok",
-                        "Ryu Kyung-soo"
-            ],
-            "tags": "Movie Thriller Horreur"
-},
-{
-            "id": 1272,
-            "titre": "Hijack 1971",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Ha Jung-woo",
-                        "Yeo Jin-goo",
-                        "Sung Dong-il",
-                        "Chae Soo-bin"
-            ],
-            "tags": "Movie Action Thriller"
-},
-{
-            "id": 1273,
-            "titre": "Revolver",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Jeon Do-yeon",
-                        "Ji Chang-wook",
-                        "Lim Ji-yeon"
-            ],
-            "tags": "Movie Thriller Crime"
-},
-{
-            "id": 1274,
-            "titre": "The Roundup: Punishment",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Ma Dong-seok",
-                        "Kim Mu-yeol",
-                        "Park Ji-hwan",
-                        "Lee Dong-hwi"
-            ],
-            "tags": "Movie Action Crime"
-},
-{
-            "id": 1275,
-            "titre": "Uprising",
-            "genre": "Historique",
-            "plateforme": "Netflix",
-            "annee": 2024,
-            "acteurs": [
-                        "Gang Dong-won",
-                        "Park Jeong-min",
-                        "Cha Seung-won",
-                        "Kim Shin-rok"
-            ],
-            "tags": "Movie Historique Action Drame"
-},
-{
-            "id": 1276,
-            "titre": "Veteran 2",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Hwang Jung-min",
-                        "Jung Hae-in",
-                        "Oh Dal-su",
-                        "Jang Yoon-ju"
-            ],
-            "tags": "Movie Action Crime Thriller"
-},
-{
-            "id": 1277,
-            "titre": "A Traveler's Needs",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2024,
-            "acteurs": [
-                        "Isabelle Huppert",
-                        "Lee Hye-young",
-                        "Kwon Hae-hyo"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1278,
-            "titre": "Wonderland",
-            "genre": "Science-Fiction",
-            "plateforme": "Netflix",
-            "annee": 2024,
-            "acteurs": [
-                        "Tang Wei",
-                        "Bae Suzy",
-                        "Park Bo-gum",
-                        "Jung Yu-mi",
-                        "Choi Woo-shik"
-            ],
-            "tags": "Movie Science-Fiction Romance Drame"
-},
-{
-            "id": 1279,
-            "titre": "84 m²",
-            "genre": "Thriller",
-            "plateforme": "Netflix",
-            "annee": 2025,
-            "acteurs": [
-                        "Kang Ha-neul",
-                        "Yeom Hye-ran",
-                        "Seo Hyun-woo"
-            ],
-            "tags": "Movie Thriller Mystère",
-            "synopsis": "Aussi connu sous le titre Wall to Wall / 84 Square Meters."
-},
-{
-            "id": 1280,
-            "titre": "3670",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Cho Yoo-hyun",
-                        "Kim Hyun-mok",
-                        "Cho Dae-hee"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1281,
-            "titre": "No Other Choice",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Lee Byung-hun",
-                        "Son Ye-jin",
-                        "Park Hee-soon",
-                        "Lee Sung-min",
-                        "Yeom Hye-ran",
-                        "Cha Seung-won"
-            ],
-            "tags": "Movie Thriller Comédie noire"
-},
-{
-            "id": 1282,
-            "titre": "Bugonia",
-            "genre": "Science-Fiction",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Emma Stone",
-                        "Jesse Plemons",
-                        "Aidan Delbis"
-            ],
-            "tags": "Movie Science-Fiction Comédie noire",
-            "synopsis": "Film international lié au cinéma coréen par son remake du film Save the Green Planet!"
-},
-{
-            "id": 1283,
-            "titre": "What Does That Nature Say to You",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Kwon Hae-hyo",
-                        "Cho Yun-hee",
-                        "Ha Seong-guk"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1284,
-            "titre": "Dark Nuns",
-            "genre": "Horreur",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Song Hye-kyo",
-                        "Jeon Yeo-been",
-                        "Lee Jin-wook"
-            ],
-            "tags": "Movie Horreur Surnaturel"
-},
-{
-            "id": 1285,
-            "titre": "Good News",
-            "genre": "Comédie",
-            "plateforme": "Netflix",
-            "annee": 2025,
-            "acteurs": [
-                        "Sul Kyung-gu",
-                        "Hong Kyung",
-                        "Ryoo Seung-bum"
-            ],
-            "tags": "Movie Comédie noire Action"
-},
-{
-            "id": 1286,
-            "titre": "High Five",
-            "genre": "Fantastique",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Yoo Ah-in",
-                        "Ra Mi-ran",
-                        "Ahn Jae-hong",
-                        "Lee Jae-in",
-                        "Kim Hee-won"
-            ],
-            "tags": "Movie Fantastique Comédie Action"
-},
-{
-            "id": 1287,
-            "titre": "Mantis",
-            "genre": "Action",
-            "plateforme": "Netflix",
-            "annee": 2025,
-            "acteurs": [
-                        "Yim Si-wan",
-                        "Park Gyu-young",
-                        "Jo Woo-jin"
-            ],
-            "tags": "Movie Action Thriller"
-},
-{
-            "id": 1288,
-            "titre": "The Match",
-            "genre": "Sport",
-            "plateforme": "Netflix",
-            "annee": 2025,
-            "acteurs": [
-                        "Lee Byung-hun",
-                        "Yoo Ah-in",
-                        "Moon Jeong-hee"
-            ],
-            "tags": "Movie Sport Drame"
-},
-{
-            "id": 1289,
-            "titre": "Mickey 17",
-            "genre": "Science-Fiction",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Robert Pattinson",
-                        "Naomi Ackie",
-                        "Steven Yeun",
-                        "Mark Ruffalo",
-                        "Toni Collette"
-            ],
-            "tags": "Movie Science-Fiction Comédie noire",
-            "synopsis": "Film international réalisé par Bong Joon-ho."
-},
-{
-            "id": 1290,
-            "titre": "My Daughter Is a Zombie",
-            "genre": "Comédie",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Cho Jung-seok",
-                        "Lee Jung-eun",
-                        "Cho Yeo-jeong",
-                        "Yoon Kyung-ho"
-            ],
-            "tags": "Movie Comédie Zombie Family"
-},
-{
-            "id": 1291,
-            "titre": "Nocturnal",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Ha Jung-woo",
-                        "Kim Nam-gil",
-                        "Yoo Da-in"
-            ],
-            "tags": "Movie Thriller Crime"
-},
-{
-            "id": 1292,
-            "titre": "The Old Woman with the Knife",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Lee Hye-young",
-                        "Kim Sung-cheol",
-                        "Yeon Woo-jin",
-                        "Kim Mu-yeol"
-            ],
-            "tags": "Movie Thriller Action"
-},
-{
-            "id": 1293,
-            "titre": "Omniscient Reader: The Prophecy",
-            "genre": "Fantastique",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Ahn Hyo-seop",
-                        "Lee Min-ho",
-                        "Chae Soo-bin",
-                        "Shin Seung-ho",
-                        "Nana"
-            ],
-            "tags": "Movie Fantastique Action"
-},
-{
-            "id": 1294,
-            "titre": "Revelations",
-            "genre": "Thriller",
-            "plateforme": "Netflix",
-            "annee": 2025,
-            "acteurs": [
-                        "Ryu Jun-yeol",
-                        "Shin Hyun-been",
-                        "Shin Min-jae"
-            ],
-            "tags": "Movie Thriller Mystère"
-},
-{
-            "id": 1295,
-            "titre": "The King of Kings",
-            "genre": "Animation",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Oscar Isaac",
-                        "Kenneth Branagh",
-                        "Uma Thurman"
-            ],
-            "tags": "Movie Animation Family"
-},
-{
-            "id": 1296,
-            "titre": "Submersion",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1297,
-            "titre": "The Ugly",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "Park Jeong-min",
-                        "Kwon Hae-hyo",
-                        "Shin Hyun-been"
-            ],
-            "tags": "Movie Thriller Mystère"
-},
-{
-            "id": 1298,
-            "titre": "The Witcher: Sirens of the Deep",
-            "genre": "Fantastique",
-            "plateforme": "Netflix",
-            "annee": 2025,
-            "acteurs": [
-                        "Doug Cockle",
-                        "Joey Batey",
-                        "Anya Chalotra"
-            ],
-            "tags": "Movie Animation Fantastique"
-},
-{
-            "id": 1299,
-            "titre": "The World of Love",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2025,
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Drame Romance"
-},
-{
-            "id": 1300,
-            "titre": "Ode to My Father 2",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "Hwang Jung-min",
-                        "Yunjin Kim"
-            ],
-            "tags": "Movie Drame Family"
-},
-{
-            "id": 1301,
-            "titre": "Cattle Run",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1302,
-            "titre": "Tazza: The Song of Beelzebub",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Thriller Crime"
-},
-{
-            "id": 1303,
-            "titre": "White Blast",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Action Thriller"
-},
-{
-            "id": 1304,
-            "titre": "Paradise Lost",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1305,
-            "titre": "Hope",
-            "genre": "Science-Fiction",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "Hwang Jung-min",
-                        "Zo In-sung",
-                        "Jung Ho-yeon",
-                        "Alicia Vikander",
-                        "Michael Fassbender"
-            ],
-            "tags": "Movie Science-Fiction Thriller"
-},
-{
-            "id": 1306,
-            "titre": "REAWAKEN MAN",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Action"
-},
-{
-            "id": 1307,
-            "titre": "Tristes Tropiques",
-            "genre": "Thriller",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Thriller Drame"
-},
-{
-            "id": 1308,
-            "titre": "The Journey to Gyeongju",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1309,
-            "titre": "OK! MADAM 2",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "Uhm Jung-hwa",
-                        "Park Sung-woong"
-            ],
-            "tags": "Movie Action Comédie"
-},
-{
-            "id": 1310,
-            "titre": "Assassins",
-            "genre": "Action",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "À surveiller",
-            "acteurs": [
-                        "À vérifier"
-            ],
-            "tags": "Movie Action Thriller"
-},
-{
-            "id": 1311,
-            "titre": "Humint",
-            "genre": "Action",
-            "plateforme": "Netflix",
-            "annee": 2026,
-            "statut": "Sorti",
-            "acteurs": [
-                        "Zo In-sung",
-                        "Park Jeong-min",
-                        "Park Hae-joon",
-                        "Shin Se-kyung"
-            ],
-            "tags": "Movie Action Espionnage Thriller"
-},
-{
-            "id": 1312,
-            "titre": "Colony",
-            "genre": "Horreur",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "Sorti",
-            "acteurs": [
-                        "Jun Ji-hyun",
-                        "Koo Kyo-hwan",
-                        "Ji Chang-wook",
-                        "Kim Shin-rok",
-                        "Shin Hyun-been",
-                        "Go Soo"
-            ],
-            "tags": "Movie Horreur Zombie Action Thriller"
-},
-{
-            "id": 1313,
-            "titre": "The Day She Returns",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "Sorti",
-            "acteurs": [
-                        "Park Mi-so",
-                        "Song Seon-mi",
-                        "Cho Yun-hee"
-            ],
-            "tags": "Movie Drame"
-},
-{
-            "id": 1314,
-            "titre": "Dora",
-            "genre": "Drame",
-            "plateforme": "À vérifier",
-            "annee": 2026,
-            "statut": "Sorti",
-            "acteurs": [
-                        "Kim Do-yeon",
-                        "Sakura Ando",
-                        "Song Sae-byeok",
-                        "Choi Won-young"
-            ],
-            "tags": "Movie Drame Romance"
-}
+            {
+                        "id": 1259,
+                        "titre": "Ode to My Father",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2014,
+                        "acteurs": [
+                                    "Hwang Jung-min",
+                                    "Yunjin Kim",
+                                    "Oh Dal-su",
+                                    "Jung Jin-young"
+                        ],
+                        "tags": "Movie Drame Historique Family",
+                        "synopsis": "Film coréen familial et historique suivant la vie d'un homme à travers les grands bouleversements de la Corée moderne."
+            },
+            {
+                        "id": 1260,
+                        "titre": "4PM",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Oh Dal-su",
+                                    "Jang Young-nam",
+                                    "Kim Hong-pa"
+                        ],
+                        "tags": "Movie Thriller Mystère"
+            },
+            {
+                        "id": 1261,
+                        "titre": "Badland Hunters",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Ma Dong-seok",
+                                    "Lee Hee-joon",
+                                    "Lee Jun-young",
+                                    "Roh Jeong-eui"
+                        ],
+                        "tags": "Movie Action Science-Fiction Thriller"
+            },
+            {
+                        "id": 1262,
+                        "titre": "Bogota: City of the Lost",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Song Joong-ki",
+                                    "Lee Hee-joon",
+                                    "Kwon Hae-hyo"
+                        ],
+                        "tags": "Movie Drame Crime"
+            },
+            {
+                        "id": 1263,
+                        "titre": "By the Stream",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Kwon Hae-hyo",
+                                    "Kim Min-hee",
+                                    "Cho Yun-hee"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1264,
+                        "titre": "Escape",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Lee Je-hoon",
+                                    "Koo Kyo-hwan",
+                                    "Hong Sa-bin"
+                        ],
+                        "tags": "Movie Action Thriller"
+            },
+            {
+                        "id": 1265,
+                        "titre": "Exhuma",
+                        "genre": "Horreur",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Choi Min-sik",
+                                    "Kim Go-eun",
+                                    "Yoo Hae-jin",
+                                    "Lee Do-hyun"
+                        ],
+                        "tags": "Movie Horreur Surnaturel Thriller"
+            },
+            {
+                        "id": 1266,
+                        "titre": "Handsome Guys",
+                        "genre": "Comédie",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Lee Sung-min",
+                                    "Lee Hee-joon",
+                                    "Gong Seung-yeon"
+                        ],
+                        "tags": "Movie Comédie Horreur"
+            },
+            {
+                        "id": 1267,
+                        "titre": "Harbin",
+                        "genre": "Historique",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Hyun Bin",
+                                    "Park Jeong-min",
+                                    "Jo Woo-jin",
+                                    "Jeon Yeo-been"
+                        ],
+                        "tags": "Movie Historique Thriller Action"
+            },
+            {
+                        "id": 1268,
+                        "titre": "Hiver à Sokcho",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Bella Kim",
+                                    "Roschdy Zem",
+                                    "Park Mi-hyeon"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1269,
+                        "titre": "My Name Is Loh Kiwan",
+                        "genre": "Drame",
+                        "plateforme": "Netflix",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Song Joong-ki",
+                                    "Choi Sung-eun",
+                                    "Jo Han-chul"
+                        ],
+                        "tags": "Movie Drame Romance"
+            },
+            {
+                        "id": 1270,
+                        "titre": "Love in the Big City",
+                        "genre": "Romance",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Kim Go-eun",
+                                    "Noh Sang-hyun"
+                        ],
+                        "tags": "Movie Romance Drame"
+            },
+            {
+                        "id": 1271,
+                        "titre": "Noise",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Lee Sun-bin",
+                                    "Kim Min-seok",
+                                    "Ryu Kyung-soo"
+                        ],
+                        "tags": "Movie Thriller Horreur"
+            },
+            {
+                        "id": 1272,
+                        "titre": "Hijack 1971",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Ha Jung-woo",
+                                    "Yeo Jin-goo",
+                                    "Sung Dong-il",
+                                    "Chae Soo-bin"
+                        ],
+                        "tags": "Movie Action Thriller"
+            },
+            {
+                        "id": 1273,
+                        "titre": "Revolver",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Jeon Do-yeon",
+                                    "Ji Chang-wook",
+                                    "Lim Ji-yeon"
+                        ],
+                        "tags": "Movie Thriller Crime"
+            },
+            {
+                        "id": 1274,
+                        "titre": "The Roundup: Punishment",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Ma Dong-seok",
+                                    "Kim Mu-yeol",
+                                    "Park Ji-hwan",
+                                    "Lee Dong-hwi"
+                        ],
+                        "tags": "Movie Action Crime"
+            },
+            {
+                        "id": 1275,
+                        "titre": "Uprising",
+                        "genre": "Historique",
+                        "plateforme": "Netflix",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Gang Dong-won",
+                                    "Park Jeong-min",
+                                    "Cha Seung-won",
+                                    "Kim Shin-rok"
+                        ],
+                        "tags": "Movie Historique Action Drame"
+            },
+            {
+                        "id": 1276,
+                        "titre": "Veteran 2",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Hwang Jung-min",
+                                    "Jung Hae-in",
+                                    "Oh Dal-su",
+                                    "Jang Yoon-ju"
+                        ],
+                        "tags": "Movie Action Crime Thriller"
+            },
+            {
+                        "id": 1277,
+                        "titre": "A Traveler's Needs",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Isabelle Huppert",
+                                    "Lee Hye-young",
+                                    "Kwon Hae-hyo"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1278,
+                        "titre": "Wonderland",
+                        "genre": "Science-Fiction",
+                        "plateforme": "Netflix",
+                        "annee": 2024,
+                        "acteurs": [
+                                    "Tang Wei",
+                                    "Bae Suzy",
+                                    "Park Bo-gum",
+                                    "Jung Yu-mi",
+                                    "Choi Woo-shik"
+                        ],
+                        "tags": "Movie Science-Fiction Romance Drame"
+            },
+            {
+                        "id": 1279,
+                        "titre": "84 m²",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Kang Ha-neul",
+                                    "Yeom Hye-ran",
+                                    "Seo Hyun-woo"
+                        ],
+                        "tags": "Movie Thriller Mystère",
+                        "synopsis": "Aussi connu sous le titre Wall to Wall / 84 Square Meters."
+            },
+            {
+                        "id": 1280,
+                        "titre": "3670",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Cho Yoo-hyun",
+                                    "Kim Hyun-mok",
+                                    "Cho Dae-hee"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1281,
+                        "titre": "No Other Choice",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Lee Byung-hun",
+                                    "Son Ye-jin",
+                                    "Park Hee-soon",
+                                    "Lee Sung-min",
+                                    "Yeom Hye-ran",
+                                    "Cha Seung-won"
+                        ],
+                        "tags": "Movie Thriller Comédie noire"
+            },
+            {
+                        "id": 1282,
+                        "titre": "Bugonia",
+                        "genre": "Science-Fiction",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Emma Stone",
+                                    "Jesse Plemons",
+                                    "Aidan Delbis"
+                        ],
+                        "tags": "Movie Science-Fiction Comédie noire",
+                        "synopsis": "Film international lié au cinéma coréen par son remake du film Save the Green Planet!"
+            },
+            {
+                        "id": 1283,
+                        "titre": "What Does That Nature Say to You",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Kwon Hae-hyo",
+                                    "Cho Yun-hee",
+                                    "Ha Seong-guk"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1284,
+                        "titre": "Dark Nuns",
+                        "genre": "Horreur",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Song Hye-kyo",
+                                    "Jeon Yeo-been",
+                                    "Lee Jin-wook"
+                        ],
+                        "tags": "Movie Horreur Surnaturel"
+            },
+            {
+                        "id": 1285,
+                        "titre": "Good News",
+                        "genre": "Comédie",
+                        "plateforme": "Netflix",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Sul Kyung-gu",
+                                    "Hong Kyung",
+                                    "Ryoo Seung-bum"
+                        ],
+                        "tags": "Movie Comédie noire Action"
+            },
+            {
+                        "id": 1286,
+                        "titre": "High Five",
+                        "genre": "Fantastique",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Yoo Ah-in",
+                                    "Ra Mi-ran",
+                                    "Ahn Jae-hong",
+                                    "Lee Jae-in",
+                                    "Kim Hee-won"
+                        ],
+                        "tags": "Movie Fantastique Comédie Action"
+            },
+            {
+                        "id": 1287,
+                        "titre": "Mantis",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Yim Si-wan",
+                                    "Park Gyu-young",
+                                    "Jo Woo-jin"
+                        ],
+                        "tags": "Movie Action Thriller"
+            },
+            {
+                        "id": 1288,
+                        "titre": "The Match",
+                        "genre": "Sport",
+                        "plateforme": "Netflix",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Lee Byung-hun",
+                                    "Yoo Ah-in",
+                                    "Moon Jeong-hee"
+                        ],
+                        "tags": "Movie Sport Drame"
+            },
+            {
+                        "id": 1289,
+                        "titre": "Mickey 17",
+                        "genre": "Science-Fiction",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Robert Pattinson",
+                                    "Naomi Ackie",
+                                    "Steven Yeun",
+                                    "Mark Ruffalo",
+                                    "Toni Collette"
+                        ],
+                        "tags": "Movie Science-Fiction Comédie noire",
+                        "synopsis": "Film international réalisé par Bong Joon-ho."
+            },
+            {
+                        "id": 1290,
+                        "titre": "My Daughter Is a Zombie",
+                        "genre": "Comédie",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Cho Jung-seok",
+                                    "Lee Jung-eun",
+                                    "Cho Yeo-jeong",
+                                    "Yoon Kyung-ho"
+                        ],
+                        "tags": "Movie Comédie Zombie Family"
+            },
+            {
+                        "id": 1291,
+                        "titre": "Nocturnal",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Ha Jung-woo",
+                                    "Kim Nam-gil",
+                                    "Yoo Da-in"
+                        ],
+                        "tags": "Movie Thriller Crime"
+            },
+            {
+                        "id": 1292,
+                        "titre": "The Old Woman with the Knife",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Lee Hye-young",
+                                    "Kim Sung-cheol",
+                                    "Yeon Woo-jin",
+                                    "Kim Mu-yeol"
+                        ],
+                        "tags": "Movie Thriller Action"
+            },
+            {
+                        "id": 1293,
+                        "titre": "Omniscient Reader: The Prophecy",
+                        "genre": "Fantastique",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Ahn Hyo-seop",
+                                    "Lee Min-ho",
+                                    "Chae Soo-bin",
+                                    "Shin Seung-ho",
+                                    "Nana"
+                        ],
+                        "tags": "Movie Fantastique Action"
+            },
+            {
+                        "id": 1294,
+                        "titre": "Revelations",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Ryu Jun-yeol",
+                                    "Shin Hyun-been",
+                                    "Shin Min-jae"
+                        ],
+                        "tags": "Movie Thriller Mystère"
+            },
+            {
+                        "id": 1295,
+                        "titre": "The King of Kings",
+                        "genre": "Animation",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Oscar Isaac",
+                                    "Kenneth Branagh",
+                                    "Uma Thurman"
+                        ],
+                        "tags": "Movie Animation Family"
+            },
+            {
+                        "id": 1296,
+                        "titre": "Submersion",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1297,
+                        "titre": "The Ugly",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Park Jeong-min",
+                                    "Kwon Hae-hyo",
+                                    "Shin Hyun-been"
+                        ],
+                        "tags": "Movie Thriller Mystère"
+            },
+            {
+                        "id": 1298,
+                        "titre": "The Witcher: Sirens of the Deep",
+                        "genre": "Fantastique",
+                        "plateforme": "Netflix",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "Doug Cockle",
+                                    "Joey Batey",
+                                    "Anya Chalotra"
+                        ],
+                        "tags": "Movie Animation Fantastique"
+            },
+            {
+                        "id": 1299,
+                        "titre": "The World of Love",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2025,
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Drame Romance"
+            },
+            {
+                        "id": 1300,
+                        "titre": "Ode to My Father 2",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "Hwang Jung-min",
+                                    "Yunjin Kim"
+                        ],
+                        "tags": "Movie Drame Family"
+            },
+            {
+                        "id": 1301,
+                        "titre": "Cattle Run",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1302,
+                        "titre": "Tazza: The Song of Beelzebub",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Thriller Crime"
+            },
+            {
+                        "id": 1303,
+                        "titre": "White Blast",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Action Thriller"
+            },
+            {
+                        "id": 1304,
+                        "titre": "Paradise Lost",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1305,
+                        "titre": "Hope",
+                        "genre": "Science-Fiction",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "Hwang Jung-min",
+                                    "Zo In-sung",
+                                    "Jung Ho-yeon",
+                                    "Alicia Vikander",
+                                    "Michael Fassbender"
+                        ],
+                        "tags": "Movie Science-Fiction Thriller"
+            },
+            {
+                        "id": 1306,
+                        "titre": "REAWAKEN MAN",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Action"
+            },
+            {
+                        "id": 1307,
+                        "titre": "Tristes Tropiques",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Thriller Drame"
+            },
+            {
+                        "id": 1308,
+                        "titre": "The Journey to Gyeongju",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1309,
+                        "titre": "OK! MADAM 2",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "Uhm Jung-hwa",
+                                    "Park Sung-woong"
+                        ],
+                        "tags": "Movie Action Comédie"
+            },
+            {
+                        "id": 1310,
+                        "titre": "Assassins",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "À surveiller",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "tags": "Movie Action Thriller"
+            },
+            {
+                        "id": 1311,
+                        "titre": "Humint",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "annee": 2026,
+                        "statut": "Sorti",
+                        "acteurs": [
+                                    "Zo In-sung",
+                                    "Park Jeong-min",
+                                    "Park Hae-joon",
+                                    "Shin Se-kyung"
+                        ],
+                        "tags": "Movie Action Espionnage Thriller"
+            },
+            {
+                        "id": 1312,
+                        "titre": "Colony",
+                        "genre": "Horreur",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "Sorti",
+                        "acteurs": [
+                                    "Jun Ji-hyun",
+                                    "Koo Kyo-hwan",
+                                    "Ji Chang-wook",
+                                    "Kim Shin-rok",
+                                    "Shin Hyun-been",
+                                    "Go Soo"
+                        ],
+                        "tags": "Movie Horreur Zombie Action Thriller"
+            },
+            {
+                        "id": 1313,
+                        "titre": "The Day She Returns",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "Sorti",
+                        "acteurs": [
+                                    "Park Mi-so",
+                                    "Song Seon-mi",
+                                    "Cho Yun-hee"
+                        ],
+                        "tags": "Movie Drame"
+            },
+            {
+                        "id": 1314,
+                        "titre": "Dora",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "annee": 2026,
+                        "statut": "Sorti",
+                        "acteurs": [
+                                    "Kim Do-yeon",
+                                    "Sakura Ando",
+                                    "Song Sae-byeok",
+                                    "Choi Won-young"
+                        ],
+                        "tags": "Movie Drame Romance"
+            },
+            {
+                        "titre": "500 mètres sous terre",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Catastrophe",
+                        "source": "Ajout films KR 2021",
+                        "id": 1315
+            },
+            {
+                        "titre": "Blackpink: The Movie",
+                        "genre": "Documentaire",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "BLACKPINK"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Documentaire K-pop Musique",
+                        "source": "Ajout films KR 2021",
+                        "id": 1316
+            },
+            {
+                        "titre": "The Book of Fish",
+                        "genre": "Historique",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Sol Kyung-gu",
+                                    "Byun Yo-han"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Historique",
+                        "source": "Ajout films KR 2021",
+                        "id": 1317
+            },
+            {
+                        "titre": "Chun Tae-Il : L'espoir d'un peuple",
+                        "genre": "Animation",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Animation Biopic Historique",
+                        "source": "Ajout films KR 2021",
+                        "id": 1318
+            },
+            {
+                        "titre": "Défense d'atterrir",
+                        "genre": "Comédie",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Comédie Action",
+                        "source": "Ajout films KR 2021",
+                        "id": 1319
+            },
+            {
+                        "titre": "Endless Rain",
+                        "genre": "Romance",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Kang Ha-neul",
+                                    "Chun Woo-hee"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Romance Mélodrame",
+                        "source": "Ajout films KR 2021",
+                        "id": 1320
+            },
+            {
+                        "titre": "Escape from Mogadishu",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Kim Yoon-seok",
+                                    "Jo In-sung",
+                                    "Heo Joon-ho"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Action Drame Historique",
+                        "source": "Ajout films KR 2021",
+                        "id": 1321
+            },
+            {
+                        "titre": "Hard Hit",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Jo Woo-jin",
+                                    "Lee Jae-in",
+                                    "Ji Chang-wook"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Action",
+                        "source": "Ajout films KR 2021",
+                        "id": 1322
+            },
+            {
+                        "titre": "Heaven: To the Land of Happiness",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Choi Min-sik",
+                                    "Park Hae-il"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2021",
+                        "id": 1323
+            },
+            {
+                        "titre": "Hostage: Missing Celebrity",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Hwang Jung-min"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Action",
+                        "source": "Ajout films KR 2021",
+                        "id": 1324
+            },
+            {
+                        "titre": "Introduction",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2021",
+                        "id": 1325
+            },
+            {
+                        "titre": "Juste sous vos yeux",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2021",
+                        "id": 1326
+            },
+            {
+                        "titre": "Midnight Silence",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Crime",
+                        "source": "Ajout films KR 2021",
+                        "id": 1327
+            },
+            {
+                        "titre": "Mission: Possible",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Action Comédie",
+                        "source": "Ajout films KR 2021",
+                        "id": 1328
+            },
+            {
+                        "titre": "Not Out",
+                        "genre": "Sport",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Sport Drame",
+                        "source": "Ajout films KR 2021",
+                        "id": 1329
+            },
+            {
+                        "titre": "On the Line",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Crime Action",
+                        "source": "Ajout films KR 2021",
+                        "id": 1330
+            },
+            {
+                        "titre": "Recalled",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Mystère",
+                        "source": "Ajout films KR 2021",
+                        "id": 1331
+            },
+            {
+                        "titre": "Saehae jeonya",
+                        "genre": "Romance",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Romance Drame",
+                        "source": "Ajout films KR 2021",
+                        "id": 1332
+            },
+            {
+                        "titre": "Seo Bok",
+                        "genre": "Science-Fiction",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Gong Yoo",
+                                    "Park Bo-gum",
+                                    "Jang Young-nam"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Science-Fiction Action Thriller",
+                        "source": "Ajout films KR 2021",
+                        "id": 1333
+            },
+            {
+                        "titre": "Space Sweepers",
+                        "genre": "Science-Fiction",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Song Joong-ki",
+                                    "Kim Tae-ri",
+                                    "Jin Sun-kyu",
+                                    "Yoo Hae-jin"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Science-Fiction Action Space Opera",
+                        "source": "Ajout films KR 2021",
+                        "id": 1334
+            },
+            {
+                        "titre": "Spiritwalker",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Action Thriller Fantastique",
+                        "source": "Ajout films KR 2021",
+                        "id": 1335
+            },
+            {
+                        "titre": "Vanishing",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Thriller Crime",
+                        "source": "Ajout films KR 2021",
+                        "id": 1336
+            },
+            {
+                        "titre": "The Witcher : Le Cauchemar du loup",
+                        "genre": "Animation",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Theo James",
+                                    "Lara Pulver",
+                                    "Graham McTavish"
+                        ],
+                        "annee": 2021,
+                        "tags": "Movie Animation Fantastique Action Studio Mir",
+                        "source": "Ajout films KR 2021",
+                        "synopsis": "Film d'animation international lié au studio coréen Studio Mir.",
+                        "id": 1337
+            },
+            {
+                        "titre": "20th Century Girl",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Kim Yoo-jung",
+                                    "Byeon Woo-seok",
+                                    "Park Jung-woo",
+                                    "Roh Yoon-seo"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Romance Mélodrame",
+                        "source": "Ajout films KR 2022",
+                        "id": 1338
+            },
+            {
+                        "titre": "About Kim Sohee",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Kim Si-eun",
+                                    "Bae Doona"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame Social",
+                        "source": "Ajout films KR 2022",
+                        "id": 1339
+            },
+            {
+                        "titre": "Air Murder",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame Catastrophe",
+                        "source": "Ajout films KR 2022",
+                        "id": 1340
+            },
+            {
+                        "titre": "L'Amour en laisse",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Seohyun",
+                                    "Lee Jun-young"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Romance Comédie",
+                        "source": "Ajout films KR 2022",
+                        "id": 1341
+            },
+            {
+                        "titre": "Les Bonnes Étoiles",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Song Kang-ho",
+                                    "Gang Dong-won",
+                                    "Bae Doona",
+                                    "IU"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2022",
+                        "id": 1342
+            },
+            {
+                        "titre": "The Boys",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame Crime",
+                        "source": "Ajout films KR 2022",
+                        "id": 1343
+            },
+            {
+                        "titre": "Carter",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Joo Won"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Action Thriller",
+                        "source": "Ajout films KR 2022",
+                        "id": 1344
+            },
+            {
+                        "titre": "Decibel",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Kim Rae-won",
+                                    "Lee Jong-suk",
+                                    "Cha Eun-woo"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Action Thriller",
+                        "source": "Ajout films KR 2022",
+                        "id": 1345
+            },
+            {
+                        "titre": "Decision to Leave",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Tang Wei",
+                                    "Park Hae-il"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Thriller Romance Crime",
+                        "source": "Ajout films KR 2022",
+                        "id": 1346
+            },
+            {
+                        "titre": "Gangnam Zombie",
+                        "genre": "Horreur",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Horreur Zombie Action",
+                        "source": "Ajout films KR 2022",
+                        "id": 1347
+            },
+            {
+                        "titre": "Hansan : La Bataille du dragon",
+                        "genre": "Historique",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Park Hae-il",
+                                    "Byun Yo-han"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Historique Action Guerre",
+                        "source": "Ajout films KR 2022",
+                        "id": 1348
+            },
+            {
+                        "titre": "Hunt",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Lee Jung-jae",
+                                    "Jung Woo-sung"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Action Espionnage Thriller",
+                        "source": "Ajout films KR 2022",
+                        "id": 1349
+            },
+            {
+                        "titre": "Kingmaker",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Sol Kyung-gu",
+                                    "Lee Sun-kyun"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame Politique",
+                        "source": "Ajout films KR 2022",
+                        "id": 1350
+            },
+            {
+                        "titre": "The Night Owl",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Thriller Historique Mystère",
+                        "source": "Ajout films KR 2022",
+                        "id": 1351
+            },
+            {
+                        "titre": "The Policeman's Lineage",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Cho Jin-woong",
+                                    "Choi Woo-shik"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Thriller Crime",
+                        "source": "Ajout films KR 2022",
+                        "id": 1352
+            },
+            {
+                        "titre": "La Romancière, le Film et le Heureux Hasard",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2022",
+                        "id": 1353
+            },
+            {
+                        "titre": "The Roundup",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Ma Dong-seok",
+                                    "Son Suk-ku"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Action Crime",
+                        "source": "Ajout films KR 2022",
+                        "id": 1354
+            },
+            {
+                        "titre": "Special Delivery",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Park So-dam"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Action Crime Thriller",
+                        "source": "Ajout films KR 2022",
+                        "id": 1355
+            },
+            {
+                        "titre": "Walk Up",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2022",
+                        "id": 1356
+            },
+            {
+                        "titre": "The Witch: Part 2. The Other One",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2022,
+                        "tags": "Movie Action Science-Fiction Thriller",
+                        "source": "Ajout films KR 2022",
+                        "id": 1357
+            },
+            {
+                        "titre": "30 il",
+                        "genre": "Comédie",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Comédie Romance",
+                        "source": "Ajout films KR 2023",
+                        "id": 1358
+            },
+            {
+                        "titre": "A Normal Family",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Sol Kyung-gu",
+                                    "Jang Dong-gun",
+                                    "Kim Hee-ae",
+                                    "Claudia Kim"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1359
+            },
+            {
+                        "titre": "Ballerina",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Jeon Jong-seo",
+                                    "Kim Ji-hoon",
+                                    "Park Yu-rim"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Action Thriller Revenge",
+                        "source": "Ajout films KR 2023",
+                        "id": 1360
+            },
+            {
+                        "titre": "Ça tourne à Séoul !",
+                        "genre": "Comédie",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Song Kang-ho",
+                                    "Im Soo-jung",
+                                    "Oh Jung-se",
+                                    "Jeon Yeo-been"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Comédie Drame Cinéma",
+                        "source": "Ajout films KR 2023",
+                        "id": 1361
+            },
+            {
+                        "titre": "Concrete Utopia",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Lee Byung-hun",
+                                    "Park Seo-joon",
+                                    "Park Bo-young"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Thriller Catastrophe Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1362
+            },
+            {
+                        "titre": "De nos jours...",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1363
+            },
+            {
+                        "titre": "Don't Buy the Seller",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Thriller Crime",
+                        "source": "Ajout films KR 2023",
+                        "id": 1364
+            },
+            {
+                        "titre": "Eileen",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Thriller International",
+                        "source": "Ajout films KR 2023",
+                        "id": 1365
+            },
+            {
+                        "titre": "Honey Sweet",
+                        "genre": "Romance",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Romance Comédie",
+                        "source": "Ajout films KR 2023",
+                        "id": 1366
+            },
+            {
+                        "titre": "Hopeless",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Hong Xa-bin",
+                                    "Song Joong-ki",
+                                    "Bibi"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Drame Crime",
+                        "source": "Ajout films KR 2023",
+                        "id": 1367
+            },
+            {
+                        "titre": "In Water",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1368
+            },
+            {
+                        "titre": "It's Okay!",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1369
+            },
+            {
+                        "titre": "Jung E",
+                        "genre": "Science-Fiction",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Kang Soo-youn",
+                                    "Kim Hyun-joo",
+                                    "Ryu Kyung-soo"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Science-Fiction Action",
+                        "source": "Ajout films KR 2023",
+                        "id": 1370
+            },
+            {
+                        "titre": "Kill Bok-soon",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Jeon Do-yeon",
+                                    "Sol Kyung-gu",
+                                    "Kim Si-a"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Action Thriller Crime",
+                        "source": "Ajout films KR 2023",
+                        "id": 1371
+            },
+            {
+                        "titre": "Killing Romance",
+                        "genre": "Comédie",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Comédie Romance",
+                        "source": "Ajout films KR 2023",
+                        "id": 1372
+            },
+            {
+                        "titre": "Mimang",
+                        "genre": "Drame",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1373
+            },
+            {
+                        "titre": "The Moon",
+                        "genre": "Science-Fiction",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Sol Kyung-gu",
+                                    "Doh Kyung-soo",
+                                    "Kim Hee-ae"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Science-Fiction Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1374
+            },
+            {
+                        "titre": "Noryang",
+                        "genre": "Historique",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Historique Action Guerre",
+                        "source": "Ajout films KR 2023",
+                        "id": 1375
+            },
+            {
+                        "titre": "One Win",
+                        "genre": "Sport",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Sport Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1376
+            },
+            {
+                        "titre": "Past Lives",
+                        "genre": "Romance",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Greta Lee",
+                                    "Teo Yoo",
+                                    "John Magaro"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Romance Drame International",
+                        "source": "Ajout films KR 2023",
+                        "synopsis": "Film américano-coréen / international, ajouté car lié au cinéma coréen.",
+                        "id": 1377
+            },
+            {
+                        "titre": "Project Silence",
+                        "genre": "Thriller",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Lee Sun-kyun",
+                                    "Ju Ji-hoon",
+                                    "Kim Hee-won"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Thriller Catastrophe",
+                        "source": "Ajout films KR 2023",
+                        "id": 1378
+            },
+            {
+                        "titre": "Road to Boston",
+                        "genre": "Sport",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "À vérifier"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Sport Historique Drame",
+                        "source": "Ajout films KR 2023",
+                        "id": 1379
+            },
+            {
+                        "titre": "The Roundup: No Way Out",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Ma Dong-seok",
+                                    "Lee Joon-hyuk",
+                                    "Munetaka Aoki"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Action Crime",
+                        "source": "Ajout films KR 2023",
+                        "id": 1380
+            },
+            {
+                        "titre": "Seoul Spring",
+                        "genre": "Historique",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Hwang Jung-min",
+                                    "Jung Woo-sung"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Historique Drame Politique",
+                        "source": "Ajout films KR 2023",
+                        "id": 1381
+            },
+            {
+                        "titre": "Smugglers",
+                        "genre": "Action",
+                        "plateforme": "À vérifier",
+                        "acteurs": [
+                                    "Kim Hye-soo",
+                                    "Yum Jung-ah",
+                                    "Jo In-sung"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Action Crime",
+                        "source": "Ajout films KR 2023",
+                        "id": 1382
+            },
+            {
+                        "titre": "Unlocked",
+                        "genre": "Thriller",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Chun Woo-hee",
+                                    "Im Si-wan",
+                                    "Kim Hee-won"
+                        ],
+                        "annee": 2023,
+                        "tags": "Movie Thriller Crime",
+                        "source": "Ajout films KR 2023",
+                        "id": 1383
+            },
+            {
+                        "titre": "Boyfriend on Demand",
+                        "genre": "Romance",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Jisoo",
+                                    "Seo In-guk"
+                        ],
+                        "annee": 2026,
+                        "episodes": 10,
+                        "nouveaute": true,
+                        "tags": "Romance Comédie Série",
+                        "source": "Ajout drama 2026",
+                        "id": 1384
+            }
 ];
 // Onglet Ajout supprimé : l'application officielle utilise uniquement la base intégrée.
 let customDramas = [];
