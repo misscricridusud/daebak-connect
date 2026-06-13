@@ -85,7 +85,6 @@
         <div class="flex bg-white/55 shadow-sm border-b border-pink-100">
             <button onclick="showTab('dramas')" class="flex-1 py-4 text-xs font-bold text-sky-600 border-b-2 border-sky-400 transition-all" id="tab-dramas">Dramas</button>
             <button onclick="showTab('chat')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-chat">💖 OppaBot</button>
-            <button onclick="showTab('import')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-import">Ajout</button>
             <button onclick="showTab('stars')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-stars">Stars</button>
             <button onclick="showTab('future2026')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-future2026">2026 📅</button>
             <button onclick="showTab('vip')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-vip">VIP 💎</button>
@@ -127,34 +126,6 @@
                 </div>
             </div>
 
-            <div id="content-import" class="hidden">
-                <div class="soft-card p-6 rounded-3xl">
-                    <h3 class="text-base font-bold text-sky-800 mb-4">Ajouter un K-Drama 🇰🇷</h3>
-                    <input type="text" id="new-drama-title" placeholder="Titre..." class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
-                    <select id="new-drama-genre" class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
-                        <option>Drame</option>
-                        <option>Romance</option>
-                        <option>Comédie</option>
-                        <option>Action</option>
-                        <option>Thriller</option>
-                        <option>Horreur</option>
-                        <option>Fantastique</option>
-                        <option>Surnaturel</option>
-                        <option>Science-Fiction</option>
-                        <option>École</option>
-                        <option>Juridique</option>
-                        <option>Médical</option>
-                        <option>Historique</option>
-                        <option>Family</option>
-                        <option>Movie</option>
-                        <option>Policier</option>
-                        <option>Sport</option>
-                        <option>Business</option></select>
-                    <input type="text" id="new-drama-platform" placeholder="Plateforme ex: Netflix, Viki..." class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
-                    <input type="text" id="new-drama-actors" placeholder="Acteurs séparés par des virgules" class="w-full p-4 mb-3 rounded-2xl text-sm border border-sky-100 bg-sky-50/50 outline-none">
-                    <button onclick="ajouterDrama()" class="w-full bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white py-3 rounded-2xl text-sm font-bold shadow-md hover:brightness-105">Ajouter</button>
-                </div>
-            </div>
 
             <div id="content-stars" class="hidden">
                 <input type="text" id="star-search" oninput="renderStars()" placeholder="Chercher une star..." class="w-full px-4 py-3 mb-4 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
@@ -15651,12 +15622,763 @@ const baseDramas = [
                         "plateforme": "Netflix",
                         "annee": 2025,
                         "acteurs": ["Lee Soo-hyuk", "Lee Da-hee", "Arin"]
-            }
+            },
+{
+            "id": 1259,
+            "titre": "Ode to My Father",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2014,
+            "acteurs": [
+                        "Hwang Jung-min",
+                        "Yunjin Kim",
+                        "Oh Dal-su",
+                        "Jung Jin-young"
+            ],
+            "tags": "Movie Drame Historique Family",
+            "synopsis": "Film coréen familial et historique suivant la vie d'un homme à travers les grands bouleversements de la Corée moderne."
+},
+{
+            "id": 1260,
+            "titre": "4PM",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Oh Dal-su",
+                        "Jang Young-nam",
+                        "Kim Hong-pa"
+            ],
+            "tags": "Movie Thriller Mystère"
+},
+{
+            "id": 1261,
+            "titre": "Badland Hunters",
+            "genre": "Action",
+            "plateforme": "Netflix",
+            "annee": 2024,
+            "acteurs": [
+                        "Ma Dong-seok",
+                        "Lee Hee-joon",
+                        "Lee Jun-young",
+                        "Roh Jeong-eui"
+            ],
+            "tags": "Movie Action Science-Fiction Thriller"
+},
+{
+            "id": 1262,
+            "titre": "Bogota: City of the Lost",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Song Joong-ki",
+                        "Lee Hee-joon",
+                        "Kwon Hae-hyo"
+            ],
+            "tags": "Movie Drame Crime"
+},
+{
+            "id": 1263,
+            "titre": "By the Stream",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Kwon Hae-hyo",
+                        "Kim Min-hee",
+                        "Cho Yun-hee"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1264,
+            "titre": "Escape",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Lee Je-hoon",
+                        "Koo Kyo-hwan",
+                        "Hong Sa-bin"
+            ],
+            "tags": "Movie Action Thriller"
+},
+{
+            "id": 1265,
+            "titre": "Exhuma",
+            "genre": "Horreur",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Choi Min-sik",
+                        "Kim Go-eun",
+                        "Yoo Hae-jin",
+                        "Lee Do-hyun"
+            ],
+            "tags": "Movie Horreur Surnaturel Thriller"
+},
+{
+            "id": 1266,
+            "titre": "Handsome Guys",
+            "genre": "Comédie",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Lee Sung-min",
+                        "Lee Hee-joon",
+                        "Gong Seung-yeon"
+            ],
+            "tags": "Movie Comédie Horreur"
+},
+{
+            "id": 1267,
+            "titre": "Harbin",
+            "genre": "Historique",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Hyun Bin",
+                        "Park Jeong-min",
+                        "Jo Woo-jin",
+                        "Jeon Yeo-been"
+            ],
+            "tags": "Movie Historique Thriller Action"
+},
+{
+            "id": 1268,
+            "titre": "Hiver à Sokcho",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Bella Kim",
+                        "Roschdy Zem",
+                        "Park Mi-hyeon"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1269,
+            "titre": "My Name Is Loh Kiwan",
+            "genre": "Drame",
+            "plateforme": "Netflix",
+            "annee": 2024,
+            "acteurs": [
+                        "Song Joong-ki",
+                        "Choi Sung-eun",
+                        "Jo Han-chul"
+            ],
+            "tags": "Movie Drame Romance"
+},
+{
+            "id": 1270,
+            "titre": "Love in the Big City",
+            "genre": "Romance",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Kim Go-eun",
+                        "Noh Sang-hyun"
+            ],
+            "tags": "Movie Romance Drame"
+},
+{
+            "id": 1271,
+            "titre": "Noise",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Lee Sun-bin",
+                        "Kim Min-seok",
+                        "Ryu Kyung-soo"
+            ],
+            "tags": "Movie Thriller Horreur"
+},
+{
+            "id": 1272,
+            "titre": "Hijack 1971",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Ha Jung-woo",
+                        "Yeo Jin-goo",
+                        "Sung Dong-il",
+                        "Chae Soo-bin"
+            ],
+            "tags": "Movie Action Thriller"
+},
+{
+            "id": 1273,
+            "titre": "Revolver",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Jeon Do-yeon",
+                        "Ji Chang-wook",
+                        "Lim Ji-yeon"
+            ],
+            "tags": "Movie Thriller Crime"
+},
+{
+            "id": 1274,
+            "titre": "The Roundup: Punishment",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Ma Dong-seok",
+                        "Kim Mu-yeol",
+                        "Park Ji-hwan",
+                        "Lee Dong-hwi"
+            ],
+            "tags": "Movie Action Crime"
+},
+{
+            "id": 1275,
+            "titre": "Uprising",
+            "genre": "Historique",
+            "plateforme": "Netflix",
+            "annee": 2024,
+            "acteurs": [
+                        "Gang Dong-won",
+                        "Park Jeong-min",
+                        "Cha Seung-won",
+                        "Kim Shin-rok"
+            ],
+            "tags": "Movie Historique Action Drame"
+},
+{
+            "id": 1276,
+            "titre": "Veteran 2",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Hwang Jung-min",
+                        "Jung Hae-in",
+                        "Oh Dal-su",
+                        "Jang Yoon-ju"
+            ],
+            "tags": "Movie Action Crime Thriller"
+},
+{
+            "id": 1277,
+            "titre": "A Traveler's Needs",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2024,
+            "acteurs": [
+                        "Isabelle Huppert",
+                        "Lee Hye-young",
+                        "Kwon Hae-hyo"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1278,
+            "titre": "Wonderland",
+            "genre": "Science-Fiction",
+            "plateforme": "Netflix",
+            "annee": 2024,
+            "acteurs": [
+                        "Tang Wei",
+                        "Bae Suzy",
+                        "Park Bo-gum",
+                        "Jung Yu-mi",
+                        "Choi Woo-shik"
+            ],
+            "tags": "Movie Science-Fiction Romance Drame"
+},
+{
+            "id": 1279,
+            "titre": "84 m²",
+            "genre": "Thriller",
+            "plateforme": "Netflix",
+            "annee": 2025,
+            "acteurs": [
+                        "Kang Ha-neul",
+                        "Yeom Hye-ran",
+                        "Seo Hyun-woo"
+            ],
+            "tags": "Movie Thriller Mystère",
+            "synopsis": "Aussi connu sous le titre Wall to Wall / 84 Square Meters."
+},
+{
+            "id": 1280,
+            "titre": "3670",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Cho Yoo-hyun",
+                        "Kim Hyun-mok",
+                        "Cho Dae-hee"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1281,
+            "titre": "No Other Choice",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Lee Byung-hun",
+                        "Son Ye-jin",
+                        "Park Hee-soon",
+                        "Lee Sung-min",
+                        "Yeom Hye-ran",
+                        "Cha Seung-won"
+            ],
+            "tags": "Movie Thriller Comédie noire"
+},
+{
+            "id": 1282,
+            "titre": "Bugonia",
+            "genre": "Science-Fiction",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Emma Stone",
+                        "Jesse Plemons",
+                        "Aidan Delbis"
+            ],
+            "tags": "Movie Science-Fiction Comédie noire",
+            "synopsis": "Film international lié au cinéma coréen par son remake du film Save the Green Planet!"
+},
+{
+            "id": 1283,
+            "titre": "What Does That Nature Say to You",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Kwon Hae-hyo",
+                        "Cho Yun-hee",
+                        "Ha Seong-guk"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1284,
+            "titre": "Dark Nuns",
+            "genre": "Horreur",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Song Hye-kyo",
+                        "Jeon Yeo-been",
+                        "Lee Jin-wook"
+            ],
+            "tags": "Movie Horreur Surnaturel"
+},
+{
+            "id": 1285,
+            "titre": "Good News",
+            "genre": "Comédie",
+            "plateforme": "Netflix",
+            "annee": 2025,
+            "acteurs": [
+                        "Sul Kyung-gu",
+                        "Hong Kyung",
+                        "Ryoo Seung-bum"
+            ],
+            "tags": "Movie Comédie noire Action"
+},
+{
+            "id": 1286,
+            "titre": "High Five",
+            "genre": "Fantastique",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Yoo Ah-in",
+                        "Ra Mi-ran",
+                        "Ahn Jae-hong",
+                        "Lee Jae-in",
+                        "Kim Hee-won"
+            ],
+            "tags": "Movie Fantastique Comédie Action"
+},
+{
+            "id": 1287,
+            "titre": "Mantis",
+            "genre": "Action",
+            "plateforme": "Netflix",
+            "annee": 2025,
+            "acteurs": [
+                        "Yim Si-wan",
+                        "Park Gyu-young",
+                        "Jo Woo-jin"
+            ],
+            "tags": "Movie Action Thriller"
+},
+{
+            "id": 1288,
+            "titre": "The Match",
+            "genre": "Sport",
+            "plateforme": "Netflix",
+            "annee": 2025,
+            "acteurs": [
+                        "Lee Byung-hun",
+                        "Yoo Ah-in",
+                        "Moon Jeong-hee"
+            ],
+            "tags": "Movie Sport Drame"
+},
+{
+            "id": 1289,
+            "titre": "Mickey 17",
+            "genre": "Science-Fiction",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Robert Pattinson",
+                        "Naomi Ackie",
+                        "Steven Yeun",
+                        "Mark Ruffalo",
+                        "Toni Collette"
+            ],
+            "tags": "Movie Science-Fiction Comédie noire",
+            "synopsis": "Film international réalisé par Bong Joon-ho."
+},
+{
+            "id": 1290,
+            "titre": "My Daughter Is a Zombie",
+            "genre": "Comédie",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Cho Jung-seok",
+                        "Lee Jung-eun",
+                        "Cho Yeo-jeong",
+                        "Yoon Kyung-ho"
+            ],
+            "tags": "Movie Comédie Zombie Family"
+},
+{
+            "id": 1291,
+            "titre": "Nocturnal",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Ha Jung-woo",
+                        "Kim Nam-gil",
+                        "Yoo Da-in"
+            ],
+            "tags": "Movie Thriller Crime"
+},
+{
+            "id": 1292,
+            "titre": "The Old Woman with the Knife",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Lee Hye-young",
+                        "Kim Sung-cheol",
+                        "Yeon Woo-jin",
+                        "Kim Mu-yeol"
+            ],
+            "tags": "Movie Thriller Action"
+},
+{
+            "id": 1293,
+            "titre": "Omniscient Reader: The Prophecy",
+            "genre": "Fantastique",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Ahn Hyo-seop",
+                        "Lee Min-ho",
+                        "Chae Soo-bin",
+                        "Shin Seung-ho",
+                        "Nana"
+            ],
+            "tags": "Movie Fantastique Action"
+},
+{
+            "id": 1294,
+            "titre": "Revelations",
+            "genre": "Thriller",
+            "plateforme": "Netflix",
+            "annee": 2025,
+            "acteurs": [
+                        "Ryu Jun-yeol",
+                        "Shin Hyun-been",
+                        "Shin Min-jae"
+            ],
+            "tags": "Movie Thriller Mystère"
+},
+{
+            "id": 1295,
+            "titre": "The King of Kings",
+            "genre": "Animation",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Oscar Isaac",
+                        "Kenneth Branagh",
+                        "Uma Thurman"
+            ],
+            "tags": "Movie Animation Family"
+},
+{
+            "id": 1296,
+            "titre": "Submersion",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1297,
+            "titre": "The Ugly",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "Park Jeong-min",
+                        "Kwon Hae-hyo",
+                        "Shin Hyun-been"
+            ],
+            "tags": "Movie Thriller Mystère"
+},
+{
+            "id": 1298,
+            "titre": "The Witcher: Sirens of the Deep",
+            "genre": "Fantastique",
+            "plateforme": "Netflix",
+            "annee": 2025,
+            "acteurs": [
+                        "Doug Cockle",
+                        "Joey Batey",
+                        "Anya Chalotra"
+            ],
+            "tags": "Movie Animation Fantastique"
+},
+{
+            "id": 1299,
+            "titre": "The World of Love",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2025,
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Drame Romance"
+},
+{
+            "id": 1300,
+            "titre": "Ode to My Father 2",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "Hwang Jung-min",
+                        "Yunjin Kim"
+            ],
+            "tags": "Movie Drame Family"
+},
+{
+            "id": 1301,
+            "titre": "Cattle Run",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1302,
+            "titre": "Tazza: The Song of Beelzebub",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Thriller Crime"
+},
+{
+            "id": 1303,
+            "titre": "White Blast",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Action Thriller"
+},
+{
+            "id": 1304,
+            "titre": "Paradise Lost",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1305,
+            "titre": "Hope",
+            "genre": "Science-Fiction",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "Hwang Jung-min",
+                        "Zo In-sung",
+                        "Jung Ho-yeon",
+                        "Alicia Vikander",
+                        "Michael Fassbender"
+            ],
+            "tags": "Movie Science-Fiction Thriller"
+},
+{
+            "id": 1306,
+            "titre": "REAWAKEN MAN",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Action"
+},
+{
+            "id": 1307,
+            "titre": "Tristes Tropiques",
+            "genre": "Thriller",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Thriller Drame"
+},
+{
+            "id": 1308,
+            "titre": "The Journey to Gyeongju",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1309,
+            "titre": "OK! MADAM 2",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "Uhm Jung-hwa",
+                        "Park Sung-woong"
+            ],
+            "tags": "Movie Action Comédie"
+},
+{
+            "id": 1310,
+            "titre": "Assassins",
+            "genre": "Action",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "À surveiller",
+            "acteurs": [
+                        "À vérifier"
+            ],
+            "tags": "Movie Action Thriller"
+},
+{
+            "id": 1311,
+            "titre": "Humint",
+            "genre": "Action",
+            "plateforme": "Netflix",
+            "annee": 2026,
+            "statut": "Sorti",
+            "acteurs": [
+                        "Zo In-sung",
+                        "Park Jeong-min",
+                        "Park Hae-joon",
+                        "Shin Se-kyung"
+            ],
+            "tags": "Movie Action Espionnage Thriller"
+},
+{
+            "id": 1312,
+            "titre": "Colony",
+            "genre": "Horreur",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "Sorti",
+            "acteurs": [
+                        "Jun Ji-hyun",
+                        "Koo Kyo-hwan",
+                        "Ji Chang-wook",
+                        "Kim Shin-rok",
+                        "Shin Hyun-been",
+                        "Go Soo"
+            ],
+            "tags": "Movie Horreur Zombie Action Thriller"
+},
+{
+            "id": 1313,
+            "titre": "The Day She Returns",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "Sorti",
+            "acteurs": [
+                        "Park Mi-so",
+                        "Song Seon-mi",
+                        "Cho Yun-hee"
+            ],
+            "tags": "Movie Drame"
+},
+{
+            "id": 1314,
+            "titre": "Dora",
+            "genre": "Drame",
+            "plateforme": "À vérifier",
+            "annee": 2026,
+            "statut": "Sorti",
+            "acteurs": [
+                        "Kim Do-yeon",
+                        "Sakura Ando",
+                        "Song Sae-byeok",
+                        "Choi Won-young"
+            ],
+            "tags": "Movie Drame Romance"
+}
 ];
-let customDramas = JSON.parse(localStorage.getItem('daebak_custom_dramas')) || [];
-customDramas = customDramas.map(d => ({ ...d, acteurs: uniqueActors(d.acteurs) }));
-localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
-let dramas = [...baseDramas, ...customDramas].map(hydrateDrama);
+// Onglet Ajout supprimé : l'application officielle utilise uniquement la base intégrée.
+let customDramas = [];
+let dramas = baseDramas.map(hydrateDrama);
 let favoris = JSON.parse(localStorage.getItem('daebak_favs')) || [];
 let currentGenre = 'Tous';
 let currentYear = 'Toutes';
@@ -15719,7 +16441,7 @@ function hydrateDrama(d) {
 }
 
 function rebuildDramas() {
-    dramas = [...baseDramas, ...customDramas].map(hydrateDrama);
+    dramas = baseDramas.map(hydrateDrama);
 }
 
 
@@ -16448,44 +17170,8 @@ function dramaExists(title) {
 }
 
 function addSuggestedDrama(encoded) {
-    try {
-        const item = JSON.parse(decodeURIComponent(encoded));
-        if(!item.titre) return alert("Titre manquant.");
-        if(dramaExists(item.titre)) return alert("Ce drama est déjà dans ta collection 😊");
-
-        const drama = {
-            id: Date.now() + Math.floor(Math.random() * 1000),
-            titre: item.titre,
-            genre: item.genre || "Drame",
-            plateforme: item.plateforme || "À vérifier",
-            acteurs: uniqueActors(item.acteurs),
-            synopsis: item.synopsis || "",
-            annee: item.annee || ""
-        };
-
-        customDramas.push(drama);
-        localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
-        rebuildDramas();
-        afficherDramas();
-        renderStars();
-
-setTimeout(() => {
-    const lastCheck = localStorage.getItem('daebak_last_update_check');
-    const today = new Date().toISOString().slice(0,10);
-    if(lastCheck !== today) {
-        localStorage.setItem('daebak_last_update_check', today);
-        const box = document.getElementById('updates-results');
-        if(box) box.innerHTML = `<div class="text-xs text-slate-600 bg-white/75 border border-pink-100 rounded-2xl p-3">Tu peux vérifier les nouveautés du jour ici 🆕</div>`;
-    }
-}, 600);
-
-        alert(`Ajouté : ${drama.titre} 🫰`);
-    } catch(e) {
-        console.error(e);
-        alert("Impossible d'ajouter ce drama.");
-    }
+    alert("L'onglet Ajout a été supprimé 😊 Pour ajouter un drama ou un film à l'appli officielle, il faut l'intégrer directement dans le fichier HTML.");
 }
-
 async function verifierNouveautes() {
     const box = document.getElementById('updates-results');
     box.innerHTML = `<div class="text-xs text-slate-500 bg-white/70 border border-pink-100 rounded-2xl p-3">Recherche des nouveautés en cours... 🫰</div>`;
@@ -17061,7 +17747,176 @@ const dramas2026 = [
             "Shim Eun-kyung"
         ],
         "tags": "Thriller Drame Comédie noire"
-    }
+    },
+{
+        "titre": "Ode to My Father 2",
+        "genre": "Drame",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "Hwang Jung-min",
+                "Yunjin Kim"
+        ],
+        "tags": "Movie Drame Family 2026"
+},
+{
+        "titre": "Cattle Run",
+        "genre": "Drame",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Drame 2026"
+},
+{
+        "titre": "Tazza: The Song of Beelzebub",
+        "genre": "Thriller",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Thriller Crime 2026"
+},
+{
+        "titre": "White Blast",
+        "genre": "Action",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Action Thriller 2026"
+},
+{
+        "titre": "Paradise Lost",
+        "genre": "Drame",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Drame 2026"
+},
+{
+        "titre": "Hope",
+        "genre": "Science-Fiction",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "Hwang Jung-min",
+                "Zo In-sung",
+                "Jung Ho-yeon",
+                "Alicia Vikander",
+                "Michael Fassbender"
+        ],
+        "tags": "Movie Science-Fiction Thriller 2026"
+},
+{
+        "titre": "REAWAKEN MAN",
+        "genre": "Action",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Action 2026"
+},
+{
+        "titre": "Tristes Tropiques",
+        "genre": "Thriller",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Thriller Drame 2026"
+},
+{
+        "titre": "The Journey to Gyeongju",
+        "genre": "Drame",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Drame 2026"
+},
+{
+        "titre": "OK! MADAM 2",
+        "genre": "Action",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "Uhm Jung-hwa",
+                "Park Sung-woong"
+        ],
+        "tags": "Movie Action Comédie 2026"
+},
+{
+        "titre": "Assassins",
+        "genre": "Action",
+        "plateforme": "À vérifier",
+        "statut": "À surveiller",
+        "acteurs": [
+                "À vérifier"
+        ],
+        "tags": "Movie Action Thriller 2026"
+},
+{
+        "titre": "Humint",
+        "genre": "Action",
+        "plateforme": "Netflix",
+        "statut": "Sorti",
+        "acteurs": [
+                "Zo In-sung",
+                "Park Jeong-min",
+                "Park Hae-joon",
+                "Shin Se-kyung"
+        ],
+        "tags": "Movie Action Espionnage Thriller 2026"
+},
+{
+        "titre": "Colony",
+        "genre": "Horreur",
+        "plateforme": "À vérifier",
+        "statut": "Sorti",
+        "acteurs": [
+                "Jun Ji-hyun",
+                "Koo Kyo-hwan",
+                "Ji Chang-wook",
+                "Kim Shin-rok",
+                "Shin Hyun-been",
+                "Go Soo"
+        ],
+        "tags": "Movie Horreur Zombie Action Thriller 2026"
+},
+{
+        "titre": "The Day She Returns",
+        "genre": "Drame",
+        "plateforme": "À vérifier",
+        "statut": "Sorti",
+        "acteurs": [
+                "Park Mi-so",
+                "Song Seon-mi",
+                "Cho Yun-hee"
+        ],
+        "tags": "Movie Drame 2026"
+},
+{
+        "titre": "Dora",
+        "genre": "Drame",
+        "plateforme": "À vérifier",
+        "statut": "Sorti",
+        "acteurs": [
+                "Kim Do-yeon",
+                "Sakura Ando",
+                "Song Sae-byeok",
+                "Choi Won-young"
+        ],
+        "tags": "Movie Drame Romance 2026"
+}
 ];
 let currentGenre2026 = 'Tous';
 
@@ -17133,7 +17988,7 @@ function render2026() {
 }
 
 function showTab(tab) {
-    ['dramas', 'chat', 'import', 'stars', 'future2026', 'vip'].forEach(t => {
+    ['dramas', 'chat', 'stars', 'future2026', 'vip'].forEach(t => {
         document.getElementById(`content-${t}`).classList.add('hidden');
         document.getElementById(`tab-${t}`).className = "flex-1 py-4 text-xs font-bold text-pink-500 transition-all hover:bg-pink-50/60";
     });
@@ -17149,24 +18004,6 @@ function toggleFav(id) {
     favoris = favoris.includes(id) ? favoris.filter(f => f !== id) : [...favoris, id];
     localStorage.setItem('daebak_favs', JSON.stringify(favoris));
     afficherDramas();
-}
-
-function ajouterDrama() {
-    const title = document.getElementById('new-drama-title').value.trim();
-    if(!title) return alert('Mets au moins un titre 😊');
-    const genre = document.getElementById('new-drama-genre').value;
-    const platform = document.getElementById('new-drama-platform').value.trim() || 'Inconnu';
-    const actors = uniqueActors(document.getElementById('new-drama-actors').value.split(','));
-    const drama = { id: Date.now(), titre: title, genre, plateforme: platform, acteurs: actors };
-    customDramas.push(drama);
-    localStorage.setItem('daebak_custom_dramas', JSON.stringify(customDramas));
-    rebuildDramas();
-    document.getElementById('new-drama-title').value = '';
-    document.getElementById('new-drama-platform').value = '';
-    document.getElementById('new-drama-actors').value = '';
-    showTab('dramas');
-    afficherDramas();
-    renderStars();
 }
 
 function pickRandom(list, n=3) {
@@ -17314,12 +18151,12 @@ function getAIResponse(text) {
     let conseil = '';
 
     if (isGreetingOnly(text)) {
-        return `Annyeong 🫰✨ Je suis Daebak, ton assistante K-Drama ! Ta liste : <b>${dramas.length} dramas</b>.<br><br>Essaie : <i>romance, thriller, avec Ji Chang Wook, mes favoris, combien j\'ai de dramas...</i>`;
+        return `Annyeong 🫰✨ Je suis Daebak, ton assistante K-Drama & Films KR !<br><br>Essaie : <i>film amour, drama thriller, avec Ji Chang Wook, mes favoris, Netflix...</i>`;
     }
 
     if (intention === 'stats') {
         const genres = [...new Set(dramas.map(d => d.genre).filter(Boolean))];
-        return `📊 Ta collection :<br>🎬 <b>${dramas.length}</b> dramas • ❤️ <b>${favoris.length}</b> favoris • 🎭 <b>${genres.length}</b> genres<br>Jinjja daebak 🫰`;
+        return `📊 Ta collection Daebak :<br>🎬 K-Dramas & Films KR • ❤️ <b>${favoris.length}</b> favoris • 🎭 <b>${genres.length}</b> genres<br>Jinjja daebak 🫰`;
     }
 
     if (intention === 'favoris') {
@@ -17368,7 +18205,7 @@ function getAIResponse(text) {
         intro = `<b>${results.length} drama${results.length>1?'s':''}</b> sur <b>${esc(intention.valeur)}</b> 📺`;
     }
     else {
-        return `Hmm 🤔 Essaie : <i>romance, thriller, avec Lee Jong-suk, mes favoris, Netflix, encore...</i> 🫰`;
+        return `Hmm 🤔 Essaie : <i>film amour, romance, thriller, avec Lee Jong-suk, Netflix, encore...</i> 🫰`;
     }
 
     if (!results.length) return `Omo 🥲 Aucun résultat ! Essaie un autre filtre 🫰`;
@@ -17408,32 +18245,53 @@ function daebakIsDramaRequest(t) {
     return /(drama|kdrama|k-drama|serie|série|film|regarder|conseille|recommande|propose|trouve|cherche|netflix|viki|disney|prime|acteur|actrice|star|avec|romance|thriller|action|fantastique|comedie|comédie|comique|drole|drôle|humour|juridique|medical|médical|historique|horreur)/.test(t);
 }
 
+function daebakIsMovie(d) {
+    const tagsText = Array.isArray(d.tags) ? d.tags.join(' ') : (d.tags || '');
+    return normalize(`${d.genre || ''} ${tagsText}`).includes('movie');
+}
+
+function daebakTextBloc(d) {
+    const tagsText = Array.isArray(d.tags) ? d.tags.join(' ') : (d.tags || '');
+    return normalize([d.titre || '', d.genre || '', d.plateforme || '', tagsText, (d.acteurs || []).join(' '), d.synopsis || ''].join(' '));
+}
+
 function daebakFindDramas(msg) {
-    const t = normalize(msg || "");
+    const t = normalize(msg || '');
     const liste = daebakDramasList();
+    const veutFilm = /\b(film|films|movie|movies)\b/.test(t);
+    const veutDrama = /\b(drama|dramas|kdrama|k drama|k dramas|serie|series|série|séries)\b/.test(t);
+
+    // Si la personne demande "film amour", on garde uniquement les films.
+    // Si elle demande "drama amour", on enlève les films.
+    let pool = liste;
+    if (veutFilm) pool = pool.filter(d => daebakIsMovie(d));
+    else if (veutDrama) pool = pool.filter(d => !daebakIsMovie(d));
+
     let resultats = [];
-    if (/comique|comedie|comédie|drole|drôle|humour|rire|marrant|rigolo/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("comed"));
-    else if (/thriller|suspense|crime|enquete|enquête|policier/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("thriller"));
-    else if (/romance|romantique|amour/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("romance"));
-    else if (/action|combat/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("action"));
-    else if (/fantastique|fantasy|magie|surnaturel/.test(t)) resultats = liste.filter(d => normalize(d.genre || "").includes("fantastique"));
-    else if (/juridique|justice|avocat|tribunal/.test(t)) resultats = liste.filter(d => normalize([d.titre,d.genre,d.synopsis,(d.acteurs||[]).join(" ")].join(" ")).match(/juridique|justice|avocat|tribunal|attorney|lawyer|prosecutor|judge/));
+    const byText = (regex) => pool.filter(d => regex.test(daebakTextBloc(d)) || regex.test(normalize(d.genre || '')));
+
+    if (/comique|comedie|comedie|drole|humour|rire|marrant|rigolo/.test(t)) resultats = byText(/comed|comedy|humour|drole|rire/);
+    else if (/thriller|suspense|crime|enquete|policier/.test(t)) resultats = byText(/thriller|suspense|crime|policier|detective|murder|investigation/);
+    else if (/romance|romantique|amour|love|sentiment/.test(t)) resultats = byText(/romance|romantique|amour|love|sentiment/);
+    else if (/action|combat|bagarre/.test(t)) resultats = byText(/action|combat|fight|police|cop/);
+    else if (/horreur|peur|zombie|flippant/.test(t)) resultats = byText(/horreur|horror|zombie|creature|haunted|slasher|gore/);
+    else if (/fantastique|fantasy|magie|surnaturel|fantome|demon|vampire/.test(t)) resultats = byText(/fantastique|fantasy|magie|magic|surnaturel|supernatural|ghost|spirit|demon|vampire|curse/);
+    else if (/juridique|justice|avocat|tribunal|juge/.test(t)) resultats = byText(/juridique|justice|avocat|tribunal|attorney|lawyer|prosecutor|judge|legal/);
+    else if (veutFilm) resultats = pool;
     else {
-        const mots = t.split(/\s+/).filter(w => w.length > 2);
-        resultats = liste.filter(d => {
-            const bloc = normalize([d.titre || "", d.genre || "", d.plateforme || "", (d.acteurs || []).join(" "), d.synopsis || ""].join(" "));
-            return mots.some(m => bloc.includes(m));
-        });
+        const mots = t.split(/\s+/).filter(w => w.length > 2 && !['film','films','drama','dramas','serie','series'].includes(w));
+        resultats = pool.filter(d => mots.some(m => daebakTextBloc(d).includes(m)));
     }
+
     return resultats.slice(0, 5);
 }
 
 function daebakDramaReply(msg) {
     const res = daebakFindDramas(msg);
     if (!res.length) return daebakPick([
-        "Je n’ai pas trouvé exactement dans ta liste 😅 Tu veux plutôt romance, thriller, comédie, fantastique ou juridique ?",
+        "Je n’ai pas trouvé exactement dans ta liste 😅 Tu veux plutôt <b>film amour</b>, drama thriller, comédie, fantastique ou juridique ?",
         "Hmm je ne trouve pas bien 😄 Donne-moi un genre ou un acteur, et je fouille dans tes dramas.",
-        "Je sèche un peu là 🌸 Essaie par exemple : “drama comique”, “avec Go Ara”, “thriller Netflix”."
+        "Je sèche un peu là 🌸 Essaie par exemple : “film amour”, “drama comique”, “avec Go Ara”, “thriller Netflix”."
     ]);
     return daebakPick(["Ouiii 😄 j'ai trouvé ça pour toi :", "J'ai quelques idées dans ta liste 🌸 :", "Mission recommandation activée 🫰 Voilà ce que je te propose :"]) +
         "<br><br>" + res.map(d => {
