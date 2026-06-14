@@ -72,6 +72,18 @@
             white-space: nowrap;
             scroll-snap-align: start;
         }
+
+        .info-card { background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(239,246,255,.86), rgba(252,231,243,.86)); border: 1px solid rgba(147,197,253,.45); box-shadow: 0 10px 24px rgba(147, 51, 234, .08); }
+        .info-pill { display:inline-flex; align-items:center; gap:6px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.72); border:1px solid rgba(249,168,212,.35); color:#be185d; font-size:11px; font-weight:800; }
+        .legal-text p { margin-top: 10px; }
+        .legal-text ul { margin-top: 8px; padding-left: 18px; list-style: disc; }
+        .ad-placeholder { border: 1.5px dashed rgba(147,197,253,.75); background: rgba(255,255,255,.45); color:#64748b; }
+
+        /* Modération VIP simple */
+        .admin-badge { display:inline-flex; align-items:center; padding:2px 7px; border-radius:999px; background:linear-gradient(135deg,#fef3c7,#fce7f3); color:#be185d; border:1px solid rgba(244,114,182,.35); font-size:9px; font-weight:900; }
+        .admin-action { font-size:10px; font-weight:800; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.78); border:1px solid rgba(244,114,182,.35); color:#be185d; }
+        .admin-action:hover { background:#fce7f3; }
+        .admin-danger { color:#dc2626; border-color:#fecaca; }
     </style>
 </head>
 <body class="bg-gradient-app min-h-screen flex items-center justify-center p-4">
@@ -97,6 +109,10 @@
                 <input type="text" id="search-bar" oninput="afficherDramas()" placeholder="Chercher dramas, films, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="active-filter" class="hidden mb-3 text-xs bg-pink-50 border border-pink-200 text-pink-700 rounded-2xl p-3"></div>
                 <div id="result-count" class="text-xs text-sky-700 font-bold mb-3"></div>
+                <!-- Emplacement pub prêt pour AdSense : à activer uniquement après validation Google -->
+                <div id="ad-home-top" class="ad-placeholder hidden mb-4 rounded-3xl p-4 text-center text-xs font-bold">
+                    Espace publicité
+                </div>
 
                 <div id="updates-box" class="mb-4 soft-card p-4 rounded-3xl">
                     <div class="flex items-start gap-3">
@@ -158,12 +174,19 @@
                 <div id="vip-login-screen">
                     <div class="soft-card p-6 rounded-3xl mb-4 text-center">
                         <div class="text-4xl mb-2">💎</div>
-                        <h2 class="text-xl font-bold text-sky-900">Salon VIP K-Drama & Films KR</h2>
-                        <p class="text-sm text-slate-500 mt-1">Le coin des fans passionnés 🌸</p>
-                        <div class="mt-3 text-2xl font-black text-pink-500">0,99 €<span class="text-xs font-normal text-slate-400">/mois</span></div>
+                        <h2 class="text-xl font-bold text-sky-900">Soutien VIP K-Drama & Films KR</h2>
+                        <p class="text-sm text-slate-500 mt-1">Aide Daebak Connect à rester en ligne 🌸</p>
+                        <div class="mt-3 text-2xl font-black text-pink-500">5 $<span class="text-xs font-normal text-slate-400"> / soutien VIP</span></div>
+                        <div class="mt-3 text-left bg-white/60 border border-pink-100 rounded-2xl p-3 text-xs text-slate-600 leading-relaxed">
+                            <div class="font-bold text-sky-800 mb-1">💎 Avantages VIP :</div>
+                            <div>• accès au salon VIP</div>
+                            <div>• badge membre VIP</div>
+                            <div>• priorité pour proposer des dramas/films à ajouter</div>
+                            <div>• aide à garder Daebak gratuit pour tout le monde</div>
+                        </div>
                         <a href='https://ko-fi.com/Q1Y320ZC2P' target='_blank' class="mt-3 w-full bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white py-2 rounded-2xl text-xs font-bold shadow-md hover:brightness-105 flex items-center justify-center gap-2" style="text-decoration:none;">
                             <img height='18' style='border:0;height:18px;' src='https://storage.ko-fi.com/cdn/kofi4.png?v=6' alt='Ko-fi' />
-                            Soutenir &amp; devenir VIP 💎
+                            Soutenir Daebak &amp; devenir VIP 💎
                         </a>
                     </div>
 
@@ -184,7 +207,7 @@
                     <!-- Formulaire inscription -->
                     <div id="vip-form-register" class="soft-card p-5 rounded-3xl mb-3 hidden">
                         <h3 class="text-sm font-bold text-pink-700 mb-1">🌸 Créer un compte VIP</h3>
-                        <p class="text-xs text-slate-400 mb-3">0,99€/mois — soutiens le projet 💖</p>
+                        <p class="text-xs text-slate-400 mb-3">Soutien VIP Ko-fi : 5 $ — chat + badge + priorité demandes 💖</p>
                         <input type="text" id="vip-pseudo" placeholder="Ton pseudo K-Drama..." class="w-full p-3 mb-2 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
                         <input type="email" id="vip-reg-email" placeholder="Ton email..." class="w-full p-3 mb-2 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
                         <input type="password" id="vip-reg-password" placeholder="Mot de passe (min 6 car.)..." class="w-full p-3 mb-3 rounded-2xl text-sm border border-pink-100 bg-white/70 outline-none focus:ring-2 focus:ring-pink-200">
@@ -233,6 +256,19 @@
                         </button>
                     </div>
 
+
+
+                    <!-- Panneau admin : visible seulement pour Cricri -->
+                    <div id="vip-admin-panel" class="hidden soft-card p-3 rounded-2xl mb-3 border border-pink-200">
+                        <div class="flex items-center justify-between gap-2">
+                            <div>
+                                <div class="text-xs font-black text-pink-700">🛡️ Mode admin Cricri</div>
+                                <div class="text-[10px] text-slate-500">Supprimer = masque le message sur ton écran. Bannir = masque ses messages sur ton écran.</div>
+                            </div>
+                            <button onclick="afficherListeBannisVip()" class="admin-action">Voir bannis</button>
+                        </div>
+                        <div id="vip-admin-bannis" class="hidden mt-2 text-[11px] text-slate-600 bg-white/60 rounded-2xl p-2"></div>
+                    </div>
                     <!-- Sélecteur de salons -->
                     <div class="flex gap-2 mb-3 overflow-x-auto scrollbar-hide pb-1">
                         <button onclick="changerSalon('general')" id="salon-btn-general" class="salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-sm">💬 Général</button>
@@ -312,6 +348,32 @@
             </div>
 
         </main>
+
+        <div id="legal-footer" class="px-4 py-3 border-t border-pink-100 bg-white/60 flex flex-wrap justify-center gap-2 text-[11px] font-bold text-pink-500">
+            <button onclick="openInfoModal('about')" class="hover:text-sky-600">À propos</button>
+            <span class="text-pink-200">|</span>
+            <button onclick="openInfoModal('contact')" class="hover:text-sky-600">Contact</button>
+            <span class="text-pink-200">|</span>
+            <button onclick="openInfoModal('privacy')" class="hover:text-sky-600">Confidentialité</button>
+            <span class="text-pink-200">|</span>
+            <button onclick="openInfoModal('legal')" class="hover:text-sky-600">Mentions légales</button>
+        </div>
+
+        <div id="info-modal" class="detail-modal" onclick="closeInfoModal(event)">
+            <div class="detail-box p-6 custom-scrollbar" onclick="event.stopPropagation()">
+                <div class="flex justify-between items-start gap-3 mb-4">
+                    <div>
+                        <h2 id="info-modal-title" class="text-xl font-bold text-sky-900">Infos</h2>
+                        <p class="text-xs text-slate-400 mt-1">Daebak Connect</p>
+                    </div>
+                    <button onclick="closeInfoModal()" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 border border-pink-200 hover:bg-pink-200 shadow-sm">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div id="info-modal-body" class="space-y-3 text-sm text-slate-600 leading-relaxed"></div>
+            </div>
+        </div>
+
 
         <div id="drama-modal" class="detail-modal" onclick="closeDramaDetails(event)">
             <div class="detail-box p-6 custom-scrollbar" onclick="event.stopPropagation()">
@@ -18271,11 +18333,26 @@ function clearStarFilter() {
     afficherDramas();
 }
 
+let dramaRenderLimit = 60;
+let lastDramaFilterKey = '';
+
+function chargerPlusDramas() {
+    dramaRenderLimit += 60;
+    afficherDramas();
+}
+
 function afficherDramas() {
     const searchEl = document.getElementById('search-bar');
     const query = normalize(searchEl ? searchEl.value : '');
     const headerCount = document.getElementById('drama-count-header');
     if(headerCount) headerCount.innerHTML = `K-Drama & Films KR 🇰🇷`;
+
+    const filterKey = `${query}|${currentGenre}|${currentYear}|${starFilter || ''}`;
+    if(filterKey !== lastDramaFilterKey) {
+        dramaRenderLimit = 60;
+        lastDramaFilterKey = filterKey;
+    }
+
     const filtered = dramas.filter(d => {
         const actorText = (d.acteurs || []).join(' ');
         const fullText = normalize(`${d.titre || ''} ${d.genre || ''} ${d.plateforme || ''} ${actorText}`);
@@ -18286,6 +18363,7 @@ function afficherDramas() {
         return matchesSearch && matchesGenre && matchesYear && matchesStar;
     });
 
+    const visible = filtered.slice(0, dramaRenderLimit);
     const active = document.getElementById('active-filter');
     if(starFilter) {
         active.classList.remove('hidden');
@@ -18294,8 +18372,9 @@ function afficherDramas() {
         active.classList.add('hidden');
     }
 
-    document.getElementById('result-count').textContent = `${filtered.length} drama(s) trouvé(s)${currentYear !== 'Toutes' ? ' • ' + currentYear : ''}`;
-    document.getElementById('dramas-list').innerHTML = filtered.map(d => `
+    const shownText = filtered.length > visible.length ? ` • ${visible.length} affichés` : '';
+    document.getElementById('result-count').textContent = `${filtered.length} drama(s) trouvé(s)${shownText}${currentYear !== 'Toutes' ? ' • ' + currentYear : ''}`;
+    const cards = visible.map(d => `
         <div onclick="openDramaDetails(${d.id})" class="drama-card soft-card p-4 rounded-2xl flex justify-between items-center hover:border-pink-200 transition-all">
             <div class="pr-2">
                 <strong class="text-sm text-sky-900">${esc(d.titre)}</strong>
@@ -18304,7 +18383,12 @@ function afficherDramas() {
             </div>
             <button onclick="event.stopPropagation(); toggleFav(${d.id})" title="Ajouter/enlever des favoris" class="text-lg px-2 py-1 hover:bg-sky-50 rounded-full">${favoris.includes(d.id) ? '❤️' : '🤍'}</button>
         </div>
-    `).join('') || `<div class="soft-card p-5 rounded-2xl text-sm text-slate-500 text-center">Aucun résultat pour l'instant 🥲</div>`;
+    `).join('');
+    const moreButton = filtered.length > visible.length ? `
+        <button onclick="chargerPlusDramas()" class="w-full mt-3 py-3 rounded-2xl bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white text-sm font-bold shadow-md hover:brightness-105">
+            Afficher 60 dramas de plus 🌸
+        </button>` : '';
+    document.getElementById('dramas-list').innerHTML = cards ? cards + moreButton : `<div class="soft-card p-5 rounded-2xl text-sm text-slate-500 text-center">Aucun résultat pour l'instant 🥲</div>`;
 }
 
 
@@ -19016,6 +19100,56 @@ function showTab(tab) {
     if(tab === 'vip' && vipUser) entrerDansSalonVip();
 }
 
+const infoPages = {
+    about: {
+        title: "À propos de Daebak Connect",
+        body: `
+            <p>Daebak Connect est une application de recherche dédiée aux dramas, films et contenus coréens.</p>
+            <p>Elle aide les fans à trouver une idée à regarder selon leurs envies : romance, thriller, action, historique, fantastique, comédie, nouveautés et bien plus encore.</p>
+            <p>Daebak Connect n’est pas une plateforme de streaming. Les liens proposés servent uniquement à faciliter la recherche d’informations ou de disponibilité sur Google, Netflix, Prime Video, Disney+, Viki ou d’autres plateformes.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+                <span class="info-pill">🇰🇷 K-Drama</span>
+                <span class="info-pill">🎬 Films KR</span>
+                <span class="info-pill">🔎 Recherche</span>
+                <span class="info-pill">🌸 Projet fan</span>
+            </div>`
+    },
+    contact: {
+        title: "Contact",
+        body: `
+            <p>Pour toute question concernant Daebak Connect, correction d’information, suggestion ou demande professionnelle, vous pouvez écrire à :</p>
+            <p class="mt-3 text-sm font-bold text-pink-600 break-all">contact@daebakconnectkr.fr</p>
+            <p class="text-xs text-slate-400 mt-2">Merci de contacter Daebak Connect uniquement pour les sujets liés au site.</p>`
+    },
+    privacy: {
+        title: "Politique de confidentialité",
+        body: `
+            <p>Daebak Connect respecte la vie privée des visiteurs. L’application peut utiliser le stockage local du navigateur pour conserver certains réglages, comme les favoris ou l’état de connexion VIP.</p>
+            <p>Si des publicités sont ajoutées plus tard via Google AdSense ou une autre régie publicitaire, des cookies ou technologies similaires pourront être utilisés pour afficher, mesurer ou personnaliser les annonces selon les règles de la régie concernée.</p>
+            <p>Daebak Connect ne vend pas les données personnelles des visiteurs. Les éventuelles données liées aux services externes restent soumises aux politiques de confidentialité de ces services.</p>`
+    },
+    legal: {
+        title: "Mentions légales",
+        body: `
+            <p><b>Site :</b> Daebak Connect<br><b>Adresse :</b> https://daebakconnectkr.fr<br><b>Contact :</b> contact@daebakconnectkr.fr</p>
+            <p>Daebak Connect est un projet indépendant de référencement et de recherche autour des dramas et films coréens.</p>
+            <p>Les marques, titres, plateformes et noms cités appartiennent à leurs propriétaires respectifs.</p>
+            <p>Les informations affichées peuvent évoluer. Les plateformes, dates, castings et disponibilités doivent être vérifiés directement auprès des services officiels.</p>`
+    }
+};
+
+function openInfoModal(page = 'about') {
+    const data = infoPages[page] || infoPages.about;
+    document.getElementById('info-modal-title').textContent = data.title;
+    document.getElementById('info-modal-body').innerHTML = data.body;
+    document.getElementById('info-modal').classList.add('show');
+}
+
+function closeInfoModal(event) {
+    if (event && event.target && event.target.id !== 'info-modal') return;
+    document.getElementById('info-modal').classList.remove('show');
+}
+
 function toggleFav(id) {
     favoris = favoris.includes(id) ? favoris.filter(f => f !== id) : [...favoris, id];
     localStorage.setItem('daebak_favs', JSON.stringify(favoris));
@@ -19487,7 +19621,7 @@ function envoyerMessage() {
 renderFilters();
 if (typeof renderYearFilters === 'function') renderYearFilters();
 afficherDramas();
-renderStars();
+// Stars sera chargé seulement quand on clique sur l'onglet Stars, pour accélérer l'ouverture.
 
 window.addEventListener('DOMContentLoaded', function() {
     const saved = localStorage.getItem('daebak_vip_session');
@@ -19522,8 +19656,95 @@ async function supaFetch(path, options = {}) {
             ...(options.headers || {})
         }
     });
-    const data = await res.json();
+    let data = null;
+    const txt = await res.text();
+    if (txt) {
+        try { data = JSON.parse(txt); }
+        catch(e) { data = txt; }
+    }
     return { ok: res.ok, status: res.status, data };
+}
+
+// ============================================================
+// MODÉRATION VIP SIMPLE - sans casser le chat existant
+// ============================================================
+const DAEBAK_ADMIN_EMAIL = 'femmeliberee2011@yahoo.fr';
+const DAEBAK_BANNIS_KEY = 'daebak_vip_bannis_local_simple';
+const DAEBAK_MESSAGES_MASQUES_KEY = 'daebak_vip_messages_masques_simple';
+const motsInterditsVip = [
+    'connard','connasse','salope','pute','enculé','encule','enculer','batard','bâtard',
+    'ntm','nique ta mère','ta gueule','fdp','fils de pute',
+    'http://','https://','www.','bit.ly','tinyurl','telegram.me'
+];
+function normaliserVip(txt) {
+    return String(txt || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+function estAdminVip() {
+    const email = vipUser?.user?.email || '';
+    return email.toLowerCase() === DAEBAK_ADMIN_EMAIL.toLowerCase();
+}
+function getLocalList(key) {
+    try { return JSON.parse(localStorage.getItem(key)) || []; }
+    catch(e) { return []; }
+}
+function setLocalList(key, list) {
+    localStorage.setItem(key, JSON.stringify(list));
+}
+function getBannisVip() { return getLocalList(DAEBAK_BANNIS_KEY); }
+function setBannisVip(list) { setLocalList(DAEBAK_BANNIS_KEY, list); }
+function getMessagesMasquesVip() { return getLocalList(DAEBAK_MESSAGES_MASQUES_KEY); }
+function setMessagesMasquesVip(list) { setLocalList(DAEBAK_MESSAGES_MASQUES_KEY, list); }
+function messageBloqueVip(message) {
+    const texte = normaliserVip(message);
+    return motsInterditsVip.some(mot => texte.includes(normaliserVip(mot)));
+}
+function majPanneauAdminVip() {
+    const panel = document.getElementById('vip-admin-panel');
+    if (panel) panel.classList.toggle('hidden', !estAdminVip());
+}
+function filtrerMessagesModerationVip(messages) {
+    const idsMasques = getMessagesMasquesVip();
+    const bannis = getBannisVip().map(b => b.user_id);
+    return (messages || []).filter(m => !idsMasques.includes(String(m.id)) && !bannis.includes(String(m.user_id)));
+}
+function afficherListeBannisVip() {
+    const box = document.getElementById('vip-admin-bannis');
+    if (!box) return;
+    const bannis = getBannisVip();
+    if (!bannis.length) {
+        box.innerHTML = 'Aucun membre banni/masqué pour le moment 🌸';
+    } else {
+        box.innerHTML = bannis.map(b => `<div class="flex items-center justify-between gap-2 border-b border-pink-100 py-1"><span><b>${esc(b.pseudo || 'Membre')}</b><br><span class="text-[10px] text-slate-400">${esc(b.user_id)}</span></span><button class="admin-action" onclick="debannirVipSimple('${escAttr(b.user_id)}')">Débannir</button></div>`).join('');
+    }
+    box.classList.toggle('hidden');
+}
+function escAttr(str) {
+    return String(str || '').replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function supprimerMessageVipSimple(messageId) {
+    if (!estAdminVip()) return;
+    if (!confirm('Masquer ce message sur ton écran ?')) return;
+    const ids = getMessagesMasquesVip();
+    const id = String(messageId);
+    if (!ids.includes(id)) ids.push(id);
+    setMessagesMasquesVip(ids);
+    chargerMessages();
+}
+function bannirVipSimple(userId, pseudo) {
+    if (!estAdminVip() || !userId) return;
+    if (!confirm('Masquer/Bannir ' + (pseudo || 'ce membre') + ' sur ton écran ?')) return;
+    const bannis = getBannisVip();
+    const id = String(userId);
+    if (!bannis.some(b => String(b.user_id) === id)) {
+        bannis.push({ user_id: id, pseudo: pseudo || 'Membre', date: new Date().toISOString() });
+        setBannisVip(bannis);
+    }
+    chargerMessages();
+}
+function debannirVipSimple(userId) {
+    setBannisVip(getBannisVip().filter(b => String(b.user_id) !== String(userId)));
+    afficherListeBannisVip();
+    chargerMessages();
 }
 
 function showVipLogin() {
@@ -19611,6 +19832,7 @@ function entrerDansSalonVip() {
     const letter = (vipPseudo || '?')[0].toUpperCase();
     document.getElementById('vip-avatar-letter').textContent = letter;
     document.getElementById('vip-user-name').textContent = vipPseudo || 'Fan K-Drama';
+    majPanneauAdminVip();
     chargerMessages();
     demarrerRealtime();
 }
@@ -19639,11 +19861,12 @@ let salonActuel = 'general';
 async function chargerMessages() {
     const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50&salon=eq.' + encodeURIComponent(salonActuel));
     const box = document.getElementById('vip-messages-list');
-    if (!r.ok || !r.data.length) {
+    const messages = filtrerMessagesModerationVip(r.data || []);
+    if (!r.ok || !messages.length) {
         box.innerHTML = '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
         return;
     }
-    box.innerHTML = r.data.map(m => renderVipMessage(m)).join('');
+    box.innerHTML = messages.map(m => renderVipMessage(m)).join('');
     box.scrollTop = box.scrollHeight;
 }
 
@@ -19659,13 +19882,20 @@ function changerSalon(salon) {
 
 function renderVipMessage(m) {
     const isMe = vipUser && m.user_id === vipUser.user?.id;
+    const isAdmin = estAdminVip();
     const time = new Date(m.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
     const letter = (m.pseudo || '?')[0].toUpperCase();
+    const adminButtons = isAdmin ? `<div class="mt-1 flex gap-1 ${isMe ? 'justify-end' : 'justify-start'}">
+        <button class="admin-action admin-danger" onclick="supprimerMessageVipSimple('${escAttr(m.id)}')">Supprimer</button>
+        ${!isMe ? `<button class="admin-action admin-danger" onclick="bannirVipSimple('${escAttr(m.user_id)}','${escAttr(m.pseudo)}')">Bannir</button>` : ''}
+    </div>` : '';
+    const adminBadge = isAdmin && m.user_id === vipUser?.user?.id ? ' <span class="admin-badge">ADMIN</span>' : '';
     if (isMe) {
         return `<div class="flex justify-end gap-2 items-end">
             <div class="max-w-[75%]">
-                <div class="text-[10px] text-right text-pink-400 font-bold mb-1">${esc(m.pseudo)} · ${time}</div>
+                <div class="text-[10px] text-right text-pink-400 font-bold mb-1">${esc(m.pseudo)}${adminBadge} · ${time}</div>
                 <div class="bg-gradient-to-r from-sky-400 to-pink-400 text-white p-3 rounded-2xl rounded-tr-none text-sm leading-relaxed">${esc(m.message)}</div>
+                ${adminButtons}
             </div>
             <div class="w-7 h-7 rounded-full bg-gradient-to-br from-pink-300 to-violet-300 flex items-center justify-center text-white font-bold text-xs flex-shrink-0">${letter}</div>
         </div>`;
@@ -19675,6 +19905,7 @@ function renderVipMessage(m) {
         <div class="max-w-[75%]">
             <div class="text-[10px] text-sky-500 font-bold mb-1">💎 ${esc(m.pseudo)} · ${time}</div>
             <div class="soft-card p-3 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">${esc(m.message)}</div>
+            ${adminButtons}
         </div>
     </div>`;
 }
@@ -19683,6 +19914,10 @@ async function vipEnvoyerMessage() {
     const input = document.getElementById('vip-chat-input');
     const msg = input.value.trim();
     if (!msg || !vipUser) return;
+    if (messageBloqueVip(msg)) {
+        alert('Message bloqué : merci de rester respectueux 💜');
+        return;
+    }
     input.value = '';
     const r = await supaFetch('/rest/v1/vip_messages', {
         method: 'POST',
@@ -19705,7 +19940,8 @@ function demarrerRealtime() {
         if (!box) { clearInterval(vipRealtimeChannel); return; }
         const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50&salon=eq.' + encodeURIComponent(salonActuel));
         if (r.ok && r.data.length) {
-            const newHtml = r.data.map(m => renderVipMessage(m)).join('');
+            const messages = filtrerMessagesModerationVip(r.data || []);
+            const newHtml = messages.length ? messages.map(m => renderVipMessage(m)).join('') : '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
             if (box.innerHTML !== newHtml) {
                 const wasAtBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
                 box.innerHTML = newHtml;
@@ -19751,6 +19987,8 @@ function vipLogout() {
     vipPseudo = '';
     if (vipRealtimeChannel) clearInterval(vipRealtimeChannel);
     document.getElementById('vip-chat-screen').classList.add('hidden');
+    const adminPanel = document.getElementById('vip-admin-panel');
+    if (adminPanel) adminPanel.classList.add('hidden');
     document.getElementById('vip-login-screen').classList.remove('hidden');
     document.getElementById('vip-email').value = '';
     document.getElementById('vip-password').value = '';
@@ -19787,5 +20025,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- Nettoyage catégories V2: 383 reclassements/ajouts automatiques sur 1175 dramas. -->
+<!-- Modération VIP simple ajoutée : admin local, suppression/ban visuel, mots interdits. -->
 </body>
 </html>
