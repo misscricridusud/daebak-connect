@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9159931125418098"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -108,7 +109,7 @@
             <div id="content-dramas">
                 <div id="filter-bar" class="genre-scroll"></div>
                 
-                <input type="text" id="search-bar" oninput="afficherDramas()" placeholder="Chercher dramas, films, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
+                <input type="text" id="search-bar" oninput="debouncedAfficherDramas()" placeholder="Chercher dramas, films, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
                 <div id="active-filter" class="hidden mb-3 text-xs bg-pink-50 border border-pink-200 text-pink-700 rounded-2xl p-3"></div>
                 <div id="result-count" class="text-xs text-sky-700 font-bold mb-3"></div>
                 <!-- Emplacement pub prêt pour AdSense : à activer uniquement après validation Google -->
@@ -17465,6 +17466,18 @@ let currentYear = 'Toutes';
 let starFilter = null;
 let starFavoris = JSON.parse(localStorage.getItem('daebak_star_favs')) || [];
 
+// Optimisation fluidité : la liste des stars est préparée une seule fois puis gardée en mémoire.
+let starsCache = null;
+let starCountCache = new Map();
+let starsPrecacheStarted = false;
+let dramaSearchTimer = null;
+
+function debouncedAfficherDramas() {
+    clearTimeout(dramaSearchTimer);
+    dramaSearchTimer = setTimeout(afficherDramas, 120);
+}
+
+
 /* ================================
    CONFIG IA GEMINI
    Mets ta clé API entre les guillemets.
@@ -18335,11 +18348,11 @@ function clearStarFilter() {
     afficherDramas();
 }
 
-let dramaRenderLimit = 60;
+let dramaRenderLimit = 40;
 let lastDramaFilterKey = '';
 
 function chargerPlusDramas() {
-    dramaRenderLimit += 60;
+    dramaRenderLimit += 40;
     afficherDramas();
 }
 
@@ -18351,7 +18364,7 @@ function afficherDramas() {
 
     const filterKey = `${query}|${currentGenre}|${currentYear}|${starFilter || ''}`;
     if(filterKey !== lastDramaFilterKey) {
-        dramaRenderLimit = 60;
+        dramaRenderLimit = 40;
         lastDramaFilterKey = filterKey;
     }
 
@@ -18388,7 +18401,7 @@ function afficherDramas() {
     `).join('');
     const moreButton = filtered.length > visible.length ? `
         <button onclick="chargerPlusDramas()" class="w-full mt-3 py-3 rounded-2xl bg-gradient-to-r from-sky-400 via-pink-400 to-violet-400 text-white text-sm font-bold shadow-md hover:brightness-105">
-            Afficher 60 dramas de plus 🌸
+            Afficher 40 dramas de plus 🌸
         </button>` : '';
     document.getElementById('dramas-list').innerHTML = cards ? cards + moreButton : `<div class="soft-card p-5 rounded-2xl text-sm text-slate-500 text-center">Aucun résultat pour l'instant 🥲</div>`;
 }
@@ -18450,8 +18463,37 @@ function toggleStarFav(star, event) {
     renderStars();
 }
 
+function buildStarsCache() {
+    if (starsCache) return;
+    const starMap = new Map();
+    starCountCache = new Map();
+    dramas.forEach(d => {
+        const seenInDrama = new Set();
+        (d.acteurs || []).forEach(actor => {
+            const clean = cleanActorName(actor);
+            const key = normalize(clean);
+            if (!clean || !key) return;
+            if (!starMap.has(key)) starMap.set(key, clean);
+            if (!seenInDrama.has(key)) {
+                starCountCache.set(key, (starCountCache.get(key) || 0) + 1);
+                seenInDrama.add(key);
+            }
+        });
+    });
+    starsCache = [...starMap.values()];
+}
+
+function scheduleStarsPrecache() {
+    if (starsPrecacheStarted || starsCache) return;
+    starsPrecacheStarted = true;
+    const job = () => buildStarsCache();
+    if ('requestIdleCallback' in window) requestIdleCallback(job, { timeout: 2500 });
+    else setTimeout(job, 800);
+}
+
 function starDramaCount(star) {
-    return dramas.filter(d => (d.acteurs || []).some(a => normalize(a) === normalize(star))).length;
+    buildStarsCache();
+    return starCountCache.get(normalize(star)) || 0;
 }
 
 function actorChip(actor) {
@@ -18469,14 +18511,22 @@ function dramasForStar(star) {
 }
 
 function renderStars() {
+    const list = document.getElementById('stars-list');
+    if (!list) return;
+    if (!starsCache) {
+        list.innerHTML = `<div class="col-span-2 soft-card p-5 rounded-2xl text-sm text-slate-500 text-center">Chargement des stars… 🌸</div>`;
+        setTimeout(() => {
+            buildStarsCache();
+            renderStarsList();
+        }, 30);
+        return;
+    }
+    renderStarsList();
+}
+
+function renderStarsList() {
     const q = normalize(document.getElementById('star-search')?.value || '');
-    const starMap = new Map();
-    dramas.flatMap(d => d.acteurs || []).forEach(actor => {
-        const clean = cleanActorName(actor);
-        const key = normalize(clean);
-        if (clean && key && !starMap.has(key)) starMap.set(key, clean);
-    });
-    let stars = [...starMap.values()].filter(s => !q || normalize(s).includes(q));
+    let stars = (starsCache || []).filter(s => !q || normalize(s).includes(q));
 
     stars.sort((a, b) => {
         const favDiff = (starFavoris.includes(b) ? 1 : 0) - (starFavoris.includes(a) ? 1 : 0);
@@ -18484,7 +18534,11 @@ function renderStars() {
         return starDramaCount(b) - starDramaCount(a) || a.localeCompare(b);
     });
 
-    document.getElementById('stars-list').innerHTML = stars.map(s => {
+    const maxStars = q ? 120 : 80;
+    const visibleStars = stars.slice(0, maxStars);
+    const moreInfo = stars.length > visibleStars.length ? `<div class="col-span-2 text-center text-[11px] text-slate-400 mt-1">${visibleStars.length} stars affichées sur ${stars.length}. Utilise la recherche pour affiner 🌸</div>` : '';
+
+    document.getElementById('stars-list').innerHTML = visibleStars.map(s => {
         const count = starDramaCount(s);
         const googleImages = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(s + ' korean actor actress')}`;
         const isFav = starFavoris.includes(s);
@@ -18507,8 +18561,9 @@ function renderStars() {
                 </a>
             </div>
         </div>`;
-    }).join('');
+    }).join('') + moreInfo;
 }
+
 
 function filterByStar(star) {
     starFilter = String(star || '').replace(/&#039;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
@@ -19623,7 +19678,8 @@ function envoyerMessage() {
 renderFilters();
 if (typeof renderYearFilters === 'function') renderYearFilters();
 afficherDramas();
-// Stars sera chargé seulement quand on clique sur l'onglet Stars, pour accélérer l'ouverture.
+scheduleStarsPrecache();
+// Stars sera préparé en arrière-plan puis affiché seulement quand on clique sur l'onglet Stars.
 
 window.addEventListener('DOMContentLoaded', function() {
     const saved = localStorage.getItem('daebak_vip_session');
