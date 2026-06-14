@@ -17513,12 +17513,42 @@ function cleanActorName(name) {
         .trim();
 }
 
+function isValidActorName(name) {
+    const clean = cleanActorName(name);
+    const key = normalize(clean);
+    if (!clean || !key) return false;
+    const invalidKeys = new Set([
+        'a verifier',
+        'a verifie',
+        'verifier',
+        'a completer',
+        'casting a completer',
+        'casting a verifier',
+        'non renseigne',
+        'non renseignee',
+        'inconnu',
+        'inconnue',
+        'unknown',
+        'n a',
+        'na',
+        'null',
+        'undefined',
+        'tbd',
+        'to be confirmed',
+        'to be announced'
+    ]);
+    if (invalidKeys.has(key)) return false;
+    if (key.includes('a verifier') || key.includes('a completer')) return false;
+    if (key.includes('casting') && (key.includes('verifier') || key.includes('completer'))) return false;
+    return true;
+}
+
 function uniqueActors(list) {
     const seen = new Map();
     (Array.isArray(list) ? list : []).forEach(actor => {
         const clean = cleanActorName(actor);
         const key = normalize(clean);
-        if (clean && key && !seen.has(key)) seen.set(key, clean);
+        if (isValidActorName(clean) && !seen.has(key)) seen.set(key, clean);
     });
     return [...seen.values()];
 }
@@ -18472,7 +18502,7 @@ function buildStarsCache() {
         (d.acteurs || []).forEach(actor => {
             const clean = cleanActorName(actor);
             const key = normalize(clean);
-            if (!clean || !key) return;
+            if (!isValidActorName(clean)) return;
             if (!starMap.has(key)) starMap.set(key, clean);
             if (!seenInDrama.has(key)) {
                 starCountCache.set(key, (starCountCache.get(key) || 0) + 1);
