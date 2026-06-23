@@ -6,7 +6,10 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daebak Connect - K-Drama & Films KR 🫰</title>
+    <title>Daebak Connect - K-Drama, films coréens et conseils</title>
+    <meta name="description" content="Découvrez des K-dramas et films coréens par genre, plateforme ou acteur, ainsi que des sélections et conseils originaux dans Le Coin Daebak.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://daebakconnectkr.fr/">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -104,12 +107,17 @@
             <button onclick="showTab('dramas')" class="flex-1 py-4 text-xs font-bold text-sky-600 border-b-2 border-sky-400 transition-all" id="tab-dramas">Dramas</button>
             <button onclick="showTab('chat')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-chat">💖 OppaBot</button>
             <button onclick="showTab('stars')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-stars">Stars</button>
+            <button onclick="showTab('editorial')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-editorial">Le Coin 🌸</button>
             <button onclick="showTab('future2026')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-future2026">2026 📅</button>
             <button onclick="showTab('vip')" class="flex-1 py-4 text-xs font-bold text-pink-500 transition-all" id="tab-vip">VIP 💎</button>
         </div>
 
         <main id="tab-content" class="flex-1 overflow-y-auto p-6 custom-scrollbar">
             <div id="content-dramas">
+                <section class="soft-card p-5 rounded-3xl mb-4" aria-labelledby="welcome-title">
+                    <h2 id="welcome-title" class="text-lg font-bold text-sky-900">Trouve ton prochain K-drama ou film coréen</h2>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Daebak Connect réunit des dramas et films coréens pour t’aider à choisir selon le genre, la plateforme ou les acteurs. Utilise les filtres, consulte les fiches et découvre aussi nos sélections originales dans <b>Le Coin Daebak</b>.</p>
+                </section>
                 <div id="filter-bar" class="genre-scroll"></div>
                 
                 <input type="text" id="search-bar" oninput="debouncedAfficherDramas()" placeholder="Chercher dramas, films, stars, plateformes..." class="w-full px-4 py-3 mb-3 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
@@ -154,6 +162,59 @@
                 <div id="stars-list" class="grid grid-cols-2 gap-3"></div>
             </div>
 
+
+            <div id="content-editorial" class="hidden space-y-4">
+                <section class="soft-card p-5 rounded-3xl">
+                    <div class="flex items-start gap-3">
+                        <div class="w-11 h-11 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center shadow-sm">🌸</div>
+                        <div>
+                            <h2 class="text-xl font-bold text-sky-900">Le Coin Daebak</h2>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Des guides et sélections rédigés pour t’aider à découvrir les dramas et films coréens selon ton humeur, ton temps disponible et tes genres préférés.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <article class="info-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-pink-700">Bien débuter dans les K-dramas</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Pour une première découverte, choisis une histoire simple à suivre et un format d’environ 12 à 16 épisodes. Une romance légère permet de s’habituer au rythme coréen, tandis qu’un thriller court convient mieux aux personnes qui aiment les intrigues rapides.</p>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Commence par un seul genre, puis explore les acteurs et réalisateurs que tu as appréciés. Le moteur de recherche de Daebak Connect permet ensuite de retrouver facilement leurs autres œuvres.</p>
+                </article>
+
+                <article class="info-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-sky-800">Choisir un drama selon son humeur</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed"><b>Besoin de douceur :</b> romance ou comédie. <b>Envie de suspense :</b> thriller, policier ou juridique. <b>Besoin d’évasion :</b> fantastique, historique ou science-fiction. <b>Envie d’émotion :</b> drame familial ou médical.</p>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Regarde aussi la durée et le nombre d’épisodes. Un film convient à une soirée, alors qu’une série permet de s’attacher davantage aux personnages.</p>
+                </article>
+
+                <article class="info-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-violet-800">Pourquoi les dramas coréens plaisent autant</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Les K-dramas mélangent souvent plusieurs tons dans une même histoire : romance, humour, suspense et émotion. Ils accordent aussi beaucoup d’importance aux liens familiaux, à l’amitié et à l’évolution personnelle des personnages.</p>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Leur format généralement limité évite que l’intrigue se prolonge indéfiniment et donne souvent une vraie conclusion à l’histoire.</p>
+                </article>
+
+                <article class="info-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-emerald-800">Romance, thriller ou historique : que choisir ?</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">La romance met l’accent sur les relations et les émotions. Le thriller privilégie les secrets, les enquêtes et les retournements de situation. Le drama historique transporte dans une autre époque avec des enjeux de pouvoir, de famille et de loyauté.</p>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Certains titres mélangent plusieurs genres. Une romance peut devenir fantastique, et un drama historique peut aussi contenir de l’action ou une enquête.</p>
+                </article>
+
+                <article class="info-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-amber-800">Comment vérifier où regarder un titre</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Les catalogues changent selon les pays et les périodes. Une plateforme indiquée aujourd’hui peut retirer un titre plus tard. Il est donc préférable de vérifier la disponibilité juste avant de commencer.</p>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Daebak Connect facilite cette recherche, mais ne diffuse aucun contenu. Les liens renvoient vers des recherches ou plateformes externes.</p>
+                </article>
+
+                <article class="info-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-rose-800">Créer sa liste personnelle de dramas</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Une bonne liste peut être divisée en trois parties : à voir bientôt, en cours et terminés. Ajoute une courte note sur ce qui t’attire dans chaque titre afin de choisir plus facilement le soir venu.</p>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Varier les genres évite aussi la lassitude : alterne par exemple une romance légère avec un thriller ou un film d’action.</p>
+                </article>
+
+                <section class="soft-card p-5 rounded-3xl">
+                    <h3 class="text-base font-bold text-sky-900">À propos de nos sélections</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">Les textes du Coin Daebak sont créés pour guider les visiteurs. Ils ne remplacent pas les informations officielles des plateformes, notamment pour les dates de sortie, les catalogues et les distributions.</p>
+                </section>
+            </div>
 
             <div id="content-future2026" class="hidden">
                 <div class="soft-card p-5 rounded-3xl mb-4">
@@ -19178,7 +19239,7 @@ function render2026() {
 }
 
 function showTab(tab) {
-    ['dramas', 'chat', 'stars', 'future2026', 'vip'].forEach(t => {
+    ['dramas', 'chat', 'stars', 'editorial', 'future2026', 'vip'].forEach(t => {
         document.getElementById(`content-${t}`).classList.add('hidden');
         document.getElementById(`tab-${t}`).className = "flex-1 py-4 text-xs font-bold text-pink-500 transition-all hover:bg-pink-50/60";
     });
