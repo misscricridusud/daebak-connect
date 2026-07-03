@@ -1,0 +1,43 @@
+{
+  "name": "Daebak Connect",
+  "short_name": "Daebak",
+  "description": "Catalogue K-Drama, films coréens et conseils communautaires",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fdf2f8",
+  "theme_color": "#f9a8d4",
+  "lang": "fr",
+  "categories": ["entertainment", "lifestyle"],
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Catalogue K-Drama",
+      "short_name": "Catalogue",
+      "description": "Parcourir les dramas coréens",
+      "url": "./#catalogue",
+      "icons": [{ "src": "favicon.png", "sizes": "48x48" }]
+    },
+    {
+      "name": "Mes Favoris",
+      "short_name": "Favoris",
+      "description": "Voir mes dramas favoris",
+      "url": "./#favoris",
+      "icons": [{ "src": "favicon.png", "sizes": "48x48" }]
+    }
+  ]
+}
