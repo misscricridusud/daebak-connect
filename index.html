@@ -13,6 +13,12 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f9a8d4">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Daebak Connect">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -94,6 +100,8 @@
         .admin-action:hover { background:#fce7f3; }
         .admin-danger { color:#dc2626; border-color:#fecaca; }
     </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f9a8d4">
 </head>
 <body class="bg-gradient-app min-h-screen flex items-center justify-center p-4">
 
@@ -474,6 +482,21 @@
 
 const baseDramas = [
             {
+                        "id": 99999,
+                        "titre": "Que ça vous serve de leçon !",
+                        "genre": "Action",
+                        "plateforme": "Netflix",
+                        "acteurs": [
+                                    "Kim Moo-yul",
+                                    "Lee Sung-min",
+                                    "Jin Ki-joo",
+                                    "Pyo Ji-hoon"
+                        ],
+                        "annee": 2026,
+                        "synopsis": "Lorsque le respect s’effrite au lycée, une unité spéciale intervient pour rétablir l’autorité et donner des leçons de vie directes aux élèves, parents et enseignants qui dépassent les limites.",
+                        "tags": "Action Drame École Webtoon"
+            },
+            {
                         "id": 1,
                         "titre": "17 First Kisses",
                         "genre": "Romance",
@@ -501,7 +524,7 @@ const baseDramas = [
                                     "Cha Eun-woo",
                                     "Park Gyu-young"
                         ],
-                        "synopsis": "It will revolve around Hana who is bound to inherit her family curse which is turning into a dog after getting her first kiss. The only way to break the curse is to get a second kiss. The problem is the guy who gave Hana her first kiss is afraid of dogs.",
+                        "synopsis": "Han Hae-na est victime d'une malédiction familiale qui la transforme en chien après son premier baiser. Pour rompre le sort, elle doit embrasser une seconde fois le même homme... mais celui-ci a une peur panique des chiens.",
                         "tags": "Fantastique"
             },
             {
@@ -534,7 +557,7 @@ const baseDramas = [
                         "note": 8.3,
                         "annee": 2017,
                         "episodes": 20,
-                        "synopsis": "A self-serving mythical creature's bid for invincibility backfires when he finds himself at the mercy of a woman who can see otherworldly beings."
+                        "synopsis": "Un être mythique égoïste cherche à devenir invincible, mais son destin bascule lorsqu'il rencontre une jeune femme capable de voir les créatures surnaturelles."
             },
             {
                         "id": 6,
@@ -577,7 +600,7 @@ const baseDramas = [
                         "note": 8.3,
                         "annee": 2022,
                         "episodes": 16,
-                        "synopsis": "Kim Hee Woo came from an inauspicious start as a low-grade high schooler to work his way up through university and finally pass the bar examination. His relentless hard work has finally paid dividends, and he has become a public prosecutor. During the course of his investigations, he must conduct a probe into a politician suspected of corruption. But his investigation is abruptly ended when a mysterious man kills him.\n\nHowever, he later comes to, finding that he is actually alive. Restored to the mortal realm, he finds that he must return to university and complete his academic journey again – while he tries to discover the truth about what happened to him."
+                        "synopsis": "Kim Hee Woo a surmonté une enfance difficile pour devenir procureur. Après avoir été assassiné alors qu'il enquêtait sur un homme politique corrompu, il revient mystérieusement dans le passé avec une seconde chance de changer son destin et de rendre justice. as a low-grade high schooler to work his way up through university and finally pass the bar examination. His relentless hard work has finally paid dividends, and he has become a public prosecutor. During the course of his investigations, he must conduct a probe into a politician suspected of corruption. But his investigation is abruptly ended when a mysterious man kills him.\n\nHowever, he later comes to, finding that he is actually alive. Restored to the mortal realm, he finds that he must return to university and complete his academic journey again – while he tries to discover the truth about what happened to him."
             },
             {
                         "id": 9,
@@ -595,7 +618,7 @@ const baseDramas = [
                         "note": 9,
                         "annee": 2022,
                         "episodes": 20,
-                        "synopsis": "A powerful sorceress in a blind woman's body encounters a man from a prestigious family, who wants her help to change his destiny."
+                        "synopsis": "Une puissante magicienne piégée dans le corps d'une jeune femme aveugle croise le chemin d'un héritier déterminé à changer son destin grâce à elle."
             },
             {
                         "id": 10,
@@ -687,7 +710,6 @@ const baseDramas = [
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Namgoong Min",
-                                    "Namkoong Min",
                                     "Kim Seol Hyun",
                                     "Lee Chung Ah",
                                     "Yoon Sun Woo",
@@ -1311,7 +1333,6 @@ const baseDramas = [
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Namgoong Min",
-                                    "Namkoong Min",
                                     "Nam Sang Mi",
                                     "Lee Jun Ho",
                                     "Jung Hye Sung",
@@ -2731,7 +2752,6 @@ const baseDramas = [
                         "plateforme": "Netflix",
                         "acteurs": [
                                     "Namgoong Min",
-                                    "Namkoong Min",
                                     "Park Ha Sun",
                                     "Kim Ji Eun",
                                     "Jang Young Nam",
@@ -18675,6 +18695,20 @@ function filterByStar(star) {
 // Onglet séparé 2026 : ne modifie pas baseDramas.
 const dramas2026 = [
     {
+        "titre": "Que ça vous serve de leçon !",
+        "genre": "Action",
+        "plateforme": "Netflix",
+        "statut": "Disponible",
+        "acteurs": [
+            "Kim Moo-yul",
+            "Lee Sung-min",
+            "Jin Ki-joo",
+            "Pyo Ji-hoon"
+        ],
+        "tags": "Action Drame École Webtoon",
+        "synopsis": "Lorsque le respect s’effrite au lycée, une unité spéciale intervient pour rétablir l’autorité et donner des leçons de vie directes aux élèves, parents et enseignants qui dépassent les limites."
+    },
+    {
         "titre": "The Remarried Empress",
         "genre": "Fantastique",
         "plateforme": "Disney+",
@@ -20178,5 +20212,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Nettoyage catégories V2: 383 reclassements/ajouts automatiques sur 1175 dramas. -->
 <!-- Modération VIP simple ajoutée : admin local, suppression/ban visuel, mots interdits. -->
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));}</script>
 </body>
 </html>
