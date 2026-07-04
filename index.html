@@ -19907,14 +19907,23 @@ function afficherListeBannisVip() {
 function escAttr(str) {
     return String(str || '').replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
-function supprimerMessageVipSimple(messageId) {
+async function supprimerMessageVipSimple(messageId) {
     if (!estAdminVip()) return;
-    if (!confirm('Masquer ce message sur ton écran ?')) return;
-    const ids = getMessagesMasquesVip();
-    const id = String(messageId);
-    if (!ids.includes(id)) ids.push(id);
-    setMessagesMasquesVip(ids);
-    chargerMessages();
+    if (!confirm('Supprimer définitivement ce message ?')) return;
+    try {
+        const res = await supaFetch('/rest/v1/vip_messages?id=eq.' + messageId, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json', 'Prefer': 'return=minimal' }
+        });
+        if (res.ok) {
+            chargerMessages();
+        } else {
+            const err = await res.json().catch(() => ({}));
+            alert('Erreur suppression : ' + (err.message || res.status));
+        }
+    } catch(e) {
+        alert('Erreur réseau : ' + e.message);
+    }
 }
 function bannirVipSimple(userId, pseudo) {
     if (!estAdminVip() || !userId) return;
