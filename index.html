@@ -424,6 +424,17 @@
 
         </main>
 
+        <!-- Contenu SEO visible pour les crawlers -->
+        <div style="display:none" aria-hidden="false">
+            <h2>À propos de Daebak Connect</h2>
+            <p>Daebak Connect est une application web gratuite dédiée à la découverte des dramas et films coréens (K-Drama). Notre catalogue recense plus de 1 400 titres classés par genre, plateforme et acteurs. Grâce à OppaBot, notre chatbot IA, recevez des recommandations personnalisées selon votre humeur. Rejoignez notre communauté VIP pour échanger avec d'autres fans de K-Drama francophones.</p>
+            <h3>Genres disponibles</h3>
+            <p>Romance coréenne, Thriller coréen, Drame coréen, Fantastique coréen, Historique coréen, Action coréenne, Comédie coréenne, Horreur coréenne, Drama médical coréen, Drama juridique coréen, Drama scolaire coréen, Science-fiction coréenne.</p>
+            <h3>Plateformes</h3>
+            <p>Retrouvez les dramas disponibles sur Netflix, Viki, Disney+, Amazon Prime Video, TVING et bien d'autres plateformes de streaming.</p>
+            <h3>Contact</h3>
+            <p>contact@daebakconnectkr.fr — Daebak Connect, https://daebakconnectkr.fr</p>
+        </div>
         <div id="legal-footer" class="px-4 py-3 border-t border-pink-100 bg-white/60 flex flex-wrap justify-center gap-2 text-[11px] font-bold text-pink-500">
             <button onclick="openInfoModal('about')" class="hover:text-sky-600">À propos</button>
             <span class="text-pink-200">|</span>
@@ -19289,40 +19300,71 @@ const infoPages = {
     about: {
         title: "À propos de Daebak Connect",
         body: `
-            <p>Daebak Connect est une application de recherche dédiée aux dramas, films et contenus coréens.</p>
-            <p>Elle aide les fans à trouver une idée à regarder selon leurs envies : romance, thriller, action, historique, fantastique, comédie, nouveautés et bien plus encore.</p>
-            <p>Daebak Connect n’est pas une plateforme de streaming. Les liens proposés servent uniquement à faciliter la recherche d’informations ou de disponibilité sur Google, Netflix, Prime Video, Disney+, Viki ou d’autres plateformes.</p>
+            <p><b>Daebak Connect</b> est une application web francophone dédiée à la découverte des dramas, films et séries coréens (K-Drama). Créée par une fan passionnée de culture coréenne, elle est entièrement gratuite et accessible sur navigateur ou installable sur smartphone.</p>
+            <p class="mt-2">Notre catalogue recense plus de <b>1 400 dramas et films coréens</b>, classés par genre (Romance, Thriller, Historique, Fantastique, Action, Comédie, Médical, Juridique, École…), par plateforme de streaming (Netflix, Viki, Disney+, Amazon Prime…) et par acteurs.</p>
+            <p class="mt-2"><b>Fonctionnalités principales :</b></p>
+            <ul class="mt-1 ml-4 list-disc text-sm space-y-1">
+                <li>Catalogue de plus de 1 400 K-dramas et films coréens avec synopsis, genre, casting et plateforme</li>
+                <li>Recherche rapide par titre, acteur ou genre</li>
+                <li>OppaBot : chatbot IA pour recevoir des recommandations personnalisées selon votre humeur</li>
+                <li>Espace Favoris pour sauvegarder vos dramas préférés</li>
+                <li>Section Stars pour découvrir les acteurs coréens populaires</li>
+                <li>Salon VIP communautaire pour échanger avec d'autres fans</li>
+                <li>Agenda des sorties K-Drama 2026</li>
+                <li>Application installable sur mobile (PWA)</li>
+            </ul>
+            <p class="mt-2">Daebak Connect n'est pas une plateforme de streaming. Les liens proposés servent uniquement à faciliter la recherche de disponibilité sur Google, Netflix, Viki ou d'autres services officiels.</p>
             <div class="mt-3 flex flex-wrap gap-2">
                 <span class="info-pill">🇰🇷 K-Drama</span>
                 <span class="info-pill">🎬 Films KR</span>
                 <span class="info-pill">🔎 Recherche</span>
                 <span class="info-pill">🌸 Projet fan</span>
+                <span class="info-pill">🤖 IA OppaBot</span>
+                <span class="info-pill">📱 PWA</span>
             </div>`
     },
     contact: {
         title: "Contact",
         body: `
-            <p>Pour toute question concernant Daebak Connect, correction d’information, suggestion ou demande professionnelle, vous pouvez écrire à :</p>
-            <p class="mt-3 text-sm font-bold text-pink-600 break-all">contact@daebakconnectkr.fr</p>
-            <p class="text-xs text-slate-400 mt-2">Merci de contacter Daebak Connect uniquement pour les sujets liés au site.</p>`
+            <p>Pour toute question concernant Daebak Connect, vous pouvez nous contacter pour :</p>
+            <ul class="mt-2 ml-4 list-disc text-sm space-y-1">
+                <li>Signaler une erreur dans le catalogue (titre, synopsis, plateforme, casting)</li>
+                <li>Proposer un drama ou film coréen à ajouter</li>
+                <li>Demande de partenariat ou collaboration</li>
+                <li>Toute autre question liée au site</li>
+            </ul>
+            <p class="mt-3 text-sm font-bold text-pink-600 break-all">📧 contact@daebakconnectkr.fr</p>
+            <p class="text-xs text-slate-400 mt-2">Nous répondons dans les meilleurs délais. Merci de contacter Daebak Connect uniquement pour les sujets liés au site.</p>`
     },
     privacy: {
         title: "Politique de confidentialité",
         body: `
-            <p>Daebak Connect respecte la vie privée des visiteurs. L’application peut utiliser le stockage local du navigateur pour conserver certains réglages, comme les favoris ou l’état de connexion VIP.</p>
-            <p>Si des publicités sont ajoutées plus tard via Google AdSense ou une autre régie publicitaire, des cookies ou technologies similaires pourront être utilisés pour afficher, mesurer ou personnaliser les annonces selon les règles de la régie concernée.</p>
-            <p>Daebak Connect ne vend pas les données personnelles des visiteurs. Les éventuelles données liées aux services externes restent soumises aux politiques de confidentialité de ces services.</p>`
+            <p><b>Dernière mise à jour :</b> 2025</p>
+            <p class="mt-2">Daebak Connect (https://daebakconnectkr.fr) accorde une grande importance à la protection de la vie privée de ses visiteurs.</p>
+            <p class="mt-2"><b>Stockage local (LocalStorage)</b></p>
+            <p>L'application utilise le stockage local de votre navigateur pour conserver vos préférences (favoris, filtres, état de connexion VIP). Ces données restent sur votre appareil et ne sont pas transmises à nos serveurs.</p>
+            <p class="mt-2"><b>Publicités (Google AdSense)</b></p>
+            <p>Daebak Connect peut afficher des publicités via Google AdSense. Google utilise des cookies pour personnaliser les annonces. Vous pouvez désactiver la personnalisation via les <a href="https://adssettings.google.com" target="_blank" class="text-pink-500 underline">paramètres publicitaires de Google</a>.</p>
+            <p class="mt-2"><b>Compte VIP</b></p>
+            <p>Si vous créez un compte VIP, votre adresse e-mail et vos messages sont stockés de manière sécurisée via Supabase. Ces données ne sont pas vendues ni partagées avec des tiers.</p>
+            <p class="mt-2"><b>Droits des utilisateurs (RGPD)</b></p>
+            <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Contactez-nous à contact@daebakconnectkr.fr.</p>`
     },
     legal: {
         title: "Mentions légales",
         body: `
-            <p><b>Site :</b> Daebak Connect<br><b>Adresse :</b> https://daebakconnectkr.fr<br><b>Contact :</b> contact@daebakconnectkr.fr</p>
-            <p>Daebak Connect est un projet indépendant de référencement et de recherche autour des dramas et films coréens.</p>
-            <p>Les marques, titres, plateformes et noms cités appartiennent à leurs propriétaires respectifs.</p>
-            <p>Les informations affichées peuvent évoluer. Les plateformes, dates, castings et disponibilités doivent être vérifiés directement auprès des services officiels.</p>`
+            <p><b>Site :</b> Daebak Connect — https://daebakconnectkr.fr<br>
+            <b>Contact :</b> contact@daebakconnectkr.fr</p>
+            <p class="mt-2"><b>Nature du site</b></p>
+            <p>Daebak Connect est un projet indépendant, non commercial, de référencement et de découverte autour des dramas et films coréens, créé et maintenu par une personne physique à titre de passion.</p>
+            <p class="mt-2"><b>Hébergement</b></p>
+            <p>Ce site est hébergé via GitHub Pages (Microsoft Corporation). La base de données VIP est hébergée sur Supabase.</p>
+            <p class="mt-2"><b>Propriété intellectuelle</b></p>
+            <p>Les marques, titres de dramas, noms d'acteurs et logos de plateformes cités appartiennent à leurs propriétaires respectifs (Netflix, Viki, Disney+, JTBC, tvN, KBS, MBC, SBS, etc.). Daebak Connect n'est affilié à aucune de ces entités.</p>
+            <p class="mt-2"><b>Responsabilité</b></p>
+            <p>Les informations affichées peuvent évoluer et doivent être vérifiées directement auprès des services officiels. Daebak Connect ne saurait être tenu responsable d'éventuelles inexactitudes.</p>`
     }
 };
-
 function openInfoModal(page = 'about') {
     const data = infoPages[page] || infoPages.about;
     document.getElementById('info-modal-title').textContent = data.title;
