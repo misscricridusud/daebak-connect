@@ -225,7 +225,7 @@
 
             <div id="content-stars" class="hidden">
                 <input type="text" id="star-search" oninput="renderStars()" placeholder="Chercher une star..." class="w-full px-4 py-3 mb-4 rounded-2xl border kawaii-input outline-none text-sm focus:ring-2 focus:ring-pink-200">
-                <div id="stars-list" class="grid grid-cols-2 gap-3"></div>
+                <div id="stars-list" class="flex flex-col gap-3"></div>
             </div>
 
 
@@ -18792,6 +18792,10 @@ function renderStarsList() {
         return starDramaCount(b) - starDramaCount(a) || a.localeCompare(b);
     });
 
+    const hasData = (s) => {
+        const d = starsData[s] || starsData[Object.keys(starsData).find(k => k.toLowerCase().replace(/[-\s]/g,'') === s.toLowerCase().replace(/[-\s]/g,'')) || ''];
+        return !!d;
+    };
     const maxStars = q ? 120 : 80;
     const visibleStars = stars.slice(0, maxStars);
     const moreInfo = stars.length > visibleStars.length ? `<div class="col-span-2 text-center text-[11px] text-slate-400 mt-1">${visibleStars.length} stars affichées sur ${stars.length}. Utilise la recherche pour affiner 🌸</div>` : '';
@@ -18804,7 +18808,7 @@ function renderStarsList() {
         const _starKey = Object.keys(starsData).find(k => k.toLowerCase().replace(/[-\s]/g,'') === s.toLowerCase().replace(/[-\s]/g,'')) || s;
         const avatar = getStarAvatar(_starKey);
         const bioHtml = data ? `
-            <div class="mt-2 text-[10px] text-slate-500 font-normal leading-relaxed">${data.bio}</div>
+            <div class="mt-2 text-[11px] text-slate-700 font-normal leading-relaxed">${data.bio}</div>
             <div class="mt-1 text-[10px] text-pink-400">🎂 ${data.naissance}</div>
         ` : '';
         return `<div class="star-card p-4 rounded-2xl text-xs font-bold text-sky-800 transition-all hover:shadow-lg">
