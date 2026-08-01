@@ -18804,7 +18804,7 @@ function renderStarsList() {
         const _starKey = Object.keys(starsData).find(k => k.toLowerCase().replace(/[-\s]/g,'') === s.toLowerCase().replace(/[-\s]/g,'')) || s;
         const avatar = getStarAvatar(_starKey);
         const bioHtml = data ? `
-            <div class="mt-2 text-[10px] text-slate-500 font-normal leading-relaxed line-clamp-3">${data.bio}</div>
+            <div class="mt-2 text-[10px] text-slate-500 font-normal leading-relaxed">${data.bio}</div>
             <div class="mt-1 text-[10px] text-pink-400">🎂 ${data.naissance}</div>
         ` : '';
         return `<div class="star-card p-4 rounded-2xl text-xs font-bold text-sky-800 transition-all hover:shadow-lg">
