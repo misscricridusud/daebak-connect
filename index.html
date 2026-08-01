@@ -18800,8 +18800,9 @@ function renderStarsList() {
         const count = starDramaCount(s);
         const googleImages = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(s + ' korean actor actress')}`;
         const isFav = starFavoris.includes(s);
-        const data = starsData[s];
-        const avatar = getStarAvatar(s);
+        const data = starsData[s] || starsData[Object.keys(starsData).find(k => k.toLowerCase().replace(/[-\s]/g,'') === s.toLowerCase().replace(/[-\s]/g,'')) || ''];
+        const _starKey = Object.keys(starsData).find(k => k.toLowerCase().replace(/[-\s]/g,'') === s.toLowerCase().replace(/[-\s]/g,'')) || s;
+        const avatar = getStarAvatar(_starKey);
         const bioHtml = data ? `
             <div class="mt-2 text-[10px] text-slate-500 font-normal leading-relaxed line-clamp-3">${data.bio}</div>
             <div class="mt-1 text-[10px] text-pink-400">🎂 ${data.naissance}</div>
