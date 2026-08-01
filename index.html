@@ -18693,6 +18693,81 @@ function dramasForStar(star) {
     return dramas.filter(d => (d.acteurs || []).some(a => normalize(a) === normalize(star)));
 }
 
+
+// ── STARS DATA - Bio + Photo (remplacer photo par illustration quand dispo) ──
+const starsData = {
+    "Lee Min-ho": {
+        photo: null,
+        naissance: "1987",
+        bio: "Star internationale du K-drama, Lee Min-ho est mondialement connu pour ses rôles de héros charismatiques. Il a explosé avec Boys Over Flowers et enchaîné les succès avec The Heirs, Legend of the Blue Sea et The King: Eternal Monarch.",
+        dramas: ["Boys Over Flowers", "The Heirs", "Legend of the Blue Sea", "The King: Eternal Monarch"]
+    },
+    "Song Hye-kyo": {
+        photo: null,
+        naissance: "1981",
+        bio: "Icône absolue du K-drama romantique, Song Hye-kyo est l'une des actrices les plus célèbres de Corée. Elle a conquis le monde avec Full House, Descendant of the Sun et The Glory.",
+        dramas: ["Full House", "Descendants of the Sun", "Encounter", "The Glory"]
+    },
+    "Park Seo-joon": {
+        photo: null,
+        naissance: "1988",
+        bio: "Acteur polyvalent et grand séducteur du petit écran, Park Seo-joon excelle dans les comédies romantiques comme She Was Pretty et What's Wrong with Secretary Kim, mais aussi dans des dramas plus sombres comme Itaewon Class.",
+        dramas: ["She Was Pretty", "What's Wrong with Secretary Kim", "Itaewon Class", "Dream"]
+    },
+    "Kim Go-eun": {
+        photo: null,
+        naissance: "1991",
+        bio: "Actrice talentueuse et naturelle, Kim Go-eun s'est imposée avec Goblin où elle donne la réplique à Gong Yoo. Elle brille également dans The King: Eternal Monarch et Little Women.",
+        dramas: ["Goblin", "The King: Eternal Monarch", "Little Women", "Yumi's Cells"]
+    },
+    "Gong Yoo": {
+        photo: null,
+        naissance: "1979",
+        bio: "Acteur culte devenu légende grâce à Goblin, Gong Yoo est réputé pour son charme naturel et sa profondeur de jeu. Il a aussi marqué les esprits dans Coffee Prince et le film Squid Game : The Challenge.",
+        dramas: ["Coffee Prince", "Goblin", "The Silent Sea"]
+    },
+    "IU": {
+        photo: null,
+        naissance: "1993",
+        bio: "Chanteuse et actrice prodige, IU (Lee Ji-eun) cumule les succès musicaux et dramatiques. Elle est inoubliable dans My Mister, Hotel Del Luna et Scarecrow. Une des artistes les plus populaires de Corée.",
+        dramas: ["Dream High", "You're the Best", "My Mister", "Hotel Del Luna", "Scarecrow"]
+    },
+    "Park Bo-gum": {
+        photo: null,
+        naissance: "1993",
+        bio: "Sourire irrésistible et talent naturel, Park Bo-gum a conquis les fans avec Reply 1988 et Moonlight Drawn by Clouds. Son charme doux et son jeu sincère en font l'un des acteurs les plus appréciés.",
+        dramas: ["Reply 1988", "Moonlight Drawn by Clouds", "Encounter", "Record of Youth"]
+    },
+    "Hyun Bin": {
+        photo: null,
+        naissance: "1982",
+        bio: "Star internationale et acteur accompli, Hyun Bin a marqué le K-drama avec Secret Garden et Crash Landing on You, où il partage l'affiche avec Son Ye-jin, aujourd'hui sa femme dans la vie.",
+        dramas: ["My Name is Kim Sam-soon", "Secret Garden", "Memories of the Alhambra", "Crash Landing on You"]
+    },
+    "Son Ye-jin": {
+        photo: null,
+        naissance: "1982",
+        bio: "Actrice romantique par excellence, Son Ye-jin a traversé toutes les générations du K-drama. Connue pour Something in the Rain et l'immense succès Crash Landing on You, elle est mariée à Hyun Bin.",
+        dramas: ["Personal Taste", "Something in the Rain", "Crash Landing on You"]
+    },
+    "Lee Jong-suk": {
+        photo: null,
+        naissance: "1989",
+        bio: "Ancien mannequin devenu acteur incontournable, Lee Jong-suk enchaîne les dramas à succès. Son visage angélique et son jeu intense l'ont rendu célèbre dans School 2013, Pinocchio, W et Doctor Stranger.",
+        dramas: ["School 2013", "Doctor Stranger", "Pinocchio", "W", "Big Mouth"]
+    }
+};
+
+const DEFAULT_STAR_AVATAR = `<div style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#fce4ec,#f3e5f5);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;border:2px solid #f48fb1;">🌸</div>`;
+
+function getStarAvatar(name) {
+    const data = starsData[name];
+    if (data && data.photo) {
+        return `<img src="${data.photo}" alt="${name}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #f48fb1;">`;
+    }
+    return DEFAULT_STAR_AVATAR;
+}
+
 function renderStars() {
     const list = document.getElementById('stars-list');
     if (!list) return;
@@ -18725,22 +18800,34 @@ function renderStarsList() {
         const count = starDramaCount(s);
         const googleImages = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(s + ' korean actor actress')}`;
         const isFav = starFavoris.includes(s);
+        const data = starsData[s];
+        const avatar = getStarAvatar(s);
+        const bioHtml = data ? `
+            <div class="mt-2 text-[10px] text-slate-500 font-normal leading-relaxed line-clamp-3">${data.bio}</div>
+            <div class="mt-1 text-[10px] text-pink-400">🎂 ${data.naissance}</div>
+        ` : '';
         return `<div class="star-card p-4 rounded-2xl text-xs font-bold text-sky-800 transition-all hover:shadow-lg">
-            <div class="flex justify-between items-start gap-2">
-                <button onclick='filterByStar(${jsArg(s)})' class="flex-1 text-left">
-                    <span class="block text-sm">${isFav ? '⭐ ' : ''}${esc(s)}</span>
-                    <span class="text-[10px] text-pink-500">${count} drama(s)</span>
-                </button>
-                <button onclick='toggleStarFav(${jsArg(s)}, event)' class="text-lg leading-none hover:scale-110 transition-transform" title="Star favorite">
-                    ${isFav ? '💗' : '🤍'}
-                </button>
+            <div class="flex gap-3 items-start">
+                ${avatar}
+                <div class="flex-1 min-w-0">
+                    <div class="flex justify-between items-start">
+                        <button onclick='filterByStar(${jsArg(s)})' class="flex-1 text-left">
+                            <span class="block text-sm">${isFav ? '⭐ ' : ''}${esc(s)}</span>
+                            <span class="text-[10px] text-pink-500">${count} drama(s)</span>
+                        </button>
+                        <button onclick='toggleStarFav(${jsArg(s)}, event)' class="text-lg leading-none hover:scale-110 transition-transform" title="Star favorite">
+                            ${isFav ? '💗' : '🤍'}
+                        </button>
+                    </div>
+                    ${bioHtml}
+                </div>
             </div>
             <div class="flex flex-wrap gap-2 mt-3">
                 <button onclick='filterByStar(${jsArg(s)})' class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-600 border border-sky-100 hover:bg-sky-100 transition-all shadow-sm">
-                    📺 Voir
+                    📺 Voir dramas
                 </button>
                 <a href="${googleImages}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-pink-100 text-pink-600 border border-pink-200 hover:bg-pink-200 transition-all shadow-sm">
-                    <i class="fa-regular fa-image"></i> Images
+                    <i class="fa-regular fa-image"></i> Photos
                 </a>
             </div>
         </div>`;
