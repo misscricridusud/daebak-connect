@@ -20139,4 +20139,280 @@ function showVipLogin() {
     document.getElementById('vip-form-register').classList.add('hidden');
 }
 function showVipRegister() {
-    document.getElementById('vip-form-login').classList.add('hidde
+    document.getElementById('vip-form-login').classList.add('hidden');
+    document.getElementById('vip-form-register').classList.remove('hidden');
+}
+
+async function vipLogin() {
+    const email = document.getElementById('vip-email').value.trim();
+    const password = document.getElementById('vip-password').value;
+    const errEl = document.getElementById('vip-login-error');
+    errEl.classList.add('hidden');
+    if (!email || !password) { errEl.textContent = 'Remplis tous les champs 😊'; errEl.classList.remove('hidden'); return; }
+    const res = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
+        method: 'POST',
+        headers: { 'apikey': SUPABASE_ANON, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) { errEl.textContent = data.error_description || 'Erreur de connexion 😅'; errEl.classList.remove('hidden'); return; }
+    vipUser = data;
+    await loadVipProfile(data.user.id);
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...data, pseudo: vipPseudo}));
+    entrerDansSalonVip();
+}
+
+async function vipRegister() {
+    const pseudo = document.getElementById('vip-pseudo').value.trim();
+    const email = document.getElementById('vip-reg-email').value.trim();
+    const password = document.getElementById('vip-reg-password').value;
+    const errEl = document.getElementById('vip-reg-error');
+    errEl.classList.add('hidden');
+    if (!pseudo || !email || !password) { errEl.textContent = 'Remplis tous les champs 😊'; errEl.classList.remove('hidden'); return; }
+    if (password.length < 6) { errEl.textContent = 'Mot de passe trop court (min 6 caractères)'; errEl.classList.remove('hidden'); return; }
+
+    const res = await fetch(SUPABASE_URL + '/auth/v1/signup', {
+        method: 'POST',
+        headers: { 'apikey': SUPABASE_ANON, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) { errEl.textContent = data.error_description || 'Erreur inscription 😅'; errEl.classList.remove('hidden'); return; }
+
+    vipUser = data;
+    vipPseudo = pseudo;
+
+    // Sauvegarder le profil
+    await fetch(SUPABASE_URL + '/rest/v1/profiles', {
+        method: 'POST',
+        headers: {
+            'apikey': SUPABASE_ANON,
+            'Authorization': 'Bearer ' + (data.access_token || SUPABASE_ANON),
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ id: data.user?.id, pseudo })
+    });
+
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo: vipPseudo}));
+    entrerDansSalonVip();
+}
+
+async function loadVipProfile(userId) {
+    const r = await supaFetch('/rest/v1/profiles?id=eq.' + userId + '&select=pseudo');
+    if (r.ok && r.data && r.data[0]) {
+        vipPseudo = r.data[0].pseudo;
+    } else {
+        vipPseudo = vipUser.user?.email?.split('@')[0] || 'Fan K-Drama';
+    }
+}
+
+function entrerDansSalonVip() {
+    // Si pas de pseudo, on le demande d'abord
+    if (!vipPseudo || vipPseudo === vipUser?.user?.email?.split('@')[0]) {
+        demanderPseudo();
+        return;
+    }
+    document.getElementById('vip-login-screen').classList.add('hidden');
+    document.getElementById('vip-pseudo-screen') && document.getElementById('vip-pseudo-screen').classList.add('hidden');
+    document.getElementById('vip-chat-screen').classList.remove('hidden');
+    const letter = (vipPseudo || '?')[0].toUpperCase();
+    document.getElementById('vip-avatar-letter').textContent = letter;
+    document.getElementById('vip-user-name').textContent = vipPseudo || 'Fan K-Drama';
+    majPanneauAdminVip();
+    chargerMessages();
+    demarrerRealtime();
+}
+
+function demanderPseudo() {
+    document.getElementById('vip-login-screen').classList.add('hidden');
+    document.getElementById('vip-chat-screen').classList.add('hidden');
+    document.getElementById('vip-pseudo-screen').classList.remove('hidden');
+}
+
+function validerPseudoInitial() {
+    const pseudo = document.getElementById('vip-pseudo-initial').value.trim();
+    if (!pseudo || pseudo.length < 2) {
+        document.getElementById('vip-pseudo-initial-error').textContent = 'Pseudo trop court 😊';
+        document.getElementById('vip-pseudo-initial-error').classList.remove('hidden');
+        return;
+    }
+    vipPseudo = pseudo;
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo}));
+    document.getElementById('vip-pseudo-screen').classList.add('hidden');
+    entrerDansSalonVip();
+}
+
+let salonActuel = 'general';
+
+async function chargerMessages() {
+    const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50&salon=eq.' + encodeURIComponent(salonActuel));
+    const box = document.getElementById('vip-messages-list');
+    const messages = filtrerMessagesModerationVip(r.data || []);
+    if (!r.ok || !messages.length) {
+        box.innerHTML = '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
+        return;
+    }
+    box.innerHTML = messages.map(m => renderVipMessage(m)).join('');
+    box.scrollTop = box.scrollHeight;
+}
+
+function changerSalon(salon) {
+    salonActuel = salon;
+    document.querySelectorAll('.salon-btn').forEach(b => {
+        b.className = 'salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white/70 border border-pink-100 text-pink-500 hover:bg-pink-50';
+    });
+    const actif = document.getElementById('salon-btn-' + salon);
+    if (actif) actif.className = 'salon-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-pink-400 text-white shadow-sm';
+    chargerMessages();
+}
+
+function renderVipMessage(m) {
+    const isMe = vipUser && m.user_id === vipUser.user?.id;
+    const isAdmin = estAdminVip();
+    const time = new Date(m.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    const letter = (m.pseudo || '?')[0].toUpperCase();
+    const adminButtons = isAdmin ? `<div class="mt-1 flex gap-1 ${isMe ? 'justify-end' : 'justify-start'}">
+        <button class="admin-action admin-danger" onclick="supprimerMessageVipSimple('${escAttr(m.id)}')">Supprimer</button>
+        ${!isMe ? `<button class="admin-action admin-danger" onclick="bannirVipSimple('${escAttr(m.user_id)}','${escAttr(m.pseudo)}')">Bannir</button>` : ''}
+    </div>` : '';
+    const adminBadge = isAdmin && m.user_id === vipUser?.user?.id ? ' <span class="admin-badge">ADMIN</span>' : '';
+    if (isMe) {
+        return `<div class="flex justify-end gap-2 items-end">
+            <div class="max-w-[75%]">
+                <div class="text-[10px] text-right text-pink-400 font-bold mb-1">${esc(m.pseudo)}${adminBadge} · ${time}</div>
+                <div class="bg-gradient-to-r from-sky-400 to-pink-400 text-white p-3 rounded-2xl rounded-tr-none text-sm leading-relaxed">${esc(m.message)}</div>
+                ${adminButtons}
+            </div>
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-pink-300 to-violet-300 flex items-center justify-center text-white font-bold text-xs flex-shrink-0">${letter}</div>
+        </div>`;
+    }
+    return `<div class="flex gap-2 items-end">
+        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-sky-200 to-pink-200 flex items-center justify-center text-pink-600 font-bold text-xs flex-shrink-0">${letter}</div>
+        <div class="max-w-[75%]">
+            <div class="text-[10px] text-sky-500 font-bold mb-1">💎 ${esc(m.pseudo)} · ${time}</div>
+            <div class="soft-card p-3 rounded-2xl rounded-tl-none text-sm leading-relaxed text-slate-600">${esc(m.message)}</div>
+            ${adminButtons}
+        </div>
+    </div>`;
+}
+
+async function vipEnvoyerMessage() {
+    const input = document.getElementById('vip-chat-input');
+    const msg = input.value.trim();
+    if (!msg || !vipUser) return;
+    if (messageBloqueVip(msg)) {
+        alert('Message bloqué : merci de rester respectueux 💜');
+        return;
+    }
+    input.value = '';
+    const r = await supaFetch('/rest/v1/vip_messages', {
+        method: 'POST',
+        headers: { 'Prefer': 'return=representation' },
+        body: JSON.stringify({
+            pseudo: vipPseudo,
+            message: msg,
+            salon: salonActuel
+        })
+    });
+    chargerMessages();
+}
+
+function demarrerRealtime() {
+    // Polling léger toutes les 3 secondes (Supabase Realtime nécessite websockets)
+    if (vipRealtimeChannel) clearInterval(vipRealtimeChannel);
+    vipRealtimeChannel = setInterval(async () => {
+        if (!vipUser) { clearInterval(vipRealtimeChannel); return; }
+        const box = document.getElementById('vip-messages-list');
+        if (!box) { clearInterval(vipRealtimeChannel); return; }
+        const r = await supaFetch('/rest/v1/vip_messages?select=*&order=created_at.asc&limit=50&salon=eq.' + encodeURIComponent(salonActuel));
+        if (r.ok && r.data.length) {
+            const messages = filtrerMessagesModerationVip(r.data || []);
+            const newHtml = messages.length ? messages.map(m => renderVipMessage(m)).join('') : '<div class="text-center text-xs text-slate-400 py-6">Soyez les premiers à écrire ici 🌸</div>';
+            if (box.innerHTML !== newHtml) {
+                const wasAtBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
+                box.innerHTML = newHtml;
+                if (wasAtBottom) box.scrollTop = box.scrollHeight;
+            }
+        }
+    }, 3000);
+}
+
+function toggleEmojiPanel() {
+    document.getElementById('vip-emoji-panel').classList.toggle('hidden');
+}
+
+function insererEmoji(emoji) {
+    const input = document.getElementById('vip-chat-input');
+    const pos = input.selectionStart || input.value.length;
+    input.value = input.value.slice(0, pos) + emoji + input.value.slice(pos);
+    input.focus();
+    input.setSelectionRange(pos + emoji.length, pos + emoji.length);
+}
+
+function ouvrirEditPseudo() {
+    const modal = document.getElementById('vip-pseudo-modal');
+    document.getElementById('vip-pseudo-edit').value = vipPseudo;
+    modal.classList.toggle('hidden');
+}
+
+async function sauvegarderPseudo() {
+    const nouveau = document.getElementById('vip-pseudo-edit').value.trim();
+    const errEl = document.getElementById('vip-pseudo-error');
+    errEl.classList.add('hidden');
+    if (!nouveau) { errEl.textContent = 'Écris un pseudo 😊'; errEl.classList.remove('hidden'); return; }
+    if (nouveau.length < 2) { errEl.textContent = 'Pseudo trop court !'; errEl.classList.remove('hidden'); return; }
+    vipPseudo = nouveau;
+    document.getElementById('vip-user-name').textContent = nouveau;
+    document.getElementById('vip-avatar-letter').textContent = nouveau[0].toUpperCase();
+    document.getElementById('vip-pseudo-modal').classList.add('hidden');
+    localStorage.setItem('daebak_vip_session', JSON.stringify({...vipUser, pseudo: nouveau}));
+}
+
+function vipLogout() {
+    vipUser = null;
+    vipPseudo = '';
+    if (vipRealtimeChannel) clearInterval(vipRealtimeChannel);
+    document.getElementById('vip-chat-screen').classList.add('hidden');
+    const adminPanel = document.getElementById('vip-admin-panel');
+    if (adminPanel) adminPanel.classList.add('hidden');
+    document.getElementById('vip-login-screen').classList.remove('hidden');
+    document.getElementById('vip-email').value = '';
+    document.getElementById('vip-password').value = '';
+    showVipLogin();
+}
+
+// Vérifier session sauvegardée
+(function() {
+    const saved = localStorage.getItem('daebak_vip_session');
+    if (saved) {
+        try {
+            const s = JSON.parse(saved);
+            if (s && s.access_token && s.user) {
+                vipUser = s;
+                vipPseudo = s.pseudo || s.user.email?.split('@')[0] || 'Fan K-Drama';
+                // Auto-connecter si on est sur le tab VIP
+                const vipContent = document.getElementById('content-vip');
+                if (vipContent && !vipContent.classList.contains('hidden')) {
+                    entrerDansSalonVip();
+                }
+            }
+        } catch(e) {}
+    }
+})();
+
+// ✅ Compteur Daebak Connect actualisé automatiquement
+document.addEventListener('DOMContentLoaded', function() {
+    const countHeader = document.getElementById('drama-count-header');
+    if (countHeader && typeof baseDramas !== 'undefined') {
+        countHeader.textContent = 'K-Drama & Films KR 🇰🇷';
+    }
+});
+
+</script>
+
+<!-- Nettoyage catégories V2: 383 reclassements/ajouts automatiques sur 1175 dramas. -->
+<!-- Modération VIP simple ajoutée : admin local, suppression/ban visuel, mots interdits. -->
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));}</script>
+</body>
+</html>
