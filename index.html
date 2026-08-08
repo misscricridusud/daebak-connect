@@ -493,6 +493,31 @@
             <h3>Contact</h3>
             <p>contact@daebakconnectkr.fr — Daebak Connect, https://daebakconnectkr.fr</p>
         </div>
+        <!-- Bouton installation PWA -->
+        <div id="pwa-install-bar" class="hidden px-4 py-2 bg-gradient-to-r from-pink-50 to-purple-50 border-t border-pink-100 text-center">
+            <button id="pwa-install-btn" onclick="installPWA()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500 text-white text-xs font-bold shadow hover:bg-pink-600 transition-all">
+                📱 Installer Daebak Connect
+            </button>
+            <button id="pwa-safari-btn" onclick="showSafariHelp()" class="hidden inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500 text-white text-xs font-bold shadow hover:bg-pink-600 transition-all">
+                📱 Installer sur iPhone/iPad
+            </button>
+            <button onclick="document.getElementById('pwa-install-bar').classList.add('hidden')" class="ml-2 text-pink-300 text-xs hover:text-pink-500">✕</button>
+        </div>
+
+        <!-- Modal aide installation Safari -->
+        <div id="safari-help-modal" class="detail-modal hidden" onclick="this.classList.add('hidden')">
+            <div class="detail-box p-6" onclick="event.stopPropagation()">
+                <h2 class="text-lg font-bold text-sky-900 mb-3">📱 Installer sur iPhone / iPad</h2>
+                <ol class="text-sm text-slate-600 space-y-3 list-decimal ml-4">
+                    <li>Appuie sur l'icône <b>Partager</b> <span class="text-lg">⬆️</span> en bas de Safari</li>
+                    <li>Fais défiler et appuie sur <b>"Sur l'écran d'accueil"</b></li>
+                    <li>Appuie sur <b>"Ajouter"</b> en haut à droite</li>
+                </ol>
+                <p class="mt-4 text-xs text-slate-400">L'app apparaîtra sur ton écran d'accueil comme une vraie appli 🌸</p>
+                <button onclick="document.getElementById('safari-help-modal').classList.add('hidden')" class="mt-4 px-4 py-2 rounded-full bg-pink-500 text-white text-xs font-bold">Fermer</button>
+            </div>
+        </div>
+
         <div id="legal-footer" class="px-4 py-3 border-t border-pink-100 bg-white/60 flex flex-wrap justify-center gap-2 text-[11px] font-bold text-pink-500">
             <button onclick="openInfoModal('about')" class="hover:text-sky-600">À propos</button>
             <span class="text-pink-200">|</span>
@@ -20533,6 +20558,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Nettoyage catégories V2: 383 reclassements/ajouts automatiques sur 1175 dramas. -->
 <!-- Modération VIP simple ajoutée : admin local, suppression/ban visuel, mots interdits. -->
+<script>
+// ── PWA INSTALL ──
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const bar = document.getElementById('pwa-install-bar');
+    const btn = document.getElementById('pwa-install-btn');
+    if (bar && btn) {
+        bar.classList.remove('hidden');
+        btn.classList.remove('hidden');
+    }
+});
+
+function installPWA() {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(() => {
+            deferredPrompt = null;
+            document.getElementById('pwa-install-bar').classList.add('hidden');
+        });
+    }
+}
+
+function showSafariHelp() {
+    document.getElementById('safari-help-modal').classList.remove('hidden');
+}
+
+// Détecter Safari iOS
+window.addEventListener('load', () => {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    
+    if ((isSafari || isIOS) && !isStandalone) {
+        const bar = document.getElementById('pwa-install-bar');
+        const safariBtn = document.getElementById('pwa-safari-btn');
+        if (bar && safariBtn) {
+            bar.classList.remove('hidden');
+            safariBtn.classList.remove('hidden');
+        }
+    }
+});
+
+window.addEventListener('appinstalled', () => {
+    document.getElementById('pwa-install-bar').classList.add('hidden');
+});
+</script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));}</script>
 </body>
 </html>
